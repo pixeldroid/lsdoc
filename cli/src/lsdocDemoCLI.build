@@ -1,0 +1,19 @@
+{
+  "name": "lsdocDemoCLI",
+  "version": "1.0",
+  "outputDir": "bin",
+  "references": [
+    "System",
+    "lsdoc"
+  ],
+  "modules": [
+    {
+      "name": "lsdocDemoCLI",
+      "version": "1.0",
+      "sourcePath": [
+        "."
+      ]
+    }
+  ],
+  "executable": true
+}

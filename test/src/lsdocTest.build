@@ -1,0 +1,21 @@
+{
+  "name": "lsdocTest",
+  "version": "1.0",
+  "outputDir": "bin",
+  "references": [
+    "System",
+    "Spec",
+    "lsdoc"
+  ],
+  "modules": [
+    {
+      "name": "lsdocTest",
+      "version": "1.0",
+      "sourcePath": [
+        "app",
+        "spec"
+      ]
+    }
+  ],
+  "executable": true
+}
