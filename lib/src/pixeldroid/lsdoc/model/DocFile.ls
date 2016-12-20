@@ -9,7 +9,7 @@ package pixeldroid.lsdoc.model
     {
 
         private var _name:String;
-        private var _packagName:String;
+        private var _packageName:String;
         private var _path:String;
         private var _root:String;
         private var _type:DocFileType;
@@ -32,12 +32,12 @@ package pixeldroid.lsdoc.model
             var components:Vector.<String> = _path.split(Path.getFolderDelimiter());
 
             _name = components.pop();
-            _packagName = components.join('.');
+            _packageName = components.join('.').toLowerCase();
             _type = DocFileType.getDocFileType(_name);
         }
 
         public function get name():String { return _name; }
-        public function get packageName():String { return _packagName; }
+        public function get packageName():String { return _packageName; }
         public function get path():String { return _path; }
         public function get root():String { return _root; }
         public function get type():String { return _type.toString(); }
