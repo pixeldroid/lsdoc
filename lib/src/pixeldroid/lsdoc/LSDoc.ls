@@ -16,7 +16,7 @@ package pixeldroid.lsdoc
         private static const EXIT_FAIL:Number = 1;
         private const logName:String = getFullTypeName().split('.').pop();
         private var dirList:Vector.<String>;
-        private var _files:Vector.<DocFile>;
+        private var fileList:Vector.<DocFile>;
 
 
         public function LSDoc():void
@@ -31,48 +31,21 @@ package pixeldroid.lsdoc
             if(!dirList.contains(directory)) dirList.push(directory);
         }
 
-        public function getFilesByDir(directory:String):Vector.<DocFile>
+        public function filterFiles(sieve:Function):Vector.<DocFile>
         {
-            var filelist:Vector.<DocFile> = [];
-
-            if(dirList.contains(directory))
-            {
-                var sieve:Function = function(item:Object, index:Number, vector:Vector):Boolean
-                {
-                    var docfile:DocFile = item as DocFile;
-                    return (docfile.root == directory);
-                };
-                filelist = _files.filter(sieve);
-            }
-
-            return filelist;
-        }
-
-        public function getFilesByType(type:DocFileType):Vector.<DocFile>
-        {
-            var filelist:Vector.<DocFile> = [];
-
-            var sieve:Function = function(item:Object, index:Number, vector:Vector):Boolean
-            {
-                var docfile:DocFile = item as DocFile;
-                return (docfile.type == type.toString());
-            };
-
-            filelist = _files.filter(sieve);
-
-            return filelist;
+            return fileList.filter(sieve);
         }
 
         public function get dirs():Vector.<String> { return dirList.slice(); }
-        public function get files():Vector.<DocFile> { return _files.slice(); }
+        public function get files():Vector.<DocFile> { return fileList.slice(); }
 
         public function get numDirs():Number { return dirList.length; }
-        public function get numFiles():Number { return _files.length; }
+        public function get numFiles():Number { return fileList.length; }
 
 
         public function scan():void
         {
-            _files = [];
+            fileList = [];
             for each(var dir:String in  dirList) Path.walkFiles(dir, scanner, dir);
         }
 
@@ -91,8 +64,8 @@ package pixeldroid.lsdoc
 
             for each(var type:DocFileType in docfileTypes)
             {
-                ft = getFilesByType(type);
-                ft.sort(sortByName);
+                ft = filterFiles(DocFile.getTypeFilter(type));
+                ft.sort(DocFile.sortByName);
 
                 n = ft.length;
                 s.setInteger(type.toString(), n);
@@ -133,35 +106,7 @@ package pixeldroid.lsdoc
             var root:String = payload as String;
             var file:DocFile = new DocFile(filepath, root);
 
-            _files.push(file);
-        }
-
-        private static function sortByName(x:Object, y:Object):Number
-        {
-            // 0 for equality, 1 for x after y and -1 for x before y
-
-            var nx:String = (x as DocFile).name;
-            var ny:String = (y as DocFile).name;
-
-            if (nx == ny)
-            {
-                nx = (x as DocFile).packageName;
-                ny = (y as DocFile).packageName;
-            }
-
-            if (nx == ny) return 0;
-
-            /* BUG: this causes outer sort to abort! ?!
-            var names:Vector.<String> = [nx, ny];
-            names.sort(); // <-- culprit
-            if (names[0] == nx) return -1;
-            */
-
-            var i:Number = 0;
-            var j:Number = Math.min(nx.length, ny.length);
-            while ((i < j) && (nx.charAt(i) == ny.charAt(i))) i++;
-
-            return (nx.charCodeAt(i) < ny.charCodeAt(i)) ? -1 : 1;
+            fileList.push(file);
         }
     }
 }

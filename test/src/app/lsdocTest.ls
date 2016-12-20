@@ -32,18 +32,15 @@ package
         {
             trace('\ngenerating a report of all files scanned..');
 
-            // var fixtureRoot:String = '/Users/ellemenno/Projects/ellemenno/lsdoc/test/fixtures/';
-            var fixtureRoot:String = '/Users/ellemenno/Projects/ellemenno/LoomSDK/sdk/';
+            var fixtureRoot:String = '/Users/ellemenno/Projects/ellemenno/lsdoc/test/fixtures/';
+            // var fixtureRoot:String = '/Users/ellemenno/Projects/ellemenno/LoomSDK/sdk/';
             var lsdoc:LSDoc = new LSDoc();
 
-            // lsdoc.addDir(fixtureRoot + 'docs');
+            lsdoc.addDir(fixtureRoot + 'docs');
             lsdoc.addDir(fixtureRoot + 'src');
             lsdoc.scan();
 
-            var j:JSON = lsdoc.toJSON();
-            var s:JSON = j.getObject('summary');
-
-            trace(s.serialize());
+            trace(lsdoc.toJSON().getObject('summary').serialize());
 
             if (File.writeTextFile('docfiles.json', lsdoc.toJsonString())) trace('done.');
             else trace('write failed');

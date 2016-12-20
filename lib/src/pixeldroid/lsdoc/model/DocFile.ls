@@ -16,6 +16,53 @@ package pixeldroid.lsdoc.model
         private var _type:DocFileType;
 
 
+        public static function getDirFilter(directory:String):Function
+        {
+            return function(item:Object, index:Number, vector:Vector):Boolean
+            {
+                var docfile:DocFile = item as DocFile;
+                return (docfile.root == directory);
+            };
+        }
+
+        public static function getTypeFilter(type:DocFileType):Function
+        {
+            return function(item:Object, index:Number, vector:Vector):Boolean
+            {
+                var docfile:DocFile = item as DocFile;
+                return (docfile.type == type.toString());
+            };
+        }
+
+        public static function sortByName(x:Object, y:Object):Number
+        {
+            // 0 for equality, 1 for x after y and -1 for x before y
+
+            var nx:String = (x as DocFile).name;
+            var ny:String = (y as DocFile).name;
+
+            if (nx == ny)
+            {
+                nx = (x as DocFile).packageName;
+                ny = (y as DocFile).packageName;
+            }
+
+            if (nx == ny) return 0;
+
+            /* BUG: this causes outer sort to abort! ?!
+            var names:Vector.<String> = [nx, ny];
+            names.sort(); // <-- culprit
+            if (names[0] == nx) return -1;
+            */
+
+            var i:Number = 0;
+            var j:Number = Math.min(nx.length, ny.length);
+            while ((i < j) && (nx.charAt(i) == ny.charAt(i))) i++;
+
+            return (nx.charCodeAt(i) < ny.charCodeAt(i)) ? -1 : 1;
+        }
+
+
         public function DocFile(filepath:String, root:String = ''):void
         {
             setPath(filepath, root);
@@ -54,7 +101,7 @@ package pixeldroid.lsdoc.model
             j.setString('packageName', _packageName);
             j.setString('path', _path);
             j.setString('root', _root);
-            j.setString('type', type);
+            j.setString('type', _type.toString());
 
             return j;
         }

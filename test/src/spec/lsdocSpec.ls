@@ -40,8 +40,11 @@ package
                 lsdoc.addDir(fixtureRoot + 'src');
                 lsdoc.scan();
 
-                it.expects(lsdoc.getFilesByDir(fixtureRoot + 'docs').length).toEqual(4);
-                it.expects(lsdoc.getFilesByDir(fixtureRoot + 'src').length).toEqual(3);
+                var docsFilter:Function = DocFile.getDirFilter(fixtureRoot + 'docs');
+                it.expects(lsdoc.filterFiles(docsFilter).length).toEqual(4);
+
+                var srcFilter:Function = DocFile.getDirFilter(fixtureRoot + 'src');
+                it.expects(lsdoc.filterFiles(srcFilter).length).toEqual(3);
             });
 
             it.should('provide files filtered by type', function() {
@@ -51,9 +54,14 @@ package
                 lsdoc.addDir(fixtureRoot + 'src');
                 lsdoc.scan();
 
-                it.expects(lsdoc.getFilesByType(DocFileType.CODE).length).toEqual(3);
-                it.expects(lsdoc.getFilesByType(DocFileType.DOC).length).toEqual(3);
-                it.expects(lsdoc.getFilesByType(DocFileType.MEDIA).length).toEqual(1);
+                var codeFilter:Function = DocFile.getTypeFilter(DocFileType.CODE);
+                it.expects(lsdoc.filterFiles(codeFilter).length).toEqual(3);
+
+                var docFilter:Function = DocFile.getTypeFilter(DocFileType.DOC);
+                it.expects(lsdoc.filterFiles(docFilter).length).toEqual(3);
+
+                var mediaFilter:Function = DocFile.getTypeFilter(DocFileType.MEDIA);
+                it.expects(lsdoc.filterFiles(mediaFilter).length).toEqual(1);
             });
 
             it.should('add directories idempotently', function() {
