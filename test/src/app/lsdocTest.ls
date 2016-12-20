@@ -32,8 +32,7 @@ package
         {
             trace('\ngenerating a report of all files scanned..');
 
-            var fixtureRoot:String = '/Users/ellemenno/Projects/ellemenno/lsdoc/test/fixtures/';
-            // var fixtureRoot:String = '/Users/ellemenno/Projects/ellemenno/LoomSDK/sdk/';
+            var fixtureRoot:String = 'fixtures/';
             var lsdoc:LSDoc = new LSDoc();
 
             lsdoc.addDir(fixtureRoot + 'docs');

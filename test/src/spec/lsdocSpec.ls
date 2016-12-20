@@ -9,7 +9,7 @@ package
 
     public static class lsdocSpec
     {
-        private static const fixtureRoot:String = '/Users/ellemenno/Projects/ellemenno/lsdoc/test/fixtures/';
+        private static const fixtureRoot:String = 'fixtures/';
 
         public static function describe():void
         {
