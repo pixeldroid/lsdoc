@@ -1,5 +1,6 @@
 package pixeldroid.lsdoc.model
 {
+    import system.JSON;
     import system.platform.Path;
 
     import pixeldroid.lsdoc.model.DocFileType;
@@ -43,6 +44,20 @@ package pixeldroid.lsdoc.model
         public function get type():String { return _type.toString(); }
 
         public function toString():String { return _path; }
+
+        public function toJSON():JSON
+        {
+            var j:JSON = new JSON();
+            j.initObject();
+
+            j.setString('name', _name);
+            j.setString('packageName', _packageName);
+            j.setString('path', _path);
+            j.setString('root', _root);
+            j.setString('type', type);
+
+            return j;
+        }
 
     }
 }

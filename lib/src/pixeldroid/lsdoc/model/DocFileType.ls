@@ -18,6 +18,16 @@ package pixeldroid.lsdoc.model
             'png' : MEDIA
         };
 
+        public static function getAllDocFileTypes():Vector.<DocFileType>
+        {
+            return [
+                CODE,
+                DOC,
+                MEDIA,
+                UNKNOWN
+            ];
+        }
+
         public static function getDocFileType(filepath:String):DocFileType
         {
             var type:DocFileType = TYPE_MAP.fetch(File2.extname(filepath), UNKNOWN) as DocFileType;

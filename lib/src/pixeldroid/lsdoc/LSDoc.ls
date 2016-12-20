@@ -1,6 +1,7 @@
 package pixeldroid.lsdoc
 {
     import system.Debug;
+    import system.JSON;
     import system.Process;
     import system.platform.Path;
 
@@ -75,6 +76,43 @@ package pixeldroid.lsdoc
             for each(var dir:String in  dirList) Path.walkFiles(dir, scanner, dir);
         }
 
+        public function toJSON():JSON
+        {
+            var j:JSON = new JSON();
+            var s:JSON = new JSON();
+
+            j.initObject();
+            s.initObject();
+
+            var docfileTypes:Vector.<DocFileType> = DocFileType.getAllDocFileTypes();
+            var fj:JSON = new JSON();
+            var ft:Vector.<DocFile>;
+            var n:Number;
+
+            for each(var type:DocFileType in docfileTypes)
+            {
+                ft = getFilesByType(type);
+                ft.sort(sortByName);
+
+                n = ft.length;
+                s.setInteger(type.toString(), n);
+
+                fj.initArray();
+                for (var i:Number = 0; i < n; i++) fj.setArrayObject(i, ft[i].toJSON());
+                j.setArray(type.toString(), fj);
+            }
+
+            j.setObject('summary', s);
+
+            return j;
+        }
+
+        public function toJsonString():String
+        {
+            var j:JSON = toJSON();
+            return j.serialize();
+        }
+
 
 
         private function fail(message:String):void
@@ -96,6 +134,34 @@ package pixeldroid.lsdoc
             var file:DocFile = new DocFile(filepath, root);
 
             _files.push(file);
+        }
+
+        private static function sortByName(x:Object, y:Object):Number
+        {
+            // 0 for equality, 1 for x after y and -1 for x before y
+
+            var nx:String = (x as DocFile).name;
+            var ny:String = (y as DocFile).name;
+
+            if (nx == ny)
+            {
+                nx = (x as DocFile).packageName;
+                ny = (y as DocFile).packageName;
+            }
+
+            if (nx == ny) return 0;
+
+            /* BUG: this causes outer sort to abort! ?!
+            var names:Vector.<String> = [nx, ny];
+            names.sort(); // <-- culprit
+            if (names[0] == nx) return -1;
+            */
+
+            var i:Number = 0;
+            var j:Number = Math.min(nx.length, ny.length);
+            while ((i < j) && (nx.charAt(i) == ny.charAt(i))) i++;
+
+            return (nx.charCodeAt(i) < ny.charCodeAt(i)) ? -1 : 1;
         }
     }
 }
