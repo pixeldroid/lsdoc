@@ -33,6 +33,29 @@ package
                 it.expects(files[6].packageName).toEqual('com.test.foo');
             });
 
+            it.should('provide files filtered by directory', function() {
+                var lsdoc:LSDoc = new LSDoc();
+
+                lsdoc.addDir(fixtureRoot + 'docs');
+                lsdoc.addDir(fixtureRoot + 'src');
+                lsdoc.scan();
+
+                it.expects(lsdoc.getFilesByDir(fixtureRoot + 'docs').length).toEqual(4);
+                it.expects(lsdoc.getFilesByDir(fixtureRoot + 'src').length).toEqual(3);
+            });
+
+            it.should('provide files filtered by type', function() {
+                var lsdoc:LSDoc = new LSDoc();
+
+                lsdoc.addDir(fixtureRoot + 'docs');
+                lsdoc.addDir(fixtureRoot + 'src');
+                lsdoc.scan();
+
+                it.expects(lsdoc.getFilesByType(DocFileType.CODE).length).toEqual(3);
+                it.expects(lsdoc.getFilesByType(DocFileType.DOC).length).toEqual(3);
+                it.expects(lsdoc.getFilesByType(DocFileType.MEDIA).length).toEqual(1);
+            });
+
             it.should('add directories idempotently', function() {
                 var lsdoc:LSDoc = new LSDoc();
 

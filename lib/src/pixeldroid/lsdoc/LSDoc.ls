@@ -18,13 +18,6 @@ package pixeldroid.lsdoc
         private var _files:Vector.<DocFile>;
 
 
-        private function fail(message:String):void
-        {
-            trace('error:', message);
-            Process.exit(EXIT_FAIL);
-        }
-
-
         public function LSDoc():void
         {
             initialize();
@@ -37,6 +30,39 @@ package pixeldroid.lsdoc
             if(!dirList.contains(directory)) dirList.push(directory);
         }
 
+        public function getFilesByDir(directory:String):Vector.<DocFile>
+        {
+            var filelist:Vector.<DocFile> = [];
+
+            if(dirList.contains(directory))
+            {
+                var sieve:Function = function(item:Object, index:Number, vector:Vector):Boolean
+                {
+                    var docfile:DocFile = item as DocFile;
+                    return (docfile.root == directory);
+                };
+                filelist = _files.filter(sieve);
+            }
+
+            return filelist;
+        }
+
+        public function getFilesByType(type:DocFileType):Vector.<DocFile>
+        {
+            var filelist:Vector.<DocFile> = [];
+
+            var sieve:Function = function(item:Object, index:Number, vector:Vector):Boolean
+            {
+                var docfile:DocFile = item as DocFile;
+                return (docfile.type == type.toString());
+            };
+
+            filelist = _files.filter(sieve);
+
+            return filelist;
+        }
+
+        public function get dirs():Vector.<String> { return dirList.slice(); }
         public function get files():Vector.<DocFile> { return _files.slice(); }
 
         public function get numDirs():Number { return dirList.length; }
@@ -49,6 +75,13 @@ package pixeldroid.lsdoc
             for each(var dir:String in  dirList) Path.walkFiles(dir, scanner, dir);
         }
 
+
+
+        private function fail(message:String):void
+        {
+            trace('error:', message);
+            Process.exit(EXIT_FAIL);
+        }
 
         private function initialize():void
         {
