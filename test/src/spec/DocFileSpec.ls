@@ -62,6 +62,23 @@ package
 
                 for (var i:Number in v2) it.expects(v1[i]).toEqual(v2[i]);
             });
+
+            it.should('extract its properties from the given filepath', function() {
+                var df:DocFile = new DocFile('root/a/b/c/File.ls', 'root');
+
+                it.expects(df.name).toEqual('File.ls');
+                it.expects(df.packageName).toEqual('a.b.c');
+                it.expects(df.path).toEqual('a/b/c/File.ls');
+                it.expects(df.root).toEqual('root');
+                it.expects(df.type).toEqual(DocFileType.CODE.toString());
+            });
+
+            it.should('serialize to JSON', function() {
+                var df:DocFile = new DocFile('/a/b/c/File.ls');
+                var js:String = '{"name": "File.ls", "packageName": "a.b.c", "path": "a/b/c/File.ls", "root": "", "type": "CODE"}';
+
+                it.expects(df.toJSON().serialize()).toEqual(js);
+            });
         }
     }
 }
