@@ -8,6 +8,7 @@ package
     import pixeldroid.lsdoc.LSDoc;
 
     import lsdocSpec;
+    import DocFileSpec;
     import DocFileTypeSpec;
 
 
@@ -19,6 +20,7 @@ package
             SpecExecutor.parseArgs();
             var returnCode:Number = SpecExecutor.exec([
                 lsdocSpec,
+                DocFileSpec,
                 DocFileTypeSpec
             ]);
 
