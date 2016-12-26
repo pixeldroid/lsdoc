@@ -5,6 +5,7 @@ package pixeldroid.lsdoc
     import system.Process;
     import system.platform.Path;
 
+    import pixeldroid.lsdoc.error.LSDocError;
     import pixeldroid.lsdoc.model.DocFile;
     import pixeldroid.lsdoc.model.DocFileType;
 
@@ -13,8 +14,6 @@ package pixeldroid.lsdoc
     {
         public static const version:String = '1.0.0';
 
-        private static const EXIT_FAIL:Number = 1;
-        private const logName:String = getFullTypeName().split('.').pop();
         private var dirList:Vector.<String>;
         private var fileList:Vector.<DocFile>;
 
@@ -24,11 +23,25 @@ package pixeldroid.lsdoc
             initialize();
         }
 
-        public function addDir(directory:String):void
+        public function addDir(directory:String):Vector.<LSDocError>
         {
-            if(!Path.dirExists(directory)) fail("directory '" +directory +'" does not exist.');
+            var errors:Vector.<LSDocError> = [];
 
-            if(!dirList.contains(directory)) dirList.push(directory);
+            if(Path.dirExists(directory))
+            {
+                if(!dirList.contains(directory)) dirList.push(directory);
+            }
+            else
+            {
+                errors.push(
+                    new LSDocError(
+                        "directory '" +directory +'" does not exist.',
+                        LSDocError.DIR_NOT_FOUND
+                    )
+                );
+            }
+
+            return errors;
         }
 
         public function filterFiles(sieve:Function):Vector.<DocFile>
@@ -43,10 +56,46 @@ package pixeldroid.lsdoc
         public function get numFiles():Number { return fileList.length; }
 
 
-        public function scan():void
+        public function scan():Vector.<LSDocError>
         {
+            var errors:Vector.<LSDocError> = [];
+
+            if (dirList.length == 0)
+            {
+                errors.push(
+                    new LSDocError(
+                        'no directories added. nothing to scan.',
+                        LSDocError.FILE_NOT_FOUND
+                    )
+                );
+
+                return errors;
+            }
+
             fileList = [];
-            for each(var dir:String in  dirList) Path.walkFiles(dir, scanner, dir);
+            for each(var dir:String in dirList) Path.walkFiles(dir, scanner, dir);
+
+            if (fileList.length == 0)
+            {
+                errors.push(
+                    new LSDocError(
+                        'no doc files found in ["' + dirList.join('", "') +'"].',
+                        LSDocError.FILE_NOT_FOUND
+                    )
+                );
+            }
+
+            return errors;
+        }
+
+        public function process():Vector.<LSDocError>
+        {
+            var errors:Vector.<LSDocError> = [];
+
+            trace('processing..');
+            trace('done.');
+
+            return errors;
         }
 
         public function toJSON():JSON
@@ -87,12 +136,6 @@ package pixeldroid.lsdoc
         }
 
 
-
-        private function fail(message:String):void
-        {
-            trace('error:', message);
-            Process.exit(EXIT_FAIL);
-        }
 
         private function initialize():void
         {

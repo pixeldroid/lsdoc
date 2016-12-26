@@ -4,8 +4,10 @@ package
     import pixeldroid.bdd.Thing;
 
     import pixeldroid.lsdoc.LSDoc;
+    import pixeldroid.lsdoc.error.LSDocError;
     import pixeldroid.lsdoc.model.DocFile;
     import pixeldroid.lsdoc.model.DocFileType;
+
 
     public static class lsdocSpec
     {
@@ -14,6 +16,28 @@ package
         public static function describe():void
         {
             var it:Thing = Spec.describe('LSDoc');
+
+            it.should('return an error when no directories have been added for scanning', function() {
+                var lsdoc:LSDoc = new LSDoc();
+                var e:Vector.<LSDocError>;
+
+                e = lsdoc.scan();
+                it.expects(e.length).toEqual(1);
+                it.expects(e[0].type).toEqual(LSDocError.FILE_NOT_FOUND);
+            });
+
+            it.should('return an error when a directory does not exist', function() {
+                var lsdoc:LSDoc = new LSDoc();
+                var e:Vector.<LSDocError>;
+
+                e = lsdoc.addDir(fixtureRoot + 'src');
+                it.expects(e.length).toEqual(0);
+                it.expects(e.join(',')).toEqual('');
+
+                e = lsdoc.addDir(fixtureRoot + 'floober');
+                it.expects(e.length).toEqual(1);
+                it.expects(e[0].type).toEqual(LSDocError.DIR_NOT_FOUND);
+            });
 
             it.should('find all loomscript files in the directory tree', function() {
                 var lsdoc:LSDoc = new LSDoc();
