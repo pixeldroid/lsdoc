@@ -37,11 +37,21 @@ package
             var fixtureRoot:String = 'fixtures/';
             var lsdoc:LSDoc = new LSDoc();
 
+            trace('adding dirs..');
             lsdoc.addDir(fixtureRoot + 'docs');
             lsdoc.addDir(fixtureRoot + 'src');
+
+            trace('scanning..');
             lsdoc.scan();
 
+            trace('processing..');
+            lsdoc.process();
+
+            trace('report:');
             trace(lsdoc.toJSON().getObject('summary').serialize());
+
+            trace('rendering..');
+            lsdoc.render();
 
             if (File.writeTextFile('docfiles.json', lsdoc.toJsonString())) trace('done.');
             else trace('write failed');

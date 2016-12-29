@@ -56,6 +56,9 @@ package pixeldroid.lsdoc
         public function get numFiles():Number { return fileList.length; }
 
 
+        /**
+            Collect the list of files to process
+        */
         public function scan():Vector.<LSDocError>
         {
             var errors:Vector.<LSDocError> = [];
@@ -77,16 +80,29 @@ package pixeldroid.lsdoc
             return errors;
         }
 
+        /**
+            Process the scanned files to extract doc comment data.
+        */
         public function process():Vector.<LSDocError>
         {
             var errors:Vector.<LSDocError> = [];
 
-            trace('processing..');
-            trace('done.');
+            return errors;
+        }
+
+        /**
+            Render the processed doc comments to an output format.
+        */
+        public function render(/*renderer:LSDocRenderer*/):Vector.<LSDocError>
+        {
+            var errors:Vector.<LSDocError> = [];
 
             return errors;
         }
 
+        /**
+            Export a summary of the scanned files as a JSON object.
+        */
         public function toJSON():JSON
         {
             var j:JSON = new JSON();
@@ -118,6 +134,9 @@ package pixeldroid.lsdoc
             return j;
         }
 
+        /**
+            Serialize the JSON summary to string.
+        */
         public function toJsonString():String
         {
             var j:JSON = toJSON();
