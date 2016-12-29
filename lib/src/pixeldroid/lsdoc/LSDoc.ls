@@ -62,13 +62,7 @@ package pixeldroid.lsdoc
 
             if (dirList.length == 0)
             {
-                errors.push(
-                    new LSDocError(
-                        'no directories added. nothing to scan.',
-                        LSDocError.FILE_NOT_FOUND
-                    )
-                );
-
+                errors.push(noFileError('no directories added. nothing to scan.'));
                 return errors;
             }
 
@@ -77,12 +71,7 @@ package pixeldroid.lsdoc
 
             if (fileList.length == 0)
             {
-                errors.push(
-                    new LSDocError(
-                        'no doc files found in ["' + dirList.join('", "') +'"].',
-                        LSDocError.FILE_NOT_FOUND
-                    )
-                );
+                errors.push(noFileError('no doc files found in ["' + dirList.join('", "') +'"].'));
             }
 
             return errors;
@@ -140,6 +129,11 @@ package pixeldroid.lsdoc
         private function initialize():void
         {
             dirList = [];
+        }
+
+        private function noFileError(msg:String):LSDocError
+        {
+            return new LSDocError(msg, LSDocError.FILE_NOT_FOUND);
         }
 
         private function scanner(filepath:String, payload:Object):void
