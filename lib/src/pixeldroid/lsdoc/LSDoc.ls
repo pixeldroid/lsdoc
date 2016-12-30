@@ -33,12 +33,7 @@ package pixeldroid.lsdoc
             }
             else
             {
-                errors.push(
-                    new LSDocError(
-                        "directory '" +directory +'" does not exist.',
-                        LSDocError.DIR_NOT_FOUND
-                    )
-                );
+                errors.push(noDirectoryError("directory '" +directory +'" does not exist.'));
             }
 
             return errors;
@@ -148,6 +143,11 @@ package pixeldroid.lsdoc
         private function initialize():void
         {
             dirList = [];
+        }
+
+        private function noDirectoryError(msg:String):LSDocError
+        {
+            return new LSDocError(msg, LSDocError.DIR_NOT_FOUND);
         }
 
         private function noFileError(msg:String):LSDocError
