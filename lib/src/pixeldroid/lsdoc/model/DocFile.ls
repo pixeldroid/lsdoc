@@ -9,12 +9,14 @@ package pixeldroid.lsdoc.model
     public class DocFile
     {
 
+        private var _module:String;
         private var _name:String;
-        private var _packageName:String;
         private var _path:String;
         private var _root:String;
         private var _type:DocFileType;
 
+
+        // public static function getModuleFilter(module:String):Function
 
         public static function getDirFilter(directory:String):Function
         {
@@ -43,8 +45,8 @@ package pixeldroid.lsdoc.model
 
             if (nx == ny)
             {
-                nx = (x as DocFile).packageName;
-                ny = (y as DocFile).packageName;
+                nx = (x as DocFile).path;
+                ny = (y as DocFile).path;
             }
 
             if (nx == ny) return 0;
@@ -63,8 +65,9 @@ package pixeldroid.lsdoc.model
         }
 
 
-        public function DocFile(filepath:String, root:String = ''):void
+        public function DocFile(module:String, filepath:String, root:String = ''):void
         {
+            _module = module;
             setPath(filepath, root);
         }
 
@@ -80,25 +83,24 @@ package pixeldroid.lsdoc.model
             var components:Vector.<String> = _path.split(Path.getFolderDelimiter());
 
             _name = components.pop();
-            _packageName = components.join('.').toLowerCase();
             _type = DocFileType.getDocFileType(_name);
         }
 
         public function get name():String { return _name; }
-        public function get packageName():String { return _packageName; }
+        public function get module():String { return _module; }
         public function get path():String { return _path; }
         public function get root():String { return _root; }
         public function get type():String { return _type.toString(); }
 
-        public function toString():String { return _path; }
+        public function toString():String { return _path +' (' +type +')'; }
 
         public function toJSON():JSON
         {
             var j:JSON = new JSON();
             j.initObject();
 
+            j.setString('module', _module);
             j.setString('name', _name);
-            j.setString('packageName', _packageName);
             j.setString('path', _path);
             j.setString('root', _root);
             j.setString('type', _type.toString());

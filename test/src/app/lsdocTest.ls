@@ -6,6 +6,7 @@ package
 
     import pixeldroid.bdd.SpecExecutor;
     import pixeldroid.lsdoc.LSDoc;
+    import pixeldroid.lsdoc.error.LSDocError;
 
     import lsdocSpec;
     import DocFileSpec;
@@ -35,23 +36,30 @@ package
             trace('\ngenerating a report of all files scanned..');
 
             var fixtureRoot:String = 'fixtures/';
+            var module:String = 'test';
             var lsdoc:LSDoc = new LSDoc();
+            var err:Vector.<LSDocError> = [];
 
             trace('adding dirs..');
-            lsdoc.addDir(fixtureRoot + 'docs');
-            lsdoc.addDir(fixtureRoot + 'src');
+            err = err.concat(lsdoc.addDir(fixtureRoot + 'docs', module));
+            err = err.concat(lsdoc.addDir(fixtureRoot + 'build', module));
+            err = err.concat(lsdoc.addDir(fixtureRoot + 'src', module));
+            trace(lsdoc.numDirs, err.join());
 
             trace('scanning..');
-            lsdoc.scan();
+            err = err.concat(lsdoc.scan());
+            trace(err.join());
 
             trace('processing..');
-            lsdoc.process();
+            err = err.concat(lsdoc.process());
+            trace(err.join());
 
             trace('report:');
             trace(lsdoc.toJSON().getObject('summary').serialize());
 
             trace('rendering..');
-            lsdoc.render();
+            err = err.concat(lsdoc.render());
+            trace(err.join());
 
             if (File.writeTextFile('docfiles.json', lsdoc.toJsonString())) trace('done.');
             else trace('write failed');

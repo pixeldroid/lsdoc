@@ -6,79 +6,86 @@ package
     import pixeldroid.lsdoc.model.DocFile;
     import pixeldroid.lsdoc.model.DocFileType;
 
+
     public static class DocFileSpec
     {
+        private static const it:Thing = Spec.describe('DocFile');
+
         public static function describe():void
         {
-            var it:Thing = Spec.describe('DocFile');
+            it.should('provide a directory filter', provide_dir_filter);
+            it.should('provide a type filter', provide_type_filter);
+            it.should('provide a name sort comparator', provide_name_sorter);
+            it.should('extract its properties from the given filepath', initialize_from_filepath);
+            it.should('serialize to JSON', serialize_to_json);
+        }
 
-            it.should('provide a directory filter', function() {
-                var path:String = 'file.ls';
 
-                var itemA:DocFile = new DocFile('rootA/' +path, 'rootA');
-                var itemB:DocFile = new DocFile('rootB/' +path, 'rootB');
+        private static function provide_dir_filter():void {
+            var path:String = 'file.ls';
 
-                var sieve:Function = DocFile.getDirFilter(itemA.root);
-                var index:Number = 0;
-                var vector:Vector.<Object> = [];
+            var itemA:DocFile = new DocFile('module', 'rootA/' +path, 'rootA');
+            var itemB:DocFile = new DocFile('module', 'rootB/' +path, 'rootB');
 
-                it.expects(sieve(itemA, index, vector)).toBeTruthy();
-                it.expects(sieve(itemB, index, vector)).toBeFalsey();
-            });
+            var sieve:Function = DocFile.getDirFilter(itemA.root);
+            var index:Number = 0;
+            var vector:Vector.<Object> = [];
 
-            it.should('provide a type filter', function() {
-                var root:String = 'root';
+            it.expects(sieve(itemA, index, vector)).toBeTruthy();
+            it.expects(sieve(itemB, index, vector)).toBeFalsey();
+        }
 
-                var itemA:DocFile = new DocFile(root +'/file.ls', root);
-                var itemB:DocFile = new DocFile(root +'/file.md', root);
+        private static function provide_type_filter():void {
+            var root:String = 'root';
 
-                var sieve:Function = DocFile.getTypeFilter(DocFileType.CODE);
-                var index:Number = 0;
-                var vector:Vector.<Object> = [];
+            var itemA:DocFile = new DocFile('module', root +'/file.ls', root);
+            var itemB:DocFile = new DocFile('module', root +'/file.md', root);
 
-                it.expects(sieve(itemA, index, vector)).toBeTruthy();
-                it.expects(sieve(itemB, index, vector)).toBeFalsey();
-            });
+            var sieve:Function = DocFile.getTypeFilter(DocFileType.CODE);
+            var index:Number = 0;
+            var vector:Vector.<Object> = [];
 
-            it.should('provide a name sort comparator', function() {
-                var root:String = 'root';
+            it.expects(sieve(itemA, index, vector)).toBeTruthy();
+            it.expects(sieve(itemB, index, vector)).toBeFalsey();
+        }
 
-                var v1:Vector.<DocFile> = [
-                    new DocFile(root +'/File.ls', root),
-                    new DocFile(root +'/File.ls', root),
-                    new DocFile(root +'/a/b/File.ls', root),
-                    new DocFile(root +'/a/b/c/File.ls', root),
-                    new DocFile(root +'/a/b/FilePlus.ls', root),
-                    new DocFile(root +'/a/b/c/file.ls', root)
-                ];
+        private static function provide_name_sorter():void {
+            var root:String = 'root';
 
-                it.expects(DocFile.sortByName(v1[2], v1[3])).toEqual(-1);
-                it.expects(DocFile.sortByName(v1[0], v1[1])).toEqual( 0);
-                it.expects(DocFile.sortByName(v1[5], v1[4])).toEqual( 1);
+            var v1:Vector.<DocFile> = [
+                new DocFile('module', root +'/File.ls', root),
+                new DocFile('module', root +'/File.ls', root),
+                new DocFile('module', root +'/a/b/File.ls', root),
+                new DocFile('module', root +'/a/b/c/File.ls', root),
+                new DocFile('module', root +'/a/b/FilePlus.ls', root),
+                new DocFile('module', root +'/a/b/c/file.ls', root)
+            ];
 
-                var v2:Vector.<DocFile> = v1.slice();
-                v2.shuffle();
-                v2.sort(DocFile.sortByName);
+            it.expects(DocFile.sortByName(v1[2], v1[3])).toEqual(-1);
+            it.expects(DocFile.sortByName(v1[0], v1[1])).toEqual( 0);
+            it.expects(DocFile.sortByName(v1[5], v1[4])).toEqual( 1);
 
-                for (var i:Number in v2) it.expects(v1[i]).toEqual(v2[i]);
-            });
+            var v2:Vector.<DocFile> = v1.slice();
+            v2.shuffle();
+            v2.sort(DocFile.sortByName);
 
-            it.should('extract its properties from the given filepath', function() {
-                var df:DocFile = new DocFile('root/a/b/c/File.ls', 'root');
+            for (var i:Number in v2) it.expects(v1[i]).toEqual(v2[i]);
+        }
 
-                it.expects(df.name).toEqual('File.ls');
-                it.expects(df.packageName).toEqual('a.b.c');
-                it.expects(df.path).toEqual('a/b/c/File.ls');
-                it.expects(df.root).toEqual('root');
-                it.expects(df.type).toEqual(DocFileType.CODE.toString());
-            });
+        private static function initialize_from_filepath():void {
+            var df:DocFile = new DocFile('module', 'root/a/b/c/File.ls', 'root');
 
-            it.should('serialize to JSON', function() {
-                var df:DocFile = new DocFile('/a/b/c/File.ls');
-                var js:String = '{"name": "File.ls", "packageName": "a.b.c", "path": "a/b/c/File.ls", "root": "", "type": "CODE"}';
+            it.expects(df.name).toEqual('File.ls');
+            it.expects(df.path).toEqual('a/b/c/File.ls');
+            it.expects(df.root).toEqual('root');
+            it.expects(df.type).toEqual(DocFileType.CODE.toString());
+        }
 
-                it.expects(df.toJSON().serialize()).toEqual(js);
-            });
+        private static function serialize_to_json():void {
+            var df:DocFile = new DocFile('module', '/a/b/c/File.ls');
+            var js:String = '{"module": "module", "name": "File.ls", "path": "a/b/c/File.ls", "root": "", "type": "CODE"}';
+
+            it.expects(df.toJSON().serialize()).toEqual(js);
         }
     }
 }

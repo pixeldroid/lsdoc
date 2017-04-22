@@ -8,6 +8,8 @@ package pixeldroid.lsdoc.model
         public static const CODE:DocFileType = new DocFileType('CODE', 1);
         public static const DOC:DocFileType = new DocFileType('DOC', 2);
         public static const MEDIA:DocFileType = new DocFileType('MEDIA', 3);
+        public static const CODE_ASSEMBLY:DocFileType = new DocFileType('CODE_ASSEMBLY', 4);
+        public static const DOC_ASSEMBLY:DocFileType = new DocFileType('DOC_ASSEMBLY', 5);
         public static const UNKNOWN:DocFileType = new DocFileType('UNKNOWN', -1);
 
         private static const TYPE_MAP:Dictionary.<String, DocFileType> = {
@@ -15,7 +17,9 @@ package pixeldroid.lsdoc.model
             'md' : DOC,
             'gif' : MEDIA,
             'jpg' : MEDIA,
-            'png' : MEDIA
+            'png' : MEDIA,
+            'loomlib' : CODE_ASSEMBLY,
+            'loomdoc' : DOC_ASSEMBLY
         };
 
         public static function getAllDocFileTypes():Vector.<DocFileType>
@@ -32,6 +36,12 @@ package pixeldroid.lsdoc.model
         {
             var type:DocFileType = TYPE_MAP.fetch(File2.extname(filepath), UNKNOWN) as DocFileType;
             return type;
+        }
+
+        public static function isAssembly(filepath:String):Boolean
+        {
+            var type:DocFileType = TYPE_MAP.fetch(File2.extname(filepath), UNKNOWN) as DocFileType;
+            return (type == CODE_ASSEMBLY || type == DOC_ASSEMBLY);
         }
 
         public static function isDocFile(filepath:String):Boolean
