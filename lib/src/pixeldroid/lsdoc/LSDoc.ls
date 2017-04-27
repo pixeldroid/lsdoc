@@ -14,7 +14,7 @@ package pixeldroid.lsdoc
         private static const parser:JSON = new JSON;
 
         private const libPaths:Vector.<String> = [];
-        private const modules:Vector.<ModuleInfo> = [];
+        public const modules:Vector.<ModuleInfo> = [];
 
 
         public function LSDoc():void
@@ -39,23 +39,6 @@ package pixeldroid.lsdoc
             }
 
             return errors;
-        }
-
-        public function get numTypes():Number
-        {
-            var n:Number = 0;
-            for each(var m:ModuleInfo in modules) n += m.types.length;
-
-            return n;
-        }
-
-        public function report():void
-        {
-            for each(var m:ModuleInfo in modules)
-            {
-                trace(m);
-                for each(var t:TypeInfo in m.types) trace(' ', t);
-            }
         }
 
 
