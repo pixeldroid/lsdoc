@@ -1,13 +1,15 @@
 package pixeldroid.lsdoc.processors
 {
     import pixeldroid.lsdoc.LSDoc;
+    import pixeldroid.lsdoc.errors.LSDocError;
     import pixeldroid.lsdoc.processors.LSDocProcessor;
 
     public class GHPagesProcessor implements LSDocProcessor
     {
-        public function execute(lsdoc:LSDoc):void
+        public function execute(lsdoc:LSDoc):Vector.<LSDocError>
         {
-
+            var err:Vector.<LSDocError> = [];
+            return err;
         }
     }
 }

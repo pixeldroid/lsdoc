@@ -29,6 +29,18 @@ package pixeldroid.lsdoc.processors
             return processor;
         }
 
+        public static function get selectionNames():Vector.<String>
+        {
+            var names:Vector.<String> = [];
+
+            for each(var t:Type in types)
+            {
+                names.push(selectionName(t));
+            }
+
+            return names;
+        }
+
 
         private static function selectionName(t:Type):String
         {

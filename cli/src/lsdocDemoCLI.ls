@@ -34,6 +34,8 @@ package
 
         private function usage():void
         {
+            var pNames:String = ProcessorSelector.selectionNames.join('|');
+
             trace('usage: lsdoc [-v|--version] [-h|--help]');
             trace('             -l|--lib <path>...');
             trace('             -p|--processor <name>');
@@ -42,7 +44,7 @@ package
             trace('  -h --help        Print this screen and exit');
             trace('  -v --version     Print version and exit');
             trace('  -l --lib <path>  Add loomlib (multiple paths may be given)');
-            trace('  -p --processor   Select processor (ghpages|info)');
+            trace('  -p --processor   Select processor (' +pNames +')');
 
             Process.exit(EXIT_OK);
         }
@@ -57,17 +59,20 @@ package
         private function runApp(opts:OptionParser):void
         {
             lsdoc = new LSDoc();
+            var err:Vector.<LSDocError> = [];
 
             var paths:Vector.<String> = opts.getOption('l', 'lib').value;
-            addLoomlibs(lsdoc, paths);
+            err = err.concat(addLoomlibs(lsdoc, paths));
 
-            var processor:LSDocProcessor = ProcessorSelector.select(opts.getOption('p', 'processor').value[0]);
-            processor.execute(lsdoc);
+            var name:String = opts.getOption('p', 'processor').value[0];
+            var processor:LSDocProcessor = ProcessorSelector.select(name);
+            err = err.concat(processor.execute(lsdoc));
 
-            Process.exit(EXIT_OK);
+            for each(var e:LSDocError in err) trace(e);
+            Process.exit(err.length == 0 ? EXIT_OK : EXIT_ERR);
         }
 
-        private function addLoomlibs(lsdoc:LSDoc, paths:Vector.<String>):void
+        private function addLoomlibs(lsdoc:LSDoc, paths:Vector.<String>):Vector.<LSDocError>
         {
             var err:Vector.<LSDocError> = [];
 
@@ -75,7 +80,8 @@ package
             {
                 err = err.concat(lsdoc.addLoomlib(libPath));
             }
-            for each(var e:LSDocError in err) trace(e);
+
+            return err;
         }
 
     }
