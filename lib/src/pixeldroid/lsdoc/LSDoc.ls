@@ -21,6 +21,14 @@ package pixeldroid.lsdoc
         {
         }
 
+        public function get numTypes():Number
+        {
+            var n:Number = 0;
+            for each(var m:ModuleInfo in modules) n += m.types.length;
+
+            return n;
+        }
+
         public function addLoomlib(path:String):Vector.<LSDocError>
         {
             var errors:Vector.<LSDocError> = [];
