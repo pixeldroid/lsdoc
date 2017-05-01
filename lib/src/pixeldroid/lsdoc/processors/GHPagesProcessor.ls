@@ -6,7 +6,7 @@ package pixeldroid.lsdoc.processors
 
     public class GHPagesProcessor implements LSDocProcessor
     {
-        public function execute(lsdoc:LSDoc):Vector.<LSDocError>
+        public function execute(lsdoc:LSDoc, opts:Dictionary):Vector.<LSDocError>
         {
             var err:Vector.<LSDocError> = [];
             return err;

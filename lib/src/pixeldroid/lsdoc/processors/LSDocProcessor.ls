@@ -5,6 +5,6 @@ package pixeldroid.lsdoc.processors
 
     public interface LSDocProcessor
     {
-        public function execute(lsdoc:LSDoc):Vector.<LSDocError>;
+        public function execute(lsdoc:LSDoc, opts:Dictionary):Vector.<LSDocError>;
     }
 }
