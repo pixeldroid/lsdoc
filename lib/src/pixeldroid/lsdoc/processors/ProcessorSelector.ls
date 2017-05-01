@@ -7,8 +7,8 @@ package pixeldroid.lsdoc.processors
     public class ProcessorSelector
     {
         private static const types:Vector.<Type> = [
-            GHPagesProcessor,
-            InfoProcessor
+            InfoProcessor,
+            GHPagesProcessor
         ];
 
 
@@ -27,6 +27,11 @@ package pixeldroid.lsdoc.processors
 
             var processor:LSDocProcessor = selectedType.getConstructor().invoke() as LSDocProcessor;
             return processor;
+        }
+
+        public static function get defaultName():String
+        {
+            return selectionName(types[0]);
         }
 
         public static function get selectionNames():Vector.<String>
