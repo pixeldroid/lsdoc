@@ -4,6 +4,7 @@
   "outputDir": "bin",
   "references": [
     "System",
+    "Log",
     "OptionParser",
     "lsdoc"
   ],
