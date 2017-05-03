@@ -16,7 +16,7 @@ package pixeldroid.lsdoc.processors
 
     public class InfoProcessor implements LSDocProcessor
     {
-        private static const logName:String = InfoProcessor.getFullTypeName();
+        private static const logName:String = InfoProcessor.getTypeName();
 
         public function execute(lsdoc:LSDoc, opts:Dictionary):Vector.<LSDocError>
         {
@@ -49,17 +49,17 @@ package pixeldroid.lsdoc.processors
                 Path.makeDir(dir);
                 if (!Path.dirExists(dir))
                 {
-                    Log.debug(logName, function():String{ return 'folder creation failed'; });
+                    Log.error(logName, function():String{ return 'folder creation failed'; });
                     err.push(LSDocError.dirFail('path: ' +dir));
                     return err;
                 }
             }
 
-            Log.info(logName, function():String{ return 'writing to file: "' +outfile +'"'; });
+            Log.info(logName, function():String{ return 'writing results to file: "' +outfile +'"'; });
 
             if (!File.writeTextFile(outfile, lines.join('\n')))
             {
-                Log.debug(logName, function():String{ return 'file writing failed'; });
+                Log.error(logName, function():String{ return 'file writing failed'; });
                 err.push(LSDocError.writeFail('path: ' +outfile));
             }
 
