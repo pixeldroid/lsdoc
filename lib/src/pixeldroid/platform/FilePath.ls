@@ -16,7 +16,9 @@ package pixeldroid.platform
         */
         public static function dirname(filepath:String):String
         {
-            return Path.folderFromPath(filepath);
+            var lastD = filepath.lastIndexOf(Path.getFolderDelimiter());
+
+            return (lastD == -1) ? filepath : filepath.substring(0, lastD);
         }
 
         /**
