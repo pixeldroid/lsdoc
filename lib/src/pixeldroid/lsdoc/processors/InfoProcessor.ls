@@ -1,69 +1,55 @@
 package pixeldroid.lsdoc.processors
 {
-    import system.platform.File;
-    import system.platform.Path;
+    import pixeldroid.lsdoc.processors.LSDocProcessor;
+    import pixeldroid.lsdoc.processors.ProcessingContext;
+    import pixeldroid.lsdoc.processors.tasks.GenerateInfo;
+    import pixeldroid.lsdoc.processors.tasks.WriteLines;
 
     import pixeldroid.platform.FilePath;
 
-    import pixeldroid.lsdoc.LSDoc;
-    import pixeldroid.lsdoc.errors.LSDocError;
-    import pixeldroid.lsdoc.models.ModuleInfo;
-    import pixeldroid.lsdoc.models.TypeInfo;
-    import pixeldroid.lsdoc.processors.LSDocProcessor;
+    import pixeldroid.task.SequentialTask;
+    import pixeldroid.task.Task;
+    import pixeldroid.task.TaskState;
 
     import pixeldroid.util.Log;
 
 
-    public class InfoProcessor implements LSDocProcessor
+    public class InfoProcessor extends SequentialTask implements LSDocProcessor
     {
         private static const logName:String = InfoProcessor.getTypeName();
+        private static const fileName:String = 'docinfo';
+        private var _context:ProcessingContext;
+        private var genInfo:GenerateInfo;
+        private var writeLines:WriteLines;
 
-        public function execute(lsdoc:LSDoc, opts:Dictionary):Vector.<LSDocError>
+
+        public function initialize(context:ProcessingContext):void
         {
-            var err:Vector.<LSDocError> = [];
-            var lines:Vector.<String> = [];
-            var outfile:String = FilePath.join(opts.fetch('output-dir', 'docs'), 'docinfo');
+            Log.debug(logName, function():String{ return 'initializing..'; });
+            _context = context;
 
-            for each(var m:ModuleInfo in lsdoc.modules)
-            {
-                lines.push(m);
-                for each(var t:TypeInfo in m.types) lines.push(' ' +t);
-            }
-            lines.push(lsdoc.numTypes +'total types');
+            addTask(genInfo = new GenerateInfo(_context));
+            addTask(writeLines = new WriteLines(_context));
 
-            err = err.concat(write(lines, outfile));
+            addSubTaskStateCallback(TaskState.COMPLETED, handleSubTaskCompletion);
 
-            return err;
+            Log.debug(logName, function():String{ return 'numTasks: ' +numTasks; });
         }
 
+        public function get context():ProcessingContext { return _context; }
 
-        private function write(lines:Vector.<String>, outfile:String):Vector.<LSDocError>
+
+        private function handleSubTaskCompletion(task:Task):void
         {
-            var err:Vector.<LSDocError> = [];
-            var dir:String = FilePath.dirname(outfile);
+            Log.debug(logName, function():String{ return 'handleSubTaskCompletion() ' +task; });
 
-            if (!Path.dirExists(dir))
+            if (task == genInfo)
             {
-                Log.debug(logName, function():String{ return 'creating folder: "' +dir +'"'; });
-
-                Path.makeDir(dir);
-                if (!Path.dirExists(dir))
-                {
-                    Log.error(logName, function():String{ return 'folder creation failed'; });
-                    err.push(LSDocError.dirFail('path: ' +dir));
-                    return err;
-                }
+                Log.debug(logName, function():String{ return 'providing lines to the write lines task'; });
+                writeLines.outfile = FilePath.join(_context.outDir, fileName);
+                writeLines.lines = (task as GenerateInfo).lines;
+                Log.debug(logName, function():String{ return 'lines assigned'; });
             }
-
-            Log.info(logName, function():String{ return 'writing results to file: "' +outfile +'"'; });
-
-            if (!File.writeTextFile(outfile, lines.join('\n')))
-            {
-                Log.error(logName, function():String{ return 'file writing failed'; });
-                err.push(LSDocError.writeFail('path: ' +outfile));
-            }
-
-            return err;
         }
 
     }

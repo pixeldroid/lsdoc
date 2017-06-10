@@ -9,6 +9,10 @@ package
     import pixeldroid.lsdoc.errors.LSDocError;
     import pixeldroid.lsdoc.processors.LSDocProcessor;
     import pixeldroid.lsdoc.processors.ProcessorSelector;
+    import pixeldroid.lsdoc.processors.ProcessingContext;
+
+    import pixeldroid.task.Task;
+    import pixeldroid.task.TaskState;
 
     import pixeldroid.util.Log;
     import pixeldroid.util.log.LogLevel;
@@ -34,7 +38,7 @@ package
 
             if (opts.getOption('h', 'help').isSet) showUsage();
             if (opts.getOption('v', 'version').isSet) showVersion();
-            if (opts.getOption('l', 'lib').hasValue) runApp(opts);
+            if (opts.getOption('l', 'lib').hasValue) runProcessor(opts);
             showUsage();
         }
 
@@ -67,24 +71,6 @@ package
             Process.exit(EXIT_OK);
         }
 
-        private function runApp(opts:OptionParser):void
-        {
-            lsdoc = new LSDoc();
-            var err:Vector.<LSDocError> = [];
-
-            var paths:Vector.<String> = opts.getOption('l', 'lib').value;
-            err = err.concat(addLoomlibs(lsdoc, paths));
-
-            var name:String = opts.getOption('p', 'processor', [ProcessorSelector.defaultName]).firstValue;
-            var processor:LSDocProcessor = ProcessorSelector.select(name);
-
-            var outDir:String = opts.getOption('o', 'output-dir', ['docs']).firstValue;
-            err = err.concat(processor.execute(lsdoc, { 'output-dir': outDir }));
-
-            for each(var e:LSDocError in err) trace(e);
-            Process.exit(err.length == 0 ? EXIT_OK : EXIT_ERR);
-        }
-
         private function addLoomlibs(lsdoc:LSDoc, paths:Vector.<String>):Vector.<LSDocError>
         {
             var err:Vector.<LSDocError> = [];
@@ -95,6 +81,82 @@ package
             }
 
             return err;
+        }
+
+        private function runProcessor(opts:OptionParser):void
+        {
+            lsdoc = new LSDoc();
+
+            var context:ProcessingContext = new ProcessingContext();
+            context.lsdoc = lsdoc;
+            context.outDir = opts.getOption('o', 'output-dir', ['docs']).firstValue;
+
+            Log.debug(logName, function():String{ return 'context.outDir: ' +context.outDir; });
+
+            var paths:Vector.<String> = opts.getOption('l', 'lib').value;
+            context.appendErrors(addLoomlibs(lsdoc, paths));
+
+            if (context.hasErrors)
+                exitWithErrors('errors while adding loomlibs', context.errors);
+
+            var name:String = opts.getOption('p', 'processor', [ProcessorSelector.defaultName]).firstValue;
+            var processor:LSDocProcessor = prepareProcessor(name);
+            processor.initialize(context);
+            processor.start();
+        }
+
+
+        private function prepareProcessor(name:String):LSDocProcessor
+        {
+            Log.debug(logName, function():String{ return 'preparing the "' +name +'" processor'; });
+            var p:LSDocProcessor = ProcessorSelector.select(name);
+
+            p.addTaskStateCallback(TaskState.RUNNING, onStart);
+            p.addTaskStateCallback(TaskState.REPORTING, onProgress);
+            p.addTaskStateCallback(TaskState.COMPLETED, onComplete);
+            p.addTaskStateCallback(TaskState.FAULT, onFault);
+
+            return p;
+        }
+
+        private function onStart(task:Task):void
+        {
+            Log.debug(logName, function():String{ return 'onStart for ' +task; });
+            trace('running..');
+        }
+
+        private function onProgress(task:Task, percent:Number):void
+        {
+            trace(Math.round(percent * 100) + '% complete');
+        }
+
+        private function onComplete(task:Task):void
+        {
+            Log.debug(logName, function():String{ return 'onComplete for ' +task; });
+            exitWithSuccess('done.');
+        }
+
+        private function onFault(task:Task, message:String):void
+        {
+            Log.debug(logName, function():String{ return 'onFault for ' +task; });
+            var context:ProcessingContext = (task as LSDocProcessor).context;
+            exitWithErrors(message, context.errors);
+        }
+
+
+        private function exitWithSuccess(message:String):void
+        {
+            trace(message);
+
+            Process.exit(EXIT_OK);
+        }
+
+        private function exitWithErrors(message:String, err:Vector.<LSDocError>):void
+        {
+            trace(message);
+            for each(var e:LSDocError in err) trace(e);
+
+            Process.exit(EXIT_ERR);
         }
 
     }

@@ -6,11 +6,22 @@ package pixeldroid.lsdoc.errors
     public class LSDocError extends Error
     {
 
+        public static const DELETE_FAIL:String = 'unable to write file';
+        public static const DIR_FAIL:String = 'unable to create directory';
         public static const FILE_NOT_FOUND:String = 'file not found';
         public static const INVALID_LOOMLIB:String = 'loomlib is invalid';
         public static const PARSE_FAIL:String = 'loomlib failed to parse';
         public static const WRITE_FAIL:String = 'unable to write file';
-        public static const DIR_FAIL:String = 'unable to create directory';
+
+        public static function deleteFail(msg:String):LSDocError
+        {
+            return new LSDocError(msg, DELETE_FAIL);
+        }
+
+        public static function dirFail(msg:String):LSDocError
+        {
+            return new LSDocError(msg, DIR_FAIL);
+        }
 
         public static function noFile(msg:String):LSDocError
         {
@@ -30,11 +41,6 @@ package pixeldroid.lsdoc.errors
         public static function writeFail(msg:String):LSDocError
         {
             return new LSDocError(msg, WRITE_FAIL);
-        }
-
-        public static function dirFail(msg:String):LSDocError
-        {
-            return new LSDocError(msg, DIR_FAIL);
         }
 
         private var _type:String;

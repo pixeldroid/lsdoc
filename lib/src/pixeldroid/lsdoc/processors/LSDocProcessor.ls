@@ -1,10 +1,11 @@
 package pixeldroid.lsdoc.processors
 {
-    import pixeldroid.lsdoc.LSDoc;
-    import pixeldroid.lsdoc.errors.LSDocError;
+    import pixeldroid.lsdoc.processors.ProcessingContext;
+    import pixeldroid.task.TaskGroup;
 
-    public interface LSDocProcessor
+    public interface LSDocProcessor extends TaskGroup
     {
-        public function execute(lsdoc:LSDoc, opts:Dictionary):Vector.<LSDocError>;
+        function initialize(context:ProcessingContext):void;
+        function get context():ProcessingContext;
     }
 }

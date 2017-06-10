@@ -4,7 +4,8 @@
   "outputDir": "build",
   "references": [
     "System",
-    "Log"
+    "Log",
+    "Task"
   ],
   "modules": [
     {

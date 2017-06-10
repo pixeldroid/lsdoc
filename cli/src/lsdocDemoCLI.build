@@ -4,9 +4,10 @@
   "outputDir": "bin",
   "references": [
     "System",
-    "Log",
     "OptionParser",
-    "lsdoc"
+    "Log",
+    "lsdoc",
+    "Task"
   ],
   "modules": [
     {
