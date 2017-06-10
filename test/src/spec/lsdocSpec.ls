@@ -9,10 +9,13 @@ package
 
     public static class lsdocSpec
     {
-        private static const it:Thing = Spec.describe('LSDoc');
+        private static var it:Thing;
+        private static const fixtureRoot:String = 'fixtures/';
 
-        public static function describe():void
+        public static function specify(specifier:Spec):void
         {
+            it = specifier.describe('LSDoc');
+
             it.should('be versioned', be_versioned);
             it.should('return an error when adding a loomlib that does not exist', error_on_no_lib);
             it.should('return an error when adding an invalid loomlib', error_on_bad_lib);
@@ -20,8 +23,6 @@ package
             it.should('find all types in the given loomlibs', find_all_types);
         }
 
-
-        private static const fixtureRoot:String = 'fixtures/';
 
         private static function be_versioned():void
         {

@@ -10,11 +10,13 @@ package
 
     public static class FilePathSpec
     {
-        private static const it:Thing = Spec.describe('FilePath');
+        private static var it:Thing;
         private static const path:String = ['a', 'b', 'c', 'file.ext'].join(Path.getFolderDelimiter());
 
-        public static function describe():void
+        public static function specify(specifier:Spec):void
         {
+            it = specifier.describe('FilePath');
+
             it.should('find the containing folder of a filepath', find_dirname);
             it.should('find the basename of a file within a filepath', find_basename);
             it.should('find the basename from a filepath minus extension', find_basename_sans_ext);
