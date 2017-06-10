@@ -2,7 +2,7 @@ package pixeldroid.lsdoc.processors
 {
     import pixeldroid.lsdoc.processors.LSDocProcessor;
     import pixeldroid.lsdoc.processors.ProcessingContext;
-    import pixeldroid.lsdoc.processors.tasks.GenerateInfo;
+    import pixeldroid.lsdoc.processors.tasks.GenerateModuleInfo;
     import pixeldroid.lsdoc.processors.tasks.WriteLines;
 
     import pixeldroid.platform.FilePath;
@@ -19,7 +19,7 @@ package pixeldroid.lsdoc.processors
         private static const logName:String = InfoProcessor.getTypeName();
         private static const fileName:String = 'docinfo';
         private var _context:ProcessingContext;
-        private var genInfo:GenerateInfo;
+        private var genInfo:GenerateModuleInfo;
         private var writeLines:WriteLines;
 
 
@@ -28,7 +28,8 @@ package pixeldroid.lsdoc.processors
             Log.debug(logName, function():String{ return 'initializing..'; });
             _context = context;
 
-            addTask(genInfo = new GenerateInfo(_context));
+            // should operate on one module at a time?
+            addTask(genInfo = new GenerateModuleInfo(_context));
             addTask(writeLines = new WriteLines(_context));
 
             addSubTaskStateCallback(TaskState.COMPLETED, handleSubTaskCompletion);
@@ -47,7 +48,7 @@ package pixeldroid.lsdoc.processors
             {
                 Log.debug(logName, function():String{ return 'providing lines to the write lines task'; });
                 writeLines.outfile = FilePath.join(_context.outDir, fileName);
-                writeLines.lines = (task as GenerateInfo).lines;
+                writeLines.lines = (task as GenerateModuleInfo).lines;
                 Log.debug(logName, function():String{ return 'lines assigned'; });
             }
         }

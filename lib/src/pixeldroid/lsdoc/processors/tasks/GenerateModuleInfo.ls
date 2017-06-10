@@ -9,15 +9,15 @@ package pixeldroid.lsdoc.processors.tasks
     import pixeldroid.util.Log;
 
 
-    public class GenerateInfo extends SingleTask
+    public class GenerateModuleInfo extends SingleTask
     {
-        private static const logName:String = GenerateInfo.getTypeName();
+        private static const logName:String = GenerateModuleInfo.getTypeName();
         private var context:ProcessingContext;
 
         public var lines:Vector.<String>;
 
 
-        public function GenerateInfo(context:ProcessingContext)
+        public function GenerateModuleInfo(context:ProcessingContext)
         {
             this.context = context;
         }
