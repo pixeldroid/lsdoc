@@ -1,20 +1,19 @@
 package pixeldroid.lsdoc.processors
 {
-    import system.platform.File;
     import system.platform.Path;
-
-    import pixeldroid.platform.FilePath;
 
     import pixeldroid.lsdoc.LSDoc;
     import pixeldroid.lsdoc.errors.LSDocError;
-    import pixeldroid.lsdoc.models.ModuleInfo;
-    import pixeldroid.lsdoc.models.TypeInfo;
     import pixeldroid.lsdoc.processors.LSDocProcessor;
+    import pixeldroid.lsdoc.processors.tasks.EmptyDirectory;
+    import pixeldroid.lsdoc.processors.tasks.CopyFiles;
 
+    import pixeldroid.platform.FilePath;
+    import pixeldroid.task.SequentialTask;
     import pixeldroid.util.Log;
 
 
-    public class GHPagesProcessor implements LSDocProcessor
+    public class GHPagesProcessor extends SequentialTask implements LSDocProcessor
     {
         private static const logName:String = GHPagesProcessor.getTypeName();
         private var _context:ProcessingContext;
@@ -24,114 +23,63 @@ package pixeldroid.lsdoc.processors
         {
             _context = context;
 
-            // var genInfo:GenerateInfo = new GenerateInfo(_context);
-            // genInfo.addTaskStateCallback(TaskState.COMPLETED, onGenerateInfoComplete);
-            // addTask(genInfo);
-
-            // writeLines = new WriteLines(_context);
-            // addTask(writeLines);
+            addEmptyOutputDir();
+            addInstallTemplates();
+            addGenerateApiDocs();
+            addCopyExamples();
+            addCopyGuides();
         }
 
         public function get context():ProcessingContext { return _context; }
 
-        public function execute(lsdoc:LSDoc, opts:Dictionary):Vector.<LSDocError>
+
+        private function addEmptyOutputDir():void
         {
-            var err:Vector.<LSDocError> = [];
-            var outDir:String = opts.fetch('output-dir', 'docs').toString();
-            var templateDir:String = opts.fetch('template-dir', 'doc-template').toString();
-            var apiDir:String = FilePath.join(outDir, opts.fetch('api-dir', '_api'));
-            var examplesSrc:String = FilePath.join(outDir, opts.fetch('examples-src', 'my-examples'));
-            var examplesDir:String = FilePath.join(outDir, opts.fetch('examples-dir', '_examples'));
-            var guidesSrc:String = FilePath.join(outDir, opts.fetch('guides-src', 'my-guides'));
-            var guidesDir:String = FilePath.join(outDir, opts.fetch('guides-dir', '_guides'));
-
-            // TODO: start using tasks
-
-            err = err.concat(removeOldFiles(outDir));
-            err = err.concat(installTemplateFiles(templateDir, outDir));
-            err = err.concat(generateApiFiles(apiDir));
-            err = err.concat(copyExamplesFiles(examplesSrc, examplesDir));
-            err = err.concat(copyGuidesFiles(guidesSrc, guidesDir));
-
-            return err;
+            addTask(new EmptyDirectory(_context.outPath, _context));
         }
 
-
-        private function removeOldFiles(dir:String):Vector.<LSDocError>
+        private function addInstallTemplates():void
         {
-            Log.info(logName, function():String{ return 'removeOldFiles from: "' +dir +'"'; });
-            var err:Vector.<LSDocError> = [];
-            var recursive:Boolean = true;
+            var templateSrc:String = _context.getOption('templates-src', 't', [null])[0];
 
-            if (Path.dirExists(dir) && !Path.removeDir(dir))
+            if (templateSrc)
             {
-                Log.error(logName, function():String{ return 'folder deletion failed'; });
-                err.push(LSDocError.deleteFail('path: ' +dir));
-                return err;
+                addTask(new CopyFiles(templateSrc, _context.outPath, _context));
             }
-
-            Path.makeDir(dir);
-            if (!Path.dirExists(dir))
+            else
             {
-                Log.error(logName, function():String{ return 'folder creation failed'; });
-                err.push(LSDocError.dirFail('path: ' +dir));
-                return err;
+                context.appendErrors([LSDocError.noDir('doc template directory not provided')]);
             }
-
-            return err;
         }
 
-        private function installTemplateFiles(src:String, dir:String):Vector.<LSDocError>
+        private function addGenerateApiDocs():void
         {
-            Log.info(logName, function():String{ return 'installTemplateFiles to: "' +dir +'"'; });
-            var err:Vector.<LSDocError> = [];
+            var apiDir:String = _context.getOption('api-dir', null, ['_api'])[0];
+            var apiPath:String = FilePath.join(_context.outPath, apiDir);
+            // addTask(new GenerateApiFiles(apiPath, _context));
+        }
 
-            Path.makeDir(dir);
-            if (!Path.dirExists(dir))
+        private function addCopyExamples():void
+        {
+            var examplesSrc:String = _context.getOption('examples-src', 'e', [null])[0];
+            if (examplesSrc)
             {
-                Log.error(logName, function():String{ return 'folder creation failed'; });
-                err.push(LSDocError.dirFail('path: ' +dir));
-                return err;
+                var examplesDir:String = _context.getOption('examples-dir', null, ['_examples'])[0];
+                var examplesPath:String = FilePath.join(_context.outPath, examplesDir);
+                addTask(new CopyFiles(examplesSrc, examplesPath, _context));
             }
-
-            return err;
         }
 
-        private function generateApiFiles(dir:String):Vector.<LSDocError>
+        private function addCopyGuides():void
         {
-            Log.info(logName, function():String{ return 'generateApiFiles into: "' +dir +'"'; });
-            var err:Vector.<LSDocError> = [];
-            return err;
-        }
-
-        private function copyExamplesFiles(src:String, dir:String):Vector.<LSDocError>
-        {
-            Log.info(logName, function():String
+            var guidesSrc:String = _context.getOption('guides-src', 'g', [null])[0];
+            if (guidesSrc)
             {
-                return [
-                    'copyExamplesFiles',
-                    'from: "' +src +'"',
-                    'into: "' +dir +'"'
-                ].join('\n');
-            });
-
-            var err:Vector.<LSDocError> = [];
-            return err;
+                var guidesDir:String = _context.getOption('guides-dir', null, ['_guides'])[0];
+                var guidesPath:String = FilePath.join(_context.outPath, guidesDir);
+                addTask(new CopyFiles(guidesSrc, guidesPath, _context));
+            }
         }
 
-        private function copyGuidesFiles(src:String, dir:String):Vector.<LSDocError>
-        {
-            Log.info(logName, function():String
-            {
-                return [
-                    'copyGuidesFiles',
-                    'from: "' +src +'"',
-                    'into: "' +dir +'"'
-                ].join('\n');
-            });
-
-            var err:Vector.<LSDocError> = [];
-            return err;
-        }
     }
 }

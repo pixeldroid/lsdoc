@@ -17,6 +17,7 @@ package pixeldroid.lsdoc.processors.tasks
 
         private var context:ProcessingContext;
 
+        public var overwrite:Boolean = true;
         public var lines:Vector.<String>;
         public var outfile:String;
 
@@ -64,7 +65,7 @@ package pixeldroid.lsdoc.processors.tasks
 
             if (!Path.dirExists(dir))
             {
-                Log.debug(logName, function():String{ return 'creating folder: "' +dir +'"'; });
+                Log.debug(logName, function():String{ return 'creating directory: "' +dir +'"'; });
                 if (!createDir(dir, err))
                     return err;
             }
@@ -72,7 +73,7 @@ package pixeldroid.lsdoc.processors.tasks
             Log.debug(logName, function():String{ return 'writing results to file: "' +outfile +'"'; });
             var contents:String = lines.join('\n');
 
-            if (File.fileExists(outfile))
+            if (File.fileExists(outfile) && !overwrite)
             {
                 Log.debug(logName, function():String{ return 'appending to file: "' +outfile +'"'; });
                 if (!appendFile(outfile, contents, err))
@@ -96,7 +97,7 @@ package pixeldroid.lsdoc.processors.tasks
                 return true;
             else
             {
-                Log.error(logName, function():String{ return 'folder creation failed'; });
+                Log.error(logName, function():String{ return 'directory creation failed'; });
                 err.push(LSDocError.dirFail('path: ' +dir));
                 return false;
             }

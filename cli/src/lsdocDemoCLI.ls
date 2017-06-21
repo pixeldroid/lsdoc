@@ -47,19 +47,26 @@ package
         {
             var pNames:String = ProcessorSelector.selectionNames.join('|');
 
-            trace('usage: lsdoc [-v|--version] [-h|--help]');
+            trace('usage: lsdoc [-h|--help] [-v|--version]');
             trace('             -l|--lib <path>...');
-            trace('             [-p|--processor <name>]');
-            trace('             [-o|--output-dir <path>]');
+            trace('             -o|--output-dir <path>');
             trace('             [-d|--debug]');
+            trace('             [-e|--examples-src <path>]');
+            trace('             [-g|--guides-src <path>]');
+            trace('             [-p|--processor <name>]');
+            trace('             [-t|--templates-src <path>]');
             trace('');
             trace('options:');
-            trace('  -h --help        Print this screen and exit');
-            trace('  -v --version     Print version and exit');
-            trace('  -l --lib <path>  Add loomlib (multiple paths may be given)');
-            trace('  -p --processor   Select processor (' +pNames +')');
-            trace('  -o --output-dir  Set directory for output (default: ./docs)');
-            trace('  -d --debug       Turn on debug logging');
+            trace('  -h --help           Print this screen and exit');
+            trace('  -v --version        Print version and exit');
+            trace('  ');
+            trace('  -d --debug          Turn on debug logging');
+            trace('  -e --examples-src   Set examples source directory');
+            trace('  -g --guides-src     Set guides source directory');
+            trace('  -l --lib <path>...  Add loomlib (multiple paths may be given)');
+            trace('  -o --output-dir     Set directory for output');
+            trace('  -p --processor      Select processor (' +pNames +')');
+            trace('  -t --templates-src  Set doc templates directory');
 
             Process.exit(EXIT_OK);
         }
@@ -85,13 +92,15 @@ package
 
         private function runProcessor(opts:OptionParser):void
         {
+            if (!opts.getOption('o', 'output-dir').hasValue)
+                exitWithErrors('no output directory specified', []);
+
             lsdoc = new LSDoc();
 
             var context:ProcessingContext = new ProcessingContext();
             context.lsdoc = lsdoc;
-            context.outDir = opts.getOption('o', 'output-dir', ['docs']).firstValue;
-
-            Log.debug(logName, function():String{ return 'context.outDir: ' +context.outDir; });
+            context.opts = opts.toDictionary();
+            context.outPath = opts.getOption('o', 'output-dir').firstValue;
 
             var paths:Vector.<String> = opts.getOption('l', 'lib').value;
             context.appendErrors(addLoomlibs(lsdoc, paths));
@@ -101,7 +110,13 @@ package
 
             var name:String = opts.getOption('p', 'processor', [ProcessorSelector.defaultName]).firstValue;
             var processor:LSDocProcessor = prepareProcessor(name);
+
             processor.initialize(context);
+
+            Log.debug(logName, function():String{ return 'context:\n' +context.toString(); });
+            if (context.hasErrors)
+                exitWithErrors('errors while initializing processor', context.errors);
+
             processor.start();
         }
 
