@@ -3,7 +3,7 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.models.ModuleInfo;
     import pixeldroid.lsdoc.processors.LSDocProcessor;
     import pixeldroid.lsdoc.processors.ProcessingContext;
-    import pixeldroid.lsdoc.processors.tasks.WriteModuleInfo;
+    import pixeldroid.lsdoc.processors.tasks.info.WriteModuleInfo;
 
     import pixeldroid.task.SequentialTask;
     import pixeldroid.util.Log;

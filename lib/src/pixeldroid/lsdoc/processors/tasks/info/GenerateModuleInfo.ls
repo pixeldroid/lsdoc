@@ -1,4 +1,4 @@
-package pixeldroid.lsdoc.processors.tasks
+package pixeldroid.lsdoc.processors.tasks.info
 {
     import pixeldroid.lsdoc.LSDoc;
     import pixeldroid.lsdoc.models.ModuleInfo;

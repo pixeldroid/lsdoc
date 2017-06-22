@@ -1,10 +1,10 @@
-package pixeldroid.lsdoc.processors.tasks
+package pixeldroid.lsdoc.processors.tasks.info
 {
     import pixeldroid.lsdoc.models.ModuleInfo;
     import pixeldroid.lsdoc.processors.LSDocProcessor;
     import pixeldroid.lsdoc.processors.ProcessingContext;
-    import pixeldroid.lsdoc.processors.tasks.GenerateModuleInfo;
     import pixeldroid.lsdoc.processors.tasks.WriteLines;
+    import pixeldroid.lsdoc.processors.tasks.info.GenerateModuleInfo;
 
     import pixeldroid.platform.FilePath;
 
