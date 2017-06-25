@@ -53,6 +53,7 @@ package
             trace('             [-d|--debug]');
             trace('             [-e|--examples-src <path>]');
             trace('             [-g|--guides-src <path>]');
+            trace('             [-i|--index-src <path>]');
             trace('             [-p|--processor <name>]');
             trace('             [-t|--templates-src <path>]');
             trace('');
@@ -63,6 +64,7 @@ package
             trace('  -d --debug          Turn on debug logging');
             trace('  -e --examples-src   Set examples source directory');
             trace('  -g --guides-src     Set guides source directory');
+            trace('  -i --index-src      Set home page source file');
             trace('  -l --lib <path>...  Add loomlib (multiple paths may be given)');
             trace('  -o --output-dir     Set directory for output');
             trace('  -p --processor      Select processor (' +pNames +')');

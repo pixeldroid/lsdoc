@@ -57,6 +57,17 @@ package pixeldroid.lsdoc.processors
             var apiDir:String = _context.getOption('api-dir', null, ['_api'])[0];
             var apiPath:String = FilePath.join(_context.outPath, apiDir);
             // addTask(new GenerateApiFiles(apiPath, _context));
+            // addTask(new GeneratePackagePages(apiPath, _context));
+            // addTask(new GenerateTypePages(apiPath, _context));
+        }
+
+        private function addCopyHomePage():void
+        {
+            var indexSrc:String = _context.getOption('index-src', 'i', ['index.md'])[0];
+            if (indexSrc)
+            {
+                addTask(new CopyFiles(indexSrc, _context.outPath, _context));
+            }
         }
 
         private function addCopyExamples():void
