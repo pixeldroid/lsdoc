@@ -54,6 +54,30 @@ package pixeldroid.platform
         }
 
         /**
+            Tests that path exists and is a directory on the filesystem.
+        */
+        public static function isDir(path:String):Boolean
+        {
+            return Path.dirExists(path);
+        }
+
+        /**
+            Tests that path exists and is a file on the filesystem.
+        */
+        public static function isFile(path:String):Boolean
+        {
+            if (File.fileExists(path))
+            {
+                // dirs are counted as files, so need to check if dir or truly file
+                return (Path.dirExists(path) ? false : true);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /**
             Combines the given components into a path delimited by the system folder delimiter.
 
             The returned string does not contain a trailing delimiter.

@@ -21,6 +21,8 @@ package
             it.should('find the basename of a file within a filepath', find_basename);
             it.should('find the basename from a filepath minus extension', find_basename_sans_ext);
             it.should('find the extension suffix of a file within a filepath', find_extname);
+            it.should('test that a path represents a directory', test_dir);
+            it.should('test that a path represents a file', test_file);
             it.should('join path components into a filepath string', join_components);
             it.should('strip components of leading or trailing delimiters when joining, except an initial leading delimiter', strip_join);
         }
@@ -51,6 +53,28 @@ package
         private static function find_extname():void
         {
             it.expects(FilePath.extname(path)).toEqual('ext');
+        }
+
+        private static function test_dir():void
+        {
+            var dirpath:String = 'fixtures';
+            it.expects(FilePath.isDir(dirpath)).toBeTruthy();
+            it.expects(FilePath.isDir('no-such-dir')).toBeFalsey();
+
+            var d:String = Path.getFolderDelimiter();
+            var filepath:String = ['fixtures', 'file'].join(d);
+            it.expects(FilePath.isDir(filepath)).toBeFalsey();
+        }
+
+        private static function test_file():void
+        {
+            var d:String = Path.getFolderDelimiter();
+            var filepath:String = ['fixtures', 'file'].join(d);
+            it.expects(FilePath.isFile(filepath)).toBeTruthy();
+            it.expects(FilePath.isFile('no-such-file')).toBeFalsey();
+
+            var dirpath:String = 'fixtures';
+            it.expects(FilePath.isFile(dirpath)).toBeFalsey();
         }
 
         private static function join_components():void {
