@@ -10,7 +10,6 @@ package
     public static class lsdocSpec
     {
         private static var it:Thing;
-        private static const fixtureRoot:String = 'fixtures/';
 
         public static function specify(specifier:Spec):void
         {
