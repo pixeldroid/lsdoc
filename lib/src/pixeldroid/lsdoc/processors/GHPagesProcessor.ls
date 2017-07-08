@@ -7,6 +7,7 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.processors.LSDocProcessor;
     import pixeldroid.lsdoc.processors.tasks.EmptyDirectory;
     import pixeldroid.lsdoc.processors.tasks.CopyFiles;
+    import pixeldroid.lsdoc.processors.tasks.ghpages.GeneratePackagePages;
 
     import pixeldroid.platform.FilePath;
     import pixeldroid.task.SequentialTask;
@@ -56,8 +57,7 @@ package pixeldroid.lsdoc.processors
         {
             var apiDir:String = _context.getOption('api-dir', null, ['_api'])[0];
             var apiPath:String = FilePath.join(_context.outPath, apiDir);
-            // addTask(new GenerateApiFiles(apiPath, _context));
-            // addTask(new GeneratePackagePages(apiPath, _context));
+            addTask(new GeneratePackagePages(apiPath, _context));
             // addTask(new GenerateTypePages(apiPath, _context));
         }
 
