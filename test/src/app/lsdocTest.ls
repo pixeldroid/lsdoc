@@ -2,12 +2,12 @@ package
 {
     import system.Process;
     import system.application.ConsoleApplication;
-    import system.platform.File;
 
     import pixeldroid.bdd.SpecExecutor;
 
     import lsdocSpec;
     import FilePathSpec;
+    import StringUtilsSpec;
 
 
     public class lsdocTest extends ConsoleApplication
@@ -18,7 +18,8 @@ package
             SpecExecutor.parseArgs();
             var returnCode:Number = SpecExecutor.exec([
                 lsdocSpec,
-                FilePathSpec
+                FilePathSpec,
+                StringUtilsSpec
             ]);
 
             Process.exit(returnCode);
