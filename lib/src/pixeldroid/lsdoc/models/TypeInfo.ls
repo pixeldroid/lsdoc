@@ -24,6 +24,7 @@ package pixeldroid.lsdoc.models
         public var packageString:String;
         //public var properties:Vector.<PropertyInfo>;
         public var sourceFile:String;
+        public var construct:String;
 
         public function TypeInfo():void
         {
@@ -44,6 +45,7 @@ package pixeldroid.lsdoc.models
             t.interfaceStrings = stringVector(j.getArray('interfaces'));
             t.packageString = j.getString('package');
             t.sourceFile = j.getString('source');
+            t.construct = j.getString('type');
 
             return t;
         }

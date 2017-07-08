@@ -7,6 +7,7 @@ package
 
     import lsdocSpec;
     import FilePathSpec;
+    import ModuleInfoSpec;
     import StringUtilsSpec;
 
 
@@ -19,6 +20,7 @@ package
             var returnCode:Number = SpecExecutor.exec([
                 lsdocSpec,
                 FilePathSpec,
+                ModuleInfoSpec,
                 StringUtilsSpec
             ]);
 
