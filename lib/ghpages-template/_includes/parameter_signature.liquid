@@ -1,0 +1,31 @@
+{% comment %}
+
+parameter_signature
+  generates a single parameter signature like the following:
+    ...name:package.Type<package.Type>=[]
+  parameter types are linked using module_linker.liquid
+
+params:
+  base_url="/path/to"
+  param: {
+    name: name
+    default_value: '[]'
+    is_var_args: true
+    type: package.Type
+    template_types: [package.Type1, package.Type2]
+  }
+
+{% endcomment %}{%
+if include.param %}{%
+  assign p = include.param %}{%
+  if p.is_var_args == true %}...{% endif %}{{ p.name }}:{% capture ml %}{% include module_linker.liquid module=p.type base_url=module_url %}{% endcapture %}{{ ml | rstrip }}{%
+  if p.template_types
+    %}&lt;{%
+      for t in p.template_types %}{%
+        capture ml %}{% include module_linker.liquid module=t base_url=module_url %}{% endcapture %}{{ ml | rstrip }}{%
+        unless forloop.last %}, {% endunless %}{%
+      endfor
+    %}&gt;{%
+  endif %}{%
+  if p.default_value %}={{ p.default_value }}{% endif %}{%
+endif %}
