@@ -17,14 +17,11 @@ package pixeldroid.lsdoc
         public const modules:Vector.<ModuleInfo> = [];
 
 
-        public function LSDoc():void
-        {
-        }
-
         public function get numTypes():Number
         {
             var n:Number = 0;
-            for each(var m:ModuleInfo in modules) n += m.types.length;
+            for each(var m:ModuleInfo in modules)
+                n += m.types.length;
 
             return n;
         }
@@ -38,7 +35,8 @@ package pixeldroid.lsdoc
                 if(!libPaths.contains(path))
                 {
                     errors = errors.concat(loadAssembly(path));
-                    if (0 == errors.length) libPaths.push(path);
+                    if (0 == errors.length)
+                        libPaths.push(path);
                 }
             }
             else
@@ -59,7 +57,8 @@ package pixeldroid.lsdoc
             {
                 var m:JSON = parser.getArray('modules');
                 var n:Number = m.getArrayCount();
-                for (var i:Number = 0; i < n; i++) modules.push(ModuleInfo.fromJSON(m.getArrayObject(i)));
+                for (var i:Number = 0; i < n; i++)
+                    modules.push(ModuleInfo.fromJSON(m.getArrayObject(i)));
             }
             else
             {
