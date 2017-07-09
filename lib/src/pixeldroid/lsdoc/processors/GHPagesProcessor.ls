@@ -4,10 +4,11 @@ package pixeldroid.lsdoc.processors
 
     import pixeldroid.lsdoc.LSDoc;
     import pixeldroid.lsdoc.errors.LSDocError;
+    import pixeldroid.lsdoc.models.ModuleInfo;
     import pixeldroid.lsdoc.processors.LSDocProcessor;
     import pixeldroid.lsdoc.processors.tasks.EmptyDirectory;
     import pixeldroid.lsdoc.processors.tasks.CopyFiles;
-    import pixeldroid.lsdoc.processors.tasks.ghpages.GeneratePackagePages;
+    import pixeldroid.lsdoc.processors.tasks.ghpages.WritePackagePage;
 
     import pixeldroid.platform.FilePath;
     import pixeldroid.task.SequentialTask;
@@ -57,8 +58,20 @@ package pixeldroid.lsdoc.processors
         {
             var apiDir:String = _context.getOption('api-dir', null, ['_api'])[0];
             var apiPath:String = FilePath.join(_context.outPath, apiDir);
-            addTask(new GeneratePackagePages(apiPath, _context));
-            // addTask(new GenerateTypePages(apiPath, _context));
+            var packages:Vector.<String>;
+
+            for each(var m:ModuleInfo in context.lsdoc.modules)
+            {
+                // package pages
+                packages = ModuleInfo.getPackages(m.types);
+
+                for each(var p:String in packages)
+                    addTask(new WritePackagePage(apiPath, p, m, context));
+
+                // type pages
+                // for each(var t:TypeInfo in m.types)
+                //     addTask(new WriteTypePage(apiPath, t, m, context));
+            }
         }
 
         private function addCopyHomePage():void
