@@ -1,9 +1,7 @@
 package pixeldroid.lsdoc.processors.tasks.info
 {
-    import pixeldroid.lsdoc.LSDoc;
     import pixeldroid.lsdoc.models.ModuleInfo;
     import pixeldroid.lsdoc.models.TypeInfo;
-    import pixeldroid.lsdoc.processors.ProcessingContext;
 
     import pixeldroid.task.SingleTask;
     import pixeldroid.util.Log;
@@ -12,16 +10,14 @@ package pixeldroid.lsdoc.processors.tasks.info
     public class GenerateModuleInfo extends SingleTask
     {
         private static const logName:String = GenerateModuleInfo.getTypeName();
-        private var context:ProcessingContext;
         private var module:ModuleInfo;
 
         public var lines:Vector.<String>;
 
 
-        public function GenerateModuleInfo(module:ModuleInfo, context:ProcessingContext)
+        public function GenerateModuleInfo(module:ModuleInfo)
         {
             this.module = module;
-            this.context = context;
         }
 
 
@@ -38,13 +34,13 @@ package pixeldroid.lsdoc.processors.tasks.info
 
         private function getInfo(m:ModuleInfo):Vector.<String>
         {
-            var lines:Vector.<String> = [];
+            var result:Vector.<String> = [];
 
-            lines.push(m);
+            result.push(m);
             for each(var t:TypeInfo in m.types)
-                lines.push(' ' +t);
+                result.push(' ' +t);
 
-            return lines;
+            return result;
         }
 
     }

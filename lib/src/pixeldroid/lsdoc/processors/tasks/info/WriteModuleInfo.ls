@@ -1,7 +1,6 @@
 package pixeldroid.lsdoc.processors.tasks.info
 {
     import pixeldroid.lsdoc.models.ModuleInfo;
-    import pixeldroid.lsdoc.processors.LSDocProcessor;
     import pixeldroid.lsdoc.processors.ProcessingContext;
     import pixeldroid.lsdoc.processors.tasks.WriteLines;
     import pixeldroid.lsdoc.processors.tasks.info.GenerateModuleInfo;
@@ -18,7 +17,6 @@ package pixeldroid.lsdoc.processors.tasks.info
     public class WriteModuleInfo extends SequentialTask
     {
         private static const logName:String = WriteModuleInfo.getTypeName();
-        private var context:ProcessingContext;
         private var module:ModuleInfo;
         private var genInfo:GenerateModuleInfo;
         private var writeLines:WriteLines;
@@ -27,10 +25,14 @@ package pixeldroid.lsdoc.processors.tasks.info
         public function WriteModuleInfo(module:ModuleInfo, context:ProcessingContext)
         {
             this.module = module;
-            this.context = context;
 
-            addTask(genInfo = new GenerateModuleInfo(module, context));
-            addTask(writeLines = new WriteLines(context));
+            genInfo = new GenerateModuleInfo(module);
+
+            writeLines = new WriteLines(context);
+            writeLines.outfile = FilePath.join(context.outPath, module.name);
+
+            addTask(genInfo);
+            addTask(writeLines);
 
             addSubTaskStateCallback(TaskState.COMPLETED, handleSubTaskCompletion);
         }
@@ -39,10 +41,7 @@ package pixeldroid.lsdoc.processors.tasks.info
         private function handleSubTaskCompletion(task:Task):void
         {
             if (task == genInfo)
-            {
-                writeLines.outfile = FilePath.join(context.outPath, module.name);
                 writeLines.lines = (task as GenerateModuleInfo).lines;
-            }
         }
 
     }
