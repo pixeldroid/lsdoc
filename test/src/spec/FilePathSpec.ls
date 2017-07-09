@@ -78,7 +78,12 @@ package
         }
 
         private static function join_components():void {
+            var b:PathObject = new PathObject('b');
+            var c:PathObject = new PathObject('c');
             it.expects(FilePath.join('a', 'b', 'c', 'file.ext')).toEqual(path);
+            it.expects(FilePath.join('a', ['b', 'c'], 'file.ext')).toEqual(path);
+            it.expects(FilePath.join('a', b, c, 'file.ext')).toEqual(path);
+            it.expects(FilePath.join('a', [b, c], 'file.ext')).toEqual(path);
         }
 
         private static function strip_join():void {
@@ -88,5 +93,13 @@ package
             it.expects(FilePath.join('a'+d+d+'b', 'c'+d+d+'file.ext')).not.toEqual(path);
         }
 
+    }
+
+    private class PathObject
+    {
+        private var _path:String;
+
+        public function PathObject(path:String) { _path = path; }
+        public function toString():String { return _path; }
     }
 }

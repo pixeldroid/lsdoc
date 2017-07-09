@@ -80,6 +80,14 @@ package pixeldroid.platform
         /**
             Combines the given components into a path delimited by the system folder delimiter.
 
+            Components can be any mix of single string values, single objects that provide
+            a `toString()` method, or Vectors of strings or objects:
+
+            * `FilePath.join('a', 'b', 'c', 'file.ext')`
+            * `FilePath.join('a', ['b', 'c'], 'file.ext')`
+            * `FilePath.join('a', b, c, 'file.ext')    // where b,c .toString() are valid`
+            * `FilePath.join('a', [b, c], 'file.ext')  // ^^`
+
             The returned string does not contain a trailing delimiter.
 
             With the exception of a leading delimiter on the first component,
@@ -96,7 +104,7 @@ package pixeldroid.platform
         private static function stringify(thing:Object, index:Number):String
         {
             var d:String = Path.getFolderDelimiter();
-            var s:String = thing.toString();
+            var s:String = (thing is Vector) ? Vector(thing).join(Path.getFolderDelimiter()) : thing.toString();
 
             if (index > 0) while (s.charAt(0) == d) s = s.substring(1, s.length);
             while (s.charAt(s.length - 1) == d) s = s.substring(0, s.length - 1);
