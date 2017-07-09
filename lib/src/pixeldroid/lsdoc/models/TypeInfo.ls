@@ -44,11 +44,12 @@ package pixeldroid.lsdoc.models
             t.docString = j.getString('docString');
             t.interfaceStrings = stringVector(j.getArray('interfaces'));
             t.packageString = j.getString('package');
-            t.sourceFile = j.getString('source');
+            t.sourceFile = cleanSourcePath(j.getString('source'), t.packageString);
             t.construct = j.getString('type');
 
             return t;
         }
+
 
         private static function stringVector(j:JSON):Vector.<String>
         {
@@ -57,6 +58,14 @@ package pixeldroid.lsdoc.models
             for (var i:Number = 0; i < n; i++) v.push(j.getArrayString(i));
 
             return v;
+        }
+
+        private static function cleanSourcePath(sourcePath:String, packageString:String):String
+        {
+            var rootPackage:String = packageString.split('.').shift();
+            var start:Number = sourcePath.indexOf(rootPackage);
+
+            return sourcePath.substring(start, sourcePath.length);
         }
 
     }
