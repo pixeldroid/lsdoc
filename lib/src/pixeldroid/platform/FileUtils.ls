@@ -47,6 +47,8 @@ package pixeldroid.platform
         /**
             Recursively remove files and subdirectories from given dir.
 
+            NOTE: empty directories are unable to be removed, only directories with files inside
+
             The containing directory is also removed.
         */
         public static function remove(dir:String):Boolean
@@ -58,10 +60,11 @@ package pixeldroid.platform
             var dirs = new Vector.<String>;
 
             // collect list of files for removal
+            // FIXME: empty directories are not found by Path.walkFiles  :(
             Path.walkFiles(dir, fileCollector, files);
             dirs.pushSingle(dir);
 
-            // remove files and save dirnames
+            // remove files and save containing dirnames
             var dirname:String;
             for each (var filename in files)
             {

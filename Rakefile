@@ -10,3 +10,8 @@ rescue LoadError
     '  https://github.com/pixeldroid/loomtasks/',
   ].join("\n"))
 end
+
+# add ./docs/ to CLEAN list
+[
+  File.join('docs'),
+].each { |f| CLEAN << f }
