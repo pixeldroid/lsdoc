@@ -15,3 +15,25 @@ end
 [
   File.join('docs'),
 ].each { |f| CLEAN << f }
+
+# add lsdoc loomlib to fixtures after compilation before running cli demo
+namespace :cli do
+
+  desc [
+    "copies #{LIBRARY} into test/fixtures for use in doc gen demo",
+  ].join("\n")
+  task :update_fixture => LIBRARY do |t, args|
+    lib = t.prerequisites[0]
+    fixtures_dir = File.join('test', 'fixtures')
+
+    puts "[#{t.name}] copying #{lib} into #{fixtures_dir}..."
+    abort("could not find '#{lib}' to copy") unless File.exists?(lib)
+
+    FileUtils.cp(lib, fixtures_dir)
+
+    puts "[#{t.name}] pre-task completed, #{lib_file} copied to #{fixtures_dir}"
+  end
+
+end
+
+Rake::Task["cli:run"].enhance ["cli:update_fixture"]
