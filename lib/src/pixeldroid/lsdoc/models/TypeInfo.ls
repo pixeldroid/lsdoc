@@ -62,10 +62,23 @@ package pixeldroid.lsdoc.models
 
         private static function cleanSourcePath(sourcePath:String, packageString:String):String
         {
+            /*
+            source file paths in loomlibs typically have two characteristics we remove here:
+              - start with a containing directory that is not part of the package namespace
+              - contain an empty directory as part of the filepath
+
+            E.g.: we convert: './src//package/subpackage/Type.ls'
+                        into: 'package/subpackage/Type.ls'
+            */
+
             var rootPackage:String = packageString.split('.').shift();
             var start:Number = sourcePath.indexOf(rootPackage);
+            var result:String;
 
-            return sourcePath.substring(start, sourcePath.length);
+            result = sourcePath.substring(start, sourcePath.length);
+            result = result.split('//').join('/');
+
+            return result;
         }
 
     }

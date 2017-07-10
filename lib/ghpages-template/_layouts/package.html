@@ -30,10 +30,12 @@ layout: page
     {% capture content %}
     <a class="header" href="{{ page_module_url }}/{{ item.name }}">{{ item.name }}</a>
     {% capture description %}{{ item.description }}{%
-      if item.description %}<br/>{% endif
-      %}_Declared in:_ {{ item.declaration }}{%
+      if item.description %}<br/>{% endif %}{%
     endcapture %}
-    <div class="description">{{ description | markdownify }}</div>
+    <div class="description">
+      {{ description | markdownify | remove: '<p>' | remove: '</p>' }}
+      <span class="smaller text"><i>Declared in:</i> {{ item.declaration }}</span>
+    </div>
     {% endcapture %}
   <div class="item">{{ content }}</div>
   {% endfor %}

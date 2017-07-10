@@ -3,6 +3,9 @@ package pixeldroid.lsdoc.errors
     import system.errors.Error;
 
 
+    /**
+    Provides error codes and messages for problems that might be encountered during docs generation.
+    */
     public class LSDocError extends Error
     {
 
