@@ -29,7 +29,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             writeLines = new WriteLines(context);
             writeLines.outfile = FilePath.join(apiPath, packagePath, fileName);
-            Log.debug(logName, function():String{ return 'WritePackagePage constructor() - outfile: "' +writeLines.outfile +'"'; });
+            Log.debug(logName, function():String{ return 'ctor() - outfile: "' +writeLines.outfile +'"'; });
 
             genPackagePage = new GeneratePackagePage(packageName, moduleInfo);
 
