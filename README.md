@@ -16,5 +16,5 @@ jekyll serve --watch --source docs/ --destination docs/_site
 
 ```
 export LSDOC=`pwd`
-rake clean && rake cli['-p ghpages -o $LSDOC/docs -t $LSDOC/template -e $LSDOC/examples -g $LSDOC/guides -l $LSDOC/test/fixtures/lsdoc.loomlib -d']
+rake clean && rake cli['-p ghpages -o $LSDOC/docs -t $LSDOC/lib/ghpages-template -e $LSDOC/examples -g $LSDOC/guides -l $LSDOC/test/fixtures/lsdoc.loomlib -d']
 ```
