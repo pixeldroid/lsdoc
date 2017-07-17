@@ -1,6 +1,5 @@
 package pixeldroid.lsdoc.processors.tasks.ghpages
 {
-    import pixeldroid.lsdoc.LSDoc;
     import pixeldroid.lsdoc.models.ModuleInfo;
     import pixeldroid.lsdoc.processors.ProcessingContext;
     import pixeldroid.lsdoc.processors.tasks.WriteLines;
@@ -29,7 +28,6 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             writeLines = new WriteLines(context);
             writeLines.outfile = FilePath.join(apiPath, packagePath, fileName);
-            Log.debug(logName, function():String{ return 'ctor() - outfile: "' +writeLines.outfile +'"'; });
 
             genPackagePage = new GeneratePackagePage(packageName, moduleInfo);
 

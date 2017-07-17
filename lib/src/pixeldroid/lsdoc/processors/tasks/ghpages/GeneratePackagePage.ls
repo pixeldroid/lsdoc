@@ -1,6 +1,5 @@
 package pixeldroid.lsdoc.processors.tasks.ghpages
 {
-    import pixeldroid.lsdoc.LSDoc;
     import pixeldroid.lsdoc.models.DefinitionConstruct;
     import pixeldroid.lsdoc.models.ModuleInfo;
     import pixeldroid.lsdoc.models.TypeInfo;
