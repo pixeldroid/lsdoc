@@ -26,9 +26,10 @@
   {% capture url %}{{ doc.url }}#/{{ collection.label | downcase }}/{% endcapture %}
   {% case doc.layout %}
     {% when 'package' %}
-      {% capture link %}<svg class="icon"><use xlink:href="#folder-outline" /></svg> {% include package_shortener.liquid module=doc.module %}{% endcapture %}
+      {% capture link %}<svg class="icon"><use xlink:href="#folder-outline" /></svg> {% include package_shortener.liquid package=doc.module %}{% endcapture %}
     {% when 'type' %}
-      {% capture link %}{% include package_shortener.liquid module=doc.module %}.{{ doc.name }}{% endcapture %}
+      {% capture pkg %}{{ doc.module }}.{{ doc.name }}{% endcapture %}
+      {% capture link %}{% include package_shortener.liquid package=pkg %}{% endcapture %}
   {% endcase %}
   <a class="very tight smaller text item" href="{{ site.baseurl }}{{ url }}">{{ link }}</a>
 {% endfor %}

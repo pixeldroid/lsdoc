@@ -5,10 +5,12 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.LSDoc;
     import pixeldroid.lsdoc.errors.LSDocError;
     import pixeldroid.lsdoc.models.ModuleInfo;
+    import pixeldroid.lsdoc.models.TypeInfo;
     import pixeldroid.lsdoc.processors.LSDocProcessor;
     import pixeldroid.lsdoc.processors.tasks.EmptyDirectory;
     import pixeldroid.lsdoc.processors.tasks.CopyFiles;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WritePackagePage;
+    import pixeldroid.lsdoc.processors.tasks.ghpages.WriteTypePage;
 
     import pixeldroid.platform.FilePath;
     import pixeldroid.task.SequentialTask;
@@ -69,8 +71,8 @@ package pixeldroid.lsdoc.processors
                     addTask(new WritePackagePage(apiPath, p, m, context));
 
                 // type pages
-                // for each(var t:TypeInfo in m.types)
-                //     addTask(new WriteTypePage(apiPath, t, m, context));
+                for each(var t:TypeInfo in m.types)
+                    addTask(new WriteTypePage(apiPath, t, m, context));
             }
         }
 
