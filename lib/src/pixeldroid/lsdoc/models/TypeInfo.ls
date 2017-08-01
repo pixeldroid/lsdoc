@@ -38,11 +38,11 @@ package pixeldroid.lsdoc.models
 
             t.name = j.getString('name');
             t.baseTypeString = j.getString('baseType');
-            t.classAttributes = stringVector(j.getArray('classattributes'));
+            extractStringVector(j.getArray('classattributes'), t.classAttributes);
             t.delegateReturnTypeString = j.getString('delegateReturnType');
-            t.delegateTypeStrings = stringVector(j.getArray('delegateTypes'));
+            extractStringVector(j.getArray('delegateTypes'), t.delegateTypeStrings);
             t.docString = j.getString('docString');
-            t.interfaceStrings = stringVector(j.getArray('interfaces'));
+            extractStringVector(j.getArray('interfaces'), t.interfaceStrings);
             t.packageString = j.getString('package');
             t.sourceFile = cleanSourcePath(j.getString('source'), t.packageString);
             t.construct = j.getString('type');
@@ -51,13 +51,10 @@ package pixeldroid.lsdoc.models
         }
 
 
-        private static function stringVector(j:JSON):Vector.<String>
+        private static function extractStringVector(j:JSON, v:Vector.<String>):void
         {
-            var v:Vector.<String> = [];
             var n:Number = j.getArrayCount();
             for (var i:Number = 0; i < n; i++) v.push(j.getArrayString(i));
-
-            return v;
         }
 
         private static function cleanSourcePath(sourcePath:String, packageString:String):String

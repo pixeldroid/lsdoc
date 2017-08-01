@@ -95,7 +95,7 @@ package
         private function runProcessor(opts:OptionParser):void
         {
             if (!opts.getOption('o', 'output-dir').hasValue)
-                exitWithErrors('no output directory specified', []);
+                exitWithErrors('no output directory specified', null);
 
             lsdoc = new LSDoc();
 
@@ -120,6 +120,17 @@ package
                 exitWithErrors('errors while initializing processor', context.errors);
 
             processor.start();
+
+            switch(processor.currentState)
+            {
+                case TaskState.COMPLETED:
+                    exitWithSuccess('done.');
+                break;
+
+                case TaskState.FAULT:
+                    exitWithErrors('errors while processing', context.errors);
+                break;
+            }
         }
 
 
@@ -128,36 +139,38 @@ package
             Log.debug(logName, function():String{ return 'preparing the "' +name +'" processor'; });
             var p:LSDocProcessor = ProcessorSelector.select(name);
 
-            p.addTaskStateCallback(TaskState.RUNNING, onStart);
-            p.addTaskStateCallback(TaskState.REPORTING, onProgress);
-            p.addTaskStateCallback(TaskState.COMPLETED, onComplete);
-            p.addTaskStateCallback(TaskState.FAULT, onFault);
+            p.addTaskStateCallback(TaskState.RUNNING, onProcessorStart);
+            p.addTaskStateCallback(TaskState.REPORTING, onProcessorProgress);
+            p.addTaskStateCallback(TaskState.COMPLETED, onProcessorComplete);
+            p.addTaskStateCallback(TaskState.FAULT, onProcessorFault);
 
             return p;
         }
 
-        private function onStart(task:Task):void
+        private function onProcessorStart(task:Task):void
         {
-            Log.debug(logName, function():String{ return 'onStart for ' +task; });
+            Log.debug(logName, function():String{ return 'onProcessorStart for ' +task; });
             trace('running..');
         }
 
-        private function onProgress(task:Task, percent:Number):void
+        private function onProcessorProgress(task:Task, percent:Number):void
         {
             trace(Math.round(percent * 100) + '% complete');
         }
 
-        private function onComplete(task:Task):void
+        private function onProcessorComplete(task:Task):void
         {
-            Log.debug(logName, function():String{ return 'onComplete for ' +task; });
-            exitWithSuccess('done.');
+            lsdoc.modules.clear();
+            lsdoc = null;
+            Log.debug(logName, function():String{ return 'onProcessorComplete for ' +task; });
         }
 
-        private function onFault(task:Task, message:String):void
+        private function onProcessorFault(task:Task, message:String):void
         {
-            Log.debug(logName, function():String{ return 'onFault for ' +task; });
+            Log.debug(logName, function():String{ return 'onProcessorFault for ' +task +': ' +message; });
+
             var context:ProcessingContext = (task as LSDocProcessor).context;
-            exitWithErrors(message, context.errors);
+            context.appendErrors([LSDocError.processorFail(message)]);
         }
 
 

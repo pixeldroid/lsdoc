@@ -2,6 +2,7 @@ package pixeldroid.lsdoc.models
 {
     import system.JSON;
 
+    import pixeldroid.lsdoc.models.ClassAttribute;
     import pixeldroid.lsdoc.models.DefinitionConstruct;
     import pixeldroid.lsdoc.models.TypeInfo;
     import pixeldroid.platform.StringUtils;
@@ -11,7 +12,7 @@ package pixeldroid.lsdoc.models
     {
 
         public var name:String;
-        public const types:Vector.<TypeInfo> = [];
+        public var types:Vector.<TypeInfo> = [];
         public var version:String;
 
 

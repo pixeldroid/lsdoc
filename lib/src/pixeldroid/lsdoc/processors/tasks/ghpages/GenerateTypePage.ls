@@ -13,32 +13,20 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
     public class GenerateTypePage extends SingleTask
     {
         private static const logName:String = GenerateTypePage.getTypeName();
-        private var typeInfo:TypeInfo;
-        private var moduleInfo:ModuleInfo;
+        private static var _yamlOptions:YamlPrinterOptions;
 
-        public var description:String;
-        public var lines:Vector.<String>;
-
-
-        public function GenerateTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo)
+        private static function get yamlOptions():YamlPrinterOptions
         {
-            this.typeInfo = typeInfo;
-            this.moduleInfo = moduleInfo;
+            if (!_yamlOptions)
+            {
+                _yamlOptions = YamlPrinterOptions.compact;
+                _yamlOptions.printDocumentEnd = true; // required for Jekyll to recognize as front matter
+            }
+
+            return _yamlOptions;
         }
 
-
-        override protected function performTask():void
-        {
-            Log.debug(logName, function():String{ return 'performTask() for ' +typeInfo; });
-
-            description = typeInfo.docString;
-            lines = getTypePage(typeInfo, moduleInfo);
-
-            complete();
-        }
-
-
-        private function getTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo):Vector.<String>
+        private static function getTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo):Vector.<String>
         {
             var result:Vector.<String> = [];
 
@@ -54,12 +42,35 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             var pageJson:Json = Json.fromObject(page);
 
-            var yamlOptions:YamlPrinterOptions = YamlPrinterOptions.compact;
-            yamlOptions.printDocumentEnd = true; // required for Jekyll to recognize as front matter
-
             result.push(YamlPrinter.print(pageJson, yamlOptions));
 
             return result;
+        }
+
+
+        private var typeInfo:TypeInfo;
+        private var moduleInfo:ModuleInfo;
+
+        public var lines:Vector.<String>;
+
+
+        public function GenerateTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo)
+        {
+            this.typeInfo = typeInfo;
+            this.moduleInfo = moduleInfo;
+        }
+
+
+        override protected function performTask():void
+        {
+            Log.debug(logName, function():String{ return 'performTask() for ' +typeInfo; });
+
+            lines = GenerateTypePage.getTypePage(typeInfo, moduleInfo);
+
+            typeInfo = null;
+            moduleInfo = null;
+
+            complete();
         }
 
     }

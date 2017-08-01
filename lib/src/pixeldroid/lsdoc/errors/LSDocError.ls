@@ -15,6 +15,7 @@ package pixeldroid.lsdoc.errors
         public static const FILE_NOT_FOUND:String = 'file not found';
         public static const INVALID_LOOMLIB:String = 'loomlib is invalid';
         public static const PARSE_FAIL:String = 'loomlib failed to parse';
+        public static const PROCESSOR_FAIL:String = 'processor failed';
         public static const WRITE_FAIL:String = 'unable to write file';
 
         public static function deleteFail(msg:String):LSDocError
@@ -45,6 +46,11 @@ package pixeldroid.lsdoc.errors
         public static function parseFail(msg:String):LSDocError
         {
             return new LSDocError(msg, PARSE_FAIL);
+        }
+
+        public static function processorFail(msg:String):LSDocError
+        {
+            return new LSDocError(msg, PROCESSOR_FAIL);
         }
 
         public static function writeFail(msg:String):LSDocError

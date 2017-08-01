@@ -14,30 +14,20 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
     public class GeneratePackagePage extends SingleTask
     {
         private static const logName:String = GeneratePackagePage.getTypeName();
-        private var packageName:String;
-        private var moduleInfo:ModuleInfo;
+        private static var _yamlOptions:YamlPrinterOptions;
 
-        public var lines:Vector.<String>;
-
-
-        public function GeneratePackagePage(packageName:String, moduleInfo:ModuleInfo)
+        private static function get yamlOptions():YamlPrinterOptions
         {
-            this.packageName = packageName;
-            this.moduleInfo = moduleInfo;
+            if (!_yamlOptions)
+            {
+                _yamlOptions = YamlPrinterOptions.compact;
+                _yamlOptions.printDocumentEnd = true; // required for Jekyll to recognize as front matter
+            }
+
+            return _yamlOptions;
         }
 
-
-        override protected function performTask():void
-        {
-            Log.debug(logName, function():String{ return 'performTask() for ' +packageName; });
-
-            lines = getPackagePage(packageName, moduleInfo);
-
-            complete();
-        }
-
-
-        private function getPackagePage(pkg:String, moduleInfo:ModuleInfo):Vector.<String>
+        private static function getPackagePage(pkg:String, moduleInfo:ModuleInfo):Vector.<String>
         {
             var result:Vector.<String> = [];
             var types:Vector.<TypeInfo> = moduleInfo.types;
@@ -69,7 +59,6 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             var pageJson:Json = Json.fromObject(page);
 
-            var yamlOptions:YamlPrinterOptions = YamlPrinterOptions.compact;
             yamlOptions.printDocumentEnd = true; // required for Jekyll to recognize as front matter
 
             result.push(YamlPrinter.print(pageJson, yamlOptions));
@@ -77,7 +66,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return result;
         }
 
-        private function getMembersByConstruct(types:Vector.<TypeInfo>, pkg:String, construct:DefinitionConstruct):Vector.<Dictionary.<String,Object>>
+        private static function getMembersByConstruct(types:Vector.<TypeInfo>, pkg:String, construct:DefinitionConstruct):Vector.<Dictionary.<String,Object>>
         {
             var filteredTypes:Vector.<TypeInfo>;
             var memberInfo:Dictionary.<String,Object>;
@@ -100,6 +89,31 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             }
 
             return result;
+        }
+
+
+        private var packageName:String;
+        private var moduleInfo:ModuleInfo;
+
+        public var lines:Vector.<String>;
+
+
+        public function GeneratePackagePage(packageName:String, moduleInfo:ModuleInfo)
+        {
+            this.packageName = packageName;
+            this.moduleInfo = moduleInfo;
+        }
+
+
+        override protected function performTask():void
+        {
+            Log.debug(logName, function():String{ return 'performTask() for ' +packageName; });
+
+            lines = GeneratePackagePage.getPackagePage(packageName, moduleInfo);
+
+            moduleInfo = null;
+
+            complete();
         }
 
     }

@@ -37,6 +37,17 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             addSubTaskStateCallback(TaskState.COMPLETED, handleSubTaskCompletion);
         }
 
+        override protected function complete():void
+        {
+            super.complete();
+
+            genPackagePage.lines.clear();
+            genPackagePage = null;
+
+            writeLines.lines.clear();
+            writeLines = null;
+        }
+
 
         private function handleSubTaskCompletion(task:Task):void
         {
