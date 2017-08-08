@@ -1,0 +1,1 @@
+Provides error codes and messages for problems that might be encountered during docs generation.

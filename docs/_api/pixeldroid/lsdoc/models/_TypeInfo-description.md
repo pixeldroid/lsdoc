@@ -1,0 +1,1 @@
+Stores properties of a Type.

@@ -3,4 +3,4 @@ lib/build/
 releases/
 test/bin/
 test/TEST-*.xml
-docfiles.json
+docs/_site

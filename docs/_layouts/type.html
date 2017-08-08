@@ -1,0 +1,138 @@
+---
+layout: page
+---
+
+{% capture module_url %}{{ site.baseurl }}/{{ site.module_root }}{% endcapture %}
+
+<span class="anchor" id="heading">&nbsp;</span>
+<h1 class="ui dividing header">{{ page.name }}</h1>
+
+<div class="ui list">
+  <div class="item">
+    <svg class="icon"><use xlink:href="#folder-outline" /></svg>
+    <div class="content">{% include module_linker.liquid module=page.module base_url=module_url %}</div>
+  </div>
+  <div class="item">
+    <svg class="icon"><use xlink:href="#file-outline" /></svg>
+    <div class="content">{{ page.type_attributes | join: ' ' }} {{ page.type }}</div>
+  </div>
+  {% if page.implements %}
+  <div class="item">
+    <svg class="icon"><use xlink:href="#interface" /></svg>
+    <div class="content">
+      {% assign content = '' %}
+      {% for interface in page.implements %}
+        {% capture link %}<a class="section" href="{{ module_url }}/{{ interface.module | split: '.' | join: '/' }}/{{ interface.name }}">{{ interface.name }}</a>{% endcapture %}
+        {% unless forloop.last %}
+          {% assign link = link | append: ', ' %}
+        {% endunless %}
+        {% assign content = content | append: link | strip | append: '
+      ' %}
+      {% endfor %}
+      {{ content | strip }}
+    </div>
+  </div>
+  {% endif %}
+  {% if page.ancestors %}
+  <div class="item">
+    <svg class="icon"><use xlink:href="#flow-line" /></svg>
+    <div class="content">
+      <div class="ui breadcrumb">
+        <span class="section active">{{ page.name }}</span>
+        {% for ancestor in page.ancestors %}
+        <svg class="icon divider"><use xlink:href="#chevron-right" /></svg>
+        <a class="section" href="{{ module_url }}/{{ ancestor.module | split: '.' | join: '/' }}/{{ ancestor.name }}">{{ ancestor.name }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% if page.descendants %}
+  <div class="item">
+    <svg class="icon"><use xlink:href="#flow-tree" /></svg>
+    <div class="content">
+      {% assign content = '' %}
+      {% for descendant in page.descendants %}
+        {% capture link %}<a class="section" href="{{ module_url }}/{{ descendant.module | split: '.' | join: '/' }}/{{ descendant.name }}">{{ descendant.name }}</a>{% endcapture %}
+        {% unless forloop.last %}
+          {% assign link = link | append: ', ' %}
+        {% endunless %}
+        {% assign content = content | append: link | strip | append: '
+      ' %}
+      {% endfor %}
+      {{ content | strip }}
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<div class="ui basic segment"><span class="anchor" id="description">&nbsp;</span>
+<h3 class="ui header">{{ page.type | capitalize }} Description</h3>
+{% capture description_file %}_{{ page.name }}-description.md{% endcapture %}
+{% capture description %}{% include_relative {{ description_file }} %}{% endcapture %}
+{{ description | replace: '   ⇥', '⇥' | replace: '⇥', site.code_indent | markdownify }}
+</div>
+
+{% capture newline %}
+{% endcapture %}
+
+{% assign attr = "fields|properties|methods" | split: '|'  %}
+
+<div class="ui basic segment"><span class="anchor" id="listing">&nbsp;</span>
+<h2 class="ui dividing header">Listing</h2>
+
+{% for a in attr %}
+{% if page[a] %}
+<span class="anchor" id="listing-{{ a }}">&nbsp;</span>
+<h3 class="ui tight header">{{ a | capitalize }}</h3>
+{% assign list = page[a] %}
+{% if list.size > 0 %}
+<table class="ui striped definition table"><tbody>
+{% assign isFunc = false %}{% if a == 'methods' %}{% assign isFunc = true %}{% endif %}
+{% for item in list %}
+  {% capture params %}{% include parameters.liquid params=item.parameters base_url=module_url %}{% endcapture %}
+  {% capture signature %}<a href="#details-{{ a }}-{{ item.name }}">{{ item.name }}</a><span class="normal text">{{ params | rstrip }}:{% include module_linker.liquid module=item.type base_url=module_url %}</span>{% endcapture %}
+  {% assign d_lines = item.description | split: newline %}
+  <tr><td{% if forloop.first %} class="collapsing"{% endif %}>{{ signature | rstrip }}</td><td>{{ d_lines | first | markdownify | remove: '<p>' | remove: '</p>' | remove: '</p>' }}</td></tr>
+{% endfor %}
+</tbody></table>
+{% endif %}
+{% endif %}
+{% endfor %}
+
+</div>
+
+
+<div class="ui basic segment"><span class="anchor" id="details">&nbsp;</span>
+<h2 class="ui dividing header">Details</h2>
+
+{% for a in attr %}
+{% if page[a] %}
+<span class="anchor" id="details-{{ a }}">&nbsp;</span>
+<h3 class="ui tight header">{{ a | capitalize }}</h3>
+{% assign list = page[a] %}
+{% assign isFunc = false %}{% if a == 'methods' %}{% assign isFunc = true %}{% endif %}
+{% for item in list %}
+  {% capture params %}{% include parameters.liquid params=item.parameters base_url=module_url %}{% endcapture %}
+  {% capture signature %}{{ item.attributes | join: ' ' }} {% if isFunc %}function {% endif %}<strong>{{ item.name }}</strong>{{ params | rstrip }}:{% include module_linker.liquid module=item.type base_url=module_url %}{% endcapture %}
+  <div class="ui tight vertical segment"><span class="anchor" id="details-{{ a }}-{{ item.name }}">&nbsp;</span><h4 class="ui very tight header">{{ item.name }}{% if isFunc %}(){% endif %}</h4>
+  <p><code>{{ signature }}</code></p>
+  {{ item.description | markdownify }}
+  {% if isFunc and item.parameters %}<table class="ui striped definition table"><tbody>
+  {% for p in item.parameters %}
+    {% capture p_sig %}{% include parameter_signature.liquid param=p base_url=include.base_url %}{% endcapture %}
+    <tr><td{% if forloop.first %} class="collapsing"{% endif %}><code>{{ p_sig | rstrip }}</code></td><td>{% if p.description %}{{ p.description | markdownify }}{% endif %}</td></tr>
+  {% endfor %}
+  </tbody></table>{% endif %}
+  </div>
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+</div>
+
+<div id="scroll-space">
+  {% for n in (1..10) %}
+  <p>&nbsp;</p>
+  {% endfor %}
+</div>

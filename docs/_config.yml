@@ -1,0 +1,37 @@
+# https://help.github.com/articles/repository-metadata-on-github-pages/
+
+# https://help.github.com/articles/configuring-jekyll/#configuration-settings-you-cannot-change
+highlighter: rouge
+
+# https://jekyllrb.com/docs/configuration/
+permalink: pretty # for trailing slash urls (requires index.html inside)
+collections: # used for the tabbed sections that appear in the side menu
+  api:
+    output: true
+    title: API
+    permalink: /:collection/:path/
+  examples:
+    output: true
+    title: Examples
+    permalink: /:collection/:path/
+  guides:
+    output: true
+    title: Guides
+    permalink: /:collection/:path/
+
+# https://github.com/penibelst/jekyll-compress-html
+compress_html:
+  comments: ["<!-- ", " -->"]
+
+# https://jekyllrb.com/docs/assets/
+sass:
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# site globals
+code_indent: '  ' # 2 space indent
+module_root: api  # the api collection houses the code modules
+project:
+  name: 'lsdoc'
+  repo: 'https://github.com/pixeldroid/lsdoc'
+  owner: pixeldroid
+  version: '0.0.0'

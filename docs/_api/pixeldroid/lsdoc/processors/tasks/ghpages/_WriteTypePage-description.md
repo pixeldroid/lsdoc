@@ -1,0 +1,1 @@
+Task group that handles generating and writing to file the page content for a type page
