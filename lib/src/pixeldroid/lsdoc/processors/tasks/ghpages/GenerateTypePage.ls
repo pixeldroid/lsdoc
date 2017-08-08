@@ -26,6 +26,17 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return _yamlOptions;
         }
 
+        private static function toTypeRef(fullName:String):Dictionary.<String,Object>
+        {
+            var lastDot:Number = fullName.lastIndexOf('.');
+            var typeRef:Dictionary.<String,Object> = {
+                'name' : fullName.substring(lastDot+1, fullName.length),
+                'module' : fullName.substring(0, lastDot),
+            };
+
+            return typeRef;
+        }
+
         private static function getTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo):Vector.<String>
         {
             var result:Vector.<String> = [];
@@ -39,6 +50,16 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             if (typeInfo.classAttributes.length > 0)
                 page['type_attributes'] = typeInfo.classAttributes;
+
+            if (typeInfo.interfaceStrings.length > 0)
+            {
+                var typeRefs:Vector.<Dictionary.<String,Object>> = [];
+
+                for each(var fullName in typeInfo.interfaceStrings)
+                    typeRefs.push(toTypeRef(fullName));
+
+                page['implements'] = typeRefs;
+            }
 
             var pageJson:Json = Json.fromObject(page);
 
