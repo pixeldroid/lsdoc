@@ -31,7 +31,7 @@ sass:
 code_indent: '  ' # 2 space indent
 module_root: api  # the api collection houses the code modules
 project:
-  name: 'lsdoc'
-  repo: 'https://github.com/pixeldroid/lsdoc'
-  owner: pixeldroid
+  name: 'docs test'
+  repo: 'https://ellemenno.github.io/pages/'
+  owner: ellemenno
   version: '0.0.0'
