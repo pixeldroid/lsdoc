@@ -1,6 +1,8 @@
 # lsdoc
 generate API documentation from doc comments in LoomScript source code
 
+> see lsdoc api documentation documented by lsdoc here: https://ellemenno.github.io/lsdoc/
+
 
 ## Development notes
 
