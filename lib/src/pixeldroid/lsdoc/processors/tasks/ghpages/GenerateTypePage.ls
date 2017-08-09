@@ -40,6 +40,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
         private static function getTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo):Vector.<String>
         {
             var result:Vector.<String> = [];
+            var relatives:Vector.<String> = [];
             var typeRefs:Vector.<Dictionary.<String,Object>> = [];
             var fullName:String;
 
@@ -53,25 +54,38 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             if (typeInfo.classAttributes.length > 0)
                 page['type_attributes'] = typeInfo.classAttributes;
 
-            var ancestors:Vector.<String> = ModuleInfo.getAncestors(typeInfo, moduleInfo.types);
-            if (ancestors.length > 0)
-            {
-                typeRefs.clear();
-
-                for each(fullName in ancestors)
-                    typeRefs.push(toTypeRef(fullName));
-
-                page['ancestors'] = typeRefs;
-            }
-
+            typeRefs.clear();
             if (typeInfo.interfaceStrings.length > 0)
             {
-                typeRefs.clear();
 
                 for each(fullName in typeInfo.interfaceStrings)
                     typeRefs.push(toTypeRef(fullName));
 
-                page['implements'] = typeRefs;
+                page['implements'] = typeRefs.slice();
+            }
+
+            typeRefs.clear();
+            relatives.clear();
+            relatives = ModuleInfo.getAncestors(typeInfo, moduleInfo.types);
+            if (relatives.length > 0)
+            {
+
+                for each(fullName in relatives)
+                    typeRefs.push(toTypeRef(fullName));
+
+                page['ancestors'] = typeRefs.slice();
+            }
+
+            typeRefs.clear();
+            relatives.clear();
+            relatives = ModuleInfo.getDescendants(typeInfo, moduleInfo.types);
+            if (relatives.length > 0)
+            {
+
+                for each(fullName in relatives)
+                    typeRefs.push(toTypeRef(fullName));
+
+                page['descendants'] = typeRefs.slice();
             }
 
             var pageJson:Json = Json.fromObject(page);

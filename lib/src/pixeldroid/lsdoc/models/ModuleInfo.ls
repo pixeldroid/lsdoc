@@ -149,5 +149,19 @@ package pixeldroid.lsdoc.models
             return result;
         }
 
+        public static function getDescendants(subject:TypeInfo, typeList:Vector.<TypeInfo>):Vector.<String>
+        {
+            var result:Vector.<String> = [];
+            var fullName:String = subject.toString();
+
+            for each(var t:TypeInfo in typeList)
+            {
+                if (t.baseTypeString == fullName)
+                    result.push(t.toString());
+            }
+
+            return result;
+        }
+
     }
 }
