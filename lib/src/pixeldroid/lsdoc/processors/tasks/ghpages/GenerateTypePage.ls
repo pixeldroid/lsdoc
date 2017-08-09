@@ -40,6 +40,8 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
         private static function getTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo):Vector.<String>
         {
             var result:Vector.<String> = [];
+            var typeRefs:Vector.<Dictionary.<String,Object>> = [];
+            var fullName:String;
 
             var page:Dictionary.<String,Object> = {
                 'layout' : 'type',
@@ -51,11 +53,22 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             if (typeInfo.classAttributes.length > 0)
                 page['type_attributes'] = typeInfo.classAttributes;
 
+            var ancestors:Vector.<String> = ModuleInfo.getAncestors(typeInfo, moduleInfo.types);
+            if (ancestors.length > 0)
+            {
+                typeRefs.clear();
+
+                for each(fullName in ancestors)
+                    typeRefs.push(toTypeRef(fullName));
+
+                page['ancestors'] = typeRefs;
+            }
+
             if (typeInfo.interfaceStrings.length > 0)
             {
-                var typeRefs:Vector.<Dictionary.<String,Object>> = [];
+                typeRefs.clear();
 
-                for each(var fullName in typeInfo.interfaceStrings)
+                for each(fullName in typeInfo.interfaceStrings)
                     typeRefs.push(toTypeRef(fullName));
 
                 page['implements'] = typeRefs;

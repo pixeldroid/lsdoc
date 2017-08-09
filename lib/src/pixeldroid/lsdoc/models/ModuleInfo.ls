@@ -40,6 +40,17 @@ package pixeldroid.lsdoc.models
             return m;
         }
 
+        public static function getTypeByName(fullName:String, typeList:Vector.<TypeInfo>):TypeInfo
+        {
+            for each(var t:TypeInfo in typeList)
+            {
+                if (t.toString() == fullName)
+                    return t;
+            }
+
+            return null;
+        }
+
         public static function getTypesByPackage(typeList:Vector.<TypeInfo>, parentPackage:String):Vector.<TypeInfo>
         {
             var result:Vector.<TypeInfo> = [];
@@ -118,6 +129,24 @@ package pixeldroid.lsdoc.models
             }
 
             return subPackages;
+        }
+
+        public static function getAncestors(subject:TypeInfo, typeList:Vector.<TypeInfo>):Vector.<String>
+        {
+            var result:Vector.<String> = [];
+            var ancestor:String = subject.baseTypeString;
+
+            while (ancestor != '')
+            {
+                result.push(ancestor);
+
+                if (!(subject = getTypeByName(ancestor, typeList)))
+                    break;
+
+                ancestor = subject.baseTypeString;
+            }
+
+            return result;
         }
 
     }
