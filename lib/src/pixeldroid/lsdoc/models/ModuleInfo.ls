@@ -149,15 +149,52 @@ package pixeldroid.lsdoc.models
             return result;
         }
 
-        public static function getDescendants(subject:TypeInfo, typeList:Vector.<TypeInfo>):Vector.<String>
+        public static function getImplementors(fullName:String, typeList:Vector.<TypeInfo>):Vector.<String>
         {
             var result:Vector.<String> = [];
-            var fullName:String = subject.toString();
+
+            for each(var t:TypeInfo in typeList)
+            {
+                if (t.interfaceStrings.contains(fullName))
+                    result.push(t.toString());
+            }
+
+            return result;
+        }
+
+        public static function getSubClasses(fullName:String, typeList:Vector.<TypeInfo>):Vector.<String>
+        {
+            var result:Vector.<String> = [];
 
             for each(var t:TypeInfo in typeList)
             {
                 if (t.baseTypeString == fullName)
                     result.push(t.toString());
+            }
+
+            return result;
+        }
+
+        public static function getDescendants(subject:TypeInfo, typeList:Vector.<TypeInfo>):Vector.<String>
+        {
+            var result:Vector.<String>;
+            var fullName:String = subject.toString();
+            var construct:DefinitionConstruct = DefinitionConstruct.fromString(subject.construct);
+
+            switch(construct)
+            {
+                case DefinitionConstruct.INTERFACE:
+                    result = getImplementors(fullName, typeList);
+                    break;
+
+                case DefinitionConstruct.CLASS:
+                case DefinitionConstruct.STRUCT:
+                    result = getSubClasses(fullName, typeList);
+                    break;
+
+                default:
+                    result = [];
+                    break;
             }
 
             return result;

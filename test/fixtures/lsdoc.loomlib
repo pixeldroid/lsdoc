@@ -1927,11 +1927,11 @@
                   "public"
                ],
                "constructor":{
-                  "bytecode":"G0xKAgA3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc5IBAgIKAAAACWQAERICAAApAx4AKwQAADwEAwISBwEAEggAACkJHgA8BwkISwABAAAAAAAREREREXRoaXMAAQljb25zdHJ1Y3ROYW1lAAAJX19sc19zd2Z0AAQFX19sc19zd2V4cHIAAAVfX2xzX2tleQAABV9fbHNfdGVybmFyeQAABV9fbHNfcG9zdGluYwAABQAA",
-                  "bytecode_fr2":"G0xKAgg3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc5IBAgIKAAAACWQAERICAAApAx4AKwQAADwEAwISBwEAEggAACkJHgA8BwkISwABAAAAAAAREREREXRoaXMAAQljb25zdHJ1Y3ROYW1lAAAJX19sc19zd2Z0AAQFX19sc19zd2V4cHIAAAVfX2xzX2tleQAABV9fbHNfdGVybmFyeQAABV9fbHNfcG9zdGluYwAABQAA",
+                  "bytecode":"G0xKAgA3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc5IBAgIKAAAACWQAHxICAAApAx4AKwQAADwEAwISBwEAEggAACkJHgA8BwkISwABAAAAAAAfHx8fH3RoaXMAAQljb25zdHJ1Y3ROYW1lAAAJX19sc19zd2Z0AAQFX19sc19zd2V4cHIAAAVfX2xzX2tleQAABV9fbHNfdGVybmFyeQAABV9fbHNfcG9zdGluYwAABQAA",
+                  "bytecode_fr2":"G0xKAgg3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc5IBAgIKAAAACWQAHxICAAApAx4AKwQAADwEAwISBwEAEggAACkJHgA8BwkISwABAAAAAAAfHx8fH3RoaXMAAQljb25zdHJ1Y3ROYW1lAAAJX19sc19zd2Z0AAQFX19sc19zd2V4cHIAAAVfX2xzX2tleQAABV9fbHNfdGVybmFyeQAABV9fbHNfcG9zdGluYwAABQAA",
                   "defaultconstructor":false,
                   "docString":"",
-                  "line":15,
+                  "line":29,
                   "metainfo":{},
                   "methodattributes":[
                      "public"
@@ -2035,7 +2035,7 @@
                      "fieldattributes":[
                         "private"
                      ],
-                     "line":13,
+                     "line":27,
                      "metainfo":{},
                      "name":"_name",
                      "ordinal":30,
@@ -2050,10 +2050,36 @@
                "metainfo":{},
                "methods":[
                   {
-                     "bytecode":"G0xKAgA3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc2kCAQgAAAAETxcAEgYAACkHHgA4BgcGTAYCAAAAAAB0aGlzAAEEX19sc19zd2Z0AAAEX19sc19zd2V4cHIAAARfX2xzX2tleQAABF9fbHNfdGVybmFyeQAABF9fbHNfcG9zdGluYwAABAAA",
-                     "bytecode_fr2":"G0xKAgg3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc2kCAQgAAAAETxcAEgYAACkHHgA4BgcGTAYCAAAAAAB0aGlzAAEEX19sc19zd2Z0AAAEX19sc19zd2V4cHIAAARfX2xzX2tleQAABF9fbHNfdGVybmFyeQAABF9fbHNfcG9zdGluYwAABAAA",
+                     "bytecode":"G0xKAgA3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc7UEAgEIAAEAVqYBDgkSBgAAEgIGACsGAQASAQYADgABAFgGCIA2BgAAKQcZADgGBwYpByAAOAYHBkIGAQIFBgIAWAYGgCsGAgASAQYANgYAACkHGQA4BgcGTAYCAA4AAQBYBgiANgYAACkHGgA4BgcGKQcgADgGBwZCBgECBQYCAFgGBoArBgIAEgEGADYGAAApBxoAOAYHBkwGAgAOAAEAWAYIgDYGAAApBxsAOAYHBikHIAA4BgcGQgYBAgUGAgBYBgaAKwYCABIBBgA2BgAAKQcbADgGBwZMBgIADgABAFgGCIA2BgAAKQccADgGBwYpByAAOAYHBkIGAQIFBgIAWAYGgCsGAgASAQYANgYAACkHHAA4BgcGTAYCAA4AAQBYBgiANgYAACkHHQA4BgcGKQcgADgGBwZCBgECBQYCAFgGBoArBgIAEgEGADYGAAApBx0AOAYHBkwGAgArBgAATAYCADBwaXhlbGRyb2lkLmxzZG9jLm1vZGVscy5EZWZpbml0aW9uQ29uc3RydWN0AAAAAAAAAAAAAAAAAAAAAAICAgICAgICAgICAgICAgIDAwMDAwMDAwMDAwMDAwMDBAQEBAQEBAQEBAQEBAQEBAUFBQUFBQUFBQUFBQUFBQUGBgYGCQljb25zdHJ1Y3QAAVZfX2xzX3N3ZnQAAFZfX2xzX3N3ZXhwcgAAVl9fbHNfa2V5AABWX19sc190ZXJuYXJ5AABWX19sc19wb3N0aW5jAABWAAA=",
+                     "bytecode_fr2":"G0xKAgg3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc7UEAgEIAAEAVqYBDgkSBgAAEgIGACsGAQASAQYADgABAFgGCIA2BgAAKQcZADgGBwYpByAAOAYHBkIGAQIFBgIAWAYGgCsGAgASAQYANgYAACkHGQA4BgcGTAYCAA4AAQBYBgiANgYAACkHGgA4BgcGKQcgADgGBwZCBgECBQYCAFgGBoArBgIAEgEGADYGAAApBxoAOAYHBkwGAgAOAAEAWAYIgDYGAAApBxsAOAYHBikHIAA4BgcGQgYBAgUGAgBYBgaAKwYCABIBBgA2BgAAKQcbADgGBwZMBgIADgABAFgGCIA2BgAAKQccADgGBwYpByAAOAYHBkIGAQIFBgIAWAYGgCsGAgASAQYANgYAACkHHAA4BgcGTAYCAA4AAQBYBgiANgYAACkHHQA4BgcGKQcgADgGBwZCBgECBQYCAFgGBoArBgIAEgEGADYGAAApBx0AOAYHBkwGAgArBgAATAYCADBwaXhlbGRyb2lkLmxzZG9jLm1vZGVscy5EZWZpbml0aW9uQ29uc3RydWN0AAAAAAAAAAAAAAAAAAAAAAICAgICAgICAgICAgICAgIDAwMDAwMDAwMDAwMDAwMDBAQEBAQEBAQEBAQEBAQEBAUFBQUFBQUFBQUFBQUFBQUGBgYGCQljb25zdHJ1Y3QAAVZfX2xzX3N3ZnQAAFZfX2xzX3N3ZXhwcgAAVl9fbHNfa2V5AABWX19sc190ZXJuYXJ5AABWX19sc19wb3N0aW5jAABWAAA=",
                      "docString":"",
-                     "line":23,
+                     "line":12,
+                     "metainfo":{},
+                     "methodattributes":[
+                        "public",
+                        "static"
+                     ],
+                     "name":"fromString",
+                     "ordinal":33,
+                     "parameters":[
+                        {
+                           "hasdefault":false,
+                           "isvarargs":false,
+                           "name":"construct",
+                           "templatetypes":null,
+                           "type":"system.String"
+                        }
+                     ],
+                     "returntype":"pixeldroid.lsdoc.models.DefinitionConstruct",
+                     "source":"./src/.//pixeldroid/lsdoc/models/DefinitionConstruct.ls",
+                     "templatetypes":null,
+                     "type":"METHOD"
+                  },
+                  {
+                     "bytecode":"G0xKAgA3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc2kCAQgAAAAETyUAEgYAACkHHgA4BgcGTAYCAAAAAAB0aGlzAAEEX19sc19zd2Z0AAAEX19sc19zd2V4cHIAAARfX2xzX2tleQAABF9fbHNfdGVybmFyeQAABF9fbHNfcG9zdGluYwAABAAA",
+                     "bytecode_fr2":"G0xKAgg3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc2kCAQgAAAAETyUAEgYAACkHHgA4BgcGTAYCAAAAAAB0aGlzAAEEX19sc19zd2Z0AAAEX19sc19zd2V4cHIAAARfX2xzX2tleQAABF9fbHNfdGVybmFyeQAABF9fbHNfcG9zdGluYwAABAAA",
+                     "docString":"",
+                     "line":37,
                      "metainfo":{},
                      "methodattributes":[
                         "public"
@@ -2073,10 +2099,10 @@
                   {
                      "docString":"",
                      "getter":{
-                        "bytecode":"G0xKAgA3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc2kCAQgAAAAETxUAEgYAACkHHgA4BgcGTAYCAAAAAAB0aGlzAAEEX19sc19zd2Z0AAAEX19sc19zd2V4cHIAAARfX2xzX2tleQAABF9fbHNfdGVybmFyeQAABF9fbHNfcG9zdGluYwAABAAA",
-                        "bytecode_fr2":"G0xKAgg3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc2kCAQgAAAAETxUAEgYAACkHHgA4BgcGTAYCAAAAAAB0aGlzAAEEX19sc19zd2Z0AAAEX19sc19zd2V4cHIAAARfX2xzX2tleQAABF9fbHNfdGVybmFyeQAABF9fbHNfcG9zdGluYwAABAAA",
+                        "bytecode":"G0xKAgA3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc2kCAQgAAAAETyMAEgYAACkHHgA4BgcGTAYCAAAAAAB0aGlzAAEEX19sc19zd2Z0AAAEX19sc19zd2V4cHIAAARfX2xzX2tleQAABF9fbHNfdGVybmFyeQAABF9fbHNfcG9zdGluYwAABAAA",
+                        "bytecode_fr2":"G0xKAgg3Li9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvRGVmaW5pdGlvbkNvbnN0cnVjdC5sc2kCAQgAAAAETyMAEgYAACkHHgA4BgcGTAYCAAAAAAB0aGlzAAEEX19sc19zd2Z0AAAEX19sc19zd2V4cHIAAARfX2xzX2tleQAABF9fbHNfdGVybmFyeQAABF9fbHNfcG9zdGluYwAABAAA",
                         "docString":"",
-                        "line":21,
+                        "line":35,
                         "metainfo":{},
                         "methodattributes":[
                            "public"
@@ -2481,8 +2507,8 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgAuLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvTW9kdWxlSW5mby5sc7oDAgISAAMCKtoBmgEJLAcJADYKAABCCgECEgsKACoMAAA4CwwLKgwBACkNAAA8DQwLEgcKADYKAQApCxEAOAoLChILAABCCgICEggKADYKAgASCwEAQgr/BFgNE4ASDw4AKRAZADgPEA8EDwgAWA8CgCsPAQBYEAGAKw8CAA8ADwBYEAmAEg8HACkQJAA4DxAPNhABACkREQA4EBEQEhEOAEIQAgBBDwACRQ0DA1IN639MBwIAEV9fbHVhX2lwYWlycwtPYmplY3QSc3lzdGVtLlZlY3Rvcv72hf8f/PaF/x8AAAAAAAAAAAAAAQEBAQEBAwMDAwUFBQUFBQUFBQUFBQUFBQUFBQUDAwlzdWJqZWN0AAEqdHlwZUxpc3QAACpfX2xzX3N3ZnQAACpfX2xzX3N3ZXhwcgAAKl9fbHNfa2V5AAAqX19sc190ZXJuYXJ5AAAqX19sc19wb3N0aW5jAAAqcmVzdWx0AAAqZnVsbE5hbWUAACp0AAAqKGZvciBnZW5lcmF0b3IpABMWKGZvciBzdGF0ZSkAABYoZm9yIGNvbnRyb2wpAAAWX19sc19rZXkAARN0AAATAAA=",
-                     "bytecode_fr2":"G0xKAgguLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvTW9kdWxlSW5mby5sc7oDAgIUAAMCKtoBmgEJLAcJADYKAABCCgECEgsKACoMAAA4CwwLKgwBACkNAAA8DQwLEgcKADYKAQApCxEAOAoLChIMAABCCgICEggKADYKAgASDAEAQgr/BFgNE4ASDw4AKRAZADgPEA8EDwgAWA8CgCsPAQBYEAGAKw8CAA8ADwBYEAmAEg8HACkQJAA4DxAPNhEBACkSEQA4ERIREhMOAEIRAgBBDwACRQ0DA1IN639MBwIAEV9fbHVhX2lwYWlycwtPYmplY3QSc3lzdGVtLlZlY3Rvcv72hf8f/PaF/x8AAAAAAAAAAAAAAQEBAQEBAwMDAwUFBQUFBQUFBQUFBQUFBQUFBQUDAwlzdWJqZWN0AAEqdHlwZUxpc3QAACpfX2xzX3N3ZnQAACpfX2xzX3N3ZXhwcgAAKl9fbHNfa2V5AAAqX19sc190ZXJuYXJ5AAAqX19sc19wb3N0aW5jAAAqcmVzdWx0AAAqZnVsbE5hbWUAACp0AAAqKGZvciBnZW5lcmF0b3IpABMWKGZvciBzdGF0ZSkAABYoZm9yIGNvbnRyb2wpAAAWX19sc19rZXkAARN0AAATAAA=",
+                     "bytecode":"G0xKAgAuLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvTW9kdWxlSW5mby5sc40DAgIRAAMCI8kBmgEILAcIADYJAABCCQECEgoJACoLAAA4CgsKKgsBACkMAAA8DAsKEgcJADYJAQASCgEAQgn/BFgMEoASDg0AKQ8eADgODw4pDzMAOA4PDhIPAABCDgICDwAOAFgPCYASDgcAKQ8kADgODw42DwIAKRARADgPEA8SEA0AQg8CAEEOAAJFDAMDUgzsf0wHAgALT2JqZWN0EV9fbHVhX2lwYWlycxJzeXN0ZW0uVmVjdG9y/vaF/x/89oX/HwAAAAAAAAAAAAACAgICBAQEBAQEBAQEBAQEBAQEBAQEAgIIZnVsbE5hbWUAASN0eXBlTGlzdAAAI19fbHNfc3dmdAAAI19fbHNfc3dleHByAAAjX19sc19rZXkAACNfX2xzX3Rlcm5hcnkAACNfX2xzX3Bvc3RpbmMAACNyZXN1bHQAACN0AAAjKGZvciBnZW5lcmF0b3IpAA0VKGZvciBzdGF0ZSkAABUoZm9yIGNvbnRyb2wpAAAVX19sc19rZXkAARJ0AAASAAA=",
+                     "bytecode_fr2":"G0xKAgguLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvTW9kdWxlSW5mby5sc40DAgITAAMCI8kBmgEILAcIADYJAABCCQECEgoJACoLAAA4CgsKKgsBACkMAAA8DAsKEgcJADYJAQASCwEAQgn/BFgMEoASDg0AKQ8eADgODw4pDzMAOA4PDhIQAABCDgICDwAOAFgPCYASDgcAKQ8kADgODw42EAIAKRERADgQERASEg0AQhACAEEOAAJFDAMDUgzsf0wHAgALT2JqZWN0EV9fbHVhX2lwYWlycxJzeXN0ZW0uVmVjdG9y/vaF/x/89oX/HwAAAAAAAAAAAAACAgICBAQEBAQEBAQEBAQEBAQEBAQEAgIIZnVsbE5hbWUAASN0eXBlTGlzdAAAI19fbHNfc3dmdAAAI19fbHNfc3dleHByAAAjX19sc19rZXkAACNfX2xzX3Rlcm5hcnkAACNfX2xzX3Bvc3RpbmMAACNyZXN1bHQAACN0AAAjKGZvciBnZW5lcmF0b3IpAA0VKGZvciBzdGF0ZSkAABUoZm9yIGNvbnRyb2wpAAAVX19sc19rZXkAARJ0AAASAAA=",
                      "docString":"",
                      "line":152,
                      "metainfo":{},
@@ -2490,8 +2516,94 @@
                         "public",
                         "static"
                      ],
-                     "name":"getDescendants",
+                     "name":"getImplementors",
                      "ordinal":35,
+                     "parameters":[
+                        {
+                           "hasdefault":false,
+                           "isvarargs":false,
+                           "name":"fullName",
+                           "templatetypes":null,
+                           "type":"system.String"
+                        },
+                        {
+                           "hasdefault":false,
+                           "isvarargs":false,
+                           "name":"typeList",
+                           "templatetypes":{
+                              "type":"system.Vector",
+                              "types":[
+                                 "pixeldroid.lsdoc.models.TypeInfo"
+                              ]
+                           },
+                           "type":"system.Vector"
+                        }
+                     ],
+                     "returntype":"system.Vector",
+                     "source":"./src/.//pixeldroid/lsdoc/models/ModuleInfo.ls",
+                     "templatetypes":{
+                        "type":"system.Vector",
+                        "types":[
+                           "system.String"
+                        ]
+                     },
+                     "type":"METHOD"
+                  },
+                  {
+                     "bytecode":"G0xKAgAuLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvTW9kdWxlSW5mby5sc5IDAgIRAAMCJMoBpwEILAcIADYJAABCCQECEgoJACoLAAA4CgsKKgsBACkMAAA8DAsKEgcJADYJAQASCgEAQgn/BFgME4ASDg0AKQ8ZADgODw4EDgAAWA4CgCsOAQBYDwGAKw4CAA8ADgBYDwmAEg4HACkPJAA4Dg8ONg8CACkQEQA4DxAPEhANAEIPAgBBDgACRQwDA1IM639MBwIAC09iamVjdBFfX2x1YV9pcGFpcnMSc3lzdGVtLlZlY3Rvcv72hf8f/PaF/x8AAAAAAAAAAAAAAgICAgQEBAQEBAQEBAQEBAQEBAQEBAQCAghmdWxsTmFtZQABJHR5cGVMaXN0AAAkX19sc19zd2Z0AAAkX19sc19zd2V4cHIAACRfX2xzX2tleQAAJF9fbHNfdGVybmFyeQAAJF9fbHNfcG9zdGluYwAAJHJlc3VsdAAAJHQAACQoZm9yIGdlbmVyYXRvcikADRYoZm9yIHN0YXRlKQAAFihmb3IgY29udHJvbCkAABZfX2xzX2tleQABE3QAABMAAA==",
+                     "bytecode_fr2":"G0xKAgguLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvTW9kdWxlSW5mby5sc5IDAgITAAMCJMoBpwEILAcIADYJAABCCQECEgoJACoLAAA4CgsKKgsBACkMAAA8DAsKEgcJADYJAQASCwEAQgn/BFgME4ASDg0AKQ8ZADgODw4EDgAAWA4CgCsOAQBYDwGAKw4CAA8ADgBYDwmAEg4HACkPJAA4Dg8ONhACACkREQA4EBEQEhINAEIQAgBBDgACRQwDA1IM639MBwIAC09iamVjdBFfX2x1YV9pcGFpcnMSc3lzdGVtLlZlY3Rvcv72hf8f/PaF/x8AAAAAAAAAAAAAAgICAgQEBAQEBAQEBAQEBAQEBAQEBAQCAghmdWxsTmFtZQABJHR5cGVMaXN0AAAkX19sc19zd2Z0AAAkX19sc19zd2V4cHIAACRfX2xzX2tleQAAJF9fbHNfdGVybmFyeQAAJF9fbHNfcG9zdGluYwAAJHJlc3VsdAAAJHQAACQoZm9yIGdlbmVyYXRvcikADRYoZm9yIHN0YXRlKQAAFihmb3IgY29udHJvbCkAABZfX2xzX2tleQABE3QAABMAAA==",
+                     "docString":"",
+                     "line":165,
+                     "metainfo":{},
+                     "methodattributes":[
+                        "public",
+                        "static"
+                     ],
+                     "name":"getSubClasses",
+                     "ordinal":36,
+                     "parameters":[
+                        {
+                           "hasdefault":false,
+                           "isvarargs":false,
+                           "name":"fullName",
+                           "templatetypes":null,
+                           "type":"system.String"
+                        },
+                        {
+                           "hasdefault":false,
+                           "isvarargs":false,
+                           "name":"typeList",
+                           "templatetypes":{
+                              "type":"system.Vector",
+                              "types":[
+                                 "pixeldroid.lsdoc.models.TypeInfo"
+                              ]
+                           },
+                           "type":"system.Vector"
+                        }
+                     ],
+                     "returntype":"system.Vector",
+                     "source":"./src/.//pixeldroid/lsdoc/models/ModuleInfo.ls",
+                     "templatetypes":{
+                        "type":"system.Vector",
+                        "types":[
+                           "system.String"
+                        ]
+                     },
+                     "type":"METHOD"
+                  },
+                  {
+                     "bytecode":"G0xKAgAuLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvTW9kdWxlSW5mby5sc9IEAgIOAAQCS8QBtAEULAcJADYKAAApCxEAOAoLChILAABCCgICEggKADYKAQApCyEAOAoLChILAAApDCIAOAsMC0IKAgISCQoAEgoJABIDCgArCgEAEgIKAA4AAgBYCgWANgoBACkLHAA4CgsKBQoDAFgKCoArCgIAEgIKADYKAgApCyMAOAoLChILCAASDAEAQgoDAhIHCgBYCiaADgACAFgKBYA2CgEAKQsZADgKCwoFCgMAWAoCgCsKAgASAgoADgACAFgKBYA2CgEAKQsdADgKCwoFCgMAWAoKgCsKAgASAgoANgoCACkLJAA4CgsKEgsIABIMAQBCCgMCEgcKAFgKDIArCgIAEgIKADYKAwBCCgECEgsKACoMAAA4CwwLKgwBACkNAAA8DQwLEgcKAFgKAIBMBwIAEnN5c3RlbS5WZWN0b3IncGl4ZWxkcm9pZC5sc2RvYy5tb2RlbHMuTW9kdWxlSW5mbxhEZWZpbml0aW9uQ29uc3RydWN0C09iamVjdP72hf8f/PaF/x8AAQEBAQEBAgICAgICAgIEBAQEBAQEBAQEBAQEBwcHBwcHBwgICAgICAgICAgICAgICAgICAgMDAwMDAwMDQ0NEBAQEBAQEBAQERRzdWJqZWN0AAFLdHlwZUxpc3QAAEtfX2xzX3N3ZnQAAEtfX2xzX3N3ZXhwcgAAS19fbHNfa2V5AABLX19sc190ZXJuYXJ5AABLX19sc19wb3N0aW5jAABLcmVzdWx0AABLZnVsbE5hbWUAAEtjb25zdHJ1Y3QAAEsAAA==",
+                     "bytecode_fr2":"G0xKAgguLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9tb2RlbHMvTW9kdWxlSW5mby5sc9IEAgIOAAQCS8QBtAEULAcJADYKAAApCxEAOAoLChIMAABCCgICEggKADYKAQApCyEAOAoLChIMAAApDSIAOAwNDEIKAgISCQoAEgoJABIDCgArCgEAEgIKAA4AAgBYCgWANgoBACkLHAA4CgsKBQoDAFgKCoArCgIAEgIKADYKAgApCyMAOAoLChIMCAASDQEAQgoDAhIHCgBYCiaADgACAFgKBYA2CgEAKQsZADgKCwoFCgMAWAoCgCsKAgASAgoADgACAFgKBYA2CgEAKQsdADgKCwoFCgMAWAoKgCsKAgASAgoANgoCACkLJAA4CgsKEgwIABINAQBCCgMCEgcKAFgKDIArCgIAEgIKADYKAwBCCgECEgsKACoMAAA4CwwLKgwBACkNAAA8DQwLEgcKAFgKAIBMBwIAEnN5c3RlbS5WZWN0b3IncGl4ZWxkcm9pZC5sc2RvYy5tb2RlbHMuTW9kdWxlSW5mbxhEZWZpbml0aW9uQ29uc3RydWN0C09iamVjdP72hf8f/PaF/x8AAQEBAQEBAgICAgICAgIEBAQEBAQEBAQEBAQEBwcHBwcHBwgICAgICAgICAgICAgICAgICAgMDAwMDAwMDQ0NEBAQEBAQEBAQERRzdWJqZWN0AAFLdHlwZUxpc3QAAEtfX2xzX3N3ZnQAAEtfX2xzX3N3ZXhwcgAAS19fbHNfa2V5AABLX19sc190ZXJuYXJ5AABLX19sc19wb3N0aW5jAABLcmVzdWx0AABLZnVsbE5hbWUAAEtjb25zdHJ1Y3QAAEsAAA==",
+                     "docString":"",
+                     "line":178,
+                     "metainfo":{},
+                     "methodattributes":[
+                        "public",
+                        "static"
+                     ],
+                     "name":"getDescendants",
+                     "ordinal":37,
                      "parameters":[
                         {
                            "hasdefault":false,
@@ -4696,11 +4808,11 @@
                   "public"
                ],
                "constructor":{
-                  "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc5sCAgMLAAIAGn0AeBIDAAApBDQAKwUAADwFBAMSAwAAKQQ1ACsFAAA8BQQDEgMAACkENgArBQAAPAUEAzYIAAAnCQEAOAgJCBIJAABCCAICEggBABIJAAApCjQAPAgKCRIIAgASCQAAKQo1ADwICglLAAEAFV9fbHNfY29uc3RydWN0b3IfcGl4ZWxkcm9pZC50YXNrLlNpbmdsZVRhc2sAAAAAAAAAAAAAAAAAAAAAAHd3d3d4eHh4eHRoaXMAARp0eXBlSW5mbwAAGm1vZHVsZUluZm8AABpfX2xzX3N3ZnQADA5fX2xzX3N3ZXhwcgAADl9fbHNfa2V5AAAOX19sc190ZXJuYXJ5AAAOX19sc19wb3N0aW5jAAAOAAA=",
-                  "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc7UCAgMLAAIAH4IBAHgSAwAAKQQ0ACsFAAA8BQQDEgMAACkENQArBQAAPAUEAxIDAAApBDYAKwUAADwFBAM2CAAAJwkBADgICQgSCgAAQggCAjYIAAAnCQEAOAgJCBIKAABCCAICEggBABIJAAApCjQAPAgKCRIIAgASCQAAKQo1ADwICglLAAEAFV9fbHNfY29uc3RydWN0b3IfcGl4ZWxkcm9pZC50YXNrLlNpbmdsZVRhc2sAAAAAAAAAAAAAAAAAAAAAAAAAAAAAd3d3d3h4eHh4dGhpcwABH3R5cGVJbmZvAAAfbW9kdWxlSW5mbwAAH19fbHNfc3dmdAAME19fbHNfc3dleHByAAATX19sc19rZXkAABNfX2xzX3Rlcm5hcnkAABNfX2xzX3Bvc3RpbmMAABMAAA==",
+                  "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc5sCAgMLAAIAGn0AZRIDAAApBDQAKwUAADwFBAMSAwAAKQQ1ACsFAAA8BQQDEgMAACkENgArBQAAPAUEAzYIAAAnCQEAOAgJCBIJAABCCAICEggBABIJAAApCjQAPAgKCRIIAgASCQAAKQo1ADwICglLAAEAFV9fbHNfY29uc3RydWN0b3IfcGl4ZWxkcm9pZC50YXNrLlNpbmdsZVRhc2sAAAAAAAAAAAAAAAAAAAAAAGRkZGRlZWVlZXRoaXMAARp0eXBlSW5mbwAAGm1vZHVsZUluZm8AABpfX2xzX3N3ZnQADA5fX2xzX3N3ZXhwcgAADl9fbHNfa2V5AAAOX19sc190ZXJuYXJ5AAAOX19sc19wb3N0aW5jAAAOAAA=",
+                  "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc7UCAgMLAAIAH4IBAGUSAwAAKQQ0ACsFAAA8BQQDEgMAACkENQArBQAAPAUEAxIDAAApBDYAKwUAADwFBAM2CAAAJwkBADgICQgSCgAAQggCAjYIAAAnCQEAOAgJCBIKAABCCAICEggBABIJAAApCjQAPAgKCRIIAgASCQAAKQo1ADwICglLAAEAFV9fbHNfY29uc3RydWN0b3IfcGl4ZWxkcm9pZC50YXNrLlNpbmdsZVRhc2sAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZGRkZGVlZWVldGhpcwABH3R5cGVJbmZvAAAfbW9kdWxlSW5mbwAAH19fbHNfc3dmdAAME19fbHNfc3dleHByAAATX19sc19rZXkAABNfX2xzX3Rlcm5hcnkAABNfX2xzX3Bvc3RpbmMAABMAAA==",
                   "defaultconstructor":false,
                   "docString":"",
-                  "line":117,
+                  "line":98,
                   "metainfo":{},
                   "methodattributes":[
                      "public"
@@ -4765,7 +4877,7 @@
                      "fieldattributes":[
                         "private"
                      ],
-                     "line":111,
+                     "line":92,
                      "metainfo":{},
                      "name":"typeInfo",
                      "ordinal":52,
@@ -4778,7 +4890,7 @@
                      "fieldattributes":[
                         "private"
                      ],
-                     "line":112,
+                     "line":93,
                      "metainfo":{},
                      "name":"moduleInfo",
                      "ordinal":53,
@@ -4791,7 +4903,7 @@
                      "fieldattributes":[
                         "public"
                      ],
-                     "line":114,
+                     "line":95,
                      "metainfo":{},
                      "name":"lines",
                      "ordinal":54,
@@ -4851,8 +4963,8 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc+gOAgIWAA8D+AGgBSpBLAcMADYNAABCDQECEg4NACoPAAA4Dg8OKg8BACkQAAA8EA8OEgcNADYNAABCDQECEg4NACoPAAA4Dg8OKg8BACkQAAA8EA8OEggNADYNAABCDQECEg4NACoPAAA4Dg8OKg8BACkQAAA8EA8OEgkNACsKAAA2DQEAQg0BAicOAgAnDwMAPA8ODScOBAASDwAAKRAfADgPEA88Dw4NJw4FABIPAAApECAAOA8QDzwPDg0nDgMAEg8AACkQIgA4DxAPPA8ODRILDQASDQAAKQ4aADgNDg0pDiAAOA0ODUINAQIpDgAAAA4NAFgNAoArDQEAWA4BgCsNAgAPAA0AWA4IgBINAAApDhoAOA0ODRIOCwAqDwIAOA4PDicPBgA8DQ8OEg0JACkOJQA4DQ4NQg0BAhINAAApDh4AOA0ODSkOIAA4DQ4NQg0BAikOAAAADg0AWA0CgCsNAQBYDgGAKw0CAA8ADQBYDhyANg4HABIPAAApEB4AOA8QD0IO/wRYEQqAEhMJACkUJAA4ExQTNhQIACkVOQA4FBUUEhUSAEIUAgBBEwACEg0SAEURAwNSEfR/EgoNABIOCQApDzcAOA4PDkIOAQISDwsAKhACADgPEA8nEAkAPA4QDxINCQApDiUAOA0ODUINAQISDQgAKQ4lADgNDg1CDQECNg0KACkOIgA4DQ4NEg4AABIPAQApEBoAOA8QD0INAwISCA0AEg0IACkOIAA4DQ4NQg0BAikOAAAADg0AWA0CgCsNAQBYDgGAKw0CAA8ADQBYDhqANg4HABIPCABCDv8EWBEKgBITCQApFCQAOBMUEzYUCAApFTkAOBQVFBIVEgBCFAIAQRMAAhINEgBFEQMDUhH0fxIKDQASDgkAKQ83ADgODw5CDgECEg8LACoQAgA4DxAPJxALADwOEA8SDQkAKQ4lADgNDg1CDQECEg0IACkOJQA4DQ4NQg0BAjYNCgApDiMAOA0ODRIOAAASDwEAKRAaADgPEA9CDQMCEggNABINCAApDiAAOA0ODUINAQIpDgAAAA4NAFgNAoArDQEAWA4BgCsNAgAPAA0AWA4agDYOBwASDwgAQg7/BFgRCoASEwkAKRQkADgTFBM2FAgAKRU5ADgUFRQSFRIAQhQCAEETAAISDRIARREDA1IR9H8SCg0AEg4JACkPNwA4Dg8OQg4BAhIPCwAqEAIAOA8QDycQDAA8DhAPNg0NACkOHwA4DQ4NEg4LAEINAgISDA0AEg0HACkOJAA4DQ4NNg4OACkPGwA4Dg8OEg8MADYQCAApETgAOBAREEIQAQBBDgEAQQ0AAkwHAgAQWWFtbFByaW50ZXIJSnNvbhBkZXNjZW5kYW50cw5hbmNlc3RvcnMPTW9kdWxlSW5mbw9pbXBsZW1lbnRzP3BpeGVsZHJvaWQubHNkb2MucHJvY2Vzc29ycy50YXNrcy5naHBhZ2VzLkdlbmVyYXRlVHlwZVBhZ2URX19sdWFfaXBhaXJzFHR5cGVfYXR0cmlidXRlcwttb2R1bGUJbmFtZQl0eXBlC2xheW91dBZzeXN0ZW0uRGljdGlvbmFyeRJzeXN0ZW0uVmVjdG9y/vaF/x/89oX/H+72hf8fAAAAAAAAAAAAAAEBAQEBAQEBAQICAgICAgICAgMFBQUFBQUFBQUFBQUFBQUFBQUFBQUNDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NEBAQEBERERERERERERERERERFBQUFBQUFBQUFBQUFBQUFBQUFBcXFxcXFxcXFxoaGhobGxsbHBwcHBwcHBwcHR0dHR0dHR0dHR0dICAgICAgICAgICAgICAgICAjIyMjIyMjIyMmJiYmJycnJygoKCgoKCgoKCkpKSkpKSkpKSkpKSwsLCwsLCwsLCwsLCwsLCwsLy8vLy8vLy8vPT09PT09Pz8/Pz8/Pz8/Pz8/P0F0eXBlSW5mbwAB+AFtb2R1bGVJbmZvAAD4AV9fbHNfc3dmdAAA+AFfX2xzX3N3ZXhwcgAA+AFfX2xzX2tleQAA+AFfX2xzX3Rlcm5hcnkAAPgBX19sc19wb3N0aW5jAAD4AXJlc3VsdAAA+AFyZWxhdGl2ZXMAAPgBdHlwZVJlZnMAAPgBZnVsbE5hbWUAAPgBcGFnZQAA+AFwYWdlSnNvbgAA+AFfX2xzX2Z1bGxOYW1lAFocKGZvciBnZW5lcmF0b3IpAAUNKGZvciBzdGF0ZSkAAA0oZm9yIGNvbnRyb2wpAAANX19sc19rZXkAAQpmdWxsTmFtZQAACl9fbHNfZnVsbE5hbWUAMxooZm9yIGdlbmVyYXRvcikAAw0oZm9yIHN0YXRlKQAADShmb3IgY29udHJvbCkAAA1fX2xzX2tleQABCmZ1bGxOYW1lAAAKX19sc19mdWxsTmFtZQAzGihmb3IgZ2VuZXJhdG9yKQADDShmb3Igc3RhdGUpAAANKGZvciBjb250cm9sKQAADV9fbHNfa2V5AAEKZnVsbE5hbWUAAAoAAA==",
-                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc+gOAgIYAA8D+AGgBSpBLAcMADYNAABCDQECEg4NACoPAAA4Dg8OKg8BACkQAAA8EA8OEgcNADYNAABCDQECEg4NACoPAAA4Dg8OKg8BACkQAAA8EA8OEggNADYNAABCDQECEg4NACoPAAA4Dg8OKg8BACkQAAA8EA8OEgkNACsKAAA2DQEAQg0BAicOAgAnDwMAPA8ODScOBAASDwAAKRAfADgPEA88Dw4NJw4FABIPAAApECAAOA8QDzwPDg0nDgMAEg8AACkQIgA4DxAPPA8ODRILDQASDQAAKQ4aADgNDg0pDiAAOA0ODUINAQIpDgAAAA4NAFgNAoArDQEAWA4BgCsNAgAPAA0AWA4IgBINAAApDhoAOA0ODRIOCwAqDwIAOA4PDicPBgA8DQ8OEg0JACkOJQA4DQ4NQg0BAhINAAApDh4AOA0ODSkOIAA4DQ4NQg0BAikOAAAADg0AWA0CgCsNAQBYDgGAKw0CAA8ADQBYDhyANg4HABIQAAApER4AOBAREEIO/wRYEQqAEhMJACkUJAA4ExQTNhUIACkWOQA4FRYVEhcSAEIVAgBBEwACEg0SAEURAwNSEfR/EgoNABIOCQApDzcAOA4PDkIOAQISDwsAKhACADgPEA8nEAkAPA4QDxINCQApDiUAOA0ODUINAQISDQgAKQ4lADgNDg1CDQECNg0KACkOIgA4DQ4NEg8AABIQAQApERoAOBAREEINAwISCA0AEg0IACkOIAA4DQ4NQg0BAikOAAAADg0AWA0CgCsNAQBYDgGAKw0CAA8ADQBYDhqANg4HABIQCABCDv8EWBEKgBITCQApFCQAOBMUEzYVCAApFjkAOBUWFRIXEgBCFQIAQRMAAhINEgBFEQMDUhH0fxIKDQASDgkAKQ83ADgODw5CDgECEg8LACoQAgA4DxAPJxALADwOEA8SDQkAKQ4lADgNDg1CDQECEg0IACkOJQA4DQ4NQg0BAjYNCgApDiMAOA0ODRIPAAASEAEAKREaADgQERBCDQMCEggNABINCAApDiAAOA0ODUINAQIpDgAAAA4NAFgNAoArDQEAWA4BgCsNAgAPAA0AWA4agDYOBwASEAgAQg7/BFgRCoASEwkAKRQkADgTFBM2FQgAKRY5ADgVFhUSFxIAQhUCAEETAAISDRIARREDA1IR9H8SCg0AEg4JACkPNwA4Dg8OQg4BAhIPCwAqEAIAOA8QDycQDAA8DhAPNg0NACkOHwA4DQ4NEg8LAEINAgISDA0AEg0HACkOJAA4DQ4NNg8OACkQGwA4DxAPEhEMADYSCAApEzgAOBITEkISAQBBDwEAQQ0AAkwHAgAQWWFtbFByaW50ZXIJSnNvbhBkZXNjZW5kYW50cw5hbmNlc3RvcnMPTW9kdWxlSW5mbw9pbXBsZW1lbnRzP3BpeGVsZHJvaWQubHNkb2MucHJvY2Vzc29ycy50YXNrcy5naHBhZ2VzLkdlbmVyYXRlVHlwZVBhZ2URX19sdWFfaXBhaXJzFHR5cGVfYXR0cmlidXRlcwttb2R1bGUJbmFtZQl0eXBlC2xheW91dBZzeXN0ZW0uRGljdGlvbmFyeRJzeXN0ZW0uVmVjdG9y/vaF/x/89oX/H+72hf8fAAAAAAAAAAAAAAEBAQEBAQEBAQICAgICAgICAgMFBQUFBQUFBQUFBQUFBQUFBQUFBQUNDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NEBAQEBERERERERERERERERERFBQUFBQUFBQUFBQUFBQUFBQUFBcXFxcXFxcXFxoaGhobGxsbHBwcHBwcHBwcHR0dHR0dHR0dHR0dICAgICAgICAgICAgICAgICAjIyMjIyMjIyMmJiYmJycnJygoKCgoKCgoKCkpKSkpKSkpKSkpKSwsLCwsLCwsLCwsLCwsLCwsLy8vLy8vLy8vPT09PT09Pz8/Pz8/Pz8/Pz8/P0F0eXBlSW5mbwAB+AFtb2R1bGVJbmZvAAD4AV9fbHNfc3dmdAAA+AFfX2xzX3N3ZXhwcgAA+AFfX2xzX2tleQAA+AFfX2xzX3Rlcm5hcnkAAPgBX19sc19wb3N0aW5jAAD4AXJlc3VsdAAA+AFyZWxhdGl2ZXMAAPgBdHlwZVJlZnMAAPgBZnVsbE5hbWUAAPgBcGFnZQAA+AFwYWdlSnNvbgAA+AFfX2xzX2Z1bGxOYW1lAFocKGZvciBnZW5lcmF0b3IpAAUNKGZvciBzdGF0ZSkAAA0oZm9yIGNvbnRyb2wpAAANX19sc19rZXkAAQpmdWxsTmFtZQAACl9fbHNfZnVsbE5hbWUAMxooZm9yIGdlbmVyYXRvcikAAw0oZm9yIHN0YXRlKQAADShmb3IgY29udHJvbCkAAA1fX2xzX2tleQABCmZ1bGxOYW1lAAAKX19sc19mdWxsTmFtZQAzGihmb3IgZ2VuZXJhdG9yKQADDShmb3Igc3RhdGUpAAANKGZvciBjb250cm9sKQAADV9fbHNfa2V5AAEKZnVsbE5hbWUAAAoAAA==",
+                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc4YEAgMSAAMELOUBKggsCAkAEgoCACkLIAA4CgsKQgoBAggKAABYCgKAKwoBAFgLAYArCgIADwAKAFgLAYBLAAEANgoAAEIKAQISCwoAKgwBADgLDAsqDAIAKQ0AADwNDAsSCAoANgoBABILAgBCCv8EWA0JgBIPCAApECQAOA8QDzYQAgApETkAOBAREBIRDgBCEAIAQQ8AAkUNAwNSDfV/EgoIABILAAAqDAMAOAsMCxIMAQA8CgwLSwABAD9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlEV9fbHVhX2lwYWlycxJzeXN0ZW0uVmVjdG9yAP72hf8f/PaF/x/u9oX/HwAAAAAAAAAAAAAAAAADAwMDAwMDAwMFBQUFBQUFBQUFBQUFBQUICAgICAgIcGFnZQABLHNlY3Rpb24AACxuYW1lcwAALF9fbHNfc3dmdAAALF9fbHNfc3dleHByAAAsX19sc19rZXkAACxfX2xzX3Rlcm5hcnkAACxfX2xzX3Bvc3RpbmMAACx0eXBlUmVmcwAALGZ1bGxOYW1lAAAsKGZvciBnZW5lcmF0b3IpABkMKGZvciBzdGF0ZSkAAAwoZm9yIGNvbnRyb2wpAAAMX19sc19rZXkAAQlmdWxsTmFtZQAACQAA",
+                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc4YEAgMUAAMELOUBKggsCAkAEgoCACkLIAA4CgsKQgoBAggKAABYCgKAKwoBAFgLAYArCgIADwAKAFgLAYBLAAEANgoAAEIKAQISCwoAKgwBADgLDAsqDAIAKQ0AADwNDAsSCAoANgoBABIMAgBCCv8EWA0JgBIPCAApECQAOA8QDzYRAgApEjkAOBESERITDgBCEQIAQQ8AAkUNAwNSDfV/EgoIABILAAAqDAMAOAsMCxIMAQA8CgwLSwABAD9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlEV9fbHVhX2lwYWlycxJzeXN0ZW0uVmVjdG9yAP72hf8f/PaF/x/u9oX/HwAAAAAAAAAAAAAAAAADAwMDAwMDAwMFBQUFBQUFBQUFBQUFBQUICAgICAgIcGFnZQABLHNlY3Rpb24AACxuYW1lcwAALF9fbHNfc3dmdAAALF9fbHNfc3dleHByAAAsX19sc19rZXkAACxfX2xzX3Rlcm5hcnkAACxfX2xzX3Bvc3RpbmMAACx0eXBlUmVmcwAALGZ1bGxOYW1lAAAsKGZvciBnZW5lcmF0b3IpABkMKGZvciBzdGF0ZSkAAAwoZm9yIGNvbnRyb2wpAAAMX19sc19rZXkAAQlmdWxsTmFtZQAACQAA",
                      "docString":"",
                      "line":40,
                      "metainfo":{},
@@ -4860,8 +4972,59 @@
                         "private",
                         "static"
                      ],
-                     "name":"getTypePage",
+                     "name":"setTypeRefs",
                      "ordinal":58,
+                     "parameters":[
+                        {
+                           "hasdefault":false,
+                           "isvarargs":false,
+                           "name":"page",
+                           "templatetypes":{
+                              "type":"system.Dictionary",
+                              "types":[
+                                 "system.String",
+                                 "system.Object"
+                              ]
+                           },
+                           "type":"system.Dictionary"
+                        },
+                        {
+                           "hasdefault":false,
+                           "isvarargs":false,
+                           "name":"section",
+                           "templatetypes":null,
+                           "type":"system.String"
+                        },
+                        {
+                           "hasdefault":false,
+                           "isvarargs":false,
+                           "name":"names",
+                           "templatetypes":{
+                              "type":"system.Vector",
+                              "types":[
+                                 "system.String"
+                              ]
+                           },
+                           "type":"system.Vector"
+                        }
+                     ],
+                     "returntype":"system.Void",
+                     "source":"./src/.//pixeldroid/lsdoc/processors/tasks/ghpages/GenerateTypePage.ls",
+                     "templatetypes":null,
+                     "type":"METHOD"
+                  },
+                  {
+                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc/0GAgIRAA4Dbe8BNyEsBwoANgsAAEILAQISDAsAKg0AADgMDQwqDQEAKQ4AADwODQwSBwsAEgsBACkMGgA4CAwLNgsBAEILAQInDAIAJw0DADwNDAsnDAQAEg0AACkOHwA4DQ4NPA0MCycMBQASDQAAKQ4gADgNDg08DQwLJwwDABINAAApDiIAOA0ODTwNDAsSCQsAEgsAACkMGgA4CwwLKQwgADgLDAtCCwECKQwAAAAMCwBYCwKAKwsBAFgMAYArCwIADwALAFgMCIASCwAAKQwaADgLDAsSDAkAKg0CADgMDQwnDQYAPAsNDDYLBwApDDoAOAsMCxIMCQAnDQgAEg4AACkPHgA4Dg8OQgsEAjYLBwApDDoAOAsMCxIMCQAnDQkANg4KACkPIgA4Dg8OEg8AABIQCABCDgMAQQsCAjYLBwApDDoAOAsMCxIMCQAnDQsANg4KACkPJQA4Dg8OEg8AABIQCABCDgMAQQsCAjYLDAApDB8AOAsMCxIMCQBCCwICEgoLABILBwApDCQAOAsMCzYMDQApDRsAOAwNDBINCgA2DgcAKQ84ADgODw5CDgEAQQwBAEELAAJMBwIAEFlhbWxQcmludGVyCUpzb24QZGVzY2VuZGFudHMPTW9kdWxlSW5mbw5hbmNlc3RvcnMPaW1wbGVtZW50cz9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlFHR5cGVfYXR0cmlidXRlcwttb2R1bGUJbmFtZQl0eXBlC2xheW91dBZzeXN0ZW0uRGljdGlvbmFyeRJzeXN0ZW0uVmVjdG9y/vaF/x/89oX/H+72hf8fAAAAAAAAAAAAAAEBAQMDAwMDAwMDAwMDAwMDAwMDAwMDAwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsODg4ODg4ODg4PDw8PDw8PDw8PDw8QEBAQEBAQEBAQEBAdHR0dHR0fHx8fHx8fHx8fHx8fIXR5cGVJbmZvAAFtbW9kdWxlSW5mbwAAbV9fbHNfc3dmdAAAbV9fbHNfc3dleHByAABtX19sc19rZXkAAG1fX2xzX3Rlcm5hcnkAAG1fX2xzX3Bvc3RpbmMAAG1yZXN1bHQAAG10eXBlTGlzdAAAbXBhZ2UAAG1wYWdlSnNvbgAAbQAA",
+                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc/0GAgITAA4Dbe8BNyEsBwoANgsAAEILAQISDAsAKg0AADgMDQwqDQEAKQ4AADwODQwSBwsAEgsBACkMGgA4CAwLNgsBAEILAQInDAIAJw0DADwNDAsnDAQAEg0AACkOHwA4DQ4NPA0MCycMBQASDQAAKQ4gADgNDg08DQwLJwwDABINAAApDiIAOA0ODTwNDAsSCQsAEgsAACkMGgA4CwwLKQwgADgLDAtCCwECKQwAAAAMCwBYCwKAKwsBAFgMAYArCwIADwALAFgMCIASCwAAKQwaADgLDAsSDAkAKg0CADgMDQwnDQYAPAsNDDYLBwApDDoAOAsMCxINCQAnDggAEg8AACkQHgA4DxAPQgsEAjYLBwApDDoAOAsMCxINCQAnDgkANg8KACkQIgA4DxAPEhEAABISCABCDwMAQQsCAjYLBwApDDoAOAsMCxINCQAnDgsANg8KACkQJQA4DxAPEhEAABISCABCDwMAQQsCAjYLDAApDB8AOAsMCxINCQBCCwICEgoLABILBwApDCQAOAsMCzYNDQApDhsAOA0ODRIPCgA2EAcAKRE4ADgQERBCEAEAQQ0BAEELAAJMBwIAEFlhbWxQcmludGVyCUpzb24QZGVzY2VuZGFudHMPTW9kdWxlSW5mbw5hbmNlc3RvcnMPaW1wbGVtZW50cz9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlFHR5cGVfYXR0cmlidXRlcwttb2R1bGUJbmFtZQl0eXBlC2xheW91dBZzeXN0ZW0uRGljdGlvbmFyeRJzeXN0ZW0uVmVjdG9y/vaF/x/89oX/H+72hf8fAAAAAAAAAAAAAAEBAQMDAwMDAwMDAwMDAwMDAwMDAwMDAwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsODg4ODg4ODg4PDw8PDw8PDw8PDw8QEBAQEBAQEBAQEBAdHR0dHR0fHx8fHx8fHx8fHx8fIXR5cGVJbmZvAAFtbW9kdWxlSW5mbwAAbV9fbHNfc3dmdAAAbV9fbHNfc3dleHByAABtX19sc19rZXkAAG1fX2xzX3Rlcm5hcnkAAG1fX2xzX3Bvc3RpbmMAAG1yZXN1bHQAAG10eXBlTGlzdAAAbXBhZ2UAAG1wYWdlSnNvbgAAbQAA",
+                     "docString":"",
+                     "line":53,
+                     "metainfo":{},
+                     "methodattributes":[
+                        "private",
+                        "static"
+                     ],
+                     "name":"getTypePage",
+                     "ordinal":59,
                      "parameters":[
                         {
                            "hasdefault":false,
@@ -4889,10 +5052,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc88BAAAJAgMADG1+ADYFAAA5BQEFJwYCAEIFAgI2BgAAOQYBBi0HAQApCDQAOAcIB0IGAgImBQYFTAUCAAaAAIAXcGVyZm9ybVRhc2soKSBmb3IgDl90b1N0cmluZwtPYmplY3QAAAAAAAAAAAAAAABfX2xzX2Z1bmNpbmZvX2FyZ2luZm9fMAB0aGlzAF9fbHNfc3dmdAABDF9fbHNfc3dleHByAAAMX19sc19rZXkAAAxfX2xzX3Rlcm5hcnkAAAxfX2xzX3Bvc3RpbmMAAAwAjwMDAQwABAEkoAF+BzYHAAApCCAAOAcIBzYIAQApCTIAOAgJCCoGAAAzCQIAQgcDAjYIAwApCToAOAgJCBIJAAApCjQAOAkKCRIKAAApCzUAOAoLCkIIAwISCQAAKQo2ADwICgkrCAAAEgkAACkKNAA8CAoJKwgAABIJAAApCjUAPAgKCRIIAAApCSwAOAgJCEIIAQIyAACASwABABVHZW5lcmF0ZVR5cGVQYWdlAD9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlCExvZ/7/BwAAAAAAAAAAAAICAgICAgICAgICAgIEBAQEBQUFBQcHBwcHB3RoaXMAASRfX2xzX3N3ZnQAACRfX2xzX3N3ZXhwcgAAJF9fbHNfa2V5AAAkX19sc190ZXJuYXJ5AAAkX19sc19wb3N0aW5jAAAkX19sc19mdW5jaW5mb19hcmdpbmZvXzAAACRfX2xzX2xvY2FsZnVuY3Rpb24zMgAIHAAA",
-                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc88BAAAKAgMADG1+ADYFAAA5BQEFJwcCAEIFAgI2BgAAOQYBBi0IAQApCTQAOAgJCEIGAgImBQYFTAUCAAaAAIAXcGVyZm9ybVRhc2soKSBmb3IgDl90b1N0cmluZwtPYmplY3QAAAAAAAAAAAAAAABfX2xzX2Z1bmNpbmZvX2FyZ2luZm9fMAB0aGlzAF9fbHNfc3dmdAABDF9fbHNfc3dleHByAAAMX19sc19rZXkAAAxfX2xzX3Rlcm5hcnkAAAxfX2xzX3Bvc3RpbmMAAAwAjwMDAQ0ABAEkoAF+BzYHAAApCCAAOAcIBzYJAQApCjIAOAkKCSoGAAAzCgIAQgcDAjYIAwApCToAOAgJCBIKAAApCzQAOAoLChILAAApDDUAOAsMC0IIAwISCQAAKQo2ADwICgkrCAAAEgkAACkKNAA8CAoJKwgAABIJAAApCjUAPAgKCRIIAAApCSwAOAgJCEIIAQIyAACASwABABVHZW5lcmF0ZVR5cGVQYWdlAD9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlCExvZ/7/BwAAAAAAAAAAAAICAgICAgICAgICAgIEBAQEBQUFBQcHBwcHB3RoaXMAASRfX2xzX3N3ZnQAACRfX2xzX3N3ZXhwcgAAJF9fbHNfa2V5AAAkX19sc190ZXJuYXJ5AAAkX19sc19wb3N0aW5jAAAkX19sc19mdW5jaW5mb19hcmdpbmZvXzAAACRfX2xzX2xvY2FsZnVuY3Rpb24zMwAIHAAA",
+                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc88BAAAJAgMADG1rADYFAAA5BQEFJwYCAEIFAgI2BgAAOQYBBi0HAQApCDQAOAcIB0IGAgImBQYFTAUCAAaAAIAXcGVyZm9ybVRhc2soKSBmb3IgDl90b1N0cmluZwtPYmplY3QAAAAAAAAAAAAAAABfX2xzX2Z1bmNpbmZvX2FyZ2luZm9fMAB0aGlzAF9fbHNfc3dmdAABDF9fbHNfc3dleHByAAAMX19sc19rZXkAAAxfX2xzX3Rlcm5hcnkAAAxfX2xzX3Bvc3RpbmMAAAwAjwMDAQwABAEkoAFrBzYHAAApCCAAOAcIBzYIAQApCTIAOAgJCCoGAAAzCQIAQgcDAjYIAwApCTsAOAgJCBIJAAApCjQAOAkKCRIKAAApCzUAOAoLCkIIAwISCQAAKQo2ADwICgkrCAAAEgkAACkKNAA8CAoJKwgAABIJAAApCjUAPAgKCRIIAAApCSwAOAgJCEIIAQIyAACASwABABVHZW5lcmF0ZVR5cGVQYWdlAD9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlCExvZ/7/BwAAAAAAAAAAAAICAgICAgICAgICAgIEBAQEBQUFBQcHBwcHB3RoaXMAASRfX2xzX3N3ZnQAACRfX2xzX3N3ZXhwcgAAJF9fbHNfa2V5AAAkX19sc190ZXJuYXJ5AAAkX19sc19wb3N0aW5jAAAkX19sc19mdW5jaW5mb19hcmdpbmZvXzAAACRfX2xzX2xvY2FsZnVuY3Rpb24zMgAIHAAA",
+                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc88BAAAKAgMADG1rADYFAAA5BQEFJwcCAEIFAgI2BgAAOQYBBi0IAQApCTQAOAgJCEIGAgImBQYFTAUCAAaAAIAXcGVyZm9ybVRhc2soKSBmb3IgDl90b1N0cmluZwtPYmplY3QAAAAAAAAAAAAAAABfX2xzX2Z1bmNpbmZvX2FyZ2luZm9fMAB0aGlzAF9fbHNfc3dmdAABDF9fbHNfc3dleHByAAAMX19sc19rZXkAAAxfX2xzX3Rlcm5hcnkAAAxfX2xzX3Bvc3RpbmMAAAwAjwMDAQ0ABAEkoAFrBzYHAAApCCAAOAcIBzYJAQApCjIAOAkKCSoGAAAzCgIAQgcDAjYIAwApCTsAOAgJCBIKAAApCzQAOAoLChILAAApDDUAOAsMC0IIAwISCQAAKQo2ADwICgkrCAAAEgkAACkKNAA8CAoJKwgAABIJAAApCjUAPAgKCRIIAAApCSwAOAgJCEIIAQIyAACASwABABVHZW5lcmF0ZVR5cGVQYWdlAD9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlCExvZ/7/BwAAAAAAAAAAAAICAgICAgICAgICAgIEBAQEBQUFBQcHBwcHB3RoaXMAASRfX2xzX3N3ZnQAACRfX2xzX3N3ZXhwcgAAJF9fbHNfa2V5AAAkX19sc190ZXJuYXJ5AAAkX19sc19wb3N0aW5jAAAkX19sc19mdW5jaW5mb19hcmdpbmZvXzAAACRfX2xzX2xvY2FsZnVuY3Rpb24zMwAIHAAA",
                      "docString":"",
-                     "line":124,
+                     "line":105,
                      "metainfo":{},
                      "methodattributes":[
                         "protected"
@@ -6114,6 +6277,6 @@
       }
    ],
    "type":"ASSEMBLY",
-   "uid":"63719292-3199-46c1-9f12-705bab407591",
+   "uid":"355bcbbe-fb83-4cb1-8a4f-f7fd552042a7",
    "version":"1.0"
 }

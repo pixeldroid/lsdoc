@@ -37,12 +37,23 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return typeRef;
         }
 
+        private static function setTypeRefs(page:Dictionary.<String,Object>, section:String, names:Vector.<String>)
+        {
+            if (names.length == 0)
+                return;
+
+            var typeRefs:Vector.<Dictionary.<String,Object>> = [];
+
+            for each(var fullName:String in names)
+                typeRefs.push(toTypeRef(fullName));
+
+            page[section] = typeRefs;
+        }
+
         private static function getTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo):Vector.<String>
         {
             var result:Vector.<String> = [];
-            var relatives:Vector.<String> = [];
-            var typeRefs:Vector.<Dictionary.<String,Object>> = [];
-            var fullName:String;
+            var typeList:Vector.<TypeInfo> = moduleInfo.types;
 
             var page:Dictionary.<String,Object> = {
                 'layout' : 'type',
@@ -54,39 +65,13 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             if (typeInfo.classAttributes.length > 0)
                 page['type_attributes'] = typeInfo.classAttributes;
 
-            typeRefs.clear();
-            if (typeInfo.interfaceStrings.length > 0)
-            {
+            setTypeRefs(page, 'implements', typeInfo.interfaceStrings);
+            setTypeRefs(page, 'ancestors', ModuleInfo.getAncestors(typeInfo, typeList));
+            setTypeRefs(page, 'descendants', ModuleInfo.getDescendants(typeInfo, typeList));
 
-                for each(fullName in typeInfo.interfaceStrings)
-                    typeRefs.push(toTypeRef(fullName));
 
-                page['implements'] = typeRefs.slice();
-            }
 
-            typeRefs.clear();
-            relatives.clear();
-            relatives = ModuleInfo.getAncestors(typeInfo, moduleInfo.types);
-            if (relatives.length > 0)
-            {
 
-                for each(fullName in relatives)
-                    typeRefs.push(toTypeRef(fullName));
-
-                page['ancestors'] = typeRefs.slice();
-            }
-
-            typeRefs.clear();
-            relatives.clear();
-            relatives = ModuleInfo.getDescendants(typeInfo, moduleInfo.types);
-            if (relatives.length > 0)
-            {
-
-                for each(fullName in relatives)
-                    typeRefs.push(toTypeRef(fullName));
-
-                page['descendants'] = typeRefs.slice();
-            }
 
             var pageJson:Json = Json.fromObject(page);
 

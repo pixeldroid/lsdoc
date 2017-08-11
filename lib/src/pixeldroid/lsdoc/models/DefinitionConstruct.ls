@@ -9,6 +9,20 @@ package pixeldroid.lsdoc.models
         public static const INTERFACE:DefinitionConstruct = new DefinitionConstruct('INTERFACE');
         public static const STRUCT:DefinitionConstruct = new DefinitionConstruct('STRUCT');
 
+        public static function fromString(construct:String):DefinitionConstruct
+        {
+            switch(construct)
+            {
+                case CLASS.name: return CLASS;
+                case DELEGATE.name: return DELEGATE;
+                case ENUM.name: return ENUM;
+                case INTERFACE.name: return INTERFACE;
+                case STRUCT.name: return STRUCT;
+            }
+
+            return null;
+        }
+
 
         private var _name:String;
 
