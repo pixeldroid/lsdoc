@@ -27,7 +27,7 @@ package pixeldroid.lsdoc.models
         //public var fields:Vector.<FieldInfo>;
         public const interfaceStrings:Vector.<String> = [];
         //public var metaInfo:MetaInfo;
-        //public var methods:Vector.<FunctionInfo>;
+        public var methods:Vector.<FunctionInfo> = [];
         public var name:String;
         public var packageString:String;
         //public var properties:Vector.<PropertyInfo>;
@@ -60,6 +60,11 @@ package pixeldroid.lsdoc.models
                     t.constructor.returnTypeString = t.packageString +'.' +t.name;
                     break;
             }
+
+            var mj:JSON = j.getArray('methods');
+            var n:Number = mj.getArrayCount();
+            for (var i:Number = 0; i < n; i++)
+               t.methods.push(FunctionInfo.fromJSON(mj.getArrayObject(i)));
 
             return t;
         }

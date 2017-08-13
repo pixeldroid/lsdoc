@@ -7,6 +7,10 @@ constructor:
   name: "ExampleStruct"
   type: "example.ExampleStruct"
 layout: "type"
+methods: 
+  - { attributes: [ "public", "operator", "static" ], description: "Public static operator doc comments first line.\n\nThe assignment operator transfers the value of `b` to `a`, and returns `a`.", name: "=", type: "example.ExampleStruct" }
+  - { attributes: [ "public", "operator", "static" ], description: "Public static operator doc comments first line.\n\nThe addition operator combines the values of `b` and `a` into a new instance.", name: "+", type: "example.ExampleStruct" }
+  - { attributes: [ "public", "operator" ], description: "Public operator doc comments first line.\n\nThe addition with assignment operator combines the values of `b` into the calling instance.", name: "+=", type: "system.Void" }
 module: "example"
 name: "ExampleStruct"
 type: "STRUCT"

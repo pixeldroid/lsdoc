@@ -2,6 +2,8 @@
 descendants: 
   - { module: "example", name: "ExampleSuperClass" }
 layout: "type"
+methods: 
+  - { attributes: [ "public" ], description: "Public interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).\n\n@param param1 The first parameter (required)\n@param rest Any additional params (optional)", name: "interface_method", type: "system.Void" }
 module: "example"
 name: "ExampleInterface"
 type: "INTERFACE"

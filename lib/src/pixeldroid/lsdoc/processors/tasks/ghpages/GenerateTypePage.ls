@@ -51,7 +51,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             page[section] = typeRefs;
         }
 
-        private static function getMethod(methodInfo:FunctionInfo):Dictionary.<String,Object>
+        private static function getOneMethod(methodInfo:FunctionInfo):Dictionary.<String,Object>
         {
             var method:Dictionary.<String,Object> = {
                 'name'        : methodInfo.name,
@@ -62,6 +62,21 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             };
 
             return method;
+        }
+
+        private static function getMethods(methodList:Vector.<FunctionInfo>):Vector.<Dictionary.<String,Object>>
+        {
+            var methods:Vector.<Dictionary.<String,Object>> = [];
+
+            for each(var m:FunctionInfo in methodList)
+            {
+                if (m.methodAttributes.contains('private'))
+                    continue;
+
+                methods.push(getOneMethod(m));
+            }
+
+            return methods;
         }
 
         private static function getTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo):Vector.<String>
@@ -79,12 +94,12 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             if (typeInfo.classAttributes.length > 0)
                 page['type_attributes'] = typeInfo.classAttributes;
 
-            if (typeInfo.constructor)
-                page['constructor'] = getMethod(typeInfo.constructor);
-
             setTypeRefs(page, 'implements', typeInfo.interfaceStrings);
             setTypeRefs(page, 'ancestors', ModuleInfo.getAncestors(typeInfo, typeList));
             setTypeRefs(page, 'descendants', ModuleInfo.getDescendants(typeInfo, typeList));
+
+            if (typeInfo.constructor)
+                page['constructor'] = getOneMethod(typeInfo.constructor);
 
             // if (typeInfo.fields.length > 0)
             //     page['fields'] = getFields(typeInfo.fields);
@@ -92,9 +107,8 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             // if (typeInfo.properties.length > 0)
             //     page['properties'] = getProperties(typeInfo.properties);
 
-            // if (typeInfo.methods.length > 0)
-            //     for each(var m:FunctionInfo in typeInfo.methods)
-            //         page['methods'].push(getMethod(m));
+            if (typeInfo.methods.length > 0)
+                page['methods'] = getMethods(typeInfo.methods);
 
             // typeInfo.metainfo
 

@@ -17,11 +17,15 @@ assign modules = include.module | split: '.' %}{%
 assign u = include.base_url %}{%
 for m in modules %}{%
   assign u = u | append: '/' | append: m %}{%
+  assign n = m %}{%
+  if m == 'Void' %}{%
+    assign n = m | downcase %}{%
+  endif %}{%
   if include.full_linkage == 'true' or forloop.last %}{%
     if include.markdown == 'true'
-      %}[{{ m }}]({{ u }}){%
+      %}[{{ n }}]({{ u }}){%
     else
-      %}<a href="{{ u }}">{{ m }}</a>{%
+      %}<a href="{{ u }}">{{ n }}</a>{%
     endif %}{%
     unless forloop.last %}.{% endunless %}{%
   endif %}{%

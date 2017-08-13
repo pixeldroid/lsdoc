@@ -54,7 +54,7 @@ package example
         }
 
         /**
-        Public static operator doc comments first line.
+        Public operator doc comments first line.
 
         The addition with assignment operator combines the values of `b` into the calling instance.
         */

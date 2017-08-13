@@ -8,6 +8,10 @@ constructor:
   name: "ExampleClass"
   type: "example.ExampleClass"
 layout: "type"
+methods: 
+  - { attributes: [ "public" ], description: "Overridden interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).\n\n@param param1 The first parameter (required)\n@param rest Any additional params (optional)", name: "interface_method", type: "system.Void" }
+  - { attributes: [ "public" ], description: "Overridden public doc comments first line.\n\nThis method has one required first parameter,\nand an optional second parameter.\n\nThe second parameter's defaul value is different than that of the base class.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)", name: "method", type: "system.String" }
+  - { attributes: [ "protected" ], description: "Overridden protected method doc comments first line.\n\nThis method has one required first parameter,\nand one optional second parameter.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)", name: "protected_method", type: "system.Void" }
 module: "example"
 name: "ExampleClass"
 type: "CLASS"

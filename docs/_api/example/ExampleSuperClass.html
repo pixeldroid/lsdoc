@@ -11,6 +11,10 @@ descendants:
 implements: 
   - { module: "example", name: "ExampleInterface" }
 layout: "type"
+methods: 
+  - { attributes: [ "public" ], description: " @inherit ", name: "interface_method", type: "system.Void" }
+  - { attributes: [ "public" ], description: "Public method doc comments first line.\n\nThis method has one required first parameter,\nand an optional second parameter.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)", name: "method", type: "system.String" }
+  - { attributes: [ "protected" ], description: "Protected method doc comments first line.\n\nThis method has one required first parameter,\nand one optional second parameter.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)", name: "protected_method", type: "system.Void" }
 module: "example"
 name: "ExampleSuperClass"
 type: "CLASS"

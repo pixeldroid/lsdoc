@@ -13,6 +13,21 @@ package pixeldroid.lsdoc.models
     */
     public class FunctionInfo
     {
+        // ref: /loom/script/compiler/lsToken.cpp::getOperatorMethodName()
+        private static const methodOperators:Dictionary.<String,String> = {
+            '__op_assignment' : '=',
+            '__op_plus' : '+',
+            '__op_plusassignment' : '+=',
+            '__op_minus' : '-',
+            '__op_minusassignment' : '-=',
+            '__op_multiply' : '*',
+            '__op_multiplyassignment' : '*=',
+            '__op_divide' : '/',
+            '__op_divideassignment' : '/=',
+            '__op_logicalnot' : '!',
+        };
+
+
         public var docString:String;
         public var isDefault:Boolean = true;
         // public var metaInfo:MetaInfo;
@@ -25,7 +40,6 @@ package pixeldroid.lsdoc.models
         // public var templateTypes:TemplateTypes;
         public var type:String;
 
-
         public function toString():String { return name; }
 
 
@@ -37,7 +51,8 @@ package pixeldroid.lsdoc.models
             m.isDefault = j.getBoolean('defaultconstructor');
             // m.metaInfo -> j.getObject('metainfo');
             LibUtils.extractStringVector(j.getArray('methodattributes'), m.methodAttributes);
-            m.name = j.getString('name');
+            m.name = (m.methodAttributes.contains('operator')) ?
+                FunctionInfo.methodOperators[j.getString('name')] : j.getString('name');
             // m.parameters -> j.getArray('parameters');
             m.sourceFile = LibUtils.cleanSourcePath(j.getString('source'), m.returnTypeString);
             m.sourceLine = j.getNumber('line');
