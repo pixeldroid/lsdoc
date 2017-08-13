@@ -76,7 +76,7 @@ layout: page
 {% capture newline %}
 {% endcapture %}
 
-{% assign attr = "fields|properties|methods" | split: '|'  %}
+{% assign attr = "constructor|fields|properties|methods" | split: '|'  %}
 
 <div class="ui basic segment"><span class="anchor" id="listing">&nbsp;</span>
 <h2 class="ui dividing header">Listing</h2>
@@ -86,12 +86,14 @@ layout: page
 <span class="anchor" id="listing-{{ a }}">&nbsp;</span>
 <h3 class="ui tight header">{{ a | capitalize }}</h3>
 {% assign list = page[a] %}
+{% if a == 'constructor' %}{% assign list = "" | split: "" | push: page[a] %}{% endif %}
 {% if list.size > 0 %}
 <table class="ui striped definition table"><tbody>
-{% assign isFunc = false %}{% if a == 'methods' %}{% assign isFunc = true %}{% endif %}
+{% assign isFunc = false %}{% if a == 'constructor' or a == 'methods' %}{% assign isFunc = true %}{% endif %}
+{% assign isCtor = false %}{% if a == 'constructor' %}{% assign isCtor = true %}{% endif %}
 {% for item in list %}
   {% capture params %}{% include parameters.liquid params=item.parameters base_url=module_url %}{% endcapture %}
-  {% capture signature %}<a href="#details-{{ a }}-{{ item.name }}">{{ item.name }}</a><span class="normal text">{{ params | rstrip }}:{% include module_linker.liquid module=item.type base_url=module_url %}</span>{% endcapture %}
+  {% capture signature %}<a href="#details-{{ a }}-{{ item.name }}">{{ item.name }}</a><span class="normal text">{{ params | rstrip }}{% if isCtor != true %}:{% include module_linker.liquid module=item.type base_url=module_url %}{% endif %}</span>{% endcapture %}
   {% assign d_lines = item.description | split: newline %}
   <tr><td{% if forloop.first %} class="collapsing"{% endif %}>{{ signature | rstrip }}</td><td>{{ d_lines | first | markdownify | remove: '<p>' | remove: '</p>' | remove: '</p>' }}</td></tr>
 {% endfor %}
@@ -102,7 +104,6 @@ layout: page
 
 </div>
 
-
 <div class="ui basic segment"><span class="anchor" id="details">&nbsp;</span>
 <h2 class="ui dividing header">Details</h2>
 
@@ -111,10 +112,12 @@ layout: page
 <span class="anchor" id="details-{{ a }}">&nbsp;</span>
 <h3 class="ui tight header">{{ a | capitalize }}</h3>
 {% assign list = page[a] %}
-{% assign isFunc = false %}{% if a == 'methods' %}{% assign isFunc = true %}{% endif %}
+{% if a == 'constructor' %}{% assign list = "" | split: "" | push: page[a] %}{% endif %}
+{% assign isFunc = false %}{% if a == 'constructor' or a == 'methods' %}{% assign isFunc = true %}{% endif %}
+{% assign isCtor = false %}{% if a == 'constructor' %}{% assign isCtor = true %}{% endif %}
 {% for item in list %}
   {% capture params %}{% include parameters.liquid params=item.parameters base_url=module_url %}{% endcapture %}
-  {% capture signature %}{{ item.attributes | join: ' ' }} {% if isFunc %}function {% endif %}<strong>{{ item.name }}</strong>{{ params | rstrip }}:{% include module_linker.liquid module=item.type base_url=module_url %}{% endcapture %}
+  {% capture signature %}{{ item.attributes | join: ' ' }} {% if isFunc %}function {% endif %}<strong>{{ item.name }}</strong>{{ params | rstrip }}{% if isCtor != true %}:{% include module_linker.liquid module=item.type base_url=module_url %}{% endif %}{% endcapture %}
   <div class="ui tight vertical segment"><span class="anchor" id="details-{{ a }}-{{ item.name }}">&nbsp;</span><h4 class="ui very tight header">{{ item.name }}{% if isFunc %}(){% endif %}</h4>
   <p><code>{{ signature }}</code></p>
   {{ item.description | markdownify }}

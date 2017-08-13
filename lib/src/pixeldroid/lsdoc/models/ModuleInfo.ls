@@ -2,23 +2,20 @@ package pixeldroid.lsdoc.models
 {
     import system.JSON;
 
-    import pixeldroid.lsdoc.models.ClassAttribute;
     import pixeldroid.lsdoc.models.DefinitionConstruct;
     import pixeldroid.lsdoc.models.TypeInfo;
     import pixeldroid.platform.StringUtils;
 
 
+    /**
+    Provides access to properties and members of a loomlib Module definition.
+    */
     public class ModuleInfo
     {
 
         public var name:String;
         public var types:Vector.<TypeInfo> = [];
         public var version:String;
-
-
-        public function ModuleInfo():void
-        {
-        }
 
         public function toString():String { return name +'(' +types.length +' types)'; }
 

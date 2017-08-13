@@ -1,6 +1,7 @@
 package pixeldroid.lsdoc.processors.tasks.ghpages
 {
     import pixeldroid.lsdoc.models.ModuleInfo;
+    import pixeldroid.lsdoc.models.FunctionInfo;
     import pixeldroid.lsdoc.models.TypeInfo;
 
     import pixeldroid.json.Json;
@@ -50,6 +51,19 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             page[section] = typeRefs;
         }
 
+        private static function getMethod(methodInfo:FunctionInfo):Dictionary.<String,Object>
+        {
+            var method:Dictionary.<String,Object> = {
+                'name'        : methodInfo.name,
+                'attributes'  : methodInfo.methodAttributes,
+                'description' : methodInfo.docString,
+                // 'parameters'  : methodInfo.parameters,
+                'type'        : methodInfo.returnTypeString,
+            };
+
+            return method;
+        }
+
         private static function getTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo):Vector.<String>
         {
             var result:Vector.<String> = [];
@@ -65,13 +79,24 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             if (typeInfo.classAttributes.length > 0)
                 page['type_attributes'] = typeInfo.classAttributes;
 
+            if (typeInfo.constructor)
+                page['constructor'] = getMethod(typeInfo.constructor);
+
             setTypeRefs(page, 'implements', typeInfo.interfaceStrings);
             setTypeRefs(page, 'ancestors', ModuleInfo.getAncestors(typeInfo, typeList));
             setTypeRefs(page, 'descendants', ModuleInfo.getDescendants(typeInfo, typeList));
 
+            // if (typeInfo.fields.length > 0)
+            //     page['fields'] = getFields(typeInfo.fields);
 
+            // if (typeInfo.properties.length > 0)
+            //     page['properties'] = getProperties(typeInfo.properties);
 
+            // if (typeInfo.methods.length > 0)
+            //     for each(var m:FunctionInfo in typeInfo.methods)
+            //         page['methods'].push(getMethod(m));
 
+            // typeInfo.metainfo
 
             var pageJson:Json = Json.fromObject(page);
 
