@@ -27,5 +27,8 @@ if include.param %}{%
       endfor
     %}&gt;{%
   endif %}{%
-  if p.default_value %}={{ p.default_value }}{% endif %}{%
+  if p.default_value %}={%
+    assign isString = false %}{% if p.type == 'system.String' %}{% assign isString = true %}{% endif %}{%
+    if isString %}'{% endif %}{{ p.default_value }}{% if isString %}'{% endif %}{%
+  endif %}{%
 endif %}
