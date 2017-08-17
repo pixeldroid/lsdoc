@@ -4,8 +4,8 @@ package pixeldroid.lsdoc.models
 
     import pixeldroid.lsdoc.LibUtils;
     // import pixeldroid.lsdoc.models.MetaInfo;
-    // import pixeldroid.lsdoc.models.ParameterInfo;
-    // import pixeldroid.lsdoc.models.TemplateTypes;
+    import pixeldroid.lsdoc.models.ParamInfo;
+    // import pixeldroid.lsdoc.models.TemplateType;
 
 
     /**
@@ -33,11 +33,11 @@ package pixeldroid.lsdoc.models
         // public var metaInfo:MetaInfo;
         public const methodAttributes:Vector.<String> = [];
         public var name:String;
-        //public var parameters:Vector.<ParameterInfo>;
+        public var parameters:Vector.<ParamInfo> = [];
         public var returnTypeString:String;
         public var sourceFile:String;
         public var sourceLine:Number;
-        // public var templateTypes:TemplateTypes;
+        // public var templateTypes:TemplateType;
         public var type:String;
 
         public function toString():String { return name; }
@@ -45,24 +45,30 @@ package pixeldroid.lsdoc.models
 
         public static function fromJSON(j:JSON):FunctionInfo
         {
-            var m:FunctionInfo = new FunctionInfo();
+            var f:FunctionInfo = new FunctionInfo();
 
-            m.docString = j.getString('docString');
-            m.isDefault = j.getBoolean('defaultconstructor');
-            // m.metaInfo -> j.getObject('metainfo');
-            LibUtils.extractStringVector(j.getArray('methodattributes'), m.methodAttributes);
-            m.name = (m.methodAttributes.contains('operator')) ?
+            f.docString = j.getString('docString');
+            f.isDefault = j.getBoolean('defaultconstructor');
+            // f.metaInfo -> j.getObject('metainfo');
+            LibUtils.extractStringVector(j.getArray('methodattributes'), f.methodAttributes);
+
+            f.name = (f.methodAttributes.contains('operator')) ?
                 FunctionInfo.methodOperators[j.getString('name')] : j.getString('name');
-            // m.parameters -> j.getArray('parameters');
-            m.sourceFile = LibUtils.cleanSourcePath(j.getString('source'), m.returnTypeString);
-            m.sourceLine = j.getNumber('line');
-            // m.templateTypes -> j.getObject('templatetypes')
-            m.type = j.getString('type');
 
-            if (m.type == 'METHOD')
-                m.returnTypeString = j.getString('returntype');
+            var pj:JSON = j.getArray('parameters');
+            var n:Number = pj.getArrayCount();
+            for (var i:Number = 0; i < n; i++)
+               f.parameters.push(ParamInfo.fromJSON(pj.getArrayObject(i)));
 
-            return m;
+            f.sourceFile = LibUtils.cleanSourcePath(j.getString('source'), f.returnTypeString);
+            f.sourceLine = j.getNumber('line');
+            // f.templateTypes = TemplatType.fromJSON(j.getObject('templatetypes'));
+            f.type = j.getString('type');
+
+            if (f.type == 'METHOD')
+                f.returnTypeString = j.getString('returntype');
+
+            return f;
         }
 
     }

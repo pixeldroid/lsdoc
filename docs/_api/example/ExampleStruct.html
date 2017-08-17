@@ -5,12 +5,13 @@ constructor:
   attributes: [ "public" ]
   description: "Constructor doc comments first line.\n\nThis constructor takes two optional parameters.\nNot all constructors do. Some take none at all.\n\n@param x Value for the x component\n@param y Value for the y component"
   name: "ExampleStruct"
+  parameters: [ { default_value: "1", name: "x", type: "system.Number" }, { default_value: "2", name: "y", type: "system.Number" } ]
   type: "example.ExampleStruct"
 layout: "type"
 methods: 
-  - { attributes: [ "public", "operator", "static" ], description: "Public static operator doc comments first line.\n\nThe assignment operator transfers the value of `b` to `a`, and returns `a`.", name: "=", type: "example.ExampleStruct" }
-  - { attributes: [ "public", "operator", "static" ], description: "Public static operator doc comments first line.\n\nThe addition operator combines the values of `b` and `a` into a new instance.", name: "+", type: "example.ExampleStruct" }
-  - { attributes: [ "public", "operator" ], description: "Public operator doc comments first line.\n\nThe addition with assignment operator combines the values of `b` into the calling instance.", name: "+=", type: "system.Void" }
+  - { attributes: [ "public", "operator", "static" ], description: "Public static operator doc comments first line.\n\nThe assignment operator transfers the value of `b` to `a`, and returns `a`.", name: "=", parameters: [ { name: "a", type: "example.ExampleStruct" }, { name: "b", type: "example.ExampleStruct" } ], type: "example.ExampleStruct" }
+  - { attributes: [ "public", "operator", "static" ], description: "Public static operator doc comments first line.\n\nThe addition operator combines the values of `b` and `a` into a new instance.", name: "+", parameters: [ { name: "a", type: "example.ExampleStruct" }, { name: "b", type: "example.ExampleStruct" } ], type: "example.ExampleStruct" }
+  - { attributes: [ "public", "operator" ], description: "Public operator doc comments first line.\n\nThe addition with assignment operator combines the values of `b` into the calling instance.", name: "+=", parameters: [ { name: "b", type: "example.ExampleStruct" } ], type: "system.Void" }
 module: "example"
 name: "ExampleStruct"
 type: "STRUCT"

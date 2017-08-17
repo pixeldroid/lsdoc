@@ -9,7 +9,7 @@ constructor:
 layout: "type"
 methods: 
   - { attributes: [ "public" ], description: "", name: "toString", type: "system.String" }
-  - { attributes: [ "public", "static" ], description: "", name: "fromJSON", type: "pixeldroid.lsdoc.models.TypeInfo" }
+  - { attributes: [ "public", "static" ], description: "", name: "fromJSON", parameters: [ { name: "j", type: "system.JSON" } ], type: "pixeldroid.lsdoc.models.TypeInfo" }
 module: "pixeldroid.lsdoc.models"
 name: "TypeInfo"
 type: "CLASS"

@@ -8,8 +8,8 @@ constructor:
   type: "pixeldroid.platform.StringUtils"
 layout: "type"
 methods: 
-  - { attributes: [ "public", "static" ], description: "", name: "startsWith", type: "system.Boolean" }
-  - { attributes: [ "public", "static" ], description: "", name: "endsWith", type: "system.Boolean" }
+  - { attributes: [ "public", "static" ], description: "", name: "startsWith", parameters: [ { name: "s", type: "system.String" }, { name: "token", type: "system.String" } ], type: "system.Boolean" }
+  - { attributes: [ "public", "static" ], description: "", name: "endsWith", parameters: [ { name: "s", type: "system.String" }, { name: "token", type: "system.String" } ], type: "system.Boolean" }
 module: "pixeldroid.platform"
 name: "StringUtils"
 type: "CLASS"

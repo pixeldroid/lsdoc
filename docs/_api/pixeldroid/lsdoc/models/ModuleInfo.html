@@ -9,16 +9,16 @@ constructor:
 layout: "type"
 methods: 
   - { attributes: [ "public" ], description: "", name: "toString", type: "system.String" }
-  - { attributes: [ "public", "static" ], description: "", name: "fromJSON", type: "pixeldroid.lsdoc.models.ModuleInfo" }
-  - { attributes: [ "public", "static" ], description: "", name: "getTypeByName", type: "pixeldroid.lsdoc.models.TypeInfo" }
-  - { attributes: [ "public", "static" ], description: "", name: "getTypesByPackage", type: "system.Vector" }
-  - { attributes: [ "public", "static" ], description: "", name: "getTypesByConstruct", type: "system.Vector" }
-  - { attributes: [ "public", "static" ], description: "", name: "getPackages", type: "system.Vector" }
-  - { attributes: [ "public", "static" ], description: "", name: "getSubpackages", type: "system.Vector" }
-  - { attributes: [ "public", "static" ], description: "", name: "getAncestors", type: "system.Vector" }
-  - { attributes: [ "public", "static" ], description: "", name: "getImplementors", type: "system.Vector" }
-  - { attributes: [ "public", "static" ], description: "", name: "getSubClasses", type: "system.Vector" }
-  - { attributes: [ "public", "static" ], description: "", name: "getDescendants", type: "system.Vector" }
+  - { attributes: [ "public", "static" ], description: "", name: "fromJSON", parameters: [ { name: "j", type: "system.JSON" } ], type: "pixeldroid.lsdoc.models.ModuleInfo" }
+  - { attributes: [ "public", "static" ], description: "", name: "getTypeByName", parameters: [ { name: "fullName", type: "system.String" }, { name: "typeList", type: "system.Vector" } ], type: "pixeldroid.lsdoc.models.TypeInfo" }
+  - { attributes: [ "public", "static" ], description: "", name: "getTypesByPackage", parameters: [ { name: "typeList", type: "system.Vector" }, { name: "parentPackage", type: "system.String" } ], type: "system.Vector" }
+  - { attributes: [ "public", "static" ], description: "", name: "getTypesByConstruct", parameters: [ { name: "typeList", type: "system.Vector" }, { name: "construct", type: "pixeldroid.lsdoc.models.DefinitionConstruct" } ], type: "system.Vector" }
+  - { attributes: [ "public", "static" ], description: "", name: "getPackages", parameters: [ { name: "typeList", type: "system.Vector" } ], type: "system.Vector" }
+  - { attributes: [ "public", "static" ], description: "", name: "getSubpackages", parameters: [ { name: "typeList", type: "system.Vector" }, { name: "parentPackage", type: "system.String" } ], type: "system.Vector" }
+  - { attributes: [ "public", "static" ], description: "", name: "getAncestors", parameters: [ { name: "subject", type: "pixeldroid.lsdoc.models.TypeInfo" }, { name: "typeList", type: "system.Vector" } ], type: "system.Vector" }
+  - { attributes: [ "public", "static" ], description: "", name: "getImplementors", parameters: [ { name: "fullName", type: "system.String" }, { name: "typeList", type: "system.Vector" } ], type: "system.Vector" }
+  - { attributes: [ "public", "static" ], description: "", name: "getSubClasses", parameters: [ { name: "fullName", type: "system.String" }, { name: "typeList", type: "system.Vector" } ], type: "system.Vector" }
+  - { attributes: [ "public", "static" ], description: "", name: "getDescendants", parameters: [ { name: "subject", type: "pixeldroid.lsdoc.models.TypeInfo" }, { name: "typeList", type: "system.Vector" } ], type: "system.Vector" }
 module: "pixeldroid.lsdoc.models"
 name: "ModuleInfo"
 type: "CLASS"

@@ -8,8 +8,8 @@ constructor:
   type: "pixeldroid.platform.FileUtils"
 layout: "type"
 methods: 
-  - { attributes: [ "public", "static" ], description: "Recursively copy files and subdirectories from source dir to destination dir.\n\nThe containing directory is not copied, only its contents.", name: "copy", type: "system.Boolean" }
-  - { attributes: [ "public", "static" ], description: "Recursively remove files and subdirectories from given dir.\n\nNOTE: empty directories are unable to be removed, only directories with files inside\n\nThe containing directory is also removed.", name: "remove", type: "system.Boolean" }
+  - { attributes: [ "public", "static" ], description: "Recursively copy files and subdirectories from source dir to destination dir.\n\nThe containing directory is not copied, only its contents.", name: "copy", parameters: [ { name: "source", type: "system.String" }, { name: "destination", type: "system.String" } ], type: "system.Boolean" }
+  - { attributes: [ "public", "static" ], description: "Recursively remove files and subdirectories from given dir.\n\nNOTE: empty directories are unable to be removed, only directories with files inside\n\nThe containing directory is also removed.", name: "remove", parameters: [ { name: "dir", type: "system.String" } ], type: "system.Boolean" }
 module: "pixeldroid.platform"
 name: "FileUtils"
 type: "CLASS"

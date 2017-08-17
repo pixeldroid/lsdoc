@@ -8,8 +8,8 @@ constructor:
   type: "pixeldroid.lsdoc.LibUtils"
 layout: "type"
 methods: 
-  - { attributes: [ "public", "static" ], description: "Inserts the contents of a JSON string array into a `Vector.<String>`", name: "extractStringVector", type: "system.Void" }
-  - { attributes: [ "public", "static" ], description: "Remove non-package path cruft from source file path.\n\nSource file paths in loomlibs typically have two characteristics we remove here:\n- start with a containing directory that is not part of the package namespace\n- contain an empty directory as part of the filepath\n\nE.g.: we convert: './src//package/subpackage/Type.ls'\ninto: 'package/subpackage/Type.ls'", name: "cleanSourcePath", type: "system.String" }
+  - { attributes: [ "public", "static" ], description: "Inserts the contents of a JSON string array into a `Vector.<String>`", name: "extractStringVector", parameters: [ { name: "j", type: "system.JSON" }, { name: "v", type: "system.Vector" } ], type: "system.Void" }
+  - { attributes: [ "public", "static" ], description: "Remove non-package path cruft from source file path.\n\nSource file paths in loomlibs typically have two characteristics we remove here:\n- start with a containing directory that is not part of the package namespace\n- contain an empty directory as part of the filepath\n\nE.g.: we convert: './src//package/subpackage/Type.ls'\ninto: 'package/subpackage/Type.ls'", name: "cleanSourcePath", parameters: [ { name: "sourcePath", type: "system.String" }, { name: "packageString", type: "system.String" } ], type: "system.String" }
 module: "pixeldroid.lsdoc"
 name: "LibUtils"
 type: "CLASS"

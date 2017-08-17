@@ -2,6 +2,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 {
     import pixeldroid.lsdoc.models.ModuleInfo;
     import pixeldroid.lsdoc.models.FunctionInfo;
+    import pixeldroid.lsdoc.models.ParamInfo;
     import pixeldroid.lsdoc.models.TypeInfo;
 
     import pixeldroid.json.Json;
@@ -51,15 +52,44 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             page[section] = typeRefs;
         }
 
+        private static function getOneParameter(paramInfo:ParamInfo):Dictionary.<String,Object>
+        {
+            var param:Dictionary.<String,Object> = {
+                'name' : paramInfo.name,
+                'type' : paramInfo.typeString,
+            };
+
+            if (paramInfo.hasDefault)
+                param['default_value'] = paramInfo.defaultValue;
+
+            if (paramInfo.isVarArgs)
+            {
+                param['is_var_args'] = true;
+                // param['template_types'] = ??
+            }
+
+            return param;
+        }
+
         private static function getOneMethod(methodInfo:FunctionInfo):Dictionary.<String,Object>
         {
             var method:Dictionary.<String,Object> = {
                 'name'        : methodInfo.name,
                 'attributes'  : methodInfo.methodAttributes,
                 'description' : methodInfo.docString,
-                // 'parameters'  : methodInfo.parameters,
                 'type'        : methodInfo.returnTypeString,
             };
+
+            if (methodInfo.parameters.length > 0)
+            {
+                var pList:Vector.<Dictionary.<String,Object>> = [];
+
+                for each(var p:ParamInfo in methodInfo.parameters)
+                    pList.push(getOneParameter(p));
+
+                method['parameters'] = pList;
+            }
+
 
             return method;
         }

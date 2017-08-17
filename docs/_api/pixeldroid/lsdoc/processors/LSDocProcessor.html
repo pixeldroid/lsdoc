@@ -6,7 +6,7 @@ descendants:
   - { module: "pixeldroid.lsdoc.processors", name: "InfoProcessor" }
 layout: "type"
 methods: 
-  - { attributes: [ "public" ], description: "", name: "initialize", type: "system.Void" }
+  - { attributes: [ "public" ], description: "", name: "initialize", parameters: [ { name: "context", type: "pixeldroid.lsdoc.processors.ProcessingContext" } ], type: "system.Void" }
 module: "pixeldroid.lsdoc.processors"
 name: "LSDocProcessor"
 type: "INTERFACE"
