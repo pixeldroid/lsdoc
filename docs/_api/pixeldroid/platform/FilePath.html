@@ -1,11 +1,6 @@
 ---
 ancestors: 
   - { module: "system", name: "Object" }
-constructor: 
-  attributes: [ "private" ]
-  description: ""
-  name: "FilePath"
-  type: "pixeldroid.platform.FilePath"
 layout: "type"
 methods: 
   - { attributes: [ "public", "static" ], description: "Returns all components of the given filepath except the last one.\n\nThe returned string does not contain a trailing delimiter.", name: "dirname", parameters: [ { name: "filepath", type: "system.String" } ], type: "system.String" }

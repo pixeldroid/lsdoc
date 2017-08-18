@@ -1,11 +1,6 @@
 ---
 ancestors: 
   - { module: "system", name: "Object" }
-constructor: 
-  attributes: [ "private" ]
-  description: ""
-  name: "FileUtils"
-  type: "pixeldroid.platform.FileUtils"
 layout: "type"
 methods: 
   - { attributes: [ "public", "static" ], description: "Recursively copy files and subdirectories from source dir to destination dir.\n\nThe containing directory is not copied, only its contents.", name: "copy", parameters: [ { name: "source", type: "system.String" }, { name: "destination", type: "system.String" } ], type: "system.Boolean" }
