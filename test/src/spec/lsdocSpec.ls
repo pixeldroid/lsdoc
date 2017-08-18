@@ -62,7 +62,7 @@ package
 
             lsdoc.addLoomlib('fixtures/lsdoc.loomlib');
             lsdoc.addLoomlib('fixtures/Loom.loomlib');
-            it.expects(lsdoc.numTypes).toEqual(321);
+            it.expects(lsdoc.numTypes).toEqual(323);
         }
 
     }

@@ -109,6 +109,36 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return methods;
         }
 
+        private static function getDelegateInfo(typeInfo:TypeInfo):FunctionInfo
+        {
+            var attr:Vector.<String> = typeInfo.classAttributes.concat(['delegate']);
+
+            var f:FunctionInfo = new FunctionInfo();
+            f.docString = typeInfo.docString;
+            f.methodAttributes = attr;
+            f.name = typeInfo.name;
+            f.type = typeInfo.delegateReturnTypeString;
+
+            if (typeInfo.delegateTypeStrings.length > 0)
+            {
+                var params:Vector.<ParamInfo> = [];
+                var p:ParamInfo;
+                var i:Number = 1;
+                for each(var paramType:String in typeInfo.delegateTypeStrings)
+                {
+                    p = new ParamInfo();
+                    p.name = 'param' +(i++);
+                    p.typeString = paramType;
+                    // p.templateTypes
+                    params.push(p);
+                }
+
+                f.parameters = params;
+            }
+
+            return f;
+        }
+
         private static function getTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo):Vector.<String>
         {
             var result:Vector.<String> = [];
@@ -139,6 +169,9 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             if (typeInfo.methods.length > 0)
                 page['methods'] = getMethods(typeInfo.methods);
+
+            if (typeInfo.construct == 'DELEGATE')
+                page['signature'] = getOneMethod(getDelegateInfo(typeInfo));
 
             // typeInfo.metainfo
 

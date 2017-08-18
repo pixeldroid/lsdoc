@@ -369,6 +369,52 @@
                "typeid":2
             },
             {
+               "baseType":"system.BaseDelegate",
+               "bytecode_instanceinitializer":"",
+               "bytecode_instanceinitializer_fr2":"",
+               "bytecode_staticinitializer":"G0xKAgAjLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlRGVsZWdhdGUubHMQAgABAAAAAQIAAEsAAQAAAAA=",
+               "bytecode_staticinitializer_fr2":"G0xKAggjLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlRGVsZWdhdGUubHMQAgABAAAAAQIAAEsAAQAAAAA=",
+               "classattributes":[
+                  "public"
+               ],
+               "constructor":{
+                  "bytecode":"G0xKAgAjLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlRGVsZWdhdGUubHOYAQIBCAACAAZRAAA2BgAAJwcBADgGBwYSBwAAQgYCAksAAQAVX19sc19jb25zdHJ1Y3RvchhzeXN0ZW0uQmFzZURlbGVnYXRlAAAAAAAAdGhpcwABBl9fbHNfc3dmdAAABl9fbHNfc3dleHByAAAGX19sc19rZXkAAAZfX2xzX3Rlcm5hcnkAAAZfX2xzX3Bvc3RpbmMAAAYAAA==",
+                  "bytecode_fr2":"G0xKAggjLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlRGVsZWdhdGUubHOxAQIBCQACAAtWAAA2BgAAJwcBADgGBwYSCAAAQgYCAjYGAAAnBwEAOAYHBhIIAABCBgICSwABABVfX2xzX2NvbnN0cnVjdG9yGHN5c3RlbS5CYXNlRGVsZWdhdGUAAAAAAAAAAAAAAHRoaXMAAQtfX2xzX3N3ZnQAAAtfX2xzX3N3ZXhwcgAAC19fbHNfa2V5AAALX19sc190ZXJuYXJ5AAALX19sc19wb3N0aW5jAAALAAA=",
+                  "defaultconstructor":true,
+                  "docString":"",
+                  "line":0,
+                  "metainfo":{},
+                  "methodattributes":[
+                     "private"
+                  ],
+                  "name":"OtherExampleDelegate",
+                  "ordinal":29,
+                  "parameters":[],
+                  "source":"./src/.//example/ExampleDelegate.ls",
+                  "templatetypes":null,
+                  "type":"CONSTRUCTOR"
+               },
+               "delegateReturnType":"system.Void",
+               "delegateTypes":[
+                  "system.String",
+                  "system.Vector",
+                  "system.Dictionary"
+               ],
+               "docString":"Another delegate's method doc comments first line.\n\nThis method has three required parameters.\n\n@param param1 The first parameter\n@param param2 The second parameter\n@param param3 The third parameter",
+               "fields":[],
+               "imports":[],
+               "interfaces":[],
+               "line":21,
+               "metainfo":{},
+               "methods":[],
+               "name":"OtherExampleDelegate",
+               "package":"example",
+               "properties":[],
+               "source":"./src/.//example/ExampleDelegate.ls",
+               "type":"DELEGATE",
+               "typeid":3
+            },
+            {
                "baseType":"system.Object",
                "bytecode_instanceinitializer":"",
                "bytecode_instanceinitializer_fr2":"",
@@ -479,7 +525,7 @@
                "properties":[],
                "source":"./src/.//example/ExampleEnum.ls",
                "type":"ENUM",
-               "typeid":3
+               "typeid":4
             },
             {
                "baseType":"",
@@ -592,7 +638,7 @@
                ],
                "source":"./src/.//example/ExampleInterface.ls",
                "type":"INTERFACE",
-               "typeid":4
+               "typeid":5
             },
             {
                "baseType":"system.Object",
@@ -773,7 +819,7 @@
                "properties":[],
                "source":"./src/.//example/ExampleStruct.ls",
                "type":"STRUCT",
-               "typeid":5
+               "typeid":6
             },
             {
                "baseType":"system.Object",
@@ -1082,7 +1128,7 @@
                ],
                "source":"./src/.//example/ExampleSuperClass.ls",
                "type":"CLASS",
-               "typeid":6
+               "typeid":7
             },
             {
                "baseType":"system.Object",
@@ -1199,7 +1245,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/lsdoc/LibUtils.ls",
                "type":"CLASS",
-               "typeid":7
+               "typeid":8
             },
             {
                "baseType":"system.Object",
@@ -1408,7 +1454,7 @@
                ],
                "source":"./src/.//pixeldroid/lsdoc/LSDoc.ls",
                "type":"CLASS",
-               "typeid":8
+               "typeid":9
             },
             {
                "baseType":"system.errors.Error",
@@ -1859,7 +1905,7 @@
                ],
                "source":"./src/.//pixeldroid/lsdoc/errors/LSDocError.ls",
                "type":"CLASS",
-               "typeid":9
+               "typeid":10
             },
             {
                "baseType":"system.Object",
@@ -2032,7 +2078,7 @@
                ],
                "source":"./src/.//pixeldroid/lsdoc/models/ClassAttribute.ls",
                "type":"CLASS",
-               "typeid":10
+               "typeid":11
             },
             {
                "baseType":"system.Object",
@@ -2246,7 +2292,7 @@
                ],
                "source":"./src/.//pixeldroid/lsdoc/models/DefinitionConstruct.ls",
                "type":"CLASS",
-               "typeid":11
+               "typeid":12
             },
             {
                "baseType":"system.Object",
@@ -2486,7 +2532,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/lsdoc/models/FunctionInfo.ls",
                "type":"CLASS",
-               "typeid":12
+               "typeid":13
             },
             {
                "baseType":"system.Object",
@@ -2997,7 +3043,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/lsdoc/models/ModuleInfo.ls",
                "type":"CLASS",
-               "typeid":13
+               "typeid":14
             },
             {
                "baseType":"system.Object",
@@ -3151,7 +3197,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/lsdoc/models/ParameterInfo.ls",
                "type":"CLASS",
-               "typeid":14
+               "typeid":15
             },
             {
                "baseType":"system.Object",
@@ -3422,7 +3468,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/lsdoc/models/TypeInfo.ls",
                "type":"CLASS",
-               "typeid":15
+               "typeid":16
             },
             {
                "baseType":"pixeldroid.task.SequentialTask",
@@ -3668,7 +3714,7 @@
                ],
                "source":"./src/.//pixeldroid/lsdoc/processors/GHPagesProcessor.ls",
                "type":"CLASS",
-               "typeid":16
+               "typeid":17
             },
             {
                "baseType":"pixeldroid.task.SequentialTask",
@@ -3805,7 +3851,7 @@
                ],
                "source":"./src/.//pixeldroid/lsdoc/processors/InfoProcessor.ls",
                "type":"CLASS",
-               "typeid":17
+               "typeid":18
             },
             {
                "baseType":"pixeldroid.task.TaskGroup",
@@ -3907,7 +3953,7 @@
                ],
                "source":"./src/.//pixeldroid/lsdoc/processors/LSDocProcessor.ls",
                "type":"INTERFACE",
-               "typeid":18
+               "typeid":19
             },
             {
                "baseType":"system.Object",
@@ -4193,7 +4239,7 @@
                ],
                "source":"./src/.//pixeldroid/lsdoc/processors/ProcessingContext.ls",
                "type":"CLASS",
-               "typeid":19
+               "typeid":20
             },
             {
                "baseType":"system.Object",
@@ -4388,7 +4434,7 @@
                ],
                "source":"./src/.//pixeldroid/lsdoc/processors/ProcessorSelector.ls",
                "type":"CLASS",
-               "typeid":20
+               "typeid":21
             },
             {
                "baseType":"pixeldroid.task.SingleTask",
@@ -4532,7 +4578,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/lsdoc/processors/tasks/CopyFiles.ls",
                "type":"CLASS",
-               "typeid":21
+               "typeid":22
             },
             {
                "baseType":"pixeldroid.task.SingleTask",
@@ -4656,7 +4702,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/lsdoc/processors/tasks/EmptyDirectory.ls",
                "type":"CLASS",
-               "typeid":22
+               "typeid":23
             },
             {
                "baseType":"pixeldroid.task.SingleTask",
@@ -4984,7 +5030,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/lsdoc/processors/tasks/WriteLines.ls",
                "type":"CLASS",
-               "typeid":23
+               "typeid":24
             },
             {
                "baseType":"pixeldroid.task.SingleTask",
@@ -5269,7 +5315,7 @@
                ],
                "source":"./src/.//pixeldroid/lsdoc/processors/tasks/ghpages/GeneratePackagePage.ls",
                "type":"CLASS",
-               "typeid":24
+               "typeid":25
             },
             {
                "baseType":"pixeldroid.task.SingleTask",
@@ -5281,11 +5327,11 @@
                   "public"
                ],
                "constructor":{
-                  "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc5wCAgMLAAIAGn0AogESAwAAKQQ0ACsFAAA8BQQDEgMAACkENQArBQAAPAUEAxIDAAApBDYAKwUAADwFBAM2CAAAJwkBADgICQgSCQAAQggCAhIIAQASCQAAKQo0ADwICgkSCAIAEgkAACkKNQA8CAoJSwABABVfX2xzX2NvbnN0cnVjdG9yH3BpeGVsZHJvaWQudGFzay5TaW5nbGVUYXNrAAAAAAAAAAAAAAAAAAAAAAChoaGhoqKioqJ0aGlzAAEadHlwZUluZm8AABptb2R1bGVJbmZvAAAaX19sc19zd2Z0AAwOX19sc19zd2V4cHIAAA5fX2xzX2tleQAADl9fbHNfdGVybmFyeQAADl9fbHNfcG9zdGluYwAADgAA",
-                  "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc7YCAgMLAAIAH4IBAKIBEgMAACkENAArBQAAPAUEAxIDAAApBDUAKwUAADwFBAMSAwAAKQQ2ACsFAAA8BQQDNggAACcJAQA4CAkIEgoAAEIIAgI2CAAAJwkBADgICQgSCgAAQggCAhIIAQASCQAAKQo0ADwICgkSCAIAEgkAACkKNQA8CAoJSwABABVfX2xzX2NvbnN0cnVjdG9yH3BpeGVsZHJvaWQudGFzay5TaW5nbGVUYXNrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKGhoaGioqKionRoaXMAAR90eXBlSW5mbwAAH21vZHVsZUluZm8AAB9fX2xzX3N3ZnQADBNfX2xzX3N3ZXhwcgAAE19fbHNfa2V5AAATX19sc190ZXJuYXJ5AAATX19sc19wb3N0aW5jAAATAAA=",
+                  "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc5wCAgMLAAIAGn0AwwESAwAAKQQ0ACsFAAA8BQQDEgMAACkENQArBQAAPAUEAxIDAAApBDYAKwUAADwFBAM2CAAAJwkBADgICQgSCQAAQggCAhIIAQASCQAAKQo0ADwICgkSCAIAEgkAACkKNQA8CAoJSwABABVfX2xzX2NvbnN0cnVjdG9yH3BpeGVsZHJvaWQudGFzay5TaW5nbGVUYXNrAAAAAAAAAAAAAAAAAAAAAADCwsLCw8PDw8N0aGlzAAEadHlwZUluZm8AABptb2R1bGVJbmZvAAAaX19sc19zd2Z0AAwOX19sc19zd2V4cHIAAA5fX2xzX2tleQAADl9fbHNfdGVybmFyeQAADl9fbHNfcG9zdGluYwAADgAA",
+                  "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc7YCAgMLAAIAH4IBAMMBEgMAACkENAArBQAAPAUEAxIDAAApBDUAKwUAADwFBAMSAwAAKQQ2ACsFAAA8BQQDNggAACcJAQA4CAkIEgoAAEIIAgI2CAAAJwkBADgICQgSCgAAQggCAhIIAQASCQAAKQo0ADwICgkSCAIAEgkAACkKNQA8CAoJSwABABVfX2xzX2NvbnN0cnVjdG9yH3BpeGVsZHJvaWQudGFzay5TaW5nbGVUYXNrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMLCwsLDw8PDw3RoaXMAAR90eXBlSW5mbwAAH21vZHVsZUluZm8AAB9fX2xzX3N3ZnQADBNfX2xzX3N3ZXhwcgAAE19fbHNfa2V5AAATX19sc190ZXJuYXJ5AAATX19sc19wb3N0aW5jAAATAAA=",
                   "defaultconstructor":false,
                   "docString":"",
-                  "line":159,
+                  "line":192,
                   "metainfo":{},
                   "methodattributes":[
                      "public"
@@ -5350,7 +5396,7 @@
                      "fieldattributes":[
                         "private"
                      ],
-                     "line":153,
+                     "line":186,
                      "metainfo":{},
                      "name":"typeInfo",
                      "ordinal":52,
@@ -5363,7 +5409,7 @@
                      "fieldattributes":[
                         "private"
                      ],
-                     "line":154,
+                     "line":187,
                      "metainfo":{},
                      "name":"moduleInfo",
                      "ordinal":53,
@@ -5376,7 +5422,7 @@
                      "fieldattributes":[
                         "public"
                      ],
-                     "line":156,
+                     "line":189,
                      "metainfo":{},
                      "name":"lines",
                      "ordinal":54,
@@ -5595,8 +5641,8 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc/QIAgIRABADmAGlAnIjLAcKADYLAABCCwECEgwLACoNAAA4DA0MKg0BACkOAAA8Dg0MEgcLABILAQApDBoAOAgMCzYLAQBCCwECJwwCACcNAwA8DQwLJwwEABINAAApDiIAOA0ODTwNDAsnDAUAEg0AACkOIwA4DQ4NPA0MCycMAwASDQAAKQ4bADgNDg08DQwLEgkLABILAAApDBoAOAsMCykMIAA4CwwLQgsBAikMAAAADAsAWAsCgCsLAQBYDAGAKwsCAA8ACwBYDAiAEgsAACkMGgA4CwwLEgwJACoNAgA4DA0MJw0GADwLDQw2CwcAKQw6ADgLDAsSDAkAJw0IABIOAAApDyAAOA4PDkILBAI2CwcAKQw6ADgLDAsSDAkAJw0JADYOCgApDyIAOA4PDhIPAAASEAgAQg4DAEELAgI2CwcAKQw6ADgLDAsSDAkAJw0LADYOCgApDyUAOA4PDhIPAAASEAgAQg4DAEELAgISCwAAKQwcADgLDAsPAAsAWAwMgDYLBwApDDwAOAsMCxIMAAApDRwAOAwNDEILAgISDAkAKg0CADgMDQwnDQwAPAsNDBILAAApDCEAOAsMCykMIAA4CwwLQgsBAikMAAAADAsAWAsCgCsLAQBYDAGAKwsCAA8ACwBYDAyANgsHACkMPQA4CwwLEgwAACkNIQA4DA0MQgsCAhIMCQAqDQIAOAwNDCcNDQA8Cw0MNgsOACkMHwA4CwwLEgwJAEILAgISCgsAEgsHACkMJAA4CwwLNgwPACkNGwA4DA0MEg0KADYOBwApDzgAOA4PDkIOAQBBDAEAQQsAAkwHAgAQWWFtbFByaW50ZXIJSnNvbgxtZXRob2RzEGNvbnN0cnVjdG9yEGRlc2NlbmRhbnRzD01vZHVsZUluZm8OYW5jZXN0b3JzD2ltcGxlbWVudHM/cGl4ZWxkcm9pZC5sc2RvYy5wcm9jZXNzb3JzLnRhc2tzLmdocGFnZXMuR2VuZXJhdGVUeXBlUGFnZRR0eXBlX2F0dHJpYnV0ZXMLbW9kdWxlCW5hbWUJdHlwZQtsYXlvdXQWc3lzdGVtLkRpY3Rpb25hcnkSc3lzdGVtLlZlY3Rvcv72hf8f/PaF/x/u9oX/HwAAAAAAAAAAAAABAQEDAwMDAwMDAwMDAwMDAwMDAwMDAwMKCgoKCgoKCgoKCgoKCgoKCgoKCgoKDQ0NDQ0NDQ0NDg4ODg4ODg4ODg4ODw8PDw8PDw8PDw8PEREREREREREREREREREREREaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGh8fHx8fHyEhISEhISEhISEhISEjdHlwZUluZm8AAZgBbW9kdWxlSW5mbwAAmAFfX2xzX3N3ZnQAAJgBX19sc19zd2V4cHIAAJgBX19sc19rZXkAAJgBX19sc190ZXJuYXJ5AACYAV9fbHNfcG9zdGluYwAAmAFyZXN1bHQAAJgBdHlwZUxpc3QAAJgBcGFnZQAAmAFwYWdlSnNvbgAAmAEAAA==",
-                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc/QIAgITABADmAGlAnIjLAcKADYLAABCCwECEgwLACoNAAA4DA0MKg0BACkOAAA8Dg0MEgcLABILAQApDBoAOAgMCzYLAQBCCwECJwwCACcNAwA8DQwLJwwEABINAAApDiIAOA0ODTwNDAsnDAUAEg0AACkOIwA4DQ4NPA0MCycMAwASDQAAKQ4bADgNDg08DQwLEgkLABILAAApDBoAOAsMCykMIAA4CwwLQgsBAikMAAAADAsAWAsCgCsLAQBYDAGAKwsCAA8ACwBYDAiAEgsAACkMGgA4CwwLEgwJACoNAgA4DA0MJw0GADwLDQw2CwcAKQw6ADgLDAsSDQkAJw4IABIPAAApECAAOA8QD0ILBAI2CwcAKQw6ADgLDAsSDQkAJw4JADYPCgApECIAOA8QDxIRAAASEggAQg8DAEELAgI2CwcAKQw6ADgLDAsSDQkAJw4LADYPCgApECUAOA8QDxIRAAASEggAQg8DAEELAgISCwAAKQwcADgLDAsPAAsAWAwMgDYLBwApDDwAOAsMCxINAAApDhwAOA0ODUILAgISDAkAKg0CADgMDQwnDQwAPAsNDBILAAApDCEAOAsMCykMIAA4CwwLQgsBAikMAAAADAsAWAsCgCsLAQBYDAGAKwsCAA8ACwBYDAyANgsHACkMPQA4CwwLEg0AACkOIQA4DQ4NQgsCAhIMCQAqDQIAOAwNDCcNDQA8Cw0MNgsOACkMHwA4CwwLEg0JAEILAgISCgsAEgsHACkMJAA4CwwLNg0PACkOGwA4DQ4NEg8KADYQBwApETgAOBAREEIQAQBBDQEAQQsAAkwHAgAQWWFtbFByaW50ZXIJSnNvbgxtZXRob2RzEGNvbnN0cnVjdG9yEGRlc2NlbmRhbnRzD01vZHVsZUluZm8OYW5jZXN0b3JzD2ltcGxlbWVudHM/cGl4ZWxkcm9pZC5sc2RvYy5wcm9jZXNzb3JzLnRhc2tzLmdocGFnZXMuR2VuZXJhdGVUeXBlUGFnZRR0eXBlX2F0dHJpYnV0ZXMLbW9kdWxlCW5hbWUJdHlwZQtsYXlvdXQWc3lzdGVtLkRpY3Rpb25hcnkSc3lzdGVtLlZlY3Rvcv72hf8f/PaF/x/u9oX/HwAAAAAAAAAAAAABAQEDAwMDAwMDAwMDAwMDAwMDAwMDAwMKCgoKCgoKCgoKCgoKCgoKCgoKCgoKDQ0NDQ0NDQ0NDg4ODg4ODg4ODg4ODw8PDw8PDw8PDw8PEREREREREREREREREREREREaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGh8fHx8fHyEhISEhISEhISEhISEjdHlwZUluZm8AAZgBbW9kdWxlSW5mbwAAmAFfX2xzX3N3ZnQAAJgBX19sc19zd2V4cHIAAJgBX19sc19rZXkAAJgBX19sc190ZXJuYXJ5AACYAV9fbHNfcG9zdGluYwAAmAFyZXN1bHQAAJgBdHlwZUxpc3QAAJgBcGFnZQAAmAFwYWdlSnNvbgAAmAEAAA==",
+                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9UHAgEXAAgCfcoCchksBwoAKQsAACsMAAASDQAAKQ4aADgNDg0pDjUAOA0ODTYOAABCDgECEgEOABIPAQAqEAAAOA8QDyoQAQApEQEAPBEQDykRAAA2EgAAQhIBAhITEgAqFAAAOBMUEyoUAQApFQEAPBUUEykVAAAnFgEAPBYVEzwSEQ8SEQEAEg4BAEINAgISBw0ANg0CAEINAQISCA0AEg0AACkOHwA4DQ4NEg4IACkPGgA8DQ8OEg0HABIOCAApDxwAPA0PDhINAAApDiIAOA0ODRIOCAApDx0APA0PDhINAAApDh0AOA0ODRIOCAApDyIAPA0PDhINAAApDh4AOA0ODSkOIAA4DQ4NQg0BAikOAAAADg0AWA0CgCsNAQBYDgGAKw0CAA8ADQBYDjOANg0AAEINAQISDg0AKg8AADgODw4qDwEAKRAAADwQDw4SCQ0AKwoAACkLAQA2DQMAEg4AACkPHgA4Dg8OQg3/BFgQHIA2EgQAQhIBAhIKEgA2EgUAORIGEicTBwBCEgICNhMFADkTBhMSBgsAKRQBACAUFAYSCxQAEhQGAEITAgImEhMSEhMKACkUHAA8EhQTEhIRABITCgApFB0APBIUExISCQApEyQAOBITEhITCgBCEgICRRADA1IQ4n8SDQkAEg4IACkPHgA8DQ8OTAgCAApwYXJhbQ5fdG9TdHJpbmcLT2JqZWN0JnBpeGVsZHJvaWQubHNkb2MubW9kZWxzLlBhcmFtSW5mbxFfX2x1YV9pcGFpcnMpcGl4ZWxkcm9pZC5sc2RvYy5tb2RlbHMuRnVuY3Rpb25JbmZvDWRlbGVnYXRlEnN5c3RlbS5WZWN0b3L+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICAgMDAwMDAwQEBAQFBQUFBQUGBgYGBgYICAgICAgICAgICAgICAoKCgoKCgoKCgsMDQ0NDQ0NDw8PEBAQEBAQEBAQEBAQEBAQEBERERETExMTEw0NFhYWFhl0eXBlSW5mbwABfV9fbHNfdmFyYXJnMAAAfV9fbHNfc3dmdAAAfV9fbHNfc3dleHByAAB9X19sc19rZXkAAH1fX2xzX3Rlcm5hcnkAAH1fX2xzX3Bvc3RpbmMAAH1hdHRyAAB9ZgAAfXBhcmFtcwAAfXAAAH1pAAB9cGFyYW1UeXBlAAB9KGZvciBnZW5lcmF0b3IpAFkfKGZvciBzdGF0ZSkAAB8oZm9yIGNvbnRyb2wpAAAfX19sc19rZXkAARxwYXJhbVR5cGUAABwAAA==",
+                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9UHAgEYAAgCfcoCchksBwoAKQsAACsMAAASDQAAKQ4aADgNDg0pDjUAOA0ODTYPAABCDwECEgEPABIQAQAqEQAAOBARECoRAQApEgEAPBIRECkSAAA2EwAAQhMBAhIUEwAqFQAAOBQVFCoVAQApFgEAPBYVFCkWAAAnFwEAPBcWFDwTEhASEgEAEg8BAEINAgISBw0ANg0CAEINAQISCA0AEg0AACkOHwA4DQ4NEg4IACkPGgA8DQ8OEg0HABIOCAApDxwAPA0PDhINAAApDiIAOA0ODRIOCAApDx0APA0PDhINAAApDh0AOA0ODRIOCAApDyIAPA0PDhINAAApDh4AOA0ODSkOIAA4DQ4NQg0BAikOAAAADg0AWA0CgCsNAQBYDgGAKw0CAA8ADQBYDjOANg0AAEINAQISDg0AKg8AADgODw4qDwEAKRAAADwQDw4SCQ0AKwoAACkLAQA2DQMAEg8AACkQHgA4DxAPQg3/BFgQHIA2EgQAQhIBAhIKEgA2EgUAORIGEicUBwBCEgICNhMFADkTBhMSBgsAKRUBACAVFQYSCxUAEhUGAEITAgImEhMSEhMKACkUHAA8EhQTEhIRABITCgApFB0APBIUExISCQApEyQAOBITEhIUCgBCEgICRRADA1IQ4n8SDQkAEg4IACkPHgA8DQ8OTAgCAApwYXJhbQ5fdG9TdHJpbmcLT2JqZWN0JnBpeGVsZHJvaWQubHNkb2MubW9kZWxzLlBhcmFtSW5mbxFfX2x1YV9pcGFpcnMpcGl4ZWxkcm9pZC5sc2RvYy5tb2RlbHMuRnVuY3Rpb25JbmZvDWRlbGVnYXRlEnN5c3RlbS5WZWN0b3L+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICAgMDAwMDAwQEBAQFBQUFBQUGBgYGBgYICAgICAgICAgICAgICAoKCgoKCgoKCgsMDQ0NDQ0NDw8PEBAQEBAQEBAQEBAQEBAQEBERERETExMTEw0NFhYWFhl0eXBlSW5mbwABfV9fbHNfdmFyYXJnMAAAfV9fbHNfc3dmdAAAfV9fbHNfc3dleHByAAB9X19sc19rZXkAAH1fX2xzX3Rlcm5hcnkAAH1fX2xzX3Bvc3RpbmMAAH1hdHRyAAB9ZgAAfXBhcmFtcwAAfXAAAH1pAAB9cGFyYW1UeXBlAAB9KGZvciBnZW5lcmF0b3IpAFkfKGZvciBzdGF0ZSkAAB8oZm9yIGNvbnRyb2wpAAAfX19sc19rZXkAARxwYXJhbVR5cGUAABwAAA==",
                      "docString":"",
                      "line":112,
                      "metainfo":{},
@@ -5604,8 +5650,34 @@
                         "private",
                         "static"
                      ],
-                     "name":"getTypePage",
+                     "name":"getDelegateInfo",
                      "ordinal":62,
+                     "parameters":[
+                        {
+                           "hasdefault":false,
+                           "isvarargs":false,
+                           "name":"typeInfo",
+                           "templatetypes":null,
+                           "type":"pixeldroid.lsdoc.models.TypeInfo"
+                        }
+                     ],
+                     "returntype":"pixeldroid.lsdoc.models.FunctionInfo",
+                     "source":"./src/.//pixeldroid/lsdoc/processors/tasks/ghpages/GenerateTypePage.ls",
+                     "templatetypes":null,
+                     "type":"METHOD"
+                  },
+                  {
+                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc4AKAgIRABIDsAG9ApABJiwHCgA2CwAAQgsBAhIMCwAqDQAAOAwNDCoNAQApDgAAPA4NDBIHCwASCwEAKQwaADgIDAs2CwEAQgsBAicMAgAnDQMAPA0MCycMBAASDQAAKQ4iADgNDg08DQwLJwwFABINAAApDiMAOA0ODTwNDAsnDAMAEg0AACkOGwA4DQ4NPA0MCxIJCwASCwAAKQwaADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwIgBILAAApDBoAOAsMCxIMCQAqDQIAOAwNDCcNBgA8Cw0MNgsHACkMOgA4CwwLEgwJACcNCAASDgAAKQ8gADgODw5CCwQCNgsHACkMOgA4CwwLEgwJACcNCQA2DgoAKQ8iADgODw4SDwAAEhAIAEIOAwBBCwICNgsHACkMOgA4CwwLEgwJACcNCwA2DgoAKQ8lADgODw4SDwAAEhAIAEIOAwBBCwICEgsAACkMHAA4CwwLDwALAFgMDIA2CwcAKQw8ADgLDAsSDAAAKQ0cADgMDQxCCwICEgwJACoNAgA4DA0MJw0MADwLDQwSCwAAKQwhADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwMgDYLBwApDD0AOAsMCxIMAAApDSEAOAwNDEILAgISDAkAKg0CADgMDQwnDQ0APAsNDBILAAApDBsAOAsMCwYLDgBYCwKAKwsBAFgMAYArCwIADwALAFgMDoA2CwcAKQw8ADgLDAs2DAcAKQ0+ADgMDQwSDQAAQgwCAEELAAISDAkAKg0CADgMDQwnDQ8APAsNDDYLEAApDB8AOAsMCxIMCQBCCwICEgoLABILBwApDCQAOAsMCzYMEQApDRsAOAwNDBINCgA2DgcAKQ84ADgODw5CDgEAQQwBAEELAAJMBwIAEFlhbWxQcmludGVyCUpzb24Oc2lnbmF0dXJlDURFTEVHQVRFDG1ldGhvZHMQY29uc3RydWN0b3IQZGVzY2VuZGFudHMPTW9kdWxlSW5mbw5hbmNlc3RvcnMPaW1wbGVtZW50cz9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlFHR5cGVfYXR0cmlidXRlcwttb2R1bGUJbmFtZQl0eXBlC2xheW91dBZzeXN0ZW0uRGljdGlvbmFyeRJzeXN0ZW0uVmVjdG9y/vaF/x/89oX/H+72hf8fAAAAAAAAAAAAAAEBAQMDAwMDAwMDAwMDAwMDAwMDAwMDAwoKCgoKCgoKCgoKCgoKCgoKCgoKCgoNDQ0NDQ0NDQ0ODg4ODg4ODg4ODg4PDw8PDw8PDw8PDw8RERERERERERERERERERERERoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dIiIiIiIiJCQkJCQkJCQkJCQkJCZ0eXBlSW5mbwABsAFtb2R1bGVJbmZvAACwAV9fbHNfc3dmdAAAsAFfX2xzX3N3ZXhwcgAAsAFfX2xzX2tleQAAsAFfX2xzX3Rlcm5hcnkAALABX19sc19wb3N0aW5jAACwAXJlc3VsdAAAsAF0eXBlTGlzdAAAsAFwYWdlAACwAXBhZ2VKc29uAACwAQAA",
+                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc4AKAgITABIDsAG9ApABJiwHCgA2CwAAQgsBAhIMCwAqDQAAOAwNDCoNAQApDgAAPA4NDBIHCwASCwEAKQwaADgIDAs2CwEAQgsBAicMAgAnDQMAPA0MCycMBAASDQAAKQ4iADgNDg08DQwLJwwFABINAAApDiMAOA0ODTwNDAsnDAMAEg0AACkOGwA4DQ4NPA0MCxIJCwASCwAAKQwaADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwIgBILAAApDBoAOAsMCxIMCQAqDQIAOAwNDCcNBgA8Cw0MNgsHACkMOgA4CwwLEg0JACcOCAASDwAAKRAgADgPEA9CCwQCNgsHACkMOgA4CwwLEg0JACcOCQA2DwoAKRAiADgPEA8SEQAAEhIIAEIPAwBBCwICNgsHACkMOgA4CwwLEg0JACcOCwA2DwoAKRAlADgPEA8SEQAAEhIIAEIPAwBBCwICEgsAACkMHAA4CwwLDwALAFgMDIA2CwcAKQw8ADgLDAsSDQAAKQ4cADgNDg1CCwICEgwJACoNAgA4DA0MJw0MADwLDQwSCwAAKQwhADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwMgDYLBwApDD0AOAsMCxINAAApDiEAOA0ODUILAgISDAkAKg0CADgMDQwnDQ0APAsNDBILAAApDBsAOAsMCwYLDgBYCwKAKwsBAFgMAYArCwIADwALAFgMDoA2CwcAKQw8ADgLDAs2DQcAKQ4+ADgNDg0SDwAAQg0CAEELAAISDAkAKg0CADgMDQwnDQ8APAsNDDYLEAApDB8AOAsMCxINCQBCCwICEgoLABILBwApDCQAOAsMCzYNEQApDhsAOA0ODRIPCgA2EAcAKRE4ADgQERBCEAEAQQ0BAEELAAJMBwIAEFlhbWxQcmludGVyCUpzb24Oc2lnbmF0dXJlDURFTEVHQVRFDG1ldGhvZHMQY29uc3RydWN0b3IQZGVzY2VuZGFudHMPTW9kdWxlSW5mbw5hbmNlc3RvcnMPaW1wbGVtZW50cz9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlFHR5cGVfYXR0cmlidXRlcwttb2R1bGUJbmFtZQl0eXBlC2xheW91dBZzeXN0ZW0uRGljdGlvbmFyeRJzeXN0ZW0uVmVjdG9y/vaF/x/89oX/H+72hf8fAAAAAAAAAAAAAAEBAQMDAwMDAwMDAwMDAwMDAwMDAwMDAwoKCgoKCgoKCgoKCgoKCgoKCgoKCgoNDQ0NDQ0NDQ0ODg4ODg4ODg4ODg4PDw8PDw8PDw8PDw8RERERERERERERERERERERERoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dIiIiIiIiJCQkJCQkJCQkJCQkJCZ0eXBlSW5mbwABsAFtb2R1bGVJbmZvAACwAV9fbHNfc3dmdAAAsAFfX2xzX3N3ZXhwcgAAsAFfX2xzX2tleQAAsAFfX2xzX3Rlcm5hcnkAALABX19sc19wb3N0aW5jAACwAXJlc3VsdAAAsAF0eXBlTGlzdAAAsAFwYWdlAACwAXBhZ2VKc29uAACwAQAA",
+                     "docString":"",
+                     "line":142,
+                     "metainfo":{},
+                     "methodattributes":[
+                        "private",
+                        "static"
+                     ],
+                     "name":"getTypePage",
+                     "ordinal":63,
                      "parameters":[
                         {
                            "hasdefault":false,
@@ -5633,10 +5705,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9ABAAAJAgMADG2oAQA2BQAAOQUBBScGAgBCBQICNgYAADkGAQYtBwEAKQg0ADgHCAdCBgICJgUGBUwFAgAGgACAF3BlcmZvcm1UYXNrKCkgZm9yIA5fdG9TdHJpbmcLT2JqZWN0AAAAAAAAAAAAAAAAX19sc19mdW5jaW5mb19hcmdpbmZvXzAAdGhpcwBfX2xzX3N3ZnQAAQxfX2xzX3N3ZXhwcgAADF9fbHNfa2V5AAAMX19sc190ZXJuYXJ5AAAMX19sc19wb3N0aW5jAAAMAJADAwEMAAQBJKABqAEHNgcAACkIIAA4BwgHNggBACkJMgA4CAkIKgYAADMJAgBCBwMCNggDACkJPgA4CAkIEgkAACkKNAA4CQoJEgoAACkLNQA4CgsKQggDAhIJAAApCjYAPAgKCSsIAAASCQAAKQo0ADwICgkrCAAAEgkAACkKNQA8CAoJEggAACkJLAA4CAkIQggBAjIAAIBLAAEAFUdlbmVyYXRlVHlwZVBhZ2UAP3BpeGVsZHJvaWQubHNkb2MucHJvY2Vzc29ycy50YXNrcy5naHBhZ2VzLkdlbmVyYXRlVHlwZVBhZ2UITG9n/v8HAAAAAAAAAAAAAgICAgICAgICAgICAgQEBAQFBQUFBwcHBwcHdGhpcwABJF9fbHNfc3dmdAAAJF9fbHNfc3dleHByAAAkX19sc19rZXkAACRfX2xzX3Rlcm5hcnkAACRfX2xzX3Bvc3RpbmMAACRfX2xzX2Z1bmNpbmZvX2FyZ2luZm9fMAAAJF9fbHNfbG9jYWxmdW5jdGlvbjMyAAgcAAA=",
-                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9ABAAAKAgMADG2oAQA2BQAAOQUBBScHAgBCBQICNgYAADkGAQYtCAEAKQk0ADgICQhCBgICJgUGBUwFAgAGgACAF3BlcmZvcm1UYXNrKCkgZm9yIA5fdG9TdHJpbmcLT2JqZWN0AAAAAAAAAAAAAAAAX19sc19mdW5jaW5mb19hcmdpbmZvXzAAdGhpcwBfX2xzX3N3ZnQAAQxfX2xzX3N3ZXhwcgAADF9fbHNfa2V5AAAMX19sc190ZXJuYXJ5AAAMX19sc19wb3N0aW5jAAAMAJADAwENAAQBJKABqAEHNgcAACkIIAA4BwgHNgkBACkKMgA4CQoJKgYAADMKAgBCBwMCNggDACkJPgA4CAkIEgoAACkLNAA4CgsKEgsAACkMNQA4CwwLQggDAhIJAAApCjYAPAgKCSsIAAASCQAAKQo0ADwICgkrCAAAEgkAACkKNQA8CAoJEggAACkJLAA4CAkIQggBAjIAAIBLAAEAFUdlbmVyYXRlVHlwZVBhZ2UAP3BpeGVsZHJvaWQubHNkb2MucHJvY2Vzc29ycy50YXNrcy5naHBhZ2VzLkdlbmVyYXRlVHlwZVBhZ2UITG9n/v8HAAAAAAAAAAAAAgICAgICAgICAgICAgQEBAQFBQUFBwcHBwcHdGhpcwABJF9fbHNfc3dmdAAAJF9fbHNfc3dleHByAAAkX19sc19rZXkAACRfX2xzX3Rlcm5hcnkAACRfX2xzX3Bvc3RpbmMAACRfX2xzX2Z1bmNpbmZvX2FyZ2luZm9fMAAAJF9fbHNfbG9jYWxmdW5jdGlvbjMzAAgcAAA=",
+                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9ABAAAJAgMADG3JAQA2BQAAOQUBBScGAgBCBQICNgYAADkGAQYtBwEAKQg0ADgHCAdCBgICJgUGBUwFAgAGgACAF3BlcmZvcm1UYXNrKCkgZm9yIA5fdG9TdHJpbmcLT2JqZWN0AAAAAAAAAAAAAAAAX19sc19mdW5jaW5mb19hcmdpbmZvXzAAdGhpcwBfX2xzX3N3ZnQAAQxfX2xzX3N3ZXhwcgAADF9fbHNfa2V5AAAMX19sc190ZXJuYXJ5AAAMX19sc19wb3N0aW5jAAAMAJADAwEMAAQBJKAByQEHNgcAACkIIAA4BwgHNggBACkJMgA4CAkIKgYAADMJAgBCBwMCNggDACkJPwA4CAkIEgkAACkKNAA4CQoJEgoAACkLNQA4CgsKQggDAhIJAAApCjYAPAgKCSsIAAASCQAAKQo0ADwICgkrCAAAEgkAACkKNQA8CAoJEggAACkJLAA4CAkIQggBAjIAAIBLAAEAFUdlbmVyYXRlVHlwZVBhZ2UAP3BpeGVsZHJvaWQubHNkb2MucHJvY2Vzc29ycy50YXNrcy5naHBhZ2VzLkdlbmVyYXRlVHlwZVBhZ2UITG9n/v8HAAAAAAAAAAAAAgICAgICAgICAgICAgQEBAQFBQUFBwcHBwcHdGhpcwABJF9fbHNfc3dmdAAAJF9fbHNfc3dleHByAAAkX19sc19rZXkAACRfX2xzX3Rlcm5hcnkAACRfX2xzX3Bvc3RpbmMAACRfX2xzX2Z1bmNpbmZvX2FyZ2luZm9fMAAAJF9fbHNfbG9jYWxmdW5jdGlvbjMyAAgcAAA=",
+                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9ABAAAKAgMADG3JAQA2BQAAOQUBBScHAgBCBQICNgYAADkGAQYtCAEAKQk0ADgICQhCBgICJgUGBUwFAgAGgACAF3BlcmZvcm1UYXNrKCkgZm9yIA5fdG9TdHJpbmcLT2JqZWN0AAAAAAAAAAAAAAAAX19sc19mdW5jaW5mb19hcmdpbmZvXzAAdGhpcwBfX2xzX3N3ZnQAAQxfX2xzX3N3ZXhwcgAADF9fbHNfa2V5AAAMX19sc190ZXJuYXJ5AAAMX19sc19wb3N0aW5jAAAMAJADAwENAAQBJKAByQEHNgcAACkIIAA4BwgHNgkBACkKMgA4CQoJKgYAADMKAgBCBwMCNggDACkJPwA4CAkIEgoAACkLNAA4CgsKEgsAACkMNQA4CwwLQggDAhIJAAApCjYAPAgKCSsIAAASCQAAKQo0ADwICgkrCAAAEgkAACkKNQA8CAoJEggAACkJLAA4CAkIQggBAjIAAIBLAAEAFUdlbmVyYXRlVHlwZVBhZ2UAP3BpeGVsZHJvaWQubHNkb2MucHJvY2Vzc29ycy50YXNrcy5naHBhZ2VzLkdlbmVyYXRlVHlwZVBhZ2UITG9n/v8HAAAAAAAAAAAAAgICAgICAgICAgICAgQEBAQFBQUFBwcHBwcHdGhpcwABJF9fbHNfc3dmdAAAJF9fbHNfc3dleHByAAAkX19sc19rZXkAACRfX2xzX3Rlcm5hcnkAACRfX2xzX3Bvc3RpbmMAACRfX2xzX2Z1bmNpbmZvX2FyZ2luZm9fMAAAJF9fbHNfbG9jYWxmdW5jdGlvbjMzAAgcAAA=",
                      "docString":"",
-                     "line":166,
+                     "line":199,
                      "metainfo":{},
                      "methodattributes":[
                         "protected"
@@ -5688,7 +5760,7 @@
                ],
                "source":"./src/.//pixeldroid/lsdoc/processors/tasks/ghpages/GenerateTypePage.ls",
                "type":"CLASS",
-               "typeid":25
+               "typeid":26
             },
             {
                "baseType":"pixeldroid.task.SequentialTask",
@@ -5854,7 +5926,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/lsdoc/processors/tasks/ghpages/WritePackagePage.ls",
                "type":"CLASS",
-               "typeid":26
+               "typeid":27
             },
             {
                "baseType":"pixeldroid.task.SequentialTask",
@@ -6034,7 +6106,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/lsdoc/processors/tasks/ghpages/WriteTypePage.ls",
                "type":"CLASS",
-               "typeid":27
+               "typeid":28
             },
             {
                "baseType":"pixeldroid.task.SingleTask",
@@ -6184,7 +6256,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/lsdoc/processors/tasks/info/GenerateModuleInfo.ls",
                "type":"CLASS",
-               "typeid":28
+               "typeid":29
             },
             {
                "baseType":"pixeldroid.task.SequentialTask",
@@ -6332,7 +6404,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/lsdoc/processors/tasks/info/WriteModuleInfo.ls",
                "type":"CLASS",
-               "typeid":29
+               "typeid":30
             },
             {
                "baseType":"system.Object",
@@ -6581,7 +6653,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/platform/FilePath.ls",
                "type":"CLASS",
-               "typeid":30
+               "typeid":31
             },
             {
                "baseType":"system.Object",
@@ -6726,7 +6798,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/platform/FileUtils.ls",
                "type":"CLASS",
-               "typeid":31
+               "typeid":32
             },
             {
                "baseType":"system.Object",
@@ -6836,7 +6908,7 @@
                "properties":[],
                "source":"./src/.//pixeldroid/platform/StringUtils.ls",
                "type":"CLASS",
-               "typeid":32
+               "typeid":33
             }
          ],
          "version":"1.0"
@@ -6858,6 +6930,6 @@
       }
    ],
    "type":"ASSEMBLY",
-   "uid":"37f8308f-bcb1-4898-be7f-dfb0e275f3cf",
+   "uid":"e9cf493a-6b96-413e-b003-085765bc668b",
    "version":"1.0"
 }
