@@ -12,7 +12,7 @@ implements:
   - { module: "example", name: "ExampleInterface" }
 layout: "type"
 methods: 
-  - { attributes: [ "public" ], description: " @inherit ", name: "interface_method", parameters: [ { name: "param1", type: "system.String" }, { is_var_args: true, name: "rest", type: "system.Vector" } ], type: "system.Void" }
+  - { attributes: [ "public" ], description: " @inherit ", name: "interface_method", parameters: [ { name: "param1", type: "system.String" }, { is_var_args: true, name: "rest", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], type: "system.Void" }
   - { attributes: [ "public" ], description: "Public method doc comments first line.\n\nThis method has one required first parameter,\nand an optional second parameter.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)", name: "method", parameters: [ { name: "param1", type: "system.String" }, { default_value: "parent default", name: "param2", type: "system.String" } ], type: "system.String" }
   - { attributes: [ "protected" ], description: "Protected method doc comments first line.\n\nThis method has one required first parameter,\nand one optional second parameter.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)", name: "protected_method", parameters: [ { name: "param1", type: "system.String" }, { default_value: "123", name: "param2", type: "system.Number" } ], type: "system.Void" }
 module: "example"

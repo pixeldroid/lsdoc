@@ -12,20 +12,20 @@ params:
     default_value: '[]'
     is_var_args: true
     type: package.Type
-    template_types: [package.Type1, package.Type2]
+    template_types: {
+      type: package.Type
+      item_types: [package.Type1, {container2}]
+    }
   }
 
 {% endcomment %}{%
 if include.param %}{%
   assign p = include.param %}{%
-  if p.is_var_args == true %}...{% endif %}{{ p.name }}:{% capture ml %}{% include module_linker.liquid module=p.type base_url=module_url %}{% endcapture %}{{ ml | rstrip }}{%
-  if p.template_types
-    %}&lt;{%
-      for t in p.template_types %}{%
-        capture ml %}{% include module_linker.liquid module=t base_url=module_url %}{% endcapture %}{{ ml | rstrip }}{%
-        unless forloop.last %}, {% endunless %}{%
-      endfor
-    %}&gt;{%
+  if p.is_var_args == true %}...{% endif %}{{ p.name }}:{%
+  if p.template_types %}{%
+    capture t %}{% include template_signature.liquid template_type=p.template_types base_url=base_url %}{% endcapture %}{{ t | rstrip }}{%
+  else %}{%
+    capture ml %}{% include module_linker.liquid module=p.type base_url=base_url %}{% endcapture %}{{ ml | rstrip }}{%
   endif %}{%
   if p.default_value %}={%
     assign isString = false %}{% if p.type == 'system.String' %}{% assign isString = true %}{% endif %}{%

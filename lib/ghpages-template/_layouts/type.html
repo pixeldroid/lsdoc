@@ -90,10 +90,10 @@ layout: page
 {% if list.size > 0 %}
 <table class="ui striped definition table"><tbody>
 {% assign isFunc = false %}{% if a == 'constructor' or a == 'signature' or a == 'methods' %}{% assign isFunc = true %}{% endif %}
-{% assign isCtor = false %}{% if a == 'constructor' or a == 'signature' %}{% assign isCtor = true %}{% endif %}
+{% assign isCtor = false %}{% if a == 'constructor' %}{% assign isCtor = true %}{% endif %}
 {% for item in list %}
   {% capture params %}{% include parameters.liquid params=item.parameters base_url=module_url %}{% endcapture %}
-  {% capture signature %}<a href="#details-{{ a }}-{{ item.name }}">{{ item.name }}</a><span class="normal text">{{ params | rstrip }}{% if isCtor != true %}:{% include module_linker.liquid module=item.type base_url=module_url %}{% endif %}</span>{% endcapture %}
+  {% capture signature %}<a href="#details-{{ a }}-{{ item.name }}">{{ item.name }}</a><span class="normal text">{{ params | rstrip }}{% if isCtor != true %}:{% if item.template_types %}{% include template_signature.liquid template_type=item.template_types base_url=module_url %}{% else %}{% include module_linker.liquid module=item.type base_url=module_url %}{% endif %}{% endif %}</span>{% endcapture %}
   {% assign d_lines = item.description | split: newline %}
   <tr><td{% if forloop.first %} class="collapsing"{% endif %}>{{ signature | rstrip }}</td><td>{{ d_lines | first | markdownify | remove: '<p>' | remove: '</p>' | remove: '</p>' }}</td></tr>
 {% endfor %}
@@ -114,10 +114,10 @@ layout: page
 {% assign list = page[a] %}
 {% if a == 'constructor' or a == 'signature' %}{% assign list = "" | split: "" | push: page[a] %}{% endif %}
 {% assign isFunc = false %}{% if a == 'constructor' or a == 'signature' or a == 'methods' %}{% assign isFunc = true %}{% endif %}
-{% assign isCtor = false %}{% if a == 'constructor' or a == 'signature' %}{% assign isCtor = true %}{% endif %}
+{% assign isCtor = false %}{% if a == 'constructor' %}{% assign isCtor = true %}{% endif %}
 {% for item in list %}
   {% capture params %}{% include parameters.liquid params=item.parameters base_url=module_url %}{% endcapture %}
-  {% capture signature %}{{ item.attributes | join: ' ' }} {% if isFunc %}function {% endif %}<strong>{{ item.name }}</strong>{{ params | rstrip }}{% if isCtor != true %}:{% include module_linker.liquid module=item.type base_url=module_url %}{% endif %}{% endcapture %}
+  {% capture signature %}{{ item.attributes | join: ' ' }} {% if isFunc %}function {% endif %}<strong>{{ item.name }}</strong>{{ params | rstrip }}{% if isCtor != true %}:{% if item.template_types %}{% include template_signature.liquid template_type=item.template_types base_url=module_url %}{% else %}{% include module_linker.liquid module=item.type base_url=module_url %}{% endif %}{% endif %}{% endcapture %}
   <div class="ui tight vertical segment"><span class="anchor" id="details-{{ a }}-{{ item.name }}">&nbsp;</span><h4 class="ui very tight header">{{ item.name }}{% if isFunc %}(){% endif %}</h4>
   <p><code>{{ signature }}</code></p>
   {{ item.description | markdownify }}

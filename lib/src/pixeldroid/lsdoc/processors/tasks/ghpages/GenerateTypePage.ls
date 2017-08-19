@@ -3,6 +3,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
     import pixeldroid.lsdoc.models.ModuleInfo;
     import pixeldroid.lsdoc.models.FunctionInfo;
     import pixeldroid.lsdoc.models.ParamInfo;
+    import pixeldroid.lsdoc.models.TemplateType;
     import pixeldroid.lsdoc.models.TypeInfo;
 
     import pixeldroid.json.Json;
@@ -52,6 +53,22 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             page[section] = typeRefs;
         }
 
+        private static function getTemplateType(templateTypes:TemplateType):Dictionary.<String,Object>
+        {
+            var tt:Dictionary.<String,Object> = {
+                'type' : templateTypes.typeString,
+            };
+
+            var item_types:Vector.<Dictionary.<String,Object>> = [];
+
+            for each(var item:TemplateType in templateTypes.itemTypes)
+                item_types.push(getTemplateType(item));
+
+            tt['item_types'] = item_types;
+
+            return tt;
+        }
+
         private static function getOneParameter(paramInfo:ParamInfo):Dictionary.<String,Object>
         {
             var param:Dictionary.<String,Object> = {
@@ -63,10 +80,10 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                 param['default_value'] = paramInfo.defaultValue;
 
             if (paramInfo.isVarArgs)
-            {
                 param['is_var_args'] = true;
-                // param['template_types'] = ??
-            }
+
+            if (paramInfo.templateTypes)
+                param['template_types'] = getTemplateType(paramInfo.templateTypes);
 
             return param;
         }
@@ -90,6 +107,8 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                 method['parameters'] = pList;
             }
 
+            if (methodInfo.templateTypes)
+                method['template_types'] = getTemplateType(methodInfo.templateTypes);
 
             return method;
         }
@@ -117,7 +136,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             f.docString = typeInfo.docString;
             f.methodAttributes = attr;
             f.name = typeInfo.name;
-            f.type = typeInfo.delegateReturnTypeString;
+            f.returnTypeString = typeInfo.delegateReturnTypeString;
 
             if (typeInfo.delegateTypeStrings.length > 0)
             {
@@ -129,7 +148,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                     p = new ParamInfo();
                     p.name = 'param' +(i++);
                     p.typeString = paramType;
-                    // p.templateTypes
+                    // FIXME: p.templateTypes cannot be set because loomlib does not carry delegate template type info
                     params.push(p);
                 }
 

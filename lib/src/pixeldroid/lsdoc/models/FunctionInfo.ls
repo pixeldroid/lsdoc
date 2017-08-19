@@ -37,7 +37,7 @@ package pixeldroid.lsdoc.models
         public var returnTypeString:String;
         public var sourceFile:String;
         public var sourceLine:Number;
-        // public var templateTypes:TemplateType;
+        public var templateTypes:TemplateType;
         public var type:String;
 
         public function toString():String { return name; }
@@ -62,8 +62,11 @@ package pixeldroid.lsdoc.models
 
             f.sourceFile = LibUtils.cleanSourcePath(j.getString('source'), f.returnTypeString);
             f.sourceLine = j.getNumber('line');
-            // f.templateTypes = TemplatType.fromJSON(j.getObject('templatetypes'));
             f.type = j.getString('type');
+
+            var tj:JSON = j.getObject('templatetypes');
+            if (tj)
+                f.templateTypes = TemplateType.fromJSON(tj);
 
             if (f.type == 'METHOD')
                 f.returnTypeString = j.getString('returntype');

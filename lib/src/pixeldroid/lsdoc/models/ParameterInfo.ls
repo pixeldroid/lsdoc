@@ -2,7 +2,7 @@ package pixeldroid.lsdoc.models
 {
     import system.JSON;
 
-    // import pixeldroid.lsdoc.models.TemplateType;
+    import pixeldroid.lsdoc.models.TemplateType;
 
 
     /**
@@ -14,7 +14,7 @@ package pixeldroid.lsdoc.models
         public var hasDefault:Boolean = true;
         public var isVarArgs:Boolean = false;
         public var name:String;
-        // public var templateTypes:TemplateType;
+        public var templateTypes:TemplateType;
         public var typeString:String;
 
         public function toString():String { return name; }
@@ -22,19 +22,23 @@ package pixeldroid.lsdoc.models
 
         public static function fromJSON(j:JSON):ParamInfo
         {
-            var m:ParamInfo = new ParamInfo();
+            var p:ParamInfo = new ParamInfo();
+            var jj:JSON;
 
-            m.hasDefault = j.getBoolean('hasdefault');
+            p.hasDefault = j.getBoolean('hasdefault');
 
-            if (m.hasDefault)
-                m.defaultValue = j.getString('defaultvalue');
+            if (p.hasDefault)
+                p.defaultValue = j.getString('defaultvalue');
 
-            m.isVarArgs = j.getBoolean('isvarargs');
-            m.name = j.getString('name');
-            // m.templateTypes = TemplateType.fromJSON(j.getObject('templatetypes'));
-            m.typeString = j.getString('type');
+            p.isVarArgs = j.getBoolean('isvarargs');
+            p.name = j.getString('name');
 
-            return m;
+            if (jj = j.getObject('templatetypes'))
+                p.templateTypes = TemplateType.fromJSON(jj);
+
+            p.typeString = j.getString('type');
+
+            return p;
         }
 
     }

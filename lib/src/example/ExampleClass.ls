@@ -25,6 +25,9 @@ package example
         /** Public field doc comments first line. */
         public var public_var:String = 'A public member variable';
 
+        /** Public templated field doc comments first line. */
+        public var public_templated_var:Vector.<String> = [];
+
         /** Protected field doc comments first line. */
         protected var protected_var:String = 'A protected member variable';
 
@@ -41,6 +44,9 @@ package example
         @param constructorParam Initialization info
         */
         public function ExampleClass(constructorParam:String = 'A constructor parameter') { }
+
+        /** Public read-only templated property doc comments first line. */
+        public function get read_only_templated_property():Dictionary.<String,Number> { return null; }
 
         /** Public read-only property doc comments first line. */
         override public function get read_only_property():ExampleEnum { return private_var; }
@@ -73,7 +79,21 @@ package example
         @param param1 The first parameter (required)
         @param param2 The second parameter (optional)
         */
-        public function method(param1:String, param2:String = 'child default'):String { return param2; }
+        override public function method(param1:String, param2:String = 'child default'):String { return param2; }
+
+        /**
+        Templated return value method signature doc comments first line.
+
+        This method signature has a templated return type.
+        */
+        public function method_template_return():Vector.<String> { return ['a', 'b']; }
+
+        /**
+        Kitchen sink method signature doc comments first line.
+
+        This method signature has 3 template type params and varargs.
+        */
+        public function kitchen_sink_method(param1:Vector.<Object>, param2:Dictionary.<String,Vector.<Object>>, param3:Vector.<Vector.<Vector.<Number>>>, ...args):void { }
 
         /**
         Overridden protected method doc comments first line.
