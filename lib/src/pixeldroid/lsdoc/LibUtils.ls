@@ -21,8 +21,8 @@ package pixeldroid.lsdoc
           - start with a containing directory that is not part of the package namespace
           - contain an empty directory as part of the filepath
 
-        E.g.: we convert: './src//package/subpackage/Type.ls'
-                    into: 'package/subpackage/Type.ls'
+        E.g.: we convert: `'./src//package/subpackage/Type.ls'`
+                    into: `'package/subpackage/Type.ls'`
         */
         public static function cleanSourcePath(sourcePath:String, packageString:String):String
         {

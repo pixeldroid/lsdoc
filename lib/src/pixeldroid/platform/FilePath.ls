@@ -82,11 +82,10 @@ package pixeldroid.platform
 
             Components can be any mix of single string values, single objects that provide
             a `toString()` method, or Vectors of strings or objects:
-
-            * `FilePath.join('a', 'b', 'c', 'file.ext')`
-            * `FilePath.join('a', ['b', 'c'], 'file.ext')`
-            * `FilePath.join('a', b, c, 'file.ext')    // where b,c .toString() are valid`
-            * `FilePath.join('a', [b, c], 'file.ext')  // ^^`
+              - `FilePath.join('a', 'b', 'c', 'file.ext')`
+              - `FilePath.join('a', ['b', 'c'], 'file.ext')`
+              - `FilePath.join('a', b, c, 'file.ext')    // where b,c .toString() are valid`
+              - `FilePath.join('a', [b, c], 'file.ext')  // ^^`
 
             The returned string does not contain a trailing delimiter.
 
