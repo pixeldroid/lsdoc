@@ -22,10 +22,14 @@ for m in modules %}{%
     assign n = m | downcase %}{%
   endif %}{%
   if include.full_linkage == 'true' or forloop.last %}{%
-    if include.markdown == 'true'
-      %}[{{ n }}]({{ u }}){%
-    else
-      %}<a href="{{ u }}">{{ n }}</a>{%
+    capture has_url %}{% include module_has_link.liquid module_url=u %}{% endcapture %}{% assign has_url = has_url | rstrip %}{%
+    if has_url == 'true' %}{%
+      if include.markdown == 'true'
+        %}[{{ n }}]({{ u }}){%
+      else
+        %}<a href="{{ u }}">{{ n }}</a>{%
+      endif %}{%
+    else %}{{ n }}{%
     endif %}{%
     unless forloop.last %}.{% endunless %}{%
   endif %}{%
