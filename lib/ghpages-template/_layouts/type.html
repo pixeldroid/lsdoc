@@ -66,12 +66,14 @@ layout: page
   {% endif %}
 </div>
 
+{% unless page.type == 'DELEGATE' %}
 <div class="ui basic segment"><span class="anchor" id="description">&nbsp;</span>
 <h3 class="ui header">{{ page.type | capitalize }} Description</h3>
 {% capture description_file %}_{{ page.name }}-description.md{% endcapture %}
 {% capture description %}{% include_relative {{ description_file }} %}{% endcapture %}
 {{ description | replace: '   ⇥', '⇥' | replace: '⇥', site.code_indent | markdownify }}
 </div>
+{% endunless %}
 
 {% capture newline %}
 {% endcapture %}
