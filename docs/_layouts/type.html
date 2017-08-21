@@ -97,7 +97,7 @@ layout: page
   {% capture params %}{% include parameters.liquid params=item.parameters base_url=module_url %}{% endcapture %}
   {% capture signature %}<a href="#details-{{ a }}-{{ item.name }}">{{ item.name }}</a><span class="normal text">{{ params | rstrip }}{% if isCtor != true %}:{% if item.template_types %}{% include template_signature.liquid template_type=item.template_types base_url=module_url %}{% else %}{% include module_linker.liquid module=item.type base_url=module_url %}{% endif %}{% endif %}</span>{% endcapture %}
   {% assign d_lines = item.description | split: newline %}
-  <tr><td{% if forloop.first %} class="collapsing"{% endif %}>{{ signature | rstrip }}</td><td>{{ d_lines | first | markdownify | remove: '<p>' | remove: '</p>' | remove: '</p>' }}</td></tr>
+  <tr><td{% if forloop.first %} class="collapsing"{% endif %}>{{ signature | rstrip }}</td><td>{{ d_lines | first | markdownify | remove: '<p>' | remove: '</p>' | remove: '</p>' | rstrip }}</td></tr>
 {% endfor %}
 </tbody></table>
 {% endif %}
@@ -126,7 +126,7 @@ layout: page
   {% if isFunc and item.parameters %}<table class="ui striped definition table"><tbody>
   {% for p in item.parameters %}
     {% capture p_sig %}{% include parameter_signature.liquid param=p base_url=include.base_url %}{% endcapture %}
-    <tr><td{% if forloop.first %} class="collapsing"{% endif %}><code>{{ p_sig | rstrip }}</code></td><td>{% if p.description %}{{ p.description | markdownify }}{% endif %}</td></tr>
+    <tr><td{% if forloop.first %} class="collapsing"{% endif %}><code>{{ p_sig | rstrip }}</code></td><td>{% if p.description %}{{ p.description | markdownify | rstrip }}{% endif %}</td></tr>
   {% endfor %}
   </tbody></table>{% endif %}
   </div>

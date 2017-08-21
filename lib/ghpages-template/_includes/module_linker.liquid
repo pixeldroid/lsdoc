@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
 
 module_linker
   turns foo.bar.Baz into:
@@ -12,25 +12,20 @@ params:
   markdown='true' (optional, defaults to html)
   full_linkage='true' (optional, defaults to Type only, without ancestor packages)
 
-{% endcomment %}{%
-assign modules = include.module | split: '.' %}{%
-assign u = include.base_url %}{%
-for m in modules %}{%
-  assign u = u | append: '/' | append: m %}{%
-  assign n = m %}{%
-  if m == 'Void' %}{%
-    assign n = m | downcase %}{%
-  endif %}{%
-  if include.full_linkage == 'true' or forloop.last %}{%
-    capture has_url %}{% include module_has_link.liquid module_url=u %}{% endcapture %}{% assign has_url = has_url | rstrip %}{%
-    if has_url == 'true' %}{%
-      if include.markdown == 'true'
-        %}[{{ n }}]({{ u }}){%
-      else
-        %}<a href="{{ u }}">{{ n }}</a>{%
-      endif %}{%
-    else %}{{ n }}{%
-    endif %}{%
-    unless forloop.last %}.{% endunless %}{%
-  endif %}{%
-endfor %}
+{%- endcomment -%}
+{%- assign modules = include.module | split: '.' -%}
+{%- assign u = include.base_url -%}
+{%- for m in modules -%}
+  {%- assign u = u | append: '/' | append: m -%}
+  {%- assign n = m -%}
+  {%- if m == 'Void' -%}{%- assign n = m | downcase -%}{%- endif -%}
+  {%- if include.full_linkage == 'true' or forloop.last -%}
+    {%- capture has_url -%}{% include module_has_link.liquid module_url=u %}{%- endcapture -%}{%- assign has_url = has_url | rstrip -%}
+    {%- if has_url == 'true' -%}
+      {%- if include.markdown == 'true' -%}[{{ n }}]({{ u }})
+      {%- else -%}<a href="{{ u }}">{{ n }}</a>
+      {%- endif -%}
+    {%- else -%}{{ n }}{%- endif -%}
+    {%- unless forloop.last -%}.{%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}

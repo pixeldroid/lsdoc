@@ -10,7 +10,7 @@ generate API documentation from doc comments in LoomScript source code
 > from the project root
 
 ```
-jekyll serve --watch --source docs/ --destination docs/_site
+bundle exec jekyll serve --watch --source docs/ --destination docs/_site
 ```
 
 ### running the demo

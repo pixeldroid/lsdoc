@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
 
 parameter_signature
   generates a single parameter signature like the following:
@@ -18,17 +18,17 @@ params:
     }
   }
 
-{% endcomment %}{%
-if include.param %}{%
-  assign p = include.param %}{%
-  if p.is_var_args == true %}...{% endif %}{{ p.name }}:{%
-  if p.template_types %}{%
-    capture t %}{% include template_signature.liquid template_type=p.template_types base_url=include.base_url %}{% endcapture %}{{ t | rstrip }}{%
-  else %}{%
-    capture ml %}{% include module_linker.liquid module=p.type base_url=include.base_url %}{% endcapture %}{{ ml | rstrip }}{%
-  endif %}{%
-  if p.default_value %}={%
-    assign isString = false %}{% if p.type == 'system.String' %}{% assign isString = true %}{% endif %}{%
-    if isString %}'{% endif %}{{ p.default_value }}{% if isString %}'{% endif %}{%
-  endif %}{%
-endif %}
+{%- endcomment -%}
+{%- if include.param -%}
+  {%- assign p = include.param -%}
+  {%- if p.is_var_args == true -%}...{%- endif -%}{{- p.name -}}:
+  {%- if p.template_types -%}
+    {%- capture t -%}{% include template_signature.liquid template_type=p.template_types base_url=include.base_url %}{%- endcapture -%}{{- t | rstrip -}}
+  {%- else -%}
+    {%- capture ml -%}{% include module_linker.liquid module=p.type base_url=include.base_url %}{%- endcapture -%}{{- ml | rstrip -}}
+  {%- endif -%}
+  {%- if p.default_value -%}=
+    {%- assign isString = false -%}{%- if p.type == 'system.String' -%}{%- assign isString = true -%}{%- endif -%}
+    {%- if isString -%}'{%- endif -%}{{ p.default_value }}{%- if isString -%}'{%- endif -%}
+  {%- endif -%}
+{%- endif -%}

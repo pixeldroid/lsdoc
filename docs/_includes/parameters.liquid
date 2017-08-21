@@ -1,4 +1,4 @@
-{% comment %}
+{%- comment -%}
 
 parameters
   generates method parameter signatures like the following:
@@ -17,10 +17,10 @@ params:
     }
   ]
 
-{% endcomment %}({%
-if include.params %}{%
-  for p in include.params %}{% capture p_sig %}{%
-    include parameter_signature.liquid param=p base_url=include.base_url %}{% endcapture %}{{ p_sig | rstrip }}{%
-    unless forloop.last %}, {% endunless %}{%
-  endfor %}{%
-endif %})
+{%- endcomment -%}
+({%- if include.params -%}
+  {%- for p in include.params -%}
+    {%- capture p_sig -%}{% include parameter_signature.liquid param=p base_url=include.base_url %}{%- endcapture -%}{{- p_sig | rstrip -}}
+    {% unless forloop.last %}, {% endunless %}
+  {%- endfor -%}
+{%- endif -%})
