@@ -9,12 +9,12 @@ module_linker
   downcases pseudotype `system.Void` to `void` keyword
 
 params:
-  module="foo.bar.Baz"
-  base_url="/path/to"
-  module_root="/api"
-  html_class="section" (optional, defaults to null)
-  markdown='true' (optional, defaults to html)
-  full_linkage='true' (optional, defaults to linking Type only, without ancestor packages)
+  module="foo.bar.Baz" (fully qualified Type name)
+  base_url="/path/to" (may be empty string when running locally)
+  module_root="/api" (should include leading slash)
+  html_class="section" (optional, defaults to null: no class applied)
+  markdown='false' (optional, defaults to false: html style links)
+  full_linkage='false' (optional, defaults to false: just the Type is shown, without ancestor packages)
 
 {%- endcomment -%}
 {%- assign modules = include.module | split: '.' -%}
