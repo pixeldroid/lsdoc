@@ -2,28 +2,34 @@
 
 module_linker
   turns foo.bar.Baz into:
-  <a href="/path/to/foo/bar/Baz">Baz</a>
+  <a href="/path/to/api/foo/bar/Baz">Baz</a>
   or, if full_linkage is set:
-  <a href="/path/to/foo/">foo</a>.<a href="/path/to/foo/bar">bar</a>.<a href="/path/to/foo/bar/Baz">Baz</a>
+  <a href="/path/to/api/foo/">foo</a>.<a href="/path/to/api/foo/bar">bar</a>.<a href="/path/to/api/foo/bar/Baz">Baz</a>
+
+  downcases pseudotype `system.Void` to `void` keyword
 
 params:
   module="foo.bar.Baz"
   base_url="/path/to"
+  module_root="/api"
+  html_class="section" (optional, defaults to null)
   markdown='true' (optional, defaults to html)
-  full_linkage='true' (optional, defaults to Type only, without ancestor packages)
+  full_linkage='true' (optional, defaults to linking Type only, without ancestor packages)
 
 {%- endcomment -%}
 {%- assign modules = include.module | split: '.' -%}
-{%- assign u = include.base_url -%}
+{%- assign u = include.module_root -%}
+{%- assign lt = '<' -%}
+{%- assign gt = '>' -%}
 {%- for m in modules -%}
   {%- assign u = u | append: '/' | append: m -%}
   {%- assign n = m -%}
-  {%- if m == 'Void' -%}{%- assign n = m | downcase -%}{%- endif -%}
+  {%- if m == 'Void' and include.module == 'system.Void' -%}{%- assign n = m | downcase -%}{%- endif -%}
   {%- if include.full_linkage == 'true' or forloop.last -%}
     {%- capture has_url -%}{% include module_has_link.liquid module_url=u %}{%- endcapture -%}{%- assign has_url = has_url | rstrip -%}
     {%- if has_url == 'true' -%}
-      {%- if include.markdown == 'true' -%}[{{ n }}]({{ u }})
-      {%- else -%}<a href="{{ u }}">{{ n }}</a>
+      {%- if include.markdown == 'true' -%}[{{ n }}]({{ include.base_url | append: u }})
+      {%- else -%}{{ lt }}a{% if include.html_class %} class="{{ include.html_class }}"{% endif %} href="{{ include.base_url | append: u }}"{{ gt }}{{ n }}{{ lt }}/a{{ gt }}
       {%- endif -%}
     {%- else -%}{{ n }}{%- endif -%}
     {%- unless forloop.last -%}.{%- endunless -%}
