@@ -5,7 +5,7 @@ package pixeldroid.lsdoc.models
     import pixeldroid.lsdoc.LibUtils;
     // import pixeldroid.lsdoc.models.MetaInfo;
     import pixeldroid.lsdoc.models.ParamInfo;
-    // import pixeldroid.lsdoc.models.TemplateType;
+    import pixeldroid.lsdoc.models.TemplateType;
 
 
     /**
