@@ -1,6 +1,7 @@
 ---
 ancestors: 
   - { module: "pixeldroid.task", name: "SequentialTask" }
+fields: []
 implements: 
   - { module: "pixeldroid.lsdoc.processors", name: "LSDocProcessor" }
 layout: "type"
@@ -8,6 +9,8 @@ methods:
   - { attributes: [ "public" ], description: "", name: "initialize", parameters: [ { name: "context", type: "pixeldroid.lsdoc.processors.ProcessingContext" } ], type: "system.Void" }
 module: "pixeldroid.lsdoc.processors"
 name: "InfoProcessor"
+properties: 
+  - { attributes: [ "public" ], description: "", getter: { attributes: [ "public" ], description: "", name: "__pget_context", type: "pixeldroid.lsdoc.processors.ProcessingContext" }, name: "context", type: "pixeldroid.lsdoc.processors.ProcessingContext" }
 type: "CLASS"
 type_attributes: 
   - "public"

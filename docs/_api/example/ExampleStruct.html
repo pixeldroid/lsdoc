@@ -7,6 +7,9 @@ constructor:
   name: "ExampleStruct"
   parameters: [ { default_value: "1", name: "x", type: "system.Number" }, { default_value: "2", name: "y", type: "system.Number" } ]
   type: "example.ExampleStruct"
+fields: 
+  - { attributes: [ "public" ], description: " Public field doc comments first line. ", name: "x", type: "system.Number" }
+  - { attributes: [ "public" ], description: " Public field doc comments first line. ", name: "y", type: "system.Number" }
 layout: "type"
 methods: 
   - { attributes: [ "public", "operator", "static" ], description: "Public static operator doc comments first line.\n\nThe assignment operator transfers the value of `b` to `a`, and returns `a`.", name: "=", parameters: [ { name: "a", type: "example.ExampleStruct" }, { name: "b", type: "example.ExampleStruct" } ], type: "example.ExampleStruct" }

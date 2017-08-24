@@ -1,10 +1,12 @@
 package pixeldroid.lsdoc.processors.tasks.ghpages
 {
     import pixeldroid.lsdoc.models.LibModule;
-    import pixeldroid.lsdoc.models.TypeMethod;
-    import pixeldroid.lsdoc.models.MethodParameter;
-    import pixeldroid.lsdoc.models.ValueTemplate;
     import pixeldroid.lsdoc.models.LibType;
+    import pixeldroid.lsdoc.models.MethodParameter;
+    import pixeldroid.lsdoc.models.TypeField;
+    import pixeldroid.lsdoc.models.TypeMethod;
+    import pixeldroid.lsdoc.models.TypeProperty;
+    import pixeldroid.lsdoc.models.ValueTemplate;
 
     import pixeldroid.json.Json;
     import pixeldroid.json.YamlPrinter;
@@ -128,6 +130,72 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return methods;
         }
 
+        private static function getOneField(fieldInfo:TypeField):Dictionary.<String,Object>
+        {
+            var field:Dictionary.<String,Object> = {
+                'name'        : fieldInfo.name,
+                'attributes'  : fieldInfo.fieldAttributes,
+                'description' : fieldInfo.docString,
+                'type'        : fieldInfo.typeString,
+            };
+
+            if (fieldInfo.templateTypes)
+                field['template_types'] = getValueTemplate(fieldInfo.templateTypes);
+
+            return field;
+        }
+
+        private static function getFields(fieldList:Vector.<TypeField>):Vector.<Dictionary.<String,Object>>
+        {
+            var fields:Vector.<Dictionary.<String,Object>> = [];
+
+            for each(var f:TypeField in fieldList)
+            {
+                if (f.fieldAttributes.contains('private'))
+                    continue;
+
+                fields.push(getOneField(f));
+            }
+
+            return fields;
+        }
+
+        private static function getOneProperty(propertyInfo:TypeProperty):Dictionary.<String,Object>
+        {
+            var property:Dictionary.<String,Object> = {
+                'name'        : propertyInfo.name,
+                'attributes'  : propertyInfo.propertyAttributes,
+                'description' : propertyInfo.docString,
+                'type'        : propertyInfo.typeString,
+            };
+
+            if (propertyInfo.templateTypes)
+                property['template_types'] = getValueTemplate(propertyInfo.templateTypes);
+
+            if (propertyInfo.getter)
+                property['getter'] = getOneMethod(propertyInfo.getter);
+
+            if (propertyInfo.setter)
+                property['setter'] = getOneMethod(propertyInfo.setter);
+
+            return property;
+        }
+
+        private static function getProperties(propertyList:Vector.<TypeProperty>):Vector.<Dictionary.<String,Object>>
+        {
+            var properties:Vector.<Dictionary.<String,Object>> = [];
+
+            for each(var p:TypeProperty in propertyList)
+            {
+                if (p.propertyAttributes.contains('private'))
+                    continue;
+
+                properties.push(getOneProperty(p));
+            }
+
+            return properties;
+        }
+
         private static function getDelegateInfo(typeInfo:LibType):TypeMethod
         {
             var attr:Vector.<String> = typeInfo.classAttributes.concat(['delegate']);
@@ -180,11 +248,11 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             if (typeInfo.constructor && !typeInfo.constructor.methodAttributes.contains('private'))
                 page['constructor'] = getOneMethod(typeInfo.constructor);
 
-            // if (typeInfo.fields.length > 0)
-            //     page['fields'] = getFields(typeInfo.fields);
+            if (typeInfo.fields.length > 0)
+                page['fields'] = getFields(typeInfo.fields);
 
-            // if (typeInfo.properties.length > 0)
-            //     page['properties'] = getProperties(typeInfo.properties);
+            if (typeInfo.properties.length > 0)
+                page['properties'] = getProperties(typeInfo.properties);
 
             if (typeInfo.methods.length > 0)
                 page['methods'] = getMethods(typeInfo.methods);

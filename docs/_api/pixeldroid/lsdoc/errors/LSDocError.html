@@ -7,6 +7,15 @@ constructor:
   name: "LSDocError"
   parameters: [ { name: "message", type: "system.String" }, { name: "type", type: "system.String" } ]
   type: "pixeldroid.lsdoc.errors.LSDocError"
+fields: 
+  - { attributes: [ "public", "static", "const" ], description: "", name: "DELETE_FAIL", type: "system.String" }
+  - { attributes: [ "public", "static", "const" ], description: "", name: "DIR_FAIL", type: "system.String" }
+  - { attributes: [ "public", "static", "const" ], description: "", name: "DIR_NOT_FOUND", type: "system.String" }
+  - { attributes: [ "public", "static", "const" ], description: "", name: "FILE_NOT_FOUND", type: "system.String" }
+  - { attributes: [ "public", "static", "const" ], description: "", name: "INVALID_LOOMLIB", type: "system.String" }
+  - { attributes: [ "public", "static", "const" ], description: "", name: "PARSE_FAIL", type: "system.String" }
+  - { attributes: [ "public", "static", "const" ], description: "", name: "PROCESSOR_FAIL", type: "system.String" }
+  - { attributes: [ "public", "static", "const" ], description: "", name: "WRITE_FAIL", type: "system.String" }
 layout: "type"
 methods: 
   - { attributes: [ "public", "static" ], description: "", name: "deleteFail", parameters: [ { name: "msg", type: "system.String" } ], type: "pixeldroid.lsdoc.errors.LSDocError" }
@@ -20,6 +29,8 @@ methods:
   - { attributes: [ "public" ], description: "", name: "toString", type: "system.String" }
 module: "pixeldroid.lsdoc.errors"
 name: "LSDocError"
+properties: 
+  - { attributes: [ "public" ], description: "", getter: { attributes: [ "public" ], description: "", name: "__pget_type", type: "system.String" }, name: "type", type: "system.String" }
 type: "CLASS"
 type_attributes: 
   - "public"

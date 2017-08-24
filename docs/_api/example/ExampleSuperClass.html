@@ -8,6 +8,10 @@ constructor:
   type: "example.ExampleSuperClass"
 descendants: 
   - { module: "example", name: "ExampleClass" }
+fields: 
+  - { attributes: [ "public", "static", "const" ], description: " Constant field doc comments first line. ", name: "constant", type: "system.String" }
+  - { attributes: [ "public" ], description: " Public field doc comments first line. ", name: "parent_public_var", type: "system.String" }
+  - { attributes: [ "protected" ], description: " Protected field doc comments first line. ", name: "parent_protected_var", type: "system.String" }
 implements: 
   - { module: "example", name: "ExampleInterface" }
 layout: "type"
@@ -17,6 +21,9 @@ methods:
   - { attributes: [ "protected" ], description: "Protected method doc comments first line.\n\nThis method has one required first parameter,\nand one optional second parameter.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)", name: "protected_method", parameters: [ { name: "param1", type: "system.String" }, { default_value: "123", name: "param2", type: "system.Number" } ], type: "system.Void" }
 module: "example"
 name: "ExampleSuperClass"
+properties: 
+  - { attributes: [ "public" ], description: " Public property getter doc comments first line. ", getter: { attributes: [ "public" ], description: "", name: "__pget_property", type: "system.String" }, name: "property", setter: { attributes: [ "public" ], description: "", name: "__pset_property", parameters: [ { name: "value", type: "system.String" } ], type: "system.Void" }, type: "system.String" }
+  - { attributes: [ "public" ], description: " @inherit ", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, name: "read_only_property", type: "example.ExampleEnum" }
 type: "CLASS"
 type_attributes: 
   - "public"

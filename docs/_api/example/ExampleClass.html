@@ -8,6 +8,11 @@ constructor:
   name: "ExampleClass"
   parameters: [ { default_value: "A constructor parameter", name: "constructorParam", type: "system.String" } ]
   type: "example.ExampleClass"
+fields: 
+  - { attributes: [ "public", "static", "const" ], description: " Constant field doc comments first line. ", name: "constant", type: "system.String" }
+  - { attributes: [ "public" ], description: " Public field doc comments first line. ", name: "public_var", type: "system.String" }
+  - { attributes: [ "public" ], description: " Public templated field doc comments first line. ", name: "public_templated_var", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "protected" ], description: " Protected field doc comments first line. ", name: "protected_var", type: "system.String" }
 layout: "type"
 methods: 
   - { attributes: [ "public" ], description: "Overridden interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).\n\n@param param1 The first parameter (required)\n@param rest Any additional params (optional)", name: "interface_method", parameters: [ { name: "param1", type: "system.String" }, { is_var_args: true, name: "rest", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], type: "system.Void" }
@@ -17,6 +22,10 @@ methods:
   - { attributes: [ "protected" ], description: "Overridden protected method doc comments first line.\n\nThis method has one required first parameter,\nand one optional second parameter.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)", name: "protected_method", parameters: [ { name: "param1", type: "system.String" }, { default_value: "123", name: "param2", type: "system.Number" } ], type: "system.Void" }
 module: "example"
 name: "ExampleClass"
+properties: 
+  - { attributes: [ "public" ], description: " Public read-only templated property doc comments first line. ", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_templated_property", template_types: { item_types: [ { item_types: [], type: "system.String" }, { item_types: [], type: "system.Number" } ], type: "system.Dictionary" }, type: "system.Dictionary" }, name: "read_only_templated_property", template_types: { item_types: [ { item_types: [], type: "system.String" }, { item_types: [], type: "system.Number" } ], type: "system.Dictionary" }, type: "system.Dictionary" }
+  - { attributes: [ "public" ], description: " Public read-only property doc comments first line. ", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, name: "read_only_property", type: "example.ExampleEnum" }
+  - { attributes: [ "public" ], description: " Public property getter doc comments first line. ", getter: { attributes: [ "public" ], description: "", name: "__pget_property", type: "system.String" }, name: "property", setter: { attributes: [ "public" ], description: "", name: "__pset_property", parameters: [ { name: "value", type: "system.String" } ], type: "system.Void" }, type: "system.String" }
 type: "CLASS"
 type_attributes: 
   - "public"

@@ -7,12 +7,20 @@ constructor:
   name: "DefinitionConstruct"
   parameters: [ { name: "constructName", type: "system.String" } ]
   type: "pixeldroid.lsdoc.models.DefinitionConstruct"
+fields: 
+  - { attributes: [ "public", "static", "const" ], description: "", name: "CLASS", type: "pixeldroid.lsdoc.models.DefinitionConstruct" }
+  - { attributes: [ "public", "static", "const" ], description: "", name: "DELEGATE", type: "pixeldroid.lsdoc.models.DefinitionConstruct" }
+  - { attributes: [ "public", "static", "const" ], description: "", name: "ENUM", type: "pixeldroid.lsdoc.models.DefinitionConstruct" }
+  - { attributes: [ "public", "static", "const" ], description: "", name: "INTERFACE", type: "pixeldroid.lsdoc.models.DefinitionConstruct" }
+  - { attributes: [ "public", "static", "const" ], description: "", name: "STRUCT", type: "pixeldroid.lsdoc.models.DefinitionConstruct" }
 layout: "type"
 methods: 
   - { attributes: [ "public", "static" ], description: "", name: "fromString", parameters: [ { name: "construct", type: "system.String" } ], type: "pixeldroid.lsdoc.models.DefinitionConstruct" }
   - { attributes: [ "public" ], description: "", name: "toString", type: "system.String" }
 module: "pixeldroid.lsdoc.models"
 name: "DefinitionConstruct"
+properties: 
+  - { attributes: [ "public" ], description: "", getter: { attributes: [ "public" ], description: "", name: "__pget_name", type: "system.String" }, name: "name", type: "system.String" }
 type: "CLASS"
 type_attributes: 
   - "public"

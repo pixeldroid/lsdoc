@@ -5,8 +5,10 @@ classes:
   - { declaration: "pixeldroid/lsdoc/models/LibModule.ls", description: "Encapsulates the data of a loomlib `module` declaration.", name: "LibModule" }
   - { declaration: "pixeldroid/lsdoc/models/LibType.ls", description: "Encapsulates the data of a loomlib `type` declaration.\n\n@see DefinitionConstruct", name: "LibType" }
   - { declaration: "pixeldroid/lsdoc/models/MethodParameter.ls", description: "Encapsulates the data of a loomlib method parameter, found in a `parameters` declaration.", name: "MethodParameter" }
+  - { declaration: "pixeldroid/lsdoc/models/TypeField.ls", description: "Encapsulates the data of a loomlib `field` declaration.", name: "TypeField" }
   - { declaration: "pixeldroid/lsdoc/models/TypeMethod.ls", description: "Encapsulates the data of a loomlib `method` declaration.\n\nThis includes overloaded operator definitions.", name: "TypeMethod" }
-  - { declaration: "pixeldroid/lsdoc/models/ValueTemplate.ls", description: "Provides type details for the items of a container type.\n\nContainer types like `Vector` and `Dictionary` declare the type of their members.\nThat information is reflected in the loomlib `templatetypes` field.", name: "ValueTemplate" }
+  - { declaration: "pixeldroid/lsdoc/models/TypeProperty.ls", description: "Encapsulates the data of a loomlib `field` declaration.", name: "TypeProperty" }
+  - { declaration: "pixeldroid/lsdoc/models/ValueTemplate.ls", description: "Provides type details for the items of a loomlib `templatetypes` declaration.\n\nContainer types like `Vector` and `Dictionary` declare the strict type of their members.", name: "ValueTemplate" }
 layout: "package"
 module: "pixeldroid.lsdoc.models"
 ...

@@ -1,4 +1,3 @@
-Provides type details for the items of a container type.
+Provides type details for the items of a loomlib `templatetypes` declaration.
 
-Container types like `Vector` and `Dictionary` declare the type of their members.
-That information is reflected in the loomlib `templatetypes` field.
+Container types like `Vector` and `Dictionary` declare the strict type of their members.

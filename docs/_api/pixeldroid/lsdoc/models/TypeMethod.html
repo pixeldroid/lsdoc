@@ -1,6 +1,17 @@
 ---
 ancestors: 
   - { module: "system", name: "Object" }
+fields: 
+  - { attributes: [ "public" ], description: "", name: "docString", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "isDefault", type: "system.Boolean" }
+  - { attributes: [ "public", "const" ], description: "", name: "methodAttributes", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "name", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "parameters", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.MethodParameter" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "returnTypeString", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "sourceFile", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "sourceLine", type: "system.Number" }
+  - { attributes: [ "public" ], description: "", name: "templateTypes", type: "pixeldroid.lsdoc.models.ValueTemplate" }
+  - { attributes: [ "public" ], description: "", name: "type", type: "system.String" }
 layout: "type"
 methods: 
   - { attributes: [ "public" ], description: "", name: "toString", type: "system.String" }

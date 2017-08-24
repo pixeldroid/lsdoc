@@ -2,18 +2,17 @@
 ancestors: 
   - { module: "system", name: "Object" }
 fields: 
-  - { attributes: [ "public" ], description: "", name: "defaultValue", type: "system.String" }
-  - { attributes: [ "public" ], description: "", name: "hasDefault", type: "system.Boolean" }
-  - { attributes: [ "public" ], description: "", name: "isVarArgs", type: "system.Boolean" }
+  - { attributes: [ "public" ], description: "", name: "docString", type: "system.String" }
+  - { attributes: [ "public", "const" ], description: "", name: "fieldAttributes", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
   - { attributes: [ "public" ], description: "", name: "name", type: "system.String" }
   - { attributes: [ "public" ], description: "", name: "templateTypes", type: "pixeldroid.lsdoc.models.ValueTemplate" }
   - { attributes: [ "public" ], description: "", name: "typeString", type: "system.String" }
 layout: "type"
 methods: 
   - { attributes: [ "public" ], description: "", name: "toString", type: "system.String" }
-  - { attributes: [ "public", "static" ], description: "", name: "fromJSON", parameters: [ { name: "j", type: "system.JSON" } ], type: "pixeldroid.lsdoc.models.MethodParameter" }
+  - { attributes: [ "public", "static" ], description: "", name: "fromJSON", parameters: [ { name: "j", type: "system.JSON" } ], type: "pixeldroid.lsdoc.models.TypeField" }
 module: "pixeldroid.lsdoc.models"
-name: "MethodParameter"
+name: "TypeField"
 type: "CLASS"
 type_attributes: 
   - "public"

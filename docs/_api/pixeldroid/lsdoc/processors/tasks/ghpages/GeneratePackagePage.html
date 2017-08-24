@@ -7,11 +7,14 @@ constructor:
   name: "GeneratePackagePage"
   parameters: [ { name: "packageName", type: "system.String" }, { name: "moduleInfo", type: "pixeldroid.lsdoc.models.LibModule" } ]
   type: "pixeldroid.lsdoc.processors.tasks.ghpages.GeneratePackagePage"
+fields: 
+  - { attributes: [ "public" ], description: "", name: "lines", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
 layout: "type"
 methods: 
   - { attributes: [ "protected" ], description: "", name: "performTask", type: "system.Void" }
 module: "pixeldroid.lsdoc.processors.tasks.ghpages"
 name: "GeneratePackagePage"
+properties: []
 type: "CLASS"
 type_attributes: 
   - "public"

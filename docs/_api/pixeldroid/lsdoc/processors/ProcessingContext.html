@@ -1,6 +1,11 @@
 ---
 ancestors: 
   - { module: "system", name: "Object" }
+fields: 
+  - { attributes: [ "public" ], description: "", name: "errors", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.errors.LSDocError" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "lsdoc", type: "pixeldroid.lsdoc.LSDoc" }
+  - { attributes: [ "public" ], description: "", name: "opts", template_types: { item_types: [ { item_types: [], type: "system.String" }, { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" } ], type: "system.Dictionary" }, type: "system.Dictionary" }
+  - { attributes: [ "public" ], description: "", name: "outPath", type: "system.String" }
 layout: "type"
 methods: 
   - { attributes: [ "public" ], description: "", name: "appendErrors", parameters: [ { name: "errors", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.errors.LSDocError" } ], type: "system.Vector" }, type: "system.Vector" } ], type: "system.Void" }
@@ -8,6 +13,8 @@ methods:
   - { attributes: [ "public" ], description: "", name: "toString", type: "system.String" }
 module: "pixeldroid.lsdoc.processors"
 name: "ProcessingContext"
+properties: 
+  - { attributes: [ "public" ], description: "", getter: { attributes: [ "public" ], description: "", name: "__pget_hasErrors", type: "system.Boolean" }, name: "hasErrors", type: "system.Boolean" }
 type: "CLASS"
 type_attributes: 
   - "public"

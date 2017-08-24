@@ -1,6 +1,10 @@
 ---
 ancestors: 
   - { module: "system", name: "Object" }
+fields: 
+  - { attributes: [ "public" ], description: "", name: "name", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "types", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.LibType" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "version", type: "system.String" }
 layout: "type"
 methods: 
   - { attributes: [ "public" ], description: "", name: "toString", type: "system.String" }

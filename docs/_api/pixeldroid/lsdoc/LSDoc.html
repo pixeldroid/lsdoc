@@ -1,11 +1,16 @@
 ---
 ancestors: 
   - { module: "system", name: "Object" }
+fields: 
+  - { attributes: [ "public", "static", "const" ], description: "", name: "version", type: "system.String" }
+  - { attributes: [ "public", "const" ], description: "", name: "modules", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.LibModule" } ], type: "system.Vector" }, type: "system.Vector" }
 layout: "type"
 methods: 
   - { attributes: [ "public" ], description: "", name: "addLoomlib", parameters: [ { name: "path", type: "system.String" } ], template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.errors.LSDocError" } ], type: "system.Vector" }, type: "system.Vector" }
 module: "pixeldroid.lsdoc"
 name: "LSDoc"
+properties: 
+  - { attributes: [ "public" ], description: "", getter: { attributes: [ "public" ], description: "", name: "__pget_numTypes", type: "system.Number" }, name: "numTypes", type: "system.Number" }
 type: "CLASS"
 type_attributes: 
   - "public"

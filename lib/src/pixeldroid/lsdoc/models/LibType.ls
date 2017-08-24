@@ -4,10 +4,10 @@ package pixeldroid.lsdoc.models
 
     import pixeldroid.lsdoc.LibUtils;
     import pixeldroid.lsdoc.models.DefinitionConstruct;
-    // import pixeldroid.lsdoc.models.TypeField;
+    import pixeldroid.lsdoc.models.TypeField;
     import pixeldroid.lsdoc.models.TypeMethod;
     // import pixeldroid.lsdoc.models.ElementMetaData;
-    // import pixeldroid.lsdoc.models.TypeProperty;
+    import pixeldroid.lsdoc.models.TypeProperty;
 
 
     /**
@@ -24,13 +24,13 @@ package pixeldroid.lsdoc.models
         public var delegateReturnTypeString:String;
         public const delegateTypeStrings:Vector.<String> = [];
         public var docString:String;
-        //public var fields:Vector.<TypeField>;
+        public var fields:Vector.<TypeField> = [];
         public const interfaceStrings:Vector.<String> = [];
         //public var metaInfo:ElementMetaData;
         public var methods:Vector.<TypeMethod> = [];
         public var name:String;
         public var packageString:String;
-        //public var properties:Vector.<TypeProperty>;
+        public var properties:Vector.<TypeProperty> = [];
         public var sourceFile:String;
 
         public function toString():String { return packageString +'.' +name; }
@@ -61,10 +61,27 @@ package pixeldroid.lsdoc.models
                     break;
             }
 
-            var mj:JSON = j.getArray('methods');
-            var n:Number = mj.getArrayCount();
-            for (var i:Number = 0; i < n; i++)
-               t.methods.push(TypeMethod.fromJSON(mj.getArrayObject(i)));
+            var jj:JSON;
+            var n:Number;
+            var i:Number;
+
+            // TODO: LibUtils.extractTypeVector(j.getArray('methods'), TypeMethod.fromJSON, t.methods);
+            jj = j.getArray('methods');
+            n = jj.getArrayCount();
+            for (i = 0; i < n; i++)
+               t.methods.push(TypeMethod.fromJSON(jj.getArrayObject(i)));
+
+            // TODO: LibUtils.extractTypeVector(j.getArray('fields'), TypeField.fromJSON, t.fields);
+            jj = j.getArray('fields');
+            n = jj.getArrayCount();
+            for (i = 0; i < n; i++)
+               t.fields.push(TypeField.fromJSON(jj.getArrayObject(i)));
+
+            // TODO: LibUtils.extractTypeVector(j.getArray('properties'), TypeField.fromJSON, t.properties);
+            jj = j.getArray('properties');
+            n = jj.getArrayCount();
+            for (i = 0; i < n; i++)
+               t.properties.push(TypeProperty.fromJSON(jj.getArrayObject(i)));
 
             return t;
         }
