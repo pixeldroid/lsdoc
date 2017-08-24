@@ -4,8 +4,8 @@ package pixeldroid.lsdoc.processors
 
     import pixeldroid.lsdoc.LSDoc;
     import pixeldroid.lsdoc.errors.LSDocError;
-    import pixeldroid.lsdoc.models.ModuleInfo;
-    import pixeldroid.lsdoc.models.TypeInfo;
+    import pixeldroid.lsdoc.models.LibModule;
+    import pixeldroid.lsdoc.models.LibType;
     import pixeldroid.lsdoc.processors.LSDocProcessor;
     import pixeldroid.lsdoc.processors.tasks.EmptyDirectory;
     import pixeldroid.lsdoc.processors.tasks.CopyFiles;
@@ -62,16 +62,16 @@ package pixeldroid.lsdoc.processors
             var apiPath:String = FilePath.join(_context.outPath, apiDir);
             var packages:Vector.<String>;
 
-            for each(var m:ModuleInfo in context.lsdoc.modules)
+            for each(var m:LibModule in context.lsdoc.modules)
             {
                 // package pages
-                packages = ModuleInfo.getPackages(m.types);
+                packages = LibModule.getPackages(m.types);
 
                 for each(var p:String in packages)
                     addTask(new WritePackagePage(apiPath, p, m, context));
 
                 // type pages
-                for each(var t:TypeInfo in m.types)
+                for each(var t:LibType in m.types)
                     addTask(new WriteTypePage(apiPath, t, m, context));
             }
         }

@@ -1,10 +1,10 @@
 package pixeldroid.lsdoc.processors.tasks.ghpages
 {
-    import pixeldroid.lsdoc.models.ModuleInfo;
-    import pixeldroid.lsdoc.models.FunctionInfo;
-    import pixeldroid.lsdoc.models.ParamInfo;
-    import pixeldroid.lsdoc.models.TemplateType;
-    import pixeldroid.lsdoc.models.TypeInfo;
+    import pixeldroid.lsdoc.models.LibModule;
+    import pixeldroid.lsdoc.models.TypeMethod;
+    import pixeldroid.lsdoc.models.MethodParameter;
+    import pixeldroid.lsdoc.models.ValueTemplate;
+    import pixeldroid.lsdoc.models.LibType;
 
     import pixeldroid.json.Json;
     import pixeldroid.json.YamlPrinter;
@@ -53,7 +53,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             page[section] = typeRefs;
         }
 
-        private static function getTemplateType(templateTypes:TemplateType):Dictionary.<String,Object>
+        private static function getValueTemplate(templateTypes:ValueTemplate):Dictionary.<String,Object>
         {
             var tt:Dictionary.<String,Object> = {
                 'type' : templateTypes.typeString,
@@ -61,15 +61,15 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             var item_types:Vector.<Dictionary.<String,Object>> = [];
 
-            for each(var item:TemplateType in templateTypes.itemTypes)
-                item_types.push(getTemplateType(item));
+            for each(var item:ValueTemplate in templateTypes.itemTypes)
+                item_types.push(getValueTemplate(item));
 
             tt['item_types'] = item_types;
 
             return tt;
         }
 
-        private static function getOneParameter(paramInfo:ParamInfo):Dictionary.<String,Object>
+        private static function getOneParameter(paramInfo:MethodParameter):Dictionary.<String,Object>
         {
             var param:Dictionary.<String,Object> = {
                 'name' : paramInfo.name,
@@ -83,12 +83,12 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                 param['is_var_args'] = true;
 
             if (paramInfo.templateTypes)
-                param['template_types'] = getTemplateType(paramInfo.templateTypes);
+                param['template_types'] = getValueTemplate(paramInfo.templateTypes);
 
             return param;
         }
 
-        private static function getOneMethod(methodInfo:FunctionInfo):Dictionary.<String,Object>
+        private static function getOneMethod(methodInfo:TypeMethod):Dictionary.<String,Object>
         {
             var method:Dictionary.<String,Object> = {
                 'name'        : methodInfo.name,
@@ -101,23 +101,23 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             {
                 var pList:Vector.<Dictionary.<String,Object>> = [];
 
-                for each(var p:ParamInfo in methodInfo.parameters)
+                for each(var p:MethodParameter in methodInfo.parameters)
                     pList.push(getOneParameter(p));
 
                 method['parameters'] = pList;
             }
 
             if (methodInfo.templateTypes)
-                method['template_types'] = getTemplateType(methodInfo.templateTypes);
+                method['template_types'] = getValueTemplate(methodInfo.templateTypes);
 
             return method;
         }
 
-        private static function getMethods(methodList:Vector.<FunctionInfo>):Vector.<Dictionary.<String,Object>>
+        private static function getMethods(methodList:Vector.<TypeMethod>):Vector.<Dictionary.<String,Object>>
         {
             var methods:Vector.<Dictionary.<String,Object>> = [];
 
-            for each(var m:FunctionInfo in methodList)
+            for each(var m:TypeMethod in methodList)
             {
                 if (m.methodAttributes.contains('private'))
                     continue;
@@ -128,11 +128,11 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return methods;
         }
 
-        private static function getDelegateInfo(typeInfo:TypeInfo):FunctionInfo
+        private static function getDelegateInfo(typeInfo:LibType):TypeMethod
         {
             var attr:Vector.<String> = typeInfo.classAttributes.concat(['delegate']);
 
-            var f:FunctionInfo = new FunctionInfo();
+            var f:TypeMethod = new TypeMethod();
             f.docString = typeInfo.docString;
             f.methodAttributes = attr;
             f.name = typeInfo.name;
@@ -140,12 +140,12 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             if (typeInfo.delegateTypeStrings.length > 0)
             {
-                var params:Vector.<ParamInfo> = [];
-                var p:ParamInfo;
+                var params:Vector.<MethodParameter> = [];
+                var p:MethodParameter;
                 var i:Number = 1;
                 for each(var paramType:String in typeInfo.delegateTypeStrings)
                 {
-                    p = new ParamInfo();
+                    p = new MethodParameter();
                     p.name = 'param' +(i++);
                     p.typeString = paramType;
                     // FIXME: p.templateTypes cannot be set because loomlib does not carry delegate template type info
@@ -158,10 +158,10 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return f;
         }
 
-        private static function getTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo):Vector.<String>
+        private static function getTypePage(typeInfo:LibType, moduleInfo:LibModule):Vector.<String>
         {
             var result:Vector.<String> = [];
-            var typeList:Vector.<TypeInfo> = moduleInfo.types;
+            var typeList:Vector.<LibType> = moduleInfo.types;
 
             var page:Dictionary.<String,Object> = {
                 'layout' : 'type',
@@ -174,8 +174,8 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                 page['type_attributes'] = typeInfo.classAttributes;
 
             setTypeRefs(page, 'implements', typeInfo.interfaceStrings);
-            setTypeRefs(page, 'ancestors', ModuleInfo.getAncestors(typeInfo, typeList));
-            setTypeRefs(page, 'descendants', ModuleInfo.getDescendants(typeInfo, typeList));
+            setTypeRefs(page, 'ancestors', LibModule.getAncestors(typeInfo, typeList));
+            setTypeRefs(page, 'descendants', LibModule.getDescendants(typeInfo, typeList));
 
             if (typeInfo.constructor && !typeInfo.constructor.methodAttributes.contains('private'))
                 page['constructor'] = getOneMethod(typeInfo.constructor);
@@ -202,13 +202,13 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
         }
 
 
-        private var typeInfo:TypeInfo;
-        private var moduleInfo:ModuleInfo;
+        private var typeInfo:LibType;
+        private var moduleInfo:LibModule;
 
         public var lines:Vector.<String>;
 
 
-        public function GenerateTypePage(typeInfo:TypeInfo, moduleInfo:ModuleInfo)
+        public function GenerateTypePage(typeInfo:LibType, moduleInfo:LibModule)
         {
             this.typeInfo = typeInfo;
             this.moduleInfo = moduleInfo;

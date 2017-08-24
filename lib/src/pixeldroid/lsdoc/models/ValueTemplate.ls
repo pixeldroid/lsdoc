@@ -5,15 +5,14 @@ package pixeldroid.lsdoc.models
 
 
     /**
-    Provides type details for the items of a container type.
+    Provides type details for the items of a loomlib `templatetypes` declaration.
 
-    Container types like `Vector` and `Dictionary` declare the type of their members.
-    That information is reflected in the loomlib templatetypes field.
+    Container types like `Vector` and `Dictionary` declare the strict type of their members.
     */
-    public class TemplateType
+    public class ValueTemplate
     {
         public var typeString:String;
-        public var itemTypes:Vector.<TemplateType> = [];
+        public var itemTypes:Vector.<ValueTemplate> = [];
 
         public function toString():String
         {
@@ -25,7 +24,7 @@ package pixeldroid.lsdoc.models
                 s += '.<';
 
                 t = [];
-                for each(var it:TemplateType in itemTypes)
+                for each(var it:ValueTemplate in itemTypes)
                     t.push(it.toString());
 
                 s += t.join(',');
@@ -36,19 +35,19 @@ package pixeldroid.lsdoc.models
         }
 
 
-        public function TemplateType(type:String)
+        public function ValueTemplate(type:String)
         {
             typeString = type;
         }
 
 
-        public static function fromJSON(j:JSON):TemplateType
+        public static function fromJSON(j:JSON):ValueTemplate
         {
-            var t:TemplateType = new TemplateType(j.getString('type'));
+            var t:ValueTemplate = new ValueTemplate(j.getString('type'));
 
             var ja:JSON = j.getArray('types');
             var n:Number = ja.getArrayCount();
-            var it:TemplateType;
+            var it:ValueTemplate;
             var jt:JSONType;
             var jj:JSON;
 
@@ -57,7 +56,7 @@ package pixeldroid.lsdoc.models
                 jt = ja.getArrayJSONType(i);
 
                 if (jt == JSONType.JSON_STRING)
-                    it = new TemplateType(ja.getArrayString(i));
+                    it = new ValueTemplate(ja.getArrayString(i));
 
                 if (jt == JSONType.JSON_OBJECT)
                 {

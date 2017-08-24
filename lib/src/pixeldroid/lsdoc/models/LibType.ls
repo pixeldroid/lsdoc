@@ -4,40 +4,40 @@ package pixeldroid.lsdoc.models
 
     import pixeldroid.lsdoc.LibUtils;
     import pixeldroid.lsdoc.models.DefinitionConstruct;
-    // import pixeldroid.lsdoc.models.FieldInfo;
-    import pixeldroid.lsdoc.models.FunctionInfo;
-    // import pixeldroid.lsdoc.models.MetaInfo;
-    // import pixeldroid.lsdoc.models.PropertyInfo;
+    // import pixeldroid.lsdoc.models.TypeField;
+    import pixeldroid.lsdoc.models.TypeMethod;
+    // import pixeldroid.lsdoc.models.ElementMetaData;
+    // import pixeldroid.lsdoc.models.TypeProperty;
 
 
     /**
-    Provides access to properties and members of a loomlib Type definition.
+    Encapsulates the data of a loomlib `type` declaration.
 
     @see DefinitionConstruct
     */
-    public class TypeInfo
+    public class LibType
     {
         public var baseTypeString:String;
         public const classAttributes:Vector.<String> = [];
         public var construct:String;
-        public var constructor:FunctionInfo;
+        public var constructor:TypeMethod;
         public var delegateReturnTypeString:String;
         public const delegateTypeStrings:Vector.<String> = [];
         public var docString:String;
-        //public var fields:Vector.<FieldInfo>;
+        //public var fields:Vector.<TypeField>;
         public const interfaceStrings:Vector.<String> = [];
-        //public var metaInfo:MetaInfo;
-        public var methods:Vector.<FunctionInfo> = [];
+        //public var metaInfo:ElementMetaData;
+        public var methods:Vector.<TypeMethod> = [];
         public var name:String;
         public var packageString:String;
-        //public var properties:Vector.<PropertyInfo>;
+        //public var properties:Vector.<TypeProperty>;
         public var sourceFile:String;
 
         public function toString():String { return packageString +'.' +name; }
 
-        public static function fromJSON(j:JSON):TypeInfo
+        public static function fromJSON(j:JSON):LibType
         {
-            var t:TypeInfo = new TypeInfo();
+            var t:LibType = new LibType();
 
             t.name = j.getString('name');
             t.construct = j.getString('type');
@@ -56,7 +56,7 @@ package pixeldroid.lsdoc.models
             {
                 case DefinitionConstruct.CLASS:
                 case DefinitionConstruct.STRUCT:
-                    t.constructor = FunctionInfo.fromJSON(j.getObject('constructor'));
+                    t.constructor = TypeMethod.fromJSON(j.getObject('constructor'));
                     t.constructor.returnTypeString = t.packageString +'.' +t.name;
                     break;
             }
@@ -64,7 +64,7 @@ package pixeldroid.lsdoc.models
             var mj:JSON = j.getArray('methods');
             var n:Number = mj.getArrayCount();
             for (var i:Number = 0; i < n; i++)
-               t.methods.push(FunctionInfo.fromJSON(mj.getArrayObject(i)));
+               t.methods.push(TypeMethod.fromJSON(mj.getArrayObject(i)));
 
             return t;
         }

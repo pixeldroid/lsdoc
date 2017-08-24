@@ -1,7 +1,7 @@
 package pixeldroid.lsdoc.processors.tasks.ghpages
 {
-    import pixeldroid.lsdoc.models.ModuleInfo;
-    import pixeldroid.lsdoc.models.TypeInfo;
+    import pixeldroid.lsdoc.models.LibModule;
+    import pixeldroid.lsdoc.models.LibType;
     import pixeldroid.lsdoc.processors.ProcessingContext;
     import pixeldroid.lsdoc.processors.tasks.WriteLines;
     import pixeldroid.lsdoc.processors.tasks.ghpages.GenerateTypePage;
@@ -26,7 +26,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
         private var writeDescription:WriteLines;
 
 
-        public function WriteTypePage(apiPath:String, typeInfo:TypeInfo, moduleInfo:ModuleInfo, context:ProcessingContext)
+        public function WriteTypePage(apiPath:String, typeInfo:LibType, moduleInfo:LibModule, context:ProcessingContext)
         {
             var packageComponents:Vector.<String> = typeInfo.packageString.split('.');
             var fileName:String = typeInfo.name +'.html';

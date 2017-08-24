@@ -2,27 +2,27 @@ package pixeldroid.lsdoc.models
 {
     import system.JSON;
 
-    import pixeldroid.lsdoc.models.TemplateType;
+    import pixeldroid.lsdoc.models.ValueTemplate;
 
 
     /**
-    Provides access to properties and members of a loomlib method parameter.
+    Encapsulates the data of a loomlib method parameter, found in a `parameters` declaration.
     */
-    public class ParamInfo
+    public class MethodParameter
     {
         public var defaultValue:String;
         public var hasDefault:Boolean = true;
         public var isVarArgs:Boolean = false;
         public var name:String;
-        public var templateTypes:TemplateType;
+        public var templateTypes:ValueTemplate;
         public var typeString:String;
 
         public function toString():String { return name; }
 
 
-        public static function fromJSON(j:JSON):ParamInfo
+        public static function fromJSON(j:JSON):MethodParameter
         {
-            var p:ParamInfo = new ParamInfo();
+            var p:MethodParameter = new MethodParameter();
             var jj:JSON;
 
             p.hasDefault = j.getBoolean('hasdefault');
@@ -34,7 +34,7 @@ package pixeldroid.lsdoc.models
             p.name = j.getString('name');
 
             if (jj = j.getObject('templatetypes'))
-                p.templateTypes = TemplateType.fromJSON(jj);
+                p.templateTypes = ValueTemplate.fromJSON(jj);
 
             p.typeString = j.getString('type');
 

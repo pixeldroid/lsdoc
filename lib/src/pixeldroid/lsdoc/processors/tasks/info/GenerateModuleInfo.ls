@@ -1,21 +1,21 @@
 package pixeldroid.lsdoc.processors.tasks.info
 {
-    import pixeldroid.lsdoc.models.ModuleInfo;
-    import pixeldroid.lsdoc.models.TypeInfo;
+    import pixeldroid.lsdoc.models.LibModule;
+    import pixeldroid.lsdoc.models.LibType;
 
     import pixeldroid.task.SingleTask;
     import pixeldroid.util.Log;
 
 
-    public class GenerateModuleInfo extends SingleTask
+    public class GenerateLibModule extends SingleTask
     {
-        private static const logName:String = GenerateModuleInfo.getTypeName();
-        private var module:ModuleInfo;
+        private static const logName:String = GenerateLibModule.getTypeName();
+        private var module:LibModule;
 
         public var lines:Vector.<String>;
 
 
-        public function GenerateModuleInfo(module:ModuleInfo)
+        public function GenerateLibModule(module:LibModule)
         {
             this.module = module;
         }
@@ -32,12 +32,12 @@ package pixeldroid.lsdoc.processors.tasks.info
         }
 
 
-        private function getInfo(m:ModuleInfo):Vector.<String>
+        private function getInfo(m:LibModule):Vector.<String>
         {
             var result:Vector.<String> = [];
 
             result.push(m);
-            for each(var t:TypeInfo in m.types)
+            for each(var t:LibType in m.types)
                 result.push(' ' +t);
 
             return result;

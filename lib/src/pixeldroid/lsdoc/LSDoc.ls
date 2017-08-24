@@ -4,8 +4,8 @@ package pixeldroid.lsdoc
     import system.platform.File;
 
     import pixeldroid.lsdoc.errors.LSDocError;
-    import pixeldroid.lsdoc.models.ModuleInfo;
-    import pixeldroid.lsdoc.models.TypeInfo;
+    import pixeldroid.lsdoc.models.LibModule;
+    import pixeldroid.lsdoc.models.LibType;
 
 
     public class LSDoc
@@ -14,13 +14,13 @@ package pixeldroid.lsdoc
         private static const parser:JSON = new JSON;
 
         private const libPaths:Vector.<String> = [];
-        public const modules:Vector.<ModuleInfo> = [];
+        public const modules:Vector.<LibModule> = [];
 
 
         public function get numTypes():Number
         {
             var n:Number = 0;
-            for each(var m:ModuleInfo in modules)
+            for each(var m:LibModule in modules)
                 n += m.types.length;
 
             return n;
@@ -58,7 +58,7 @@ package pixeldroid.lsdoc
                 var m:JSON = parser.getArray('modules');
                 var n:Number = m.getArrayCount();
                 for (var i:Number = 0; i < n; i++)
-                    modules.push(ModuleInfo.fromJSON(m.getArrayObject(i)));
+                    modules.push(LibModule.fromJSON(m.getArrayObject(i)));
             }
             else
             {

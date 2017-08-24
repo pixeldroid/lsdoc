@@ -1,6 +1,6 @@
 package pixeldroid.lsdoc.processors.tasks.ghpages
 {
-    import pixeldroid.lsdoc.models.ModuleInfo;
+    import pixeldroid.lsdoc.models.LibModule;
     import pixeldroid.lsdoc.processors.ProcessingContext;
     import pixeldroid.lsdoc.processors.tasks.WriteLines;
     import pixeldroid.lsdoc.processors.tasks.ghpages.GeneratePackagePage;
@@ -21,7 +21,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
         private var writeLines:WriteLines;
 
 
-        public function WritePackagePage(apiPath:String, packageName:String, moduleInfo:ModuleInfo, context:ProcessingContext)
+        public function WritePackagePage(apiPath:String, packageName:String, moduleInfo:LibModule, context:ProcessingContext)
         {
             var packagePath:Vector.<String> = packageName.split('.');
             var fileName:String = packagePath.pop() +'.html'; // removes file name from packagePath

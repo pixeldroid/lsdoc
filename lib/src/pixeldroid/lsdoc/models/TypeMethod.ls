@@ -3,15 +3,17 @@ package pixeldroid.lsdoc.models
     import system.JSON;
 
     import pixeldroid.lsdoc.LibUtils;
-    // import pixeldroid.lsdoc.models.MetaInfo;
-    import pixeldroid.lsdoc.models.ParamInfo;
-    import pixeldroid.lsdoc.models.TemplateType;
+    // import pixeldroid.lsdoc.models.ElementMetaData;
+    import pixeldroid.lsdoc.models.MethodParameter;
+    import pixeldroid.lsdoc.models.ValueTemplate;
 
 
     /**
-    Provides access to properties and members of a loomlib Method definition.
+    Encapsulates the data of a loomlib `method` declaration.
+
+    This includes overloaded operator definitions.
     */
-    public class FunctionInfo
+    public class TypeMethod
     {
         // ref: /loom/script/compiler/lsToken.cpp::getOperatorMethodName()
         private static const methodOperators:Dictionary.<String,String> = {
@@ -30,22 +32,22 @@ package pixeldroid.lsdoc.models
 
         public var docString:String;
         public var isDefault:Boolean = true;
-        // public var metaInfo:MetaInfo;
+        // public var metaInfo:ElementMetaData;
         public const methodAttributes:Vector.<String> = [];
         public var name:String;
-        public var parameters:Vector.<ParamInfo> = [];
+        public var parameters:Vector.<MethodParameter> = [];
         public var returnTypeString:String;
         public var sourceFile:String;
         public var sourceLine:Number;
-        public var templateTypes:TemplateType;
+        public var templateTypes:ValueTemplate;
         public var type:String;
 
         public function toString():String { return name; }
 
 
-        public static function fromJSON(j:JSON):FunctionInfo
+        public static function fromJSON(j:JSON):TypeMethod
         {
-            var f:FunctionInfo = new FunctionInfo();
+            var f:TypeMethod = new TypeMethod();
 
             f.docString = j.getString('docString');
             f.isDefault = j.getBoolean('defaultconstructor');
@@ -53,12 +55,12 @@ package pixeldroid.lsdoc.models
             LibUtils.extractStringVector(j.getArray('methodattributes'), f.methodAttributes);
 
             f.name = (f.methodAttributes.contains('operator')) ?
-                FunctionInfo.methodOperators[j.getString('name')] : j.getString('name');
+                TypeMethod.methodOperators[j.getString('name')] : j.getString('name');
 
             var pj:JSON = j.getArray('parameters');
             var n:Number = pj.getArrayCount();
             for (var i:Number = 0; i < n; i++)
-               f.parameters.push(ParamInfo.fromJSON(pj.getArrayObject(i)));
+               f.parameters.push(MethodParameter.fromJSON(pj.getArrayObject(i)));
 
             f.sourceFile = LibUtils.cleanSourcePath(j.getString('source'), f.returnTypeString);
             f.sourceLine = j.getNumber('line');
@@ -66,7 +68,7 @@ package pixeldroid.lsdoc.models
 
             var tj:JSON = j.getObject('templatetypes');
             if (tj)
-                f.templateTypes = TemplateType.fromJSON(tj);
+                f.templateTypes = ValueTemplate.fromJSON(tj);
 
             if (f.type == 'METHOD')
                 f.returnTypeString = j.getString('returntype');

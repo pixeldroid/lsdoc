@@ -1,1 +1,0 @@
-Provides access to properties and members of a loomlib Module definition.

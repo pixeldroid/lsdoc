@@ -6,17 +6,17 @@ package
     import pixeldroid.bdd.Thing;
 
     import pixeldroid.lsdoc.models.DefinitionConstruct;
-    import pixeldroid.lsdoc.models.ModuleInfo;
-    import pixeldroid.lsdoc.models.TypeInfo;
+    import pixeldroid.lsdoc.models.LibModule;
+    import pixeldroid.lsdoc.models.LibType;
 
 
-    public static class ModuleInfoSpec
+    public static class LibModuleSpec
     {
         private static var it:Thing;
 
         public static function specify(specifier:Spec):void
         {
-            it = specifier.describe('ModuleInfo');
+            it = specifier.describe('LibModule');
 
             it.should('retrieve types by package membership', types_by_package);
             it.should('retrieve types by construct', types_by_construct);
@@ -27,71 +27,71 @@ package
 
         private static function types_by_package():void
         {
-            var r:Vector.<TypeInfo>;
-            var t:Vector.<TypeInfo> = testTypes;
+            var r:Vector.<LibType>;
+            var t:Vector.<LibType> = testTypes;
 
-            r = ModuleInfo.getTypesByPackage(t, '');
+            r = LibModule.getTypesByPackage(t, '');
             it.expects(r.length).toEqual(1);
 
-            r = ModuleInfo.getTypesByPackage(t, 'test');
+            r = LibModule.getTypesByPackage(t, 'test');
             it.expects(r.length).toEqual(0);
 
-            r = ModuleInfo.getTypesByPackage(t, 'test.pkga');
+            r = LibModule.getTypesByPackage(t, 'test.pkga');
             it.expects(r.length).toEqual(7);
 
-            r = ModuleInfo.getTypesByPackage(t, 'test.pkgb.suba');
+            r = LibModule.getTypesByPackage(t, 'test.pkgb.suba');
             it.expects(r.length).toEqual(2);
         }
 
         private static function types_by_construct():void
         {
-            var r:Vector.<TypeInfo>;
-            var t:Vector.<TypeInfo> = testTypes;
+            var r:Vector.<LibType>;
+            var t:Vector.<LibType> = testTypes;
 
-            r = ModuleInfo.getTypesByConstruct(t, DefinitionConstruct.CLASS);
+            r = LibModule.getTypesByConstruct(t, DefinitionConstruct.CLASS);
             it.expects(r.length).toEqual(8);
 
-            r = ModuleInfo.getTypesByConstruct(t, DefinitionConstruct.DELEGATE);
+            r = LibModule.getTypesByConstruct(t, DefinitionConstruct.DELEGATE);
             it.expects(r.length).toEqual(5);
 
-            r = ModuleInfo.getTypesByConstruct(t, DefinitionConstruct.ENUM);
+            r = LibModule.getTypesByConstruct(t, DefinitionConstruct.ENUM);
             it.expects(r.length).toEqual(2);
 
-            r = ModuleInfo.getTypesByConstruct(t, DefinitionConstruct.INTERFACE);
+            r = LibModule.getTypesByConstruct(t, DefinitionConstruct.INTERFACE);
             it.expects(r.length).toEqual(4);
 
-            r = ModuleInfo.getTypesByConstruct(t, DefinitionConstruct.STRUCT);
+            r = LibModule.getTypesByConstruct(t, DefinitionConstruct.STRUCT);
             it.expects(r.length).toEqual(3);
         }
 
         private static function get_packages():void
         {
-            var r:Vector.<TypeInfo>;
-            var t:Vector.<TypeInfo> = testTypes;
+            var r:Vector.<LibType>;
+            var t:Vector.<LibType> = testTypes;
 
-            r = ModuleInfo.getPackages(t);
+            r = LibModule.getPackages(t);
             it.expects(r.length).toEqual(7);
         }
 
         private static function get_subpackages():void
         {
-            var r:Vector.<TypeInfo>;
-            var t:Vector.<TypeInfo> = testTypes;
+            var r:Vector.<LibType>;
+            var t:Vector.<LibType> = testTypes;
 
-            r = ModuleInfo.getSubpackages(t, '');
+            r = LibModule.getSubpackages(t, '');
             it.expects(r.length).toEqual(1);
 
-            r = ModuleInfo.getSubpackages(t, 'test');
+            r = LibModule.getSubpackages(t, 'test');
             it.expects(r.length).toEqual(2);
 
-            r = ModuleInfo.getSubpackages(t, 'test.pkga');
+            r = LibModule.getSubpackages(t, 'test.pkga');
             it.expects(r.length).toEqual(3);
         }
 
 
-        private static function get testTypes():Vector.<TypeInfo>
+        private static function get testTypes():Vector.<LibType>
         {
-            var result:Vector.<TypeInfo> = [];
+            var result:Vector.<LibType> = [];
 
             result.push(getTestType('ClassTopLevel', '', DefinitionConstruct.CLASS));
 
@@ -121,9 +121,9 @@ package
             return result;
         }
 
-        private static function getTestType(name:String, packageString:String, construct:DefinitionConstruct):TypeInfo
+        private static function getTestType(name:String, packageString:String, construct:DefinitionConstruct):LibType
         {
-            var t:TypeInfo = new TypeInfo();
+            var t:LibType = new LibType();
 
             t.name = name;
             t.interfaceStrings = ['Ia', 'Ib', 'Ic'];

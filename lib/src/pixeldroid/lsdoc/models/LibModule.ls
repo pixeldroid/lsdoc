@@ -3,43 +3,43 @@ package pixeldroid.lsdoc.models
     import system.JSON;
 
     import pixeldroid.lsdoc.models.DefinitionConstruct;
-    import pixeldroid.lsdoc.models.TypeInfo;
+    import pixeldroid.lsdoc.models.LibType;
     import pixeldroid.platform.StringUtils;
 
 
     /**
-    Provides access to properties and members of a loomlib Module definition.
+    Encapsulates the data of a loomlib `module` declaration.
     */
-    public class ModuleInfo
+    public class LibModule
     {
 
         public var name:String;
-        public var types:Vector.<TypeInfo> = [];
+        public var types:Vector.<LibType> = [];
         public var version:String;
 
         public function toString():String { return name +'(' +types.length +' types)'; }
 
 
-        public static function fromJSON(j:JSON):ModuleInfo
+        public static function fromJSON(j:JSON):LibModule
         {
-            var m:ModuleInfo = new ModuleInfo();
+            var m:LibModule = new LibModule();
 
             m.name = j.getString('name');
             m.version = j.getString('version');
-            var mTypes:Vector.<TypeInfo> = m.types;
+            var mTypes:Vector.<LibType> = m.types;
             var jTypes:JSON = j.getArray('types');
             var numTypes:Number = jTypes.getArrayCount();
             for (var i:Number = 0; i < numTypes; i++)
             {
-                mTypes.push(TypeInfo.fromJSON(jTypes.getArrayObject(i)));
+                mTypes.push(LibType.fromJSON(jTypes.getArrayObject(i)));
             }
 
             return m;
         }
 
-        public static function getTypeByName(fullName:String, typeList:Vector.<TypeInfo>):TypeInfo
+        public static function getTypeByName(fullName:String, typeList:Vector.<LibType>):LibType
         {
-            for each(var t:TypeInfo in typeList)
+            for each(var t:LibType in typeList)
             {
                 if (t.toString() == fullName)
                     return t;
@@ -48,12 +48,12 @@ package pixeldroid.lsdoc.models
             return null;
         }
 
-        public static function getTypesByPackage(typeList:Vector.<TypeInfo>, parentPackage:String):Vector.<TypeInfo>
+        public static function getTypesByPackage(typeList:Vector.<LibType>, parentPackage:String):Vector.<LibType>
         {
-            var result:Vector.<TypeInfo> = [];
+            var result:Vector.<LibType> = [];
             var typePackage:String;
 
-            for each(var t:TypeInfo in typeList)
+            for each(var t:LibType in typeList)
             {
                 typePackage = t.packageString;
 
@@ -67,11 +67,11 @@ package pixeldroid.lsdoc.models
             return result;
         }
 
-        public static function getTypesByConstruct(typeList:Vector.<TypeInfo>, construct:DefinitionConstruct):Vector.<TypeInfo>
+        public static function getTypesByConstruct(typeList:Vector.<LibType>, construct:DefinitionConstruct):Vector.<LibType>
         {
-            var result:Vector.<TypeInfo> = [];
+            var result:Vector.<LibType> = [];
 
-            for each(var t:TypeInfo in typeList)
+            for each(var t:LibType in typeList)
             {
                 if (t.construct == construct.name)
                     result.push(t);
@@ -80,12 +80,12 @@ package pixeldroid.lsdoc.models
             return result;
         }
 
-        public static function getPackages(typeList:Vector.<TypeInfo>):Vector.<String>
+        public static function getPackages(typeList:Vector.<LibType>):Vector.<String>
         {
             var p:Vector.<String> = [];
             var s:String;
 
-            for each(var t:TypeInfo in typeList)
+            for each(var t:LibType in typeList)
             {
                 s = t.packageString;
                 if (s == '' || p.contains(s))
@@ -97,14 +97,14 @@ package pixeldroid.lsdoc.models
             return p;
         }
 
-        public static function getSubpackages(typeList:Vector.<TypeInfo>, parentPackage:String):Vector.<String>
+        public static function getSubpackages(typeList:Vector.<LibType>, parentPackage:String):Vector.<String>
         {
             var subPackages:Vector.<String> = [];
             var typePackage:String;
             var parentComponents:Vector.<String> = [];
             var typeComponents:Vector.<String> = [];
 
-            for each(var t:TypeInfo in typeList)
+            for each(var t:LibType in typeList)
             {
                 typePackage = t.packageString;
 
@@ -128,7 +128,7 @@ package pixeldroid.lsdoc.models
             return subPackages;
         }
 
-        public static function getAncestors(subject:TypeInfo, typeList:Vector.<TypeInfo>):Vector.<String>
+        public static function getAncestors(subject:LibType, typeList:Vector.<LibType>):Vector.<String>
         {
             var result:Vector.<String> = [];
             var ancestor:String = subject.baseTypeString;
@@ -146,11 +146,11 @@ package pixeldroid.lsdoc.models
             return result;
         }
 
-        public static function getImplementors(fullName:String, typeList:Vector.<TypeInfo>):Vector.<String>
+        public static function getImplementors(fullName:String, typeList:Vector.<LibType>):Vector.<String>
         {
             var result:Vector.<String> = [];
 
-            for each(var t:TypeInfo in typeList)
+            for each(var t:LibType in typeList)
             {
                 if (t.interfaceStrings.contains(fullName))
                     result.push(t.toString());
@@ -159,11 +159,11 @@ package pixeldroid.lsdoc.models
             return result;
         }
 
-        public static function getSubClasses(fullName:String, typeList:Vector.<TypeInfo>):Vector.<String>
+        public static function getSubClasses(fullName:String, typeList:Vector.<LibType>):Vector.<String>
         {
             var result:Vector.<String> = [];
 
-            for each(var t:TypeInfo in typeList)
+            for each(var t:LibType in typeList)
             {
                 if (t.baseTypeString == fullName)
                     result.push(t.toString());
@@ -172,7 +172,7 @@ package pixeldroid.lsdoc.models
             return result;
         }
 
-        public static function getDescendants(subject:TypeInfo, typeList:Vector.<TypeInfo>):Vector.<String>
+        public static function getDescendants(subject:LibType, typeList:Vector.<LibType>):Vector.<String>
         {
             var result:Vector.<String>;
             var fullName:String = subject.toString();

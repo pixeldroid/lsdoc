@@ -1,8 +1,8 @@
 package pixeldroid.lsdoc.processors.tasks.ghpages
 {
     import pixeldroid.lsdoc.models.DefinitionConstruct;
-    import pixeldroid.lsdoc.models.ModuleInfo;
-    import pixeldroid.lsdoc.models.TypeInfo;
+    import pixeldroid.lsdoc.models.LibModule;
+    import pixeldroid.lsdoc.models.LibType;
 
     import pixeldroid.json.Json;
     import pixeldroid.json.YamlPrinter;
@@ -27,10 +27,10 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return _yamlOptions;
         }
 
-        private static function getPackagePage(pkg:String, moduleInfo:ModuleInfo):Vector.<String>
+        private static function getPackagePage(pkg:String, moduleInfo:LibModule):Vector.<String>
         {
             var result:Vector.<String> = [];
-            var types:Vector.<TypeInfo> = moduleInfo.types;
+            var types:Vector.<LibType> = moduleInfo.types;
             var submodules:Vector.<String>;
             var memberTypes:Vector.<Dictionary.<String,Object>>;
 
@@ -39,7 +39,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                 'module' : pkg,
             };
 
-            if ((submodules = ModuleInfo.getSubpackages(types, pkg)).length > 0)
+            if ((submodules = LibModule.getSubpackages(types, pkg)).length > 0)
                 page['submodules'] = submodules;
 
             if ((memberTypes = getMembersByConstruct(types, pkg, DefinitionConstruct.CLASS)).length > 0)
@@ -66,16 +66,16 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return result;
         }
 
-        private static function getMembersByConstruct(types:Vector.<TypeInfo>, pkg:String, construct:DefinitionConstruct):Vector.<Dictionary.<String,Object>>
+        private static function getMembersByConstruct(types:Vector.<LibType>, pkg:String, construct:DefinitionConstruct):Vector.<Dictionary.<String,Object>>
         {
-            var filteredTypes:Vector.<TypeInfo>;
+            var filteredTypes:Vector.<LibType>;
             var memberInfo:Dictionary.<String,Object>;
             var result:Vector.<Dictionary.<String,Object>> = [];
 
-            filteredTypes = ModuleInfo.getTypesByConstruct(types, construct);
-            filteredTypes = ModuleInfo.getTypesByPackage(filteredTypes, pkg);
+            filteredTypes = LibModule.getTypesByConstruct(types, construct);
+            filteredTypes = LibModule.getTypesByPackage(filteredTypes, pkg);
 
-            for each(var t:TypeInfo in filteredTypes)
+            for each(var t:LibType in filteredTypes)
             {
                 memberInfo = {
                     'name' : t.name,
@@ -93,12 +93,12 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
 
         private var packageName:String;
-        private var moduleInfo:ModuleInfo;
+        private var moduleInfo:LibModule;
 
         public var lines:Vector.<String>;
 
 
-        public function GeneratePackagePage(packageName:String, moduleInfo:ModuleInfo)
+        public function GeneratePackagePage(packageName:String, moduleInfo:LibModule)
         {
             this.packageName = packageName;
             this.moduleInfo = moduleInfo;
