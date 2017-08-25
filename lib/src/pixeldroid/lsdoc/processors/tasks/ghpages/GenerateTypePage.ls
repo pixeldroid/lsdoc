@@ -94,7 +94,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
         {
             var method:Dictionary.<String,Object> = {
                 'name'        : methodInfo.name,
-                'attributes'  : methodInfo.methodAttributes,
+                'attributes'  : methodInfo.attributes,
                 'description' : methodInfo.docString,
                 'type'        : methodInfo.returnTypeString,
             };
@@ -121,7 +121,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             for each(var m:TypeMethod in methodList)
             {
-                if (m.methodAttributes.contains('private'))
+                if (m.attributes.contains('private'))
                     continue;
 
                 methods.push(getOneMethod(m));
@@ -134,7 +134,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
         {
             var field:Dictionary.<String,Object> = {
                 'name'        : fieldInfo.name,
-                'attributes'  : fieldInfo.fieldAttributes,
+                'attributes'  : fieldInfo.attributes,
                 'description' : fieldInfo.docString,
                 'type'        : fieldInfo.typeString,
             };
@@ -151,7 +151,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             for each(var f:TypeField in fieldList)
             {
-                if (f.fieldAttributes.contains('private'))
+                if (f.attributes.contains('private'))
                     continue;
 
                 fields.push(getOneField(f));
@@ -164,7 +164,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
         {
             var property:Dictionary.<String,Object> = {
                 'name'        : propertyInfo.name,
-                'attributes'  : propertyInfo.propertyAttributes,
+                'attributes'  : propertyInfo.attributes,
                 'description' : propertyInfo.docString,
                 'type'        : propertyInfo.typeString,
             };
@@ -190,7 +190,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             for each(var p:TypeProperty in propertyList)
             {
-                if (p.propertyAttributes.contains('private'))
+                if (p.attributes.contains('private'))
                     continue;
 
                 properties.push(getOneProperty(p));
@@ -201,11 +201,11 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
         private static function getDelegateInfo(typeInfo:LibType):TypeMethod
         {
-            var attr:Vector.<String> = typeInfo.classAttributes.concat(['delegate']);
+            var attr:Vector.<String> = typeInfo.attributes.concat(['delegate']);
 
             var f:TypeMethod = new TypeMethod();
             f.docString = typeInfo.docString;
-            f.methodAttributes = attr;
+            f.attributes = attr;
             f.name = typeInfo.name;
             f.returnTypeString = typeInfo.delegateReturnTypeString;
 
@@ -241,14 +241,14 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                 'type'   : typeInfo.construct,
             };
 
-            if (typeInfo.classAttributes.length > 0)
-                page['type_attributes'] = typeInfo.classAttributes;
+            if (typeInfo.attributes.length > 0)
+                page['type_attributes'] = typeInfo.attributes;
 
             setTypeRefs(page, 'implements', typeInfo.interfaceStrings);
             setTypeRefs(page, 'ancestors', LibModule.getAncestors(typeInfo, typeList));
             setTypeRefs(page, 'descendants', LibModule.getDescendants(typeInfo, typeList));
 
-            if (typeInfo.constructor && !typeInfo.constructor.methodAttributes.contains('private'))
+            if (typeInfo.constructor && !typeInfo.constructor.attributes.contains('private'))
                 page['constructor'] = getOneMethod(typeInfo.constructor);
 
             if (typeInfo.fields.length > 0)

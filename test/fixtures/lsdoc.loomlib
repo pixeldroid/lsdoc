@@ -3020,7 +3020,7 @@
                      ],
                      "line":21,
                      "metainfo":{},
-                     "name":"classAttributes",
+                     "name":"attributes",
                      "ordinal":26,
                      "source":"./src/.//pixeldroid/lsdoc/models/LibType.ls",
                      "templatetypes":{
@@ -3497,7 +3497,7 @@
                      ],
                      "line":17,
                      "metainfo":{},
-                     "name":"fieldAttributes",
+                     "name":"attributes",
                      "ordinal":26,
                      "source":"./src/.//pixeldroid/lsdoc/models/TypeField.ls",
                      "templatetypes":{
@@ -3693,7 +3693,7 @@
                      ],
                      "line":36,
                      "metainfo":{},
-                     "name":"methodAttributes",
+                     "name":"attributes",
                      "ordinal":28,
                      "source":"./src/.//pixeldroid/lsdoc/models/TypeMethod.ls",
                      "templatetypes":{
@@ -3965,7 +3965,7 @@
                      ],
                      "line":24,
                      "metainfo":{},
-                     "name":"propertyAttributes",
+                     "name":"attributes",
                      "ordinal":30,
                      "source":"./src/.//pixeldroid/lsdoc/models/TypeProperty.ls",
                      "templatetypes":{
@@ -7836,6 +7836,6 @@
       }
    ],
    "type":"ASSEMBLY",
-   "uid":"42dfd8a2-ce5a-430f-a220-527e1d76eafd",
+   "uid":"3b025f37-641b-49c6-b5ab-961efb3c4ec2",
    "version":"1.0"
 }

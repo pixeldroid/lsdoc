@@ -18,7 +18,7 @@ package pixeldroid.lsdoc.models
     public class LibType
     {
         public var baseTypeString:String;
-        public const classAttributes:Vector.<String> = [];
+        public const attributes:Vector.<String> = [];
         public var construct:String;
         public var constructor:TypeMethod;
         public var delegateReturnTypeString:String;
@@ -43,7 +43,7 @@ package pixeldroid.lsdoc.models
             t.construct = j.getString('type');
 
             t.baseTypeString = j.getString('baseType');
-            LibUtils.extractStringVector(j.getArray('classattributes'), t.classAttributes);
+            LibUtils.extractStringVector(j.getArray('classattributes'), t.attributes);
             t.delegateReturnTypeString = j.getString('delegateReturnType');
             LibUtils.extractStringVector(j.getArray('delegateTypes'), t.delegateTypeStrings);
             t.docString = j.getString('docString');

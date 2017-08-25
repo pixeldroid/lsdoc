@@ -21,7 +21,7 @@ package pixeldroid.lsdoc.models
         public var setter:TypeMethod;
         // public var metaInfo:ElementMetaData;
         public var name:String;
-        public const propertyAttributes:Vector.<String> = [];
+        public const attributes:Vector.<String> = [];
         public var templateTypes:ValueTemplate;
         public var typeString:String;
 
@@ -34,7 +34,7 @@ package pixeldroid.lsdoc.models
 
             p.docString = j.getString('docString');
             // p.metaInfo -> j.getObject('metainfo');
-            LibUtils.extractStringVector(j.getArray('propertyattributes'), p.propertyAttributes);
+            LibUtils.extractStringVector(j.getArray('propertyattributes'), p.attributes);
             p.name = j.getString('name');
             p.typeString = j.getString('type');
 

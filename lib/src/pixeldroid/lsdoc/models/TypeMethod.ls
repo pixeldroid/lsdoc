@@ -33,7 +33,7 @@ package pixeldroid.lsdoc.models
         public var docString:String;
         public var isDefault:Boolean = true;
         // public var metaInfo:ElementMetaData;
-        public const methodAttributes:Vector.<String> = [];
+        public const attributes:Vector.<String> = [];
         public var name:String;
         public var parameters:Vector.<MethodParameter> = [];
         public var returnTypeString:String;
@@ -52,9 +52,9 @@ package pixeldroid.lsdoc.models
             f.docString = j.getString('docString');
             f.isDefault = j.getBoolean('defaultconstructor');
             // f.metaInfo -> j.getObject('metainfo');
-            LibUtils.extractStringVector(j.getArray('methodattributes'), f.methodAttributes);
+            LibUtils.extractStringVector(j.getArray('methodattributes'), f.attributes);
 
-            f.name = (f.methodAttributes.contains('operator')) ?
+            f.name = (f.attributes.contains('operator')) ?
                 TypeMethod.methodOperators[j.getString('name')] : j.getString('name');
 
             var pj:JSON = j.getArray('parameters');
