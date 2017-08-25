@@ -178,6 +178,9 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             if (propertyInfo.setter)
                 property['setter'] = getOneMethod(propertyInfo.setter);
 
+            if (propertyInfo.isReadOnly)
+                property['is_read_only'] = true;
+
             return property;
         }
 

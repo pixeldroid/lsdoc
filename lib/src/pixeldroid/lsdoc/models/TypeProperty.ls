@@ -16,6 +16,7 @@ package pixeldroid.lsdoc.models
     public class TypeProperty
     {
         public var docString:String;
+        public var isReadOnly:Boolean = false;
         public var getter:TypeMethod;
         public var setter:TypeMethod;
         // public var metaInfo:ElementMetaData;
@@ -46,6 +47,9 @@ package pixeldroid.lsdoc.models
             jj = j.getObject('setter');
             if (jj)
                 p.setter = TypeMethod.fromJSON(jj);
+
+            else
+                p.isReadOnly = true;
 
             jj = j.getObject('templatetypes');
             if (jj)

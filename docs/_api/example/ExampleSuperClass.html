@@ -23,7 +23,7 @@ module: "example"
 name: "ExampleSuperClass"
 properties: 
   - { attributes: [ "public" ], description: " Public property getter doc comments first line. ", getter: { attributes: [ "public" ], description: "", name: "__pget_property", type: "system.String" }, name: "property", setter: { attributes: [ "public" ], description: "", name: "__pset_property", parameters: [ { name: "value", type: "system.String" } ], type: "system.Void" }, type: "system.String" }
-  - { attributes: [ "public" ], description: " @inherit ", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, name: "read_only_property", type: "example.ExampleEnum" }
+  - { attributes: [ "public" ], description: " @inherit ", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, is_read_only: true, name: "read_only_property", type: "example.ExampleEnum" }
 type: "CLASS"
 type_attributes: 
   - "public"

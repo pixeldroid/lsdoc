@@ -7,7 +7,7 @@ methods:
 module: "example"
 name: "ExampleInterface"
 properties: 
-  - { attributes: [ "public" ], description: " Public read-only property doc comments first line. ", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, name: "read_only_property", type: "example.ExampleEnum" }
+  - { attributes: [ "public" ], description: " Public read-only property doc comments first line. ", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, is_read_only: true, name: "read_only_property", type: "example.ExampleEnum" }
 type: "INTERFACE"
 type_attributes: 
   - "public"

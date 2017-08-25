@@ -10,7 +10,7 @@ methods:
 module: "pixeldroid.lsdoc.processors"
 name: "LSDocProcessor"
 properties: 
-  - { attributes: [ "public" ], description: "", getter: { attributes: [ "public" ], description: "", name: "__pget_context", type: "pixeldroid.lsdoc.processors.ProcessingContext" }, name: "context", type: "pixeldroid.lsdoc.processors.ProcessingContext" }
+  - { attributes: [ "public" ], description: "", getter: { attributes: [ "public" ], description: "", name: "__pget_context", type: "pixeldroid.lsdoc.processors.ProcessingContext" }, is_read_only: true, name: "context", type: "pixeldroid.lsdoc.processors.ProcessingContext" }
 type: "INTERFACE"
 type_attributes: 
   - "public"
