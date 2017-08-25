@@ -33,7 +33,7 @@ package example
         /** Public property getter doc comments first line. */
         public function get property():String { return 'value'; }
 
-        /** Public property setter doc comments first line. */
+        /** Setter doc comments are ignored; place doc comments on the getter. */
         public function set property(value:String):void { }
 
         // interface methods
