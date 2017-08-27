@@ -16,7 +16,8 @@ package
 
             it.should('extract a tag from a line', extract_from_line);
             it.should('extract a list of tags from a field', extract_from_field);
-            it.should('extract tags from a list by name', extract_tags_from_list);
+            it.should('extract tags from a list that match a given name', extract_matching_tags_from_list);
+            it.should('extract tags from a list that don\'t match a given name', extract_nonmatching_tags_from_list);
         }
 
 
@@ -68,7 +69,7 @@ package
             it.expects(tags[2].toString()).toEqual('@tag3 value3a value3b value3c');
         }
 
-        private static function extract_tags_from_list():void
+        private static function extract_matching_tags_from_list():void
         {
             var lines:Vector.<String> = [
                 '  @tag1 value1a',
@@ -88,7 +89,36 @@ package
             var result:Boolean = DocTag.selectByTagName(source, 'tag1', target);
 
             it.expects(result).toBeTruthy();
-            it.expects(target.length).toEqual(4);
+            it.asserts(target.length).isEqualTo(4).or('4 tags were not found named "tag1":\n' +field);
+            it.expects(target[0].toString()).toEqual('@tag1 value1a');
+            it.expects(target[1].toString()).toEqual('@tag1 value1b');
+            it.expects(target[2].toString()).toEqual('@tag1 value1c');
+            it.expects(target[3].toString()).toEqual('@tag1 value1d');
+        }
+
+        private static function extract_nonmatching_tags_from_list():void
+        {
+            var lines:Vector.<String> = [
+                '  @tag1 value1a',
+                '  @tag2 value2a',
+                '  @tag1 value1b',
+                '  @tag1 value1c',
+                '  @tag3 value3a',
+                '  @tag1 value1d',
+            ];
+            var field:String = lines.join('\n');
+            var source:Vector.<DocTag> = [];
+
+            DocTag.fromRawField(field, source);
+            it.asserts(source.length).isGreaterThan(0).or('field did not parse into any tags:\n' +field);
+
+            var target:Vector.<DocTag> = [];
+            var result:Boolean = DocTag.selectByTagName(source, 'tag1', target, true);
+
+            it.expects(result).toBeTruthy();
+            it.asserts(target.length).isEqualTo(2).or('2 tags were not found not named "tag1":\n' +field);
+            it.expects(target[0].toString()).toEqual('@tag2 value2a');
+            it.expects(target[1].toString()).toEqual('@tag3 value3a');
         }
 
     }

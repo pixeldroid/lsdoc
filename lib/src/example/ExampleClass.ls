@@ -19,10 +19,14 @@ package example
     */
     public class ExampleClass extends ExampleSuperClass
     {
-        /** Constant field doc comments first line. */
+        /** Constant field doc comments first and only line. */
         public static const constant:String = 'A public class constant';
 
-        /** Public field doc comments first line. */
+        /**
+        Public field doc comments first line.
+        Second line.
+        Third line.
+        */
         public var public_var:String = 'A public member variable';
 
         /** Public templated field doc comments first line. */
@@ -54,7 +58,7 @@ package example
         /** Public property getter doc comments first line. */
         override public function get property():String { return 'value'; }
 
-        /** Public property setter doc comments first line. */
+        /** Public property setter doc comments first line (not expected to appear in loomlib or docs). */
         override public function set property(value:String):void { }
 
         /**
@@ -92,16 +96,20 @@ package example
         Kitchen sink method signature doc comments first line.
 
         This method signature has 3 template type params and varargs.
+
+        @param param1 A `Vector` of anything
+        @param param2 A `Dictionary` using `String` values to look up `Vector`s of anything
+        @param param3 A 3D matrix: `m[x][y][z] = 0`
+        @param args An optional varargs catchall for any additional params the user wants to supply
         */
         public function kitchen_sink_method(param1:Vector.<Object>, param2:Dictionary.<String,Vector.<Object>>, param3:Vector.<Vector.<Vector.<Number>>>, ...args):void { }
 
         /**
         Overridden protected method doc comments first line.
 
-        This method has one required first parameter,
-        and one optional second parameter.
+        This method has one required first parameter without any documentation,
+        and one optional second parameter with documentation.
 
-        @param param1 The first parameter (required)
         @param param2 The second parameter (optional)
         */
         override protected function protected_method(param1:String, param2:Number = 123):void { }

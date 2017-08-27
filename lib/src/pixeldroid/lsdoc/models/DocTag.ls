@@ -21,16 +21,18 @@ package pixeldroid.lsdoc.models
             _value = value;
         }
 
-        public static function selectByTagName(sourceList:Vector.<DocTag>, tagName:String, targetList:Vector.<DocTag>):Boolean
+        public static function selectByTagName(sourceList:Vector.<DocTag>, tagName:String, targetList:Vector.<DocTag>, findNonMatches:Boolean = false):Boolean
         {
             var anyFound:Boolean = false;
 
             if (!targetList)
                 return anyFound;
 
+            var isMatch:Boolean = false;
             for each(var tag in sourceList)
             {
-                if (tag.name == tagName)
+                isMatch = (tag.name == tagName);
+                if ((isMatch && !findNonMatches) || (!isMatch && findNonMatches))
                 {
                     anyFound = true;
                     targetList.push(tag);

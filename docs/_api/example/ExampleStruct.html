@@ -5,8 +5,7 @@ constructor:
   attributes: [ "public" ]
   description: "Constructor doc comments first line.\n\nThis constructor takes two optional parameters.\nNot all constructors do. Some take none at all.\n\n"
   name: "ExampleStruct"
-  parameters: [ { default_value: "1", name: "x", type: "system.Number" }, { default_value: "2", name: "y", type: "system.Number" } ]
-  tags: [ { name: "param", value: "x Value for the x component" }, { name: "param", value: "y Value for the y component" } ]
+  parameters: [ { default_value: "1", description: "Value for the x component", name: "x", type: "system.Number" }, { default_value: "2", description: "Value for the y component", name: "y", type: "system.Number" } ]
   type: "example.ExampleStruct"
 fields: 
   - { attributes: [ "public" ], description: " Public field doc comments first line. \n", name: "x", type: "system.Number" }

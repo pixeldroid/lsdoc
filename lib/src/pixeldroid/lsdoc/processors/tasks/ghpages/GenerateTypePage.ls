@@ -13,6 +13,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
     import pixeldroid.json.YamlPrinter;
     import pixeldroid.json.YamlPrinterOptions;
     import pixeldroid.task.SingleTask;
+    import pixeldroid.platform.StringUtils;
     import pixeldroid.util.Log;
 
 
@@ -72,7 +73,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return tt;
         }
 
-        private static function getOneParameter(paramInfo:MethodParameter):Dictionary.<String,Object>
+        private static function getOneParameter(paramInfo:MethodParameter, tags:Vector.<DocTag>):Dictionary.<String,Object>
         {
             var param:Dictionary.<String,Object> = {
                 'name' : paramInfo.name,
@@ -88,6 +89,15 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             if (paramInfo.templateTypes)
                 param['template_types'] = getValueTemplate(paramInfo.templateTypes);
 
+            for each(var t:DocTag in tags)
+            {
+                if (StringUtils.startsWith(t.value, paramInfo.name))
+                {
+                    param['description'] = t.value.substring(paramInfo.name.length + 1);
+                    break;
+                }
+            }
+
             return param;
         }
 
@@ -100,15 +110,24 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                 'type'        : methodInfo.returnTypeString,
             };
 
+            var tags:Vector.<DocTag> = [];
+
             if (methodInfo.docTags.length > 0)
-                method['tags'] = getTags(methodInfo.docTags);
+            {
+                tags.clear();
+                if (DocTag.selectByTagName(methodInfo.docTags, 'param', tags, true))
+                    method['tags'] = getTags(tags);
+            }
 
             if (methodInfo.parameters.length > 0)
             {
+                tags.clear();
+                DocTag.selectByTagName(methodInfo.docTags, 'param', tags);
+
                 var pList:Vector.<Dictionary.<String,Object>> = [];
 
                 for each(var p:MethodParameter in methodInfo.parameters)
-                    pList.push(getOneParameter(p));
+                    pList.push(getOneParameter(p, tags));
 
                 method['parameters'] = pList;
             }
