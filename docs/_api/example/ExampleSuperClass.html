@@ -3,27 +3,27 @@ ancestors:
   - { module: "system", name: "Object" }
 constructor: 
   attributes: [ "public" ]
-  description: "Constructor doc comments first line."
+  description: "Constructor doc comments first line.\n"
   name: "ExampleSuperClass"
   type: "example.ExampleSuperClass"
 descendants: 
   - { module: "example", name: "ExampleClass" }
 fields: 
-  - { attributes: [ "public", "static", "const" ], description: " Constant field doc comments first line. ", name: "constant", type: "system.String" }
-  - { attributes: [ "public" ], description: " Public field doc comments first line. ", name: "parent_public_var", type: "system.String" }
-  - { attributes: [ "protected" ], description: " Protected field doc comments first line. ", name: "parent_protected_var", type: "system.String" }
+  - { attributes: [ "public", "static", "const" ], description: " Constant field doc comments first line. \n", name: "constant", type: "system.String" }
+  - { attributes: [ "public" ], description: " Public field doc comments first line. \n", name: "parent_public_var", type: "system.String" }
+  - { attributes: [ "protected" ], description: " Protected field doc comments first line. \n", name: "parent_protected_var", type: "system.String" }
 implements: 
   - { module: "example", name: "ExampleInterface" }
 layout: "type"
 methods: 
-  - { attributes: [ "public" ], description: " @inherit ", name: "interface_method", parameters: [ { name: "param1", type: "system.String" }, { is_var_args: true, name: "rest", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], type: "system.Void" }
-  - { attributes: [ "public" ], description: "Public method doc comments first line.\n\nThis method has one required first parameter,\nand an optional second parameter.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)", name: "method", parameters: [ { name: "param1", type: "system.String" }, { default_value: "parent default", name: "param2", type: "system.String" } ], type: "system.String" }
-  - { attributes: [ "protected" ], description: "Protected method doc comments first line.\n\nThis method has one required first parameter,\nand one optional second parameter.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)", name: "protected_method", parameters: [ { name: "param1", type: "system.String" }, { default_value: "123", name: "param2", type: "system.Number" } ], type: "system.Void" }
+  - { attributes: [ "public" ], description: "", name: "interface_method", parameters: [ { name: "param1", type: "system.String" }, { is_var_args: true, name: "rest", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], type: "system.Void" }
+  - { attributes: [ "public" ], description: "Public method doc comments first line.\n\nThis method has one required first parameter,\nand an optional second parameter.\n\n", name: "method", parameters: [ { name: "param1", type: "system.String" }, { default_value: "parent default", name: "param2", type: "system.String" } ], tags: [ { name: "param", value: "param1 The first parameter (required)" }, { name: "param", value: "param2 The second parameter (optional)" } ], type: "system.String" }
+  - { attributes: [ "protected" ], description: "Protected method doc comments first line.\n\nThis method has one required first parameter,\nand one optional second parameter.\n\n", name: "protected_method", parameters: [ { name: "param1", type: "system.String" }, { default_value: "123", name: "param2", type: "system.Number" } ], tags: [ { name: "param", value: "param1 The first parameter (required)" }, { name: "param", value: "param2 The second parameter (optional)" } ], type: "system.Void" }
 module: "example"
 name: "ExampleSuperClass"
 properties: 
-  - { attributes: [ "public" ], description: " Public property getter doc comments first line. ", getter: { attributes: [ "public" ], description: "", name: "__pget_property", type: "system.String" }, name: "property", setter: { attributes: [ "public" ], description: "", name: "__pset_property", parameters: [ { name: "value", type: "system.String" } ], type: "system.Void" }, type: "system.String" }
-  - { attributes: [ "public" ], description: " @inherit ", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, is_read_only: true, name: "read_only_property", type: "example.ExampleEnum" }
+  - { attributes: [ "public" ], description: " Public property getter doc comments first line. \n", getter: { attributes: [ "public" ], description: "", name: "__pget_property", type: "system.String" }, name: "property", setter: { attributes: [ "public" ], description: "", name: "__pset_property", parameters: [ { name: "value", type: "system.String" } ], type: "system.Void" }, type: "system.String" }
+  - { attributes: [ "public" ], description: "", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, is_read_only: true, name: "read_only_property", type: "example.ExampleEnum" }
 type: "CLASS"
 type_attributes: 
   - "public"

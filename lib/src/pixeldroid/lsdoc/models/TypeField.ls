@@ -3,6 +3,7 @@ package pixeldroid.lsdoc.models
     import system.JSON;
 
     import pixeldroid.lsdoc.LibUtils;
+    import pixeldroid.lsdoc.models.DocTag;
     // import pixeldroid.lsdoc.models.ElementMetaData;
     import pixeldroid.lsdoc.models.ValueTemplate;
 
@@ -14,6 +15,7 @@ package pixeldroid.lsdoc.models
     {
         public var attributes:Vector.<String> = [];
         public var docString:String;
+        public var docTags:Vector.<DocTag> = [];
         // public var metaInfo:ElementMetaData;
         public var name:String;
         public var templateTypes:ValueTemplate;
@@ -28,6 +30,7 @@ package pixeldroid.lsdoc.models
             var jj:JSON;
 
             f.docString = j.getString('docString');
+            f.docString = DocTag.fromRawField(f.docString, f.docTags);
             f.name = j.getString('name');
             f.typeString = j.getString('type');
 

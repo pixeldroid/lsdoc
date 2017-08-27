@@ -18,9 +18,10 @@ package
         {
             SpecExecutor.parseArgs();
             var returnCode:Number = SpecExecutor.exec([
-                lsdocSpec,
+                DocTagSpec,
                 FilePathSpec,
                 LibModuleSpec,
+                lsdocSpec,
                 StringUtilsSpec
             ]);
 

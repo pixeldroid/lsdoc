@@ -3,11 +3,11 @@ descendants:
   - { module: "example", name: "ExampleSuperClass" }
 layout: "type"
 methods: 
-  - { attributes: [ "public" ], description: "Public interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).\n\n@param param1 The first parameter (required)\n@param rest Any additional params (optional)", name: "interface_method", parameters: [ { name: "param1", type: "system.String" }, { is_var_args: true, name: "rest", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], type: "system.Void" }
+  - { attributes: [ "public" ], description: "Public interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).\n\n", name: "interface_method", parameters: [ { name: "param1", type: "system.String" }, { is_var_args: true, name: "rest", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], tags: [ { name: "param", value: "param1 The first parameter (required)" }, { name: "param", value: "rest Any additional params (optional)" } ], type: "system.Void" }
 module: "example"
 name: "ExampleInterface"
 properties: 
-  - { attributes: [ "public" ], description: " Public read-only property doc comments first line. ", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, is_read_only: true, name: "read_only_property", type: "example.ExampleEnum" }
+  - { attributes: [ "public" ], description: " Public read-only property doc comments first line. \n", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, is_read_only: true, name: "read_only_property", type: "example.ExampleEnum" }
 type: "INTERFACE"
 type_attributes: 
   - "public"

@@ -3,6 +3,7 @@ package pixeldroid.lsdoc.models
     import system.JSON;
 
     import pixeldroid.lsdoc.LibUtils;
+    import pixeldroid.lsdoc.models.DocTag;
     // import pixeldroid.lsdoc.models.ElementMetaData;
     import pixeldroid.lsdoc.models.MethodParameter;
     import pixeldroid.lsdoc.models.ValueTemplate;
@@ -32,6 +33,7 @@ package pixeldroid.lsdoc.models
 
         public var attributes:Vector.<String> = [];
         public var docString:String;
+        public var docTags:Vector.<DocTag> = [];
         public var isDefault:Boolean = true;
         // public var metaInfo:ElementMetaData;
         public var name:String;
@@ -47,33 +49,34 @@ package pixeldroid.lsdoc.models
 
         public static function fromJSON(j:JSON):TypeMethod
         {
-            var f:TypeMethod = new TypeMethod();
+            var m:TypeMethod = new TypeMethod();
             var jj:JSON;
 
-            f.docString = j.getString('docString');
-            f.isDefault = j.getBoolean('defaultconstructor');
-            f.sourceFile = LibUtils.cleanSourcePath(j.getString('source'), f.returnTypeString);
-            f.sourceLine = j.getNumber('line');
-            f.type = j.getString('type');
+            m.docString = j.getString('docString');
+            m.docString = DocTag.fromRawField(m.docString, m.docTags);
+            m.isDefault = j.getBoolean('defaultconstructor');
+            m.sourceFile = LibUtils.cleanSourcePath(j.getString('source'), m.returnTypeString);
+            m.sourceLine = j.getNumber('line');
+            m.type = j.getString('type');
 
-            // f.metaInfo -> j.getObject('metainfo');
+            // m.metaInfo -> j.getObject('metainfo');
 
             if (jj = j.getArray('methodattributes'))
-                LibUtils.extractStringVector(jj, f.attributes);
+                LibUtils.extractStringVector(jj, m.attributes);
 
-            f.name = (f.attributes.contains('operator')) ?
+            m.name = (m.attributes.contains('operator')) ?
                 TypeMethod.methodOperators[j.getString('name')] : j.getString('name');
 
             if (jj = j.getArray('parameters'))
-                LibUtils.extractTypeVector(jj, MethodParameter.fromJSON, f.parameters);
+                LibUtils.extractTypeVector(jj, MethodParameter.fromJSON, m.parameters);
 
             if (jj = j.getObject('templatetypes'))
-                f.templateTypes = ValueTemplate.fromJSON(jj);
+                m.templateTypes = ValueTemplate.fromJSON(jj);
 
-            if (f.type == 'METHOD')
-                f.returnTypeString = j.getString('returntype');
+            if (m.type == 'METHOD')
+                m.returnTypeString = j.getString('returntype');
 
-            return f;
+            return m;
         }
 
     }

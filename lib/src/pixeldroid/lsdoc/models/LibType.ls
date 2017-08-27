@@ -4,9 +4,10 @@ package pixeldroid.lsdoc.models
 
     import pixeldroid.lsdoc.LibUtils;
     import pixeldroid.lsdoc.models.DefinitionConstruct;
+    import pixeldroid.lsdoc.models.DocTag;
+    // import pixeldroid.lsdoc.models.ElementMetaData;
     import pixeldroid.lsdoc.models.TypeField;
     import pixeldroid.lsdoc.models.TypeMethod;
-    // import pixeldroid.lsdoc.models.ElementMetaData;
     import pixeldroid.lsdoc.models.TypeProperty;
 
 
@@ -24,6 +25,7 @@ package pixeldroid.lsdoc.models
         public var delegateReturnTypeString:String;
         public var delegateTypeStrings:Vector.<String> = [];
         public var docString:String;
+        public var docTags:Vector.<DocTag> = [];
         public var fields:Vector.<TypeField> = [];
         public var interfaceStrings:Vector.<String> = [];
         //public var metaInfo:ElementMetaData;
@@ -54,6 +56,7 @@ package pixeldroid.lsdoc.models
                 LibUtils.extractStringVector(jj, t.delegateTypeStrings);
 
             t.docString = j.getString('docString');
+            t.docString = DocTag.fromRawField(t.docString, t.docTags);
 
             if (jj = j.getArray('interfaces'))
                 LibUtils.extractStringVector(jj, t.interfaceStrings);

@@ -7,4 +7,3 @@ Code sample:
 var c:ExampleClass = new ExampleClass();
 ```
 
-@see example.ExampleSuperClass

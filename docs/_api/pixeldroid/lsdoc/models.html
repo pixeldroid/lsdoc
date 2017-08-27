@@ -1,14 +1,15 @@
 ---
 classes: 
   - { declaration: "pixeldroid/lsdoc/models/ClassAttribute.ls", name: "ClassAttribute" }
-  - { declaration: "pixeldroid/lsdoc/models/DefinitionConstruct.ls", description: "An enumeration of Loom types.\n\nUnlike an Enum type, the values of this class are convertible to strings.", name: "DefinitionConstruct" }
-  - { declaration: "pixeldroid/lsdoc/models/LibModule.ls", description: "Encapsulates the data of a loomlib `module` declaration.", name: "LibModule" }
-  - { declaration: "pixeldroid/lsdoc/models/LibType.ls", description: "Encapsulates the data of a loomlib `type` declaration.\n\n@see DefinitionConstruct", name: "LibType" }
-  - { declaration: "pixeldroid/lsdoc/models/MethodParameter.ls", description: "Encapsulates the data of a loomlib method parameter, found in a `parameters` declaration.", name: "MethodParameter" }
-  - { declaration: "pixeldroid/lsdoc/models/TypeField.ls", description: "Encapsulates the data of a loomlib `field` declaration.", name: "TypeField" }
-  - { declaration: "pixeldroid/lsdoc/models/TypeMethod.ls", description: "Encapsulates the data of a loomlib `method` declaration.\n\nThis includes overloaded operator definitions.", name: "TypeMethod" }
-  - { declaration: "pixeldroid/lsdoc/models/TypeProperty.ls", description: "Encapsulates the data of a loomlib `field` declaration.\n\nNote that doc strings are only recorded from the getter definition.", name: "TypeProperty" }
-  - { declaration: "pixeldroid/lsdoc/models/ValueTemplate.ls", description: "Provides type details for the items of a loomlib `templatetypes` declaration.\n\nContainer types like `Vector` and `Dictionary` declare the strict type of their members.", name: "ValueTemplate" }
+  - { declaration: "pixeldroid/lsdoc/models/DefinitionConstruct.ls", description: "An enumeration of Loom types.\n\nUnlike an Enum type, the values of this class are convertible to strings.\n", name: "DefinitionConstruct" }
+  - { declaration: "pixeldroid/lsdoc/models/DocTag.ls", name: "DocTag" }
+  - { declaration: "pixeldroid/lsdoc/models/LibModule.ls", description: "Encapsulates the data of a loomlib `module` declaration.\n", name: "LibModule" }
+  - { declaration: "pixeldroid/lsdoc/models/LibType.ls", description: "Encapsulates the data of a loomlib `type` declaration.\n\n", name: "LibType" }
+  - { declaration: "pixeldroid/lsdoc/models/MethodParameter.ls", description: "Encapsulates the data of a loomlib method parameter, found in a `parameters` declaration.\n", name: "MethodParameter" }
+  - { declaration: "pixeldroid/lsdoc/models/TypeField.ls", description: "Encapsulates the data of a loomlib `field` declaration.\n", name: "TypeField" }
+  - { declaration: "pixeldroid/lsdoc/models/TypeMethod.ls", description: "Encapsulates the data of a loomlib `method` declaration.\n\nThis includes overloaded operator definitions.\n", name: "TypeMethod" }
+  - { declaration: "pixeldroid/lsdoc/models/TypeProperty.ls", description: "Encapsulates the data of a loomlib `property` declaration.\n\nLoom properties are special methods that look like a field, but provide control over access and mutation:\n- `function get foo()`\n- `function set foo()` (optional, value is read-only when not defined)\n\nNote that doc strings are only recorded from the getter definition.\n", name: "TypeProperty" }
+  - { declaration: "pixeldroid/lsdoc/models/ValueTemplate.ls", description: "Provides type details for the items of a loomlib `templatetypes` declaration.\n\nContainer types like `Vector` and `Dictionary` declare the strict type of their members.\n", name: "ValueTemplate" }
 layout: "package"
 module: "pixeldroid.lsdoc.models"
 ...

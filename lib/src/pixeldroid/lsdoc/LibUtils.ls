@@ -14,7 +14,6 @@ package pixeldroid.lsdoc
             if (j.getJSONType() != JSONType.JSON_ARRAY)
                 return;
 
-            // FIXME: too much trust going on here? need to assert or validate f and v use matching types?
             var n:Number = j.getArrayCount();
             for (var i:Number = 0; i < n; i++)
                v.push(f(j.getArrayObject(i)));

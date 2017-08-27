@@ -2,9 +2,10 @@
 ancestors: 
   - { module: "system", name: "Object" }
 fields: 
+  - { attributes: [ "public" ], description: "", name: "attributes", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
   - { attributes: [ "public" ], description: "", name: "docString", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "docTags", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.DocTag" } ], type: "system.Vector" }, type: "system.Vector" }
   - { attributes: [ "public" ], description: "", name: "isDefault", type: "system.Boolean" }
-  - { attributes: [ "public", "const" ], description: "", name: "attributes", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
   - { attributes: [ "public" ], description: "", name: "name", type: "system.String" }
   - { attributes: [ "public" ], description: "", name: "parameters", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.MethodParameter" } ], type: "system.Vector" }, type: "system.Vector" }
   - { attributes: [ "public" ], description: "", name: "returnTypeString", type: "system.String" }
