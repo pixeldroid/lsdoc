@@ -54,12 +54,8 @@ package pixeldroid.lsdoc
             var json:String = File.loadTextFile(path);
 
             if (parser.loadString(json))
-            {
-                var m:JSON = parser.getArray('modules');
-                var n:Number = m.getArrayCount();
-                for (var i:Number = 0; i < n; i++)
-                    modules.push(LibModule.fromJSON(m.getArrayObject(i)));
-            }
+                LibUtils.extractTypeVector(parser.getArray('modules'), LibModule.fromJSON, modules);
+
             else
             {
                 errors.push(LSDocError.parseFail(parser.getError()));

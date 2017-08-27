@@ -11,8 +11,8 @@ package pixeldroid.lsdoc.models
     */
     public class ValueTemplate
     {
-        public var typeString:String;
         public var itemTypes:Vector.<ValueTemplate> = [];
+        public var typeString:String;
 
         public function toString():String
         {

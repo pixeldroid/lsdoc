@@ -30,10 +30,10 @@ package pixeldroid.lsdoc.models
         };
 
 
+        public var attributes:Vector.<String> = [];
         public var docString:String;
         public var isDefault:Boolean = true;
         // public var metaInfo:ElementMetaData;
-        public const attributes:Vector.<String> = [];
         public var name:String;
         public var parameters:Vector.<MethodParameter> = [];
         public var returnTypeString:String;
@@ -48,27 +48,27 @@ package pixeldroid.lsdoc.models
         public static function fromJSON(j:JSON):TypeMethod
         {
             var f:TypeMethod = new TypeMethod();
+            var jj:JSON;
 
             f.docString = j.getString('docString');
             f.isDefault = j.getBoolean('defaultconstructor');
-            // f.metaInfo -> j.getObject('metainfo');
-            LibUtils.extractStringVector(j.getArray('methodattributes'), f.attributes);
-
-            f.name = (f.attributes.contains('operator')) ?
-                TypeMethod.methodOperators[j.getString('name')] : j.getString('name');
-
-            var pj:JSON = j.getArray('parameters');
-            var n:Number = pj.getArrayCount();
-            for (var i:Number = 0; i < n; i++)
-               f.parameters.push(MethodParameter.fromJSON(pj.getArrayObject(i)));
-
             f.sourceFile = LibUtils.cleanSourcePath(j.getString('source'), f.returnTypeString);
             f.sourceLine = j.getNumber('line');
             f.type = j.getString('type');
 
-            var tj:JSON = j.getObject('templatetypes');
-            if (tj)
-                f.templateTypes = ValueTemplate.fromJSON(tj);
+            // f.metaInfo -> j.getObject('metainfo');
+
+            if (jj = j.getArray('methodattributes'))
+                LibUtils.extractStringVector(jj, f.attributes);
+
+            f.name = (f.attributes.contains('operator')) ?
+                TypeMethod.methodOperators[j.getString('name')] : j.getString('name');
+
+            if (jj = j.getArray('parameters'))
+                LibUtils.extractTypeVector(jj, MethodParameter.fromJSON, f.parameters);
+
+            if (jj = j.getObject('templatetypes'))
+                f.templateTypes = ValueTemplate.fromJSON(jj);
 
             if (f.type == 'METHOD')
                 f.returnTypeString = j.getString('returntype');

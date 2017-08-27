@@ -2,6 +2,7 @@ package pixeldroid.lsdoc.models
 {
     import system.JSON;
 
+    import pixeldroid.lsdoc.LibUtils;
     import pixeldroid.lsdoc.models.DefinitionConstruct;
     import pixeldroid.lsdoc.models.LibType;
     import pixeldroid.platform.StringUtils;
@@ -23,16 +24,13 @@ package pixeldroid.lsdoc.models
         public static function fromJSON(j:JSON):LibModule
         {
             var m:LibModule = new LibModule();
+            var jj:JSON;
 
             m.name = j.getString('name');
             m.version = j.getString('version');
-            var mTypes:Vector.<LibType> = m.types;
-            var jTypes:JSON = j.getArray('types');
-            var numTypes:Number = jTypes.getArrayCount();
-            for (var i:Number = 0; i < numTypes; i++)
-            {
-                mTypes.push(LibType.fromJSON(jTypes.getArrayObject(i)));
-            }
+
+            if (jj = j.getArray('types'))
+                LibUtils.extractTypeVector(jj, LibType.fromJSON, m.types);
 
             return m;
         }

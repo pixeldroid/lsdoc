@@ -9,19 +9,23 @@ package pixeldroid.lsdoc.models
 
 
     /**
-    Encapsulates the data of a loomlib `field` declaration.
+    Encapsulates the data of a loomlib `property` declaration.
+
+    Loom properties are special methods that look like a field, but provide control over access and mutation:
+      - `function get foo()`
+      - `function set foo()` (optional, value is read-only when not defined)
 
     Note that doc strings are only recorded from the getter definition.
     */
     public class TypeProperty
     {
+        public var attributes:Vector.<String> = [];
         public var docString:String;
-        public var isReadOnly:Boolean = false;
         public var getter:TypeMethod;
-        public var setter:TypeMethod;
+        public var isReadOnly:Boolean = false;
         // public var metaInfo:ElementMetaData;
         public var name:String;
-        public const attributes:Vector.<String> = [];
+        public var setter:TypeMethod;
         public var templateTypes:ValueTemplate;
         public var typeString:String;
 
@@ -31,28 +35,27 @@ package pixeldroid.lsdoc.models
         public static function fromJSON(j:JSON):TypeProperty
         {
             var p:TypeProperty = new TypeProperty();
+            var jj:JSON;
 
             p.docString = j.getString('docString');
-            // p.metaInfo -> j.getObject('metainfo');
-            LibUtils.extractStringVector(j.getArray('propertyattributes'), p.attributes);
             p.name = j.getString('name');
             p.typeString = j.getString('type');
 
-            var jj:JSON;
+            // p.metaInfo -> j.getObject('metainfo');
 
-            jj = j.getObject('getter');
-            if (jj)
+            if (jj = j.getArray('propertyattributes'))
+                LibUtils.extractStringVector(jj, p.attributes);
+
+            if (jj = j.getObject('getter'))
                 p.getter = TypeMethod.fromJSON(jj);
 
-            jj = j.getObject('setter');
-            if (jj)
+            if (jj = j.getObject('setter'))
                 p.setter = TypeMethod.fromJSON(jj);
 
             else
                 p.isReadOnly = true;
 
-            jj = j.getObject('templatetypes');
-            if (jj)
+            if (jj = j.getObject('templatetypes'))
                 p.templateTypes = ValueTemplate.fromJSON(jj);
 
             return p;

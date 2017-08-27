@@ -1,17 +1,36 @@
 package pixeldroid.lsdoc
 {
     import system.JSON;
+    import system.JSONType;
+
 
     public final class LibUtils
     {
+        /**
+        Extracts JSON array elements, sends them through a transformation function, and stores them in a provided Vector.
+        */
+        public static function extractTypeVector(j:JSON, f:Function, v:Vector.<Object>):void
+        {
+            if (j.getJSONType() != JSONType.JSON_ARRAY)
+                return;
+
+            // FIXME: too much trust going on here? need to assert or validate f and v use matching types?
+            var n:Number = j.getArrayCount();
+            for (var i:Number = 0; i < n; i++)
+               v.push(f(j.getArrayObject(i)));
+        }
 
         /**
         Inserts the contents of a JSON string array into a `Vector.<String>`
         */
         public static function extractStringVector(j:JSON, v:Vector.<String>):void
         {
+            if (j.getJSONType() != JSONType.JSON_ARRAY)
+                return;
+
             var n:Number = j.getArrayCount();
-            for (var i:Number = 0; i < n; i++) v.push(j.getArrayString(i));
+            for (var i:Number = 0; i < n; i++)
+                v.push(j.getArrayString(i));
         }
 
         /**

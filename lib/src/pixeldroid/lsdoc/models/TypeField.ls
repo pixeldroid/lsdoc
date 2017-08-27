@@ -12,9 +12,9 @@ package pixeldroid.lsdoc.models
     */
     public class TypeField
     {
+        public var attributes:Vector.<String> = [];
         public var docString:String;
         // public var metaInfo:ElementMetaData;
-        public const attributes:Vector.<String> = [];
         public var name:String;
         public var templateTypes:ValueTemplate;
         public var typeString:String;
@@ -25,16 +25,19 @@ package pixeldroid.lsdoc.models
         public static function fromJSON(j:JSON):TypeField
         {
             var f:TypeField = new TypeField();
+            var jj:JSON;
 
             f.docString = j.getString('docString');
-            // f.metaInfo -> j.getObject('metainfo');
-            LibUtils.extractStringVector(j.getArray('fieldattributes'), f.attributes);
             f.name = j.getString('name');
             f.typeString = j.getString('type');
 
-            var tj:JSON = j.getObject('templatetypes');
-            if (tj)
-                f.templateTypes = ValueTemplate.fromJSON(tj);
+            // f.metaInfo -> j.getObject('metainfo');
+
+            if (jj = j.getArray('fieldattributes'))
+                LibUtils.extractStringVector(jj, f.attributes);
+
+            if (jj = j.getObject('templatetypes'))
+                f.templateTypes = ValueTemplate.fromJSON(jj);
 
             return f;
         }

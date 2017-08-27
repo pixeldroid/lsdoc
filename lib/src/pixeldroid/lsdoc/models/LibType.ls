@@ -18,14 +18,14 @@ package pixeldroid.lsdoc.models
     public class LibType
     {
         public var baseTypeString:String;
-        public const attributes:Vector.<String> = [];
+        public var attributes:Vector.<String> = [];
         public var construct:String;
         public var constructor:TypeMethod;
         public var delegateReturnTypeString:String;
-        public const delegateTypeStrings:Vector.<String> = [];
+        public var delegateTypeStrings:Vector.<String> = [];
         public var docString:String;
         public var fields:Vector.<TypeField> = [];
-        public const interfaceStrings:Vector.<String> = [];
+        public var interfaceStrings:Vector.<String> = [];
         //public var metaInfo:ElementMetaData;
         public var methods:Vector.<TypeMethod> = [];
         public var name:String;
@@ -38,21 +38,30 @@ package pixeldroid.lsdoc.models
         public static function fromJSON(j:JSON):LibType
         {
             var t:LibType = new LibType();
+            var jj:JSON;
 
             t.name = j.getString('name');
             t.construct = j.getString('type');
 
             t.baseTypeString = j.getString('baseType');
-            LibUtils.extractStringVector(j.getArray('classattributes'), t.attributes);
+
+            if (jj = j.getArray('classattributes'))
+                LibUtils.extractStringVector(jj, t.attributes);
+
             t.delegateReturnTypeString = j.getString('delegateReturnType');
-            LibUtils.extractStringVector(j.getArray('delegateTypes'), t.delegateTypeStrings);
+
+            if (jj = j.getArray('delegateTypes'))
+                LibUtils.extractStringVector(jj, t.delegateTypeStrings);
+
             t.docString = j.getString('docString');
-            LibUtils.extractStringVector(j.getArray('interfaces'), t.interfaceStrings);
+
+            if (jj = j.getArray('interfaces'))
+                LibUtils.extractStringVector(jj, t.interfaceStrings);
+
             t.packageString = j.getString('package');
             t.sourceFile = LibUtils.cleanSourcePath(j.getString('source'), t.packageString);
 
-            var construct:DefinitionConstruct = DefinitionConstruct.fromString(t.construct);
-            switch(construct)
+            switch(DefinitionConstruct.fromString(t.construct))
             {
                 case DefinitionConstruct.CLASS:
                 case DefinitionConstruct.STRUCT:
@@ -61,27 +70,14 @@ package pixeldroid.lsdoc.models
                     break;
             }
 
-            var jj:JSON;
-            var n:Number;
-            var i:Number;
+            if (jj = j.getArray('methods'))
+                LibUtils.extractTypeVector(jj, TypeMethod.fromJSON, t.methods);
 
-            // TODO: LibUtils.extractTypeVector(j.getArray('methods'), TypeMethod.fromJSON, t.methods);
-            jj = j.getArray('methods');
-            n = jj.getArrayCount();
-            for (i = 0; i < n; i++)
-               t.methods.push(TypeMethod.fromJSON(jj.getArrayObject(i)));
+            if (jj = j.getArray('fields'))
+                LibUtils.extractTypeVector(jj, TypeField.fromJSON, t.fields);
 
-            // TODO: LibUtils.extractTypeVector(j.getArray('fields'), TypeField.fromJSON, t.fields);
-            jj = j.getArray('fields');
-            n = jj.getArrayCount();
-            for (i = 0; i < n; i++)
-               t.fields.push(TypeField.fromJSON(jj.getArrayObject(i)));
-
-            // TODO: LibUtils.extractTypeVector(j.getArray('properties'), TypeField.fromJSON, t.properties);
-            jj = j.getArray('properties');
-            n = jj.getArrayCount();
-            for (i = 0; i < n; i++)
-               t.properties.push(TypeProperty.fromJSON(jj.getArrayObject(i)));
+            if (jj = j.getArray('properties'))
+                LibUtils.extractTypeVector(jj, TypeProperty.fromJSON, t.properties);
 
             return t;
         }

@@ -32,11 +32,10 @@ package pixeldroid.lsdoc.models
 
             p.isVarArgs = j.getBoolean('isvarargs');
             p.name = j.getString('name');
+            p.typeString = j.getString('type');
 
             if (jj = j.getObject('templatetypes'))
                 p.templateTypes = ValueTemplate.fromJSON(jj);
-
-            p.typeString = j.getString('type');
 
             return p;
         }
