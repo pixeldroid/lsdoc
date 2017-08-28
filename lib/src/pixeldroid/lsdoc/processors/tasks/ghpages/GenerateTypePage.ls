@@ -57,6 +57,26 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             page[section] = typeRefs;
         }
 
+        private static function getOneTag(tagInfo:DocTag):Dictionary.<String,Object>
+        {
+            var tag:Dictionary.<String,Object> = {
+                'name'  : tagInfo.name,
+                'value' : tagInfo.value,
+            };
+
+            return tag;
+        }
+
+        private static function getTags(tagList:Vector.<DocTag>):Vector.<Dictionary.<String,Object>>
+        {
+            var tags:Vector.<Dictionary.<String,Object>> = [];
+
+            for each(var d:DocTag in tagList)
+                tags.push(getOneTag(d));
+
+            return tags;
+        }
+
         private static function getValueTemplate(templateTypes:ValueTemplate):Dictionary.<String,Object>
         {
             var tt:Dictionary.<String,Object> = {
@@ -151,28 +171,6 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             }
 
             return methods;
-        }
-
-        private static function getOneTag(tagInfo:DocTag):Dictionary.<String,Object>
-        {
-            var tag:Dictionary.<String,Object> = {
-                'name'  : tagInfo.name,
-                'value' : tagInfo.value,
-            };
-
-            return tag;
-        }
-
-        private static function getTags(tagList:Vector.<DocTag>):Vector.<Dictionary.<String,Object>>
-        {
-            var tags:Vector.<Dictionary.<String,Object>> = [];
-
-            for each(var d:DocTag in tagList)
-            {
-                tags.push(getOneTag(d));
-            }
-
-            return tags;
         }
 
         private static function getOneField(fieldInfo:TypeField):Dictionary.<String,Object>

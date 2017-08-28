@@ -24,8 +24,10 @@ package example
 
         /**
         Public field doc comments first line.
-        Second line.
-        Third line.
+
+        Second paragraph.
+
+        Third paragraph.
         */
         public var public_var:String = 'A public member variable';
 
