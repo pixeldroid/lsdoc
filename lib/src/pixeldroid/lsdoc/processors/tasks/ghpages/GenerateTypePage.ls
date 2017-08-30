@@ -250,13 +250,12 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
         private static function getDelegateInfo(typeInfo:LibType):TypeMethod
         {
-            var attr:Vector.<String> = typeInfo.attributes.concat(['delegate']);
-
-            var f:TypeMethod = new TypeMethod();
-            f.docString = typeInfo.docString;
-            f.attributes = attr;
-            f.name = typeInfo.name;
-            f.returnTypeString = typeInfo.delegateReturnTypeString;
+            var m:TypeMethod = new TypeMethod();
+            m.docString = typeInfo.docString;
+            m.docTags = typeInfo.docTags;
+            m.attributes = typeInfo.attributes.concat(['delegate']);
+            m.name = typeInfo.name;
+            m.returnTypeString = typeInfo.delegateReturnTypeString;
 
             if (typeInfo.delegateTypeStrings.length > 0)
             {
@@ -268,14 +267,14 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                     p = new MethodParameter();
                     p.name = 'param' +(i++);
                     p.typeString = paramType;
-                    // FIXME: p.templateTypes cannot be set because loomlib does not carry delegate template type info
+                    // Note: p.templateTypes cannot be set because loomlib does not carry delegate template type info
                     params.push(p);
                 }
 
-                f.parameters = params;
+                m.parameters = params;
             }
 
-            return f;
+            return m;
         }
 
         private static function getTypePage(typeInfo:LibType, moduleInfo:LibModule):Vector.<String>
