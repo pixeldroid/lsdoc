@@ -10,12 +10,12 @@ constructor:
   type: "example.ExampleClass"
 fields: 
   - { attributes: [ "public", "static", "const" ], description: " Constant field doc comments first and only line. \n", name: "constant", type: "system.String" }
-  - { attributes: [ "public" ], description: "Public field doc comments first line.\n\nSecond paragraph.\n\nThird paragraph.\n", name: "public_var", type: "system.String" }
-  - { attributes: [ "public" ], description: " Public templated field doc comments first line. \n", name: "public_templated_var", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
-  - { attributes: [ "protected" ], description: " Protected field doc comments first line. \n", name: "protected_var", type: "system.String" }
+  - { attributes: [ "public" ], description: "Public field doc comments first line.\n\nSecond paragraph.\n\nThird paragraph.\n", name: "public_field", type: "system.String" }
+  - { attributes: [ "public" ], description: " Public templated field doc comments first line. \n", name: "public_templated_field", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "protected" ], description: " Protected field doc comments first line. \n", name: "protected_field", type: "system.String" }
 layout: "type"
 methods: 
-  - { attributes: [ "public" ], description: "Overridden interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).\n\n", name: "interface_method", parameters: [ { description: "The first parameter (required)", name: "param1", type: "system.String" }, { description: "Any additional params (optional)", is_var_args: true, name: "rest", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], type: "system.Void" }
+  - { attributes: [ "public" ], description: "Overridden interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).\n\n\n", name: "interface_method", parameters: [ { description: "The first parameter (required)", name: "param1", type: "system.String" }, { description: "Any additional params (optional)", is_var_args: true, name: "rest", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], tags: [ { name: "see", value: "example.ExampleInterface" } ], type: "system.Void" }
   - { attributes: [ "public" ], description: "Overridden public doc comments first line.\n\nThis method has one required first parameter,\nand an optional second parameter.\n\nThe second parameter's defaul value is different than that of the base class.\n\n", name: "method", parameters: [ { description: "The first parameter (required)", name: "param1", type: "system.String" }, { default_value: "child default", description: "The second parameter (optional)", name: "param2", type: "system.String" } ], type: "system.String" }
   - { attributes: [ "public" ], description: "Templated return value method signature doc comments first line.\n\nThis method signature has a templated return type.\n", name: "method_template_return", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
   - { attributes: [ "public" ], description: "Kitchen sink method signature doc comments first line.\n\nThis method signature has 3 template type params and varargs.\n\n", name: "kitchen_sink_method", parameters: [ { description: "A `Vector` of anything", name: "param1", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" }, { description: "A `Dictionary` using `String` values to look up `Vector`s of anything", name: "param2", template_types: { item_types: [ { item_types: [], type: "system.String" }, { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" } ], type: "system.Dictionary" }, type: "system.Dictionary" }, { description: "A 3D matrix: `m[x][y][z] = 0`", name: "param3", template_types: { item_types: [ { item_types: [ { item_types: [ { item_types: [], type: "system.Number" } ], type: "system.Vector" } ], type: "system.Vector" } ], type: "system.Vector" }, type: "system.Vector" }, { description: "An optional varargs catchall for any additional params the user wants to supply", is_var_args: true, name: "args", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], type: "system.Void" }
@@ -27,7 +27,11 @@ properties:
   - { attributes: [ "public" ], description: " Public read-only property doc comments first line. \n", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, is_read_only: true, name: "read_only_property", type: "example.ExampleEnum" }
   - { attributes: [ "public" ], description: " Public property getter doc comments first line. \n", getter: { attributes: [ "public" ], description: "", name: "__pget_property", type: "system.String" }, name: "property", setter: { attributes: [ "public" ], description: "", name: "__pset_property", parameters: [ { name: "value", type: "system.String" } ], type: "system.Void" }, type: "system.String" }
 tags: 
-  - { name: "see", value: "example.ExampleSuperClass" }
+  - { name: "see", value: "example.ExampleSuperClass#constructor" }
+  - { name: "see", value: "example.ExampleEnum#LAST" }
+  - { name: "see", value: "#read_only_property" }
+  - { name: "see", value: "#protected_field" }
+  - { name: "see", value: "#kitchen_sink_method" }
 type: "CLASS"
 type_attributes: 
   - "public"

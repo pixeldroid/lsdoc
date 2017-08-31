@@ -8,6 +8,8 @@ module: "example"
 name: "ExampleInterface"
 properties: 
   - { attributes: [ "public" ], description: " Public read-only property doc comments first line. \n", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, is_read_only: true, name: "read_only_property", type: "example.ExampleEnum" }
+tags: 
+  - { name: "see", value: "#interface_method" }
 type: "INTERFACE"
 type_attributes: 
   - "public"

@@ -13,8 +13,8 @@ fields:
 layout: "type"
 methods: 
   - { attributes: [ "public", "operator", "static" ], description: "Public static operator doc comments first line.\n\nThe assignment operator transfers the value of `b` to `a`, and returns `a`.\n", name: "=", parameters: [ { name: "a", type: "example.ExampleStruct" }, { name: "b", type: "example.ExampleStruct" } ], type: "example.ExampleStruct" }
-  - { attributes: [ "public", "operator", "static" ], description: "Public static operator doc comments first line.\n\nThe addition operator combines the values of `b` and `a` into a new instance.\n", name: "+", parameters: [ { name: "a", type: "example.ExampleStruct" }, { name: "b", type: "example.ExampleStruct" } ], type: "example.ExampleStruct" }
-  - { attributes: [ "public", "operator" ], description: "Public operator doc comments first line.\n\nThe addition with assignment operator combines the values of `b` into the calling instance.\n", name: "+=", parameters: [ { name: "b", type: "example.ExampleStruct" } ], type: "system.Void" }
+  - { attributes: [ "public", "operator", "static" ], description: "Public static operator doc comments first line.\n\nThe addition operator combines the values of `b` and `a` into a new instance.\n\n", name: "+", parameters: [ { name: "a", type: "example.ExampleStruct" }, { name: "b", type: "example.ExampleStruct" } ], tags: [ { name: "see", value: "#+=" } ], type: "example.ExampleStruct" }
+  - { attributes: [ "public", "operator" ], description: "Public operator doc comments first line.\n\nThe addition with assignment operator combines the values of `b` into the calling instance.\n\n", name: "+=", parameters: [ { name: "b", type: "example.ExampleStruct" } ], tags: [ { name: "see", value: "#+" } ], type: "system.Void" }
 module: "example"
 name: "ExampleStruct"
 type: "STRUCT"

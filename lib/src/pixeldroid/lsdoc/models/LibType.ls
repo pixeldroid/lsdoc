@@ -14,7 +14,7 @@ package pixeldroid.lsdoc.models
     /**
     Encapsulates the data of a loomlib `type` declaration.
 
-    @see DefinitionConstruct
+    @see pixeldroid.lsdoc.models.DefinitionConstruct
     */
     public class LibType
     {

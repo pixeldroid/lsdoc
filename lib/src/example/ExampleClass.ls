@@ -15,7 +15,11 @@ package example
     var c:ExampleClass = new ExampleClass();
     ```
 
-    @see example.ExampleSuperClass
+    @see example.ExampleSuperClass#constructor
+    @see example.ExampleEnum#LAST
+    @see #read_only_property
+    @see #protected_field
+    @see #kitchen_sink_method
     */
     public class ExampleClass extends ExampleSuperClass
     {
@@ -29,16 +33,16 @@ package example
 
         Third paragraph.
         */
-        public var public_var:String = 'A public member variable';
+        public var public_field:String = 'A public member field';
 
         /** Public templated field doc comments first line. */
-        public var public_templated_var:Vector.<String> = [];
+        public var public_templated_field:Vector.<String> = [];
 
         /** Protected field doc comments first line. */
-        protected var protected_var:String = 'A protected member variable';
+        protected var protected_field:String = 'A protected member field';
 
-        /** Private field doc comments should not appear in the API documentation. */
-        private var private_var:ExampleEnum = ExampleEnum.LAST;
+        /** Private doc comments should not appear in the API documentation. */
+        private var private_field:ExampleEnum = ExampleEnum.LAST;
 
 
         /**
@@ -55,7 +59,7 @@ package example
         public function get read_only_templated_property():Dictionary.<String,Number> { return null; }
 
         /** Public read-only property doc comments first line. */
-        override public function get read_only_property():ExampleEnum { return private_var; }
+        override public function get read_only_property():ExampleEnum { return private_field; }
 
         /** Public property getter doc comments first line. */
         override public function get property():String { return 'value'; }
@@ -71,6 +75,8 @@ package example
 
         @param param1 The first parameter (required)
         @param rest Any additional params (optional)
+
+        @see example.ExampleInterface
         */
         override public function interface_method(param1:String, ...rest):void { }
 

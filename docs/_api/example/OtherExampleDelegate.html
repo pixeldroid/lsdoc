@@ -8,7 +8,8 @@ signature:
   attributes: [ "public", "delegate" ]
   description: "Another delegate's method doc comments first line.\n\nThis method has three required parameters and returns a `Boolean`.\n\n"
   name: "OtherExampleDelegate"
-  parameters: [ { name: "param1", type: "system.String" }, { name: "param2", type: "system.Vector" }, { name: "param3", type: "system.Dictionary" } ]
+  parameters: [ { description: "The first parameter", name: "param1", type: "system.String" }, { description: "The second parameter", name: "param2", type: "system.Vector" }, { description: "The third parameter", name: "param3", type: "system.Dictionary" } ]
+  tags: [ { name: "return", value: "A `true` / `false` value" } ]
   type: "system.Boolean"
 tags: 
   - { name: "param", value: "param1 The first parameter" }

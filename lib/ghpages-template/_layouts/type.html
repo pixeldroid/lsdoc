@@ -73,6 +73,8 @@ layout: page
 {% capture description_file %}_{{ page.name }}-description.md{% endcapture %}
 {% capture description %}{% include_relative {{ description_file }} %}{% endcapture %}
 {{ description | replace: '   ⇥', '⇥' | replace: '⇥', site.code_indent | markdownify }}
+{% assign base_module = page.module | append: '.' | append: page.name %}
+{% include see_also.liquid base_module=base_module tags=page.tags heading=3 %}
 </div>
 {% endunless %}
 
@@ -97,7 +99,7 @@ layout: page
 {% for item in list %}
   {% capture params %}{% include parameters.liquid params=item.parameters base_url=site.baseurl module_root=site.module_root %}{% endcapture %}
   {% capture read_only %}{% if item.is_read_only %}<div class="ui horizontal label">read only</div>{% endif %}{% endcapture %}
-  {% capture signature %}<a href="#details-{{ a }}-{{ item.name }}">{{ item.name }}</a><span class="normal text">{% if isFunc and params.size == 0 %}(){% else %}{{ params | rstrip }}{% endif %}{% if isCtor != true %}:{% if item.template_types %}{% include template_signature.liquid template_type=item.template_types base_url=site.baseurl module_root=site.module_root %}{% else %}{% include module_linker.liquid module=item.type base_url=site.baseurl module_root=site.module_root %}{% endif %}{% endif %}</span>{% endcapture %}
+  {% capture signature %}<a href="#details-{{ item.name }}">{{ item.name }}</a><span class="normal text">{% if isFunc and params.size == 0 %}(){% else %}{{ params | rstrip }}{% endif %}{% if isCtor != true %}:{% if item.template_types %}{% include template_signature.liquid template_type=item.template_types base_url=site.baseurl module_root=site.module_root %}{% else %}{% include module_linker.liquid module=item.type base_url=site.baseurl module_root=site.module_root %}{% endif %}{% endif %}</span>{% endcapture %}
   {% assign d_lines = item.description | split: newline %}
   <tr><td{% if forloop.first %} class="collapsing"{% endif %}>{{ read_only }}{{ signature | rstrip }}</td><td>{{ d_lines | first | markdownify | remove: '<p>' | remove: '</p>' | remove: '</p>' | rstrip }}</td></tr>
 {% endfor %}
@@ -123,9 +125,11 @@ layout: page
   {% capture params %}{% include parameters.liquid params=item.parameters base_url=site.baseurl module_root=site.module_root %}{% endcapture %}
   {% capture read_only %}{% if item.is_read_only %}<div class="ui horizontal label">read only</div>{% endif %}{% endcapture %}
   {% capture signature %}{{ item.attributes | join: ' ' }} {% if isFunc %}function {% endif %}<strong>{{ item.name }}</strong>{{ params | rstrip }}{% if isCtor != true %}:{% if item.template_types %}{% include template_signature.liquid template_type=item.template_types base_url=site.baseurl module_root=site.module_root %}{% else %}{% include module_linker.liquid module=item.type base_url=site.baseurl module_root=site.module_root %}{% endif %}{% endif %}{% endcapture %}
-  <div class="ui tight vertical segment"><span class="anchor" id="details-{{ a }}-{{ item.name }}">&nbsp;</span><h4 class="ui very tight header">{{ item.name }}{% if isFunc %}(){% endif %}</h4>
+  <div class="ui tight vertical segment"><span class="anchor" id="details-{{ item.name }}">&nbsp;</span><h4 class="ui very tight header">{{ item.name }}{% if isFunc %}(){% endif %}</h4>
   <p>{{ read_only }}<code>{{ signature }}</code></p>
   {{ item.description | markdownify }}
+  {% assign base_module = page.module | append: '.' | append: page.name %}
+  {% include see_also.liquid base_module=base_module tags=item.tags heading=4 %}
   {% if isFunc and item.parameters %}<table class="ui striped definition table"><tbody>
   {% for p in item.parameters %}
     {% capture p_sig %}{% include parameter_signature.liquid param=p base_url=include.base_url %}{% endcapture %}

@@ -47,6 +47,8 @@ package example
         Public static operator doc comments first line.
 
         The addition operator combines the values of `b` and `a` into a new instance.
+
+        @see #+=
         */
         public static operator function +(a:ExampleStruct, b:ExampleStruct):ExampleStruct
         {
@@ -57,6 +59,8 @@ package example
         Public operator doc comments first line.
 
         The addition with assignment operator combines the values of `b` into the calling instance.
+
+        @see #+
         */
         public operator function +=(b:ExampleStruct)
         {

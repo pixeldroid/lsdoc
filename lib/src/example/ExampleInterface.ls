@@ -7,6 +7,8 @@ package example
     Interface description doc comments first line.
 
     Additional interface description documentation comments.
+
+    @see #interface_method
     */
     public interface ExampleInterface
     {

@@ -10,19 +10,19 @@
          "types":[
             {
                "baseType":"example.ExampleSuperClass",
-               "bytecode_instanceinitializer":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHPtAQIBBwAEAhoiAAASAQAAKQInACcDAAA8AwIBEgEAACkCKAA2AwEAQgMBAhIEAwAqBQAAOAQFBCoFAQApBgAAPAYFBDwDAgESAQAAKQIpACcDAgA8AwIBEgEAACkCKgA2AwMAKQQdADgDBAM8AwIBSwABABBFeGFtcGxlRW51bSBBIHByb3RlY3RlZCBtZW1iZXIgdmFyaWFibGUSc3lzdGVtLlZlY3Rvch1BIHB1YmxpYyBtZW1iZXIgdmFyaWFibGX+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0aGlzAAEaAAA=",
-               "bytecode_instanceinitializer_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHPtAQIBBwAEAhoiAAASAQAAKQInACcDAAA8AwIBEgEAACkCKAA2AwEAQgMBAhIEAwAqBQAAOAQFBCoFAQApBgAAPAYFBDwDAgESAQAAKQIpACcDAgA8AwIBEgEAACkCKgA2AwMAKQQdADgDBAM8AwIBSwABABBFeGFtcGxlRW51bSBBIHByb3RlY3RlZCBtZW1iZXIgdmFyaWFibGUSc3lzdGVtLlZlY3Rvch1BIHB1YmxpYyBtZW1iZXIgdmFyaWFibGX+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0aGlzAAEaAAA=",
+               "bytecode_instanceinitializer":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHPnAQIBBwAEAhoiAAASAQAAKQInACcDAAA8AwIBEgEAACkCKAA2AwEAQgMBAhIEAwAqBQAAOAQFBCoFAQApBgAAPAYFBDwDAgESAQAAKQIpACcDAgA8AwIBEgEAACkCKgA2AwMAKQQdADgDBAM8AwIBSwABABBFeGFtcGxlRW51bR1BIHByb3RlY3RlZCBtZW1iZXIgZmllbGQSc3lzdGVtLlZlY3RvchpBIHB1YmxpYyBtZW1iZXIgZmllbGT+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0aGlzAAEaAAA=",
+               "bytecode_instanceinitializer_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHPnAQIBBwAEAhoiAAASAQAAKQInACcDAAA8AwIBEgEAACkCKAA2AwEAQgMBAhIEAwAqBQAAOAQFBCoFAQApBgAAPAYFBDwDAgESAQAAKQIpACcDAgA8AwIBEgEAACkCKgA2AwMAKQQdADgDBAM8AwIBSwABABBFeGFtcGxlRW51bR1BIHByb3RlY3RlZCBtZW1iZXIgZmllbGQSc3lzdGVtLlZlY3RvchpBIHB1YmxpYyBtZW1iZXIgZmllbGT+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0aGlzAAEaAAA=",
                "bytecode_staticinitializer":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHOcAgIAAwAHABcYAAA2AAAAKQEZACcCAQA8AgEANgAAACcBAgA4AAEAKQEBACcCAwA8AgEANgAAACcBBAA4AAEAKQEBACkCewA8AgEANgAAACcBBQA4AAEAKQEAACcCBgA8AgEASwABABxBIGNvbnN0cnVjdG9yIHBhcmFtZXRlciNfX2xzX2NvbnN0cnVjdG9yX19kZWZhdWx0X2FyZ3MjcHJvdGVjdGVkX21ldGhvZF9fZGVmYXVsdF9hcmdzEmNoaWxkIGRlZmF1bHQZbWV0aG9kX19kZWZhdWx0X2FyZ3McQSBwdWJsaWMgY2xhc3MgY29uc3RhbnQRRXhhbXBsZUNsYXNzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
                "bytecode_staticinitializer_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHOcAgIAAwAHABcYAAA2AAAAKQEZACcCAQA8AgEANgAAACcBAgA4AAEAKQEBACcCAwA8AgEANgAAACcBBAA4AAEAKQEBACkCewA8AgEANgAAACcBBQA4AAEAKQEAACcCBgA8AgEASwABABxBIGNvbnN0cnVjdG9yIHBhcmFtZXRlciNfX2xzX2NvbnN0cnVjdG9yX19kZWZhdWx0X2FyZ3MjcHJvdGVjdGVkX21ldGhvZF9fZGVmYXVsdF9hcmdzEmNoaWxkIGRlZmF1bHQZbWV0aG9kX19kZWZhdWx0X2FyZ3McQSBwdWJsaWMgY2xhc3MgY29uc3RhbnQRRXhhbXBsZUNsYXNzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
                "classattributes":[
                   "public"
                ],
                "constructor":{
-                  "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHOHAwICCQAGAh99AAASAgAAKQMnACcEAAA8BAMCEgIAACkDKAA2BAEAQgQBAhIFBAAqBgAAOAUGBSoGAQApBwAAPAcGBTwEAwISAgAAKQMpACcEAgA8BAMCEgIAACkDKgA2BAMAKQUdADgEBQQ8BAMCNgcEACcIBQA4BwgHEggAAEIHAgJLAAEAFV9fbHNfY29uc3RydWN0b3IeZXhhbXBsZS5FeGFtcGxlU3VwZXJDbGFzcxBFeGFtcGxlRW51bSBBIHByb3RlY3RlZCBtZW1iZXIgdmFyaWFibGUSc3lzdGVtLlZlY3Rvch1BIHB1YmxpYyBtZW1iZXIgdmFyaWFibGX+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHRoaXMAAR9jb25zdHJ1Y3RvclBhcmFtAAAfX19sc19zd2Z0ABkGX19sc19zd2V4cHIAAAZfX2xzX2tleQAABl9fbHNfdGVybmFyeQAABl9fbHNfcG9zdGluYwAABgAA",
-                  "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHOhAwICCgAGAiSCAQAAEgIAACkDJwAnBAAAPAQDAhICAAApAygANgQBAEIEAQISBQQAKgYAADgFBgUqBgEAKQcAADwHBgU8BAMCEgIAACkDKQAnBAIAPAQDAhICAAApAyoANgQDACkFHQA4BAUEPAQDAjYHBAAnCAUAOAcIBxIJAABCBwICNgcEACcIBQA4BwgHEgkAAEIHAgJLAAEAFV9fbHNfY29uc3RydWN0b3IeZXhhbXBsZS5FeGFtcGxlU3VwZXJDbGFzcxBFeGFtcGxlRW51bSBBIHByb3RlY3RlZCBtZW1iZXIgdmFyaWFibGUSc3lzdGVtLlZlY3Rvch1BIHB1YmxpYyBtZW1iZXIgdmFyaWFibGX+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdGhpcwABJGNvbnN0cnVjdG9yUGFyYW0AACRfX2xzX3N3ZnQAGQtfX2xzX3N3ZXhwcgAAC19fbHNfa2V5AAALX19sc190ZXJuYXJ5AAALX19sc19wb3N0aW5jAAALAAA=",
+                  "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHOBAwICCQAGAh99AAASAgAAKQMnACcEAAA8BAMCEgIAACkDKAA2BAEAQgQBAhIFBAAqBgAAOAUGBSoGAQApBwAAPAcGBTwEAwISAgAAKQMpACcEAgA8BAMCEgIAACkDKgA2BAMAKQUdADgEBQQ8BAMCNgcEACcIBQA4BwgHEggAAEIHAgJLAAEAFV9fbHNfY29uc3RydWN0b3IeZXhhbXBsZS5FeGFtcGxlU3VwZXJDbGFzcxBFeGFtcGxlRW51bR1BIHByb3RlY3RlZCBtZW1iZXIgZmllbGQSc3lzdGVtLlZlY3RvchpBIHB1YmxpYyBtZW1iZXIgZmllbGT+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHRoaXMAAR9jb25zdHJ1Y3RvclBhcmFtAAAfX19sc19zd2Z0ABkGX19sc19zd2V4cHIAAAZfX2xzX2tleQAABl9fbHNfdGVybmFyeQAABl9fbHNfcG9zdGluYwAABgAA",
+                  "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHObAwICCgAGAiSCAQAAEgIAACkDJwAnBAAAPAQDAhICAAApAygANgQBAEIEAQISBQQAKgYAADgFBgUqBgEAKQcAADwHBgU8BAMCEgIAACkDKQAnBAIAPAQDAhICAAApAyoANgQDACkFHQA4BAUEPAQDAjYHBAAnCAUAOAcIBxIJAABCBwICNgcEACcIBQA4BwgHEgkAAEIHAgJLAAEAFV9fbHNfY29uc3RydWN0b3IeZXhhbXBsZS5FeGFtcGxlU3VwZXJDbGFzcxBFeGFtcGxlRW51bR1BIHByb3RlY3RlZCBtZW1iZXIgZmllbGQSc3lzdGVtLlZlY3RvchpBIHB1YmxpYyBtZW1iZXIgZmllbGT+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdGhpcwABJGNvbnN0cnVjdG9yUGFyYW0AACRfX2xzX3N3ZnQAGQtfX2xzX3N3ZXhwcgAAC19fbHNfa2V5AAALX19sc190ZXJuYXJ5AAALX19sc19wb3N0aW5jAAALAAA=",
                   "defaultconstructor":false,
                   "docString":"Constructor doc comments first line.\n\nThis constructor takes an optional parameter.\nNot all constructors do. Some take none at all.\n\n@param constructorParam Initialization info",
-                  "line":52,
+                  "line":56,
                   "metainfo":{},
                   "methodattributes":[
                      "public"
@@ -45,7 +45,7 @@
                },
                "delegateReturnType":"",
                "delegateTypes":[],
-               "docString":"Class description doc comments first line.\n\nAdditional class description documentation comments.\n\nCode sample:\n```as3\nvar c:ExampleClass = new ExampleClass();\n```\n\n@see example.ExampleSuperClass",
+               "docString":"Class description doc comments first line.\n\nAdditional class description documentation comments.\n\nCode sample:\n```as3\nvar c:ExampleClass = new ExampleClass();\n```\n\n@see example.ExampleSuperClass#constructor\n@see example.ExampleEnum#LAST\n@see #read_only_property\n@see #protected_field\n@see #kitchen_sink_method",
                "fields":[
                   {
                      "docString":" Constant field doc comments first and only line. ",
@@ -54,7 +54,7 @@
                         "static",
                         "const"
                      ],
-                     "line":23,
+                     "line":27,
                      "metainfo":{},
                      "name":"constant",
                      "ordinal":25,
@@ -67,9 +67,9 @@
                      "fieldattributes":[
                         "public"
                      ],
-                     "line":32,
+                     "line":36,
                      "metainfo":{},
-                     "name":"public_var",
+                     "name":"public_field",
                      "ordinal":39,
                      "source":"./src/.//example/ExampleClass.ls",
                      "templatetypes":null,
@@ -80,9 +80,9 @@
                      "fieldattributes":[
                         "public"
                      ],
-                     "line":35,
+                     "line":39,
                      "metainfo":{},
-                     "name":"public_templated_var",
+                     "name":"public_templated_field",
                      "ordinal":40,
                      "source":"./src/.//example/ExampleClass.ls",
                      "templatetypes":{
@@ -98,22 +98,22 @@
                      "fieldattributes":[
                         "protected"
                      ],
-                     "line":38,
+                     "line":42,
                      "metainfo":{},
-                     "name":"protected_var",
+                     "name":"protected_field",
                      "ordinal":41,
                      "source":"./src/.//example/ExampleClass.ls",
                      "templatetypes":null,
                      "type":"system.String"
                   },
                   {
-                     "docString":" Private field doc comments should not appear in the API documentation. ",
+                     "docString":" Private doc comments should not appear in the API documentation. ",
                      "fieldattributes":[
                         "private"
                      ],
-                     "line":41,
+                     "line":45,
                      "metainfo":{},
-                     "name":"private_var",
+                     "name":"private_field",
                      "ordinal":42,
                      "source":"./src/.//example/ExampleClass.ls",
                      "templatetypes":null,
@@ -125,14 +125,14 @@
                   "example.ExampleSuperClass"
                ],
                "interfaces":[],
-               "line":20,
+               "line":24,
                "metainfo":{},
                "methods":[
                   {
                      "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNqAgMIAAAAAVwAAEsAAQAAdGhpcwABAXBhcmFtMQAAAXJlc3QAAAFfX2xzX3N3ZnQAAAFfX2xzX3N3ZXhwcgAAAV9fbHNfa2V5AAABX19sc190ZXJuYXJ5AAABX19sc19wb3N0aW5jAAABAAA=",
                      "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNqAgMIAAAAAVwAAEsAAQAAdGhpcwABAXBhcmFtMQAAAXJlc3QAAAFfX2xzX3N3ZnQAAAFfX2xzX3N3ZXhwcgAAAV9fbHNfa2V5AAABX19sc190ZXJuYXJ5AAABX19sc19wb3N0aW5jAAABAAA=",
-                     "docString":"Overridden interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).\n\n@param param1 The first parameter (required)\n@param rest Any additional params (optional)",
-                     "line":75,
+                     "docString":"Overridden interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).\n\n@param param1 The first parameter (required)\n@param rest Any additional params (optional)\n\n@see example.ExampleInterface",
+                     "line":81,
                      "metainfo":{},
                      "methodattributes":[
                         "public"
@@ -166,10 +166,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNsAgMIAAAAAV5YAEwCAgAAdGhpcwABAXBhcmFtMQAAAXBhcmFtMgAAAV9fbHNfc3dmdAAAAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
-                     "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNsAgMIAAAAAV5YAEwCAgAAdGhpcwABAXBhcmFtMQAAAXBhcmFtMgAAAV9fbHNfc3dmdAAAAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
+                     "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNsAgMIAAAAAV5eAEwCAgAAdGhpcwABAXBhcmFtMQAAAXBhcmFtMgAAAV9fbHNfc3dmdAAAAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
+                     "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNsAgMIAAAAAV5eAEwCAgAAdGhpcwABAXBhcmFtMQAAAXBhcmFtMgAAAV9fbHNfc3dmdAAAAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
                      "docString":"Overridden public doc comments first line.\n\nThis method has one required first parameter,\nand an optional second parameter.\n\nThe second parameter's defaul value is different than that of the base class.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)",
-                     "line":88,
+                     "line":94,
                      "metainfo":{},
                      "methodattributes":[
                         "public"
@@ -199,10 +199,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHO8AQIBDAADAg9aXwA2BgAAQgYBAhIHBgAqCAAAOAcIByoIAQApCQIAPAkIBykJAAAnCgEAPAoJBykKAQAnCwIAPAsKB0wGAgAGYgZhEnN5c3RlbS5WZWN0b3L+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAdGhpcwABD19fbHNfc3dmdAAAD19fbHNfc3dleHByAAAPX19sc19rZXkAAA9fX2xzX3Rlcm5hcnkAAA9fX2xzX3Bvc3RpbmMAAA8AAA==",
-                     "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHO8AQIBDAADAg9aXwA2BgAAQgYBAhIHBgAqCAAAOAcIByoIAQApCQIAPAkIBykJAAAnCgEAPAoJBykKAQAnCwIAPAsKB0wGAgAGYgZhEnN5c3RlbS5WZWN0b3L+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAdGhpcwABD19fbHNfc3dmdAAAD19fbHNfc3dleHByAAAPX19sc19rZXkAAA9fX2xzX3Rlcm5hcnkAAA9fX2xzX3Bvc3RpbmMAAA8AAA==",
+                     "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHO8AQIBDAADAg9aZQA2BgAAQgYBAhIHBgAqCAAAOAcIByoIAQApCQIAPAkIBykJAAAnCgEAPAoJBykKAQAnCwIAPAsKB0wGAgAGYgZhEnN5c3RlbS5WZWN0b3L+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAdGhpcwABD19fbHNfc3dmdAAAD19fbHNfc3dleHByAAAPX19sc19rZXkAAA9fX2xzX3Rlcm5hcnkAAA9fX2xzX3Bvc3RpbmMAAA8AAA==",
+                     "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHO8AQIBDAADAg9aZQA2BgAAQgYBAhIHBgAqCAAAOAcIByoIAQApCQIAPAkIBykJAAAnCgEAPAoJBykKAQAnCwIAPAsKB0wGAgAGYgZhEnN5c3RlbS5WZWN0b3L+9oX/H/z2hf8fAAAAAAAAAAAAAAAAAAAAdGhpcwABD19fbHNfc3dmdAAAD19fbHNfc3dleHByAAAPX19sc19rZXkAAA9fX2xzX3Rlcm5hcnkAAA9fX2xzX3Bvc3RpbmMAAA8AAA==",
                      "docString":"Templated return value method signature doc comments first line.\n\nThis method signature has a templated return type.",
-                     "line":95,
+                     "line":101,
                      "metainfo":{},
                      "methodattributes":[
                         "public"
@@ -221,10 +221,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHN8AgUKAAAAAW5fAEsAAQAAdGhpcwABAXBhcmFtMQAAAXBhcmFtMgAAAXBhcmFtMwAAAWFyZ3MAAAFfX2xzX3N3ZnQAAAFfX2xzX3N3ZXhwcgAAAV9fbHNfa2V5AAABX19sc190ZXJuYXJ5AAABX19sc19wb3N0aW5jAAABAAA=",
-                     "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHN8AgUKAAAAAW5fAEsAAQAAdGhpcwABAXBhcmFtMQAAAXBhcmFtMgAAAXBhcmFtMwAAAWFyZ3MAAAFfX2xzX3N3ZnQAAAFfX2xzX3N3ZXhwcgAAAV9fbHNfa2V5AAABX19sc190ZXJuYXJ5AAABX19sc19wb3N0aW5jAAABAAA=",
+                     "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHN8AgUKAAAAAW5lAEsAAQAAdGhpcwABAXBhcmFtMQAAAXBhcmFtMgAAAXBhcmFtMwAAAWFyZ3MAAAFfX2xzX3N3ZnQAAAFfX2xzX3N3ZXhwcgAAAV9fbHNfa2V5AAABX19sc190ZXJuYXJ5AAABX19sc19wb3N0aW5jAAABAAA=",
+                     "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHN8AgUKAAAAAW5lAEsAAQAAdGhpcwABAXBhcmFtMQAAAXBhcmFtMgAAAXBhcmFtMwAAAWFyZ3MAAAFfX2xzX3N3ZnQAAAFfX2xzX3N3ZXhwcgAAAV9fbHNfa2V5AAABX19sc190ZXJuYXJ5AAABX19sc19wb3N0aW5jAAABAAA=",
                      "docString":"Kitchen sink method signature doc comments first line.\n\nThis method signature has 3 template type params and varargs.\n\n@param param1 A `Vector` of anything\n@param param2 A `Dictionary` using `String` values to look up `Vector`s of anything\n@param param3 A 3D matrix: `m[x][y][z] = 0`\n@param args An optional varargs catchall for any additional params the user wants to supply",
-                     "line":107,
+                     "line":113,
                      "metainfo":{},
                      "methodattributes":[
                         "public"
@@ -303,10 +303,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNsAgMIAAAAAV5fAEsAAQAAdGhpcwABAXBhcmFtMQAAAXBhcmFtMgAAAV9fbHNfc3dmdAAAAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
-                     "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNsAgMIAAAAAV5fAEsAAQAAdGhpcwABAXBhcmFtMQAAAXBhcmFtMgAAAV9fbHNfc3dmdAAAAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
+                     "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNsAgMIAAAAAV5lAEsAAQAAdGhpcwABAXBhcmFtMQAAAXBhcmFtMgAAAV9fbHNfc3dmdAAAAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
+                     "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNsAgMIAAAAAV5lAEsAAQAAdGhpcwABAXBhcmFtMQAAAXBhcmFtMgAAAV9fbHNfc3dmdAAAAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
                      "docString":"Overridden protected method doc comments first line.\n\nThis method has one required first parameter without any documentation,\nand one optional second parameter with documentation.\n\n@param param2 The second parameter (optional)",
-                     "line":117,
+                     "line":123,
                      "metainfo":{},
                      "methodattributes":[
                         "protected"
@@ -336,10 +336,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNfAgEHAAAAAk14ACsGAgBMBgIAAAB0aGlzAAECX19sc19zd2Z0AAACX19sc19zd2V4cHIAAAJfX2xzX2tleQAAAl9fbHNfdGVybmFyeQAAAl9fbHNfcG9zdGluYwAAAgAA",
-                     "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNfAgEHAAAAAk14ACsGAgBMBgIAAAB0aGlzAAECX19sc19zd2Z0AAACX19sc19zd2V4cHIAAAJfX2xzX2tleQAAAl9fbHNfdGVybmFyeQAAAl9fbHNfcG9zdGluYwAAAgAA",
+                     "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNfAgEHAAAAAk1+ACsGAgBMBgIAAAB0aGlzAAECX19sc19zd2Z0AAACX19sc19zd2V4cHIAAAJfX2xzX2tleQAAAl9fbHNfdGVybmFyeQAAAl9fbHNfcG9zdGluYwAAAgAA",
+                     "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNfAgEHAAAAAk1+ACsGAgBMBgIAAAB0aGlzAAECX19sc19zd2Z0AAACX19sc19zd2V4cHIAAAJfX2xzX2tleQAAAl9fbHNfdGVybmFyeQAAAl9fbHNfcG9zdGluYwAAAgAA",
                      "docString":" Private method doc comments should not appear in the API documentation. ",
-                     "line":120,
+                     "line":126,
                      "metainfo":{},
                      "methodattributes":[
                         "private"
@@ -359,10 +359,10 @@
                   {
                      "docString":" Public read-only templated property doc comments first line. ",
                      "getter":{
-                        "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNfAgEHAAAAAk03ACsGAABMBgIAAAB0aGlzAAECX19sc19zd2Z0AAACX19sc19zd2V4cHIAAAJfX2xzX2tleQAAAl9fbHNfdGVybmFyeQAAAl9fbHNfcG9zdGluYwAAAgAA",
-                        "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNfAgEHAAAAAk03ACsGAABMBgIAAAB0aGlzAAECX19sc19zd2Z0AAACX19sc19zd2V4cHIAAAJfX2xzX2tleQAAAl9fbHNfdGVybmFyeQAAAl9fbHNfcG9zdGluYwAAAgAA",
+                        "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNfAgEHAAAAAk07ACsGAABMBgIAAAB0aGlzAAECX19sc19zd2Z0AAACX19sc19zd2V4cHIAAAJfX2xzX2tleQAAAl9fbHNfdGVybmFyeQAAAl9fbHNfcG9zdGluYwAAAgAA",
+                        "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNfAgEHAAAAAk07ACsGAABMBgIAAAB0aGlzAAECX19sc19zd2Z0AAACX19sc19zd2V4cHIAAAJfX2xzX2tleQAAAl9fbHNfdGVybmFyeQAAAl9fbHNfcG9zdGluYwAAAgAA",
                         "docString":"",
-                        "line":55,
+                        "line":59,
                         "metainfo":{},
                         "methodattributes":[
                            "public"
@@ -401,10 +401,10 @@
                   {
                      "docString":" Public read-only property doc comments first line. ",
                      "getter":{
-                        "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNpAgEIAAAABE86ABIGAAApByoAOAYHBkwGAgAAAAAAdGhpcwABBF9fbHNfc3dmdAAABF9fbHNfc3dleHByAAAEX19sc19rZXkAAARfX2xzX3Rlcm5hcnkAAARfX2xzX3Bvc3RpbmMAAAQAAA==",
-                        "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNpAgEIAAAABE86ABIGAAApByoAOAYHBkwGAgAAAAAAdGhpcwABBF9fbHNfc3dmdAAABF9fbHNfc3dleHByAAAEX19sc19rZXkAAARfX2xzX3Rlcm5hcnkAAARfX2xzX3Bvc3RpbmMAAAQAAA==",
+                        "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNpAgEIAAAABE8+ABIGAAApByoAOAYHBkwGAgAAAAAAdGhpcwABBF9fbHNfc3dmdAAABF9fbHNfc3dleHByAAAEX19sc19rZXkAAARfX2xzX3Rlcm5hcnkAAARfX2xzX3Bvc3RpbmMAAAQAAA==",
+                        "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNpAgEIAAAABE8+ABIGAAApByoAOAYHBkwGAgAAAAAAdGhpcwABBF9fbHNfc3dmdAAABF9fbHNfc3dleHByAAAEX19sc19rZXkAAARfX2xzX3Rlcm5hcnkAAARfX2xzX3Bvc3RpbmMAAAQAAA==",
                         "docString":"",
-                        "line":58,
+                        "line":62,
                         "metainfo":{},
                         "methodattributes":[
                            "public"
@@ -431,10 +431,10 @@
                   {
                      "docString":" Public property getter doc comments first line. ",
                      "getter":{
-                        "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNlAgEHAAEAAk09ACcGAABMBgIACnZhbHVlAAB0aGlzAAECX19sc19zd2Z0AAACX19sc19zd2V4cHIAAAJfX2xzX2tleQAAAl9fbHNfdGVybmFyeQAAAl9fbHNfcG9zdGluYwAAAgAA",
-                        "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNlAgEHAAEAAk09ACcGAABMBgIACnZhbHVlAAB0aGlzAAECX19sc19zd2Z0AAACX19sc19zd2V4cHIAAAJfX2xzX2tleQAAAl9fbHNfdGVybmFyeQAAAl9fbHNfcG9zdGluYwAAAgAA",
+                        "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNlAgEHAAEAAk1BACcGAABMBgIACnZhbHVlAAB0aGlzAAECX19sc19zd2Z0AAACX19sc19zd2V4cHIAAAJfX2xzX2tleQAAAl9fbHNfdGVybmFyeQAAAl9fbHNfcG9zdGluYwAAAgAA",
+                        "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNlAgEHAAEAAk1BACcGAABMBgIACnZhbHVlAAB0aGlzAAECX19sc19zd2Z0AAACX19sc19zd2V4cHIAAAJfX2xzX2tleQAAAl9fbHNfdGVybmFyeQAAAl9fbHNfcG9zdGluYwAAAgAA",
                         "docString":"",
-                        "line":61,
+                        "line":65,
                         "metainfo":{},
                         "methodattributes":[
                            "public"
@@ -455,10 +455,10 @@
                         "public"
                      ],
                      "setter":{
-                        "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNiAgIHAAAAAVQ9AEsAAQAAdGhpcwABAXZhbHVlAAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
-                        "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNiAgIHAAAAAVQ9AEsAAQAAdGhpcwABAXZhbHVlAAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
+                        "bytecode":"G0xKAgAgLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNiAgIHAAAAAVRBAEsAAQAAdGhpcwABAXZhbHVlAAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
+                        "bytecode_fr2":"G0xKAgggLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlQ2xhc3MubHNiAgIHAAAAAVRBAEsAAQAAdGhpcwABAXZhbHVlAAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
                         "docString":"",
-                        "line":64,
+                        "line":68,
                         "metainfo":{},
                         "methodattributes":[
                            "public"
@@ -606,7 +606,7 @@
                },
                "delegateReturnType":"",
                "delegateTypes":[],
-               "docString":"Enum doc comments first line.\n\nThis enumeration starts at zero and counts by ones,\nand has a `LAST` entry with value `999`.",
+               "docString":"Enum doc comments first line.\n\nThis enumeration starts at zero and counts by ones,\nand has a `LAST` entry with value `999`.\n\nThe individual values can have their own doc comments.",
                "fields":[
                   {
                      "docString":"",
@@ -623,7 +623,7 @@
                      "type":"example.ExampleEnum"
                   },
                   {
-                     "docString":"",
+                     "docString":" `FIRST` value doc comments, first line. ",
                      "fieldattributes":[
                         "public",
                         "static"
@@ -665,7 +665,7 @@
                      "type":"example.ExampleEnum"
                   },
                   {
-                     "docString":"",
+                     "docString":" The numerical value of `LAST` is `999`. ",
                      "fieldattributes":[
                         "public",
                         "static"
@@ -681,7 +681,7 @@
                ],
                "imports":[],
                "interfaces":[],
-               "line":9,
+               "line":11,
                "metainfo":{},
                "methods":[],
                "name":"ExampleEnum",
@@ -719,20 +719,20 @@
                },
                "delegateReturnType":"",
                "delegateTypes":[],
-               "docString":"Interface description doc comments first line.\n\nAdditional interface description documentation comments.",
+               "docString":"Interface description doc comments first line.\n\nAdditional interface description documentation comments.\n\n@see #interface_method",
                "fields":[],
                "imports":[
                   "example.ExampleEnum"
                ],
                "interfaces":[],
-               "line":11,
+               "line":13,
                "metainfo":{},
                "methods":[
                   {
                      "bytecode":"G0xKAgAkLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlSW50ZXJmYWNlLmxzagIDCAAAAAFcAABLAAEAAHRoaXMAAQFwYXJhbTEAAAFyZXN0AAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
                      "bytecode_fr2":"G0xKAggkLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlSW50ZXJmYWNlLmxzagIDCAAAAAFcAABLAAEAAHRoaXMAAQFwYXJhbTEAAAFyZXN0AAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
                      "docString":"Public interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).\n\n@param param1 The first parameter (required)\n@param rest Any additional params (optional)",
-                     "line":26,
+                     "line":28,
                      "metainfo":{},
                      "methodattributes":[
                         "public"
@@ -775,7 +775,7 @@
                         "bytecode":"G0xKAgAkLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlSW50ZXJmYWNlLmxzWgIBBgAAAAFMAABLAAEAAHRoaXMAAQFfX2xzX3N3ZnQAAAFfX2xzX3N3ZXhwcgAAAV9fbHNfa2V5AAABX19sc190ZXJuYXJ5AAABX19sc19wb3N0aW5jAAABAAA=",
                         "bytecode_fr2":"G0xKAggkLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlSW50ZXJmYWNlLmxzWgIBBgAAAAFMAABLAAEAAHRoaXMAAQFfX2xzX3N3ZnQAAAFfX2xzX3N3ZXhwcgAAAV9fbHNfa2V5AAABX19sc190ZXJuYXJ5AAABX19sc19wb3N0aW5jAAABAAA=",
                         "docString":"",
-                        "line":15,
+                        "line":17,
                         "metainfo":{},
                         "methodattributes":[
                            "public"
@@ -918,10 +918,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgAhLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3RydWN0LmxzwQECAgwAAQARXTUANgcAABIIAAApCRkAOAgJCBIJAQApChkAOAkKCSAICQgSCQAAKQoaADgJCgkSCgEAKQsaADgKCwogCQoJQgcDAkwHAgAaZXhhbXBsZS5FeGFtcGxlU3RydWN0AAAAAAAAAAAAAAAAAAAAAABhAAERYgAAEV9fbHNfc3dmdAAAEV9fbHNfc3dleHByAAARX19sc19rZXkAABFfX2xzX3Rlcm5hcnkAABFfX2xzX3Bvc3RpbmMAABEAAA==",
-                     "bytecode_fr2":"G0xKAgghLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3RydWN0LmxzwQECAg0AAQARXTUANgcAABIJAAApChkAOAkKCRIKAQApCxkAOAoLCiAJCgkSCgAAKQsaADgKCwoSCwEAKQwaADgLDAsgCgsKQgcDAkwHAgAaZXhhbXBsZS5FeGFtcGxlU3RydWN0AAAAAAAAAAAAAAAAAAAAAABhAAERYgAAEV9fbHNfc3dmdAAAEV9fbHNfc3dleHByAAARX19sc19rZXkAABFfX2xzX3Rlcm5hcnkAABFfX2xzX3Bvc3RpbmMAABEAAA==",
-                     "docString":"Public static operator doc comments first line.\n\nThe addition operator combines the values of `b` and `a` into a new instance.",
-                     "line":51,
+                     "bytecode":"G0xKAgAhLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3RydWN0LmxzwQECAgwAAQARXTcANgcAABIIAAApCRkAOAgJCBIJAQApChkAOAkKCSAICQgSCQAAKQoaADgJCgkSCgEAKQsaADgKCwogCQoJQgcDAkwHAgAaZXhhbXBsZS5FeGFtcGxlU3RydWN0AAAAAAAAAAAAAAAAAAAAAABhAAERYgAAEV9fbHNfc3dmdAAAEV9fbHNfc3dleHByAAARX19sc19rZXkAABFfX2xzX3Rlcm5hcnkAABFfX2xzX3Bvc3RpbmMAABEAAA==",
+                     "bytecode_fr2":"G0xKAgghLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3RydWN0LmxzwQECAg0AAQARXTcANgcAABIJAAApChkAOAkKCRIKAQApCxkAOAoLCiAJCgkSCgAAKQsaADgKCwoSCwEAKQwaADgLDAsgCgsKQgcDAkwHAgAaZXhhbXBsZS5FeGFtcGxlU3RydWN0AAAAAAAAAAAAAAAAAAAAAABhAAERYgAAEV9fbHNfc3dmdAAAEV9fbHNfc3dleHByAAARX19sc19rZXkAABFfX2xzX3Rlcm5hcnkAABFfX2xzX3Bvc3RpbmMAABEAAA==",
+                     "docString":"Public static operator doc comments first line.\n\nThe addition operator combines the values of `b` and `a` into a new instance.\n\n@see #+=",
+                     "line":53,
                      "metainfo":{},
                      "methodattributes":[
                         "public",
@@ -952,10 +952,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgAhLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3RydWN0LmxzwgECAgoAAAAVZD8BEgcAACkIGQA4BwgHEggBACkJGQA4CAkIIAcIBxIIAAApCRkAPAcJCBIHAAApCBoAOAcIBxIIAQApCRoAOAgJCCAHCAcSCAAAKQkaADwHCQhLAAEAAAAAAAAAAAAAAAEBAQEBAQEBAQEBdGhpcwABFWIAABVfX2xzX3N3ZnQAABVfX2xzX3N3ZXhwcgAAFV9fbHNfa2V5AAAVX19sc190ZXJuYXJ5AAAVX19sc19wb3N0aW5jAAAVAAA=",
-                     "bytecode_fr2":"G0xKAgghLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3RydWN0LmxzwgECAgoAAAAVZD8BEgcAACkIGQA4BwgHEggBACkJGQA4CAkIIAcIBxIIAAApCRkAPAcJCBIHAAApCBoAOAcIBxIIAQApCRoAOAgJCCAHCAcSCAAAKQkaADwHCQhLAAEAAAAAAAAAAAAAAAEBAQEBAQEBAQEBdGhpcwABFWIAABVfX2xzX3N3ZnQAABVfX2xzX3N3ZXhwcgAAFV9fbHNfa2V5AAAVX19sc190ZXJuYXJ5AAAVX19sc19wb3N0aW5jAAAVAAA=",
-                     "docString":"Public operator doc comments first line.\n\nThe addition with assignment operator combines the values of `b` into the calling instance.",
-                     "line":61,
+                     "bytecode":"G0xKAgAhLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3RydWN0LmxzwgECAgoAAAAVZEMBEgcAACkIGQA4BwgHEggBACkJGQA4CAkIIAcIBxIIAAApCRkAPAcJCBIHAAApCBoAOAcIBxIIAQApCRoAOAgJCCAHCAcSCAAAKQkaADwHCQhLAAEAAAAAAAAAAAAAAAEBAQEBAQEBAQEBdGhpcwABFWIAABVfX2xzX3N3ZnQAABVfX2xzX3N3ZXhwcgAAFV9fbHNfa2V5AAAVX19sc190ZXJuYXJ5AAAVX19sc19wb3N0aW5jAAAVAAA=",
+                     "bytecode_fr2":"G0xKAgghLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3RydWN0LmxzwgECAgoAAAAVZEMBEgcAACkIGQA4BwgHEggBACkJGQA4CAkIIAcIBxIIAAApCRkAPAcJCBIHAAApCBoAOAcIBxIIAQApCRoAOAgJCCAHCAcSCAAAKQkaADwHCQhLAAEAAAAAAAAAAAAAAAEBAQEBAQEBAQEBdGhpcwABFWIAABVfX2xzX3N3ZnQAABVfX2xzX3N3ZXhwcgAAFV9fbHNfa2V5AAAVX19sc190ZXJuYXJ5AAAVX19sc19wb3N0aW5jAAAVAAA=",
+                     "docString":"Public operator doc comments first line.\n\nThe addition with assignment operator combines the values of `b` into the calling instance.\n\n@see #+",
+                     "line":65,
                      "metainfo":{},
                      "methodattributes":[
                         "public",
@@ -987,19 +987,19 @@
             },
             {
                "baseType":"system.Object",
-               "bytecode_instanceinitializer":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc54BAgEFAAMADxcAABIBAAApAhoAJwMAADwDAgESAQAAKQIbACcDAQA8AwIBEgEAACkCHAA2AwIAKQQZADgDBAM8AwIBSwABABBFeGFtcGxlRW51bSBBIHByb3RlY3RlZCBtZW1iZXIgdmFyaWFibGUdQSBwdWJsaWMgbWVtYmVyIHZhcmlhYmxlAAAAAAAAAAAAAAAAAAAAdGhpcwABDwAA",
-               "bytecode_instanceinitializer_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc54BAgEFAAMADxcAABIBAAApAhoAJwMAADwDAgESAQAAKQIbACcDAQA8AwIBEgEAACkCHAA2AwIAKQQZADgDBAM8AwIBSwABABBFeGFtcGxlRW51bSBBIHByb3RlY3RlZCBtZW1iZXIgdmFyaWFibGUdQSBwdWJsaWMgbWVtYmVyIHZhcmlhYmxlAAAAAAAAAAAAAAAAAAAAdGhpcwABDwAA",
+               "bytecode_instanceinitializer":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc5gBAgEFAAMADxcAABIBAAApAhoAJwMAADwDAgESAQAAKQIbACcDAQA8AwIBEgEAACkCHAA2AwIAKQQZADgDBAM8AwIBSwABABBFeGFtcGxlRW51bR1BIHByb3RlY3RlZCBtZW1iZXIgZmllbGQaQSBwdWJsaWMgbWVtYmVyIGZpZWxkAAAAAAAAAAAAAAAAAAAAdGhpcwABDwAA",
+               "bytecode_instanceinitializer_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc5gBAgEFAAMADxcAABIBAAApAhoAJwMAADwDAgESAQAAKQIbACcDAQA8AwIBEgEAACkCHAA2AwIAKQQZADgDBAM8AwIBSwABABBFeGFtcGxlRW51bR1BIHByb3RlY3RlZCBtZW1iZXIgZmllbGQaQSBwdWJsaWMgbWVtYmVyIGZpZWxkAAAAAAAAAAAAAAAAAAAAdGhpcwABDwAA",
                "bytecode_staticinitializer":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc80BAgADAAUAERIAADYAAAApARkAJwIBADwCAQA2AAAAJwECADgAAQApAQEAJwIDADwCAQA2AAAAJwEEADgAAQApAQEAKQJ7ADwCAQBLAAEAI3Byb3RlY3RlZF9tZXRob2RfX2RlZmF1bHRfYXJncxNwYXJlbnQgZGVmYXVsdBltZXRob2RfX2RlZmF1bHRfYXJncxxBIHB1YmxpYyBjbGFzcyBjb25zdGFudBZFeGFtcGxlU3VwZXJDbGFzcwAAAAAAAAAAAAAAAAAAAAAAAAA=",
                "bytecode_staticinitializer_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc80BAgADAAUAERIAADYAAAApARkAJwIBADwCAQA2AAAAJwECADgAAQApAQEAJwIDADwCAQA2AAAAJwEEADgAAQApAQEAKQJ7ADwCAQBLAAEAI3Byb3RlY3RlZF9tZXRob2RfX2RlZmF1bHRfYXJncxNwYXJlbnQgZGVmYXVsdBltZXRob2RfX2RlZmF1bHRfYXJncxxBIHB1YmxpYyBjbGFzcyBjb25zdGFudBZFeGFtcGxlU3VwZXJDbGFzcwAAAAAAAAAAAAAAAAAAAAAAAAA=",
                "classattributes":[
                   "public"
                ],
                "constructor":{
-                  "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc+EBAgEGAAMAD1oAABIBAAApAhoAJwMAADwDAgESAQAAKQIbACcDAQA8AwIBEgEAACkCHAA2AwIAKQQZADgDBAM8AwIBSwABABBFeGFtcGxlRW51bSBBIHByb3RlY3RlZCBtZW1iZXIgdmFyaWFibGUdQSBwdWJsaWMgbWVtYmVyIHZhcmlhYmxlAAAAAAAAAAAAAAAAAAAAdGhpcwABD19fbHNfc3dmdAAOAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
-                  "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc+EBAgEGAAMAD1oAABIBAAApAhoAJwMAADwDAgESAQAAKQIbACcDAQA8AwIBEgEAACkCHAA2AwIAKQQZADgDBAM8AwIBSwABABBFeGFtcGxlRW51bSBBIHByb3RlY3RlZCBtZW1iZXIgdmFyaWFibGUdQSBwdWJsaWMgbWVtYmVyIHZhcmlhYmxlAAAAAAAAAAAAAAAAAAAAdGhpcwABD19fbHNfc3dmdAAOAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
+                  "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc9sBAgEGAAMAD1oAABIBAAApAhoAJwMAADwDAgESAQAAKQIbACcDAQA8AwIBEgEAACkCHAA2AwIAKQQZADgDBAM8AwIBSwABABBFeGFtcGxlRW51bR1BIHByb3RlY3RlZCBtZW1iZXIgZmllbGQaQSBwdWJsaWMgbWVtYmVyIGZpZWxkAAAAAAAAAAAAAAAAAAAAdGhpcwABD19fbHNfc3dmdAAOAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
+                  "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc9sBAgEGAAMAD1oAABIBAAApAhoAJwMAADwDAgESAQAAKQIbACcDAQA8AwIBEgEAACkCHAA2AwIAKQQZADgDBAM8AwIBSwABABBFeGFtcGxlRW51bR1BIHByb3RlY3RlZCBtZW1iZXIgZmllbGQaQSBwdWJsaWMgbWVtYmVyIGZpZWxkAAAAAAAAAAAAAAAAAAAAdGhpcwABD19fbHNfc3dmdAAOAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
                   "defaultconstructor":false,
                   "docString":"Constructor doc comments first line.",
-                  "line":31,
+                  "line":33,
                   "metainfo":{},
                   "methodattributes":[
                      "public"
@@ -1013,7 +1013,7 @@
                },
                "delegateReturnType":"",
                "delegateTypes":[],
-               "docString":"SuperClass description doc comments first line.\n\nAdditional class description documentation comments.",
+               "docString":"SuperClass description doc comments first line.\n\nAdditional class description documentation comments.\n\n@see example.ExampleInterface",
                "fields":[
                   {
                      "docString":" Constant field doc comments first line. ",
@@ -1022,7 +1022,7 @@
                         "static",
                         "const"
                      ],
-                     "line":16,
+                     "line":18,
                      "metainfo":{},
                      "name":"constant",
                      "ordinal":25,
@@ -1035,9 +1035,9 @@
                      "fieldattributes":[
                         "public"
                      ],
-                     "line":19,
+                     "line":21,
                      "metainfo":{},
-                     "name":"parent_public_var",
+                     "name":"parent_public_field",
                      "ordinal":26,
                      "source":"./src/.//example/ExampleSuperClass.ls",
                      "templatetypes":null,
@@ -1048,22 +1048,22 @@
                      "fieldattributes":[
                         "protected"
                      ],
-                     "line":22,
+                     "line":24,
                      "metainfo":{},
-                     "name":"parent_protected_var",
+                     "name":"parent_protected_field",
                      "ordinal":27,
                      "source":"./src/.//example/ExampleSuperClass.ls",
                      "templatetypes":null,
                      "type":"system.String"
                   },
                   {
-                     "docString":" Private field doc comments should not appear in the API documentation. ",
+                     "docString":" Private doc comments should not appear in the API documentation. ",
                      "fieldattributes":[
                         "private"
                      ],
-                     "line":25,
+                     "line":27,
                      "metainfo":{},
-                     "name":"parent_private_var",
+                     "name":"parent_private_field",
                      "ordinal":28,
                      "source":"./src/.//example/ExampleSuperClass.ls",
                      "templatetypes":null,
@@ -1077,14 +1077,14 @@
                "interfaces":[
                   "example.ExampleInterface"
                ],
-               "line":13,
+               "line":15,
                "metainfo":{},
                "methods":[
                   {
                      "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2oCAwgAAAABXAAASwABAAB0aGlzAAEBcGFyYW0xAAABcmVzdAAAAV9fbHNfc3dmdAAAAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
                      "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2oCAwgAAAABXAAASwABAAB0aGlzAAEBcGFyYW0xAAABcmVzdAAAAV9fbHNfc3dmdAAAAV9fbHNfc3dleHByAAABX19sc19rZXkAAAFfX2xzX3Rlcm5hcnkAAAFfX2xzX3Bvc3RpbmMAAAEAAA==",
                      "docString":" @inherit ",
-                     "line":45,
+                     "line":47,
                      "metainfo":{},
                      "methodattributes":[
                         "public"
@@ -1118,10 +1118,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2wCAwgAAAABXjgATAICAAB0aGlzAAEBcGFyYW0xAAABcGFyYW0yAAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
-                     "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2wCAwgAAAABXjgATAICAAB0aGlzAAEBcGFyYW0xAAABcGFyYW0yAAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
+                     "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2wCAwgAAAABXjoATAICAAB0aGlzAAEBcGFyYW0xAAABcGFyYW0yAAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
+                     "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2wCAwgAAAABXjoATAICAAB0aGlzAAEBcGFyYW0xAAABcGFyYW0yAAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
                      "docString":"Public method doc comments first line.\n\nThis method has one required first parameter,\nand an optional second parameter.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)",
-                     "line":56,
+                     "line":58,
                      "metainfo":{},
                      "methodattributes":[
                         "public"
@@ -1151,10 +1151,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2wCAwgAAAABXjgASwABAAB0aGlzAAEBcGFyYW0xAAABcGFyYW0yAAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
-                     "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2wCAwgAAAABXjgASwABAAB0aGlzAAEBcGFyYW0xAAABcGFyYW0yAAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
+                     "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2wCAwgAAAABXjoASwABAAB0aGlzAAEBcGFyYW0xAAABcGFyYW0yAAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
+                     "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2wCAwgAAAABXjoASwABAAB0aGlzAAEBcGFyYW0xAAABcGFyYW0yAAABX19sc19zd2Z0AAABX19sc19zd2V4cHIAAAFfX2xzX2tleQAAAV9fbHNfdGVybmFyeQAAAV9fbHNfcG9zdGluYwAAAQAA",
                      "docString":"Protected method doc comments first line.\n\nThis method has one required first parameter,\nand one optional second parameter.\n\n@param param1 The first parameter (required)\n@param param2 The second parameter (optional)",
-                     "line":67,
+                     "line":69,
                      "metainfo":{},
                      "methodattributes":[
                         "protected"
@@ -1184,10 +1184,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc18CAQcAAAACTUYAKwYCAEwGAgAAAHRoaXMAAQJfX2xzX3N3ZnQAAAJfX2xzX3N3ZXhwcgAAAl9fbHNfa2V5AAACX19sc190ZXJuYXJ5AAACX19sc19wb3N0aW5jAAACAAA=",
-                     "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc18CAQcAAAACTUYAKwYCAEwGAgAAAHRoaXMAAQJfX2xzX3N3ZnQAAAJfX2xzX3N3ZXhwcgAAAl9fbHNfa2V5AAACX19sc190ZXJuYXJ5AAACX19sc19wb3N0aW5jAAACAAA=",
+                     "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc18CAQcAAAACTUgAKwYCAEwGAgAAAHRoaXMAAQJfX2xzX3N3ZnQAAAJfX2xzX3N3ZXhwcgAAAl9fbHNfa2V5AAACX19sc190ZXJuYXJ5AAACX19sc19wb3N0aW5jAAACAAA=",
+                     "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc18CAQcAAAACTUgAKwYCAEwGAgAAAHRoaXMAAQJfX2xzX3N3ZnQAAAJfX2xzX3N3ZXhwcgAAAl9fbHNfa2V5AAACX19sc190ZXJuYXJ5AAACX19sc19wb3N0aW5jAAACAAA=",
                      "docString":" Private method doc comments should not appear in the API documentation. ",
-                     "line":70,
+                     "line":72,
                      "metainfo":{},
                      "methodattributes":[
                         "private"
@@ -1207,10 +1207,10 @@
                   {
                      "docString":" Public property getter doc comments first line. ",
                      "getter":{
-                        "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2UCAQcAAQACTSIAJwYAAEwGAgAKdmFsdWUAAHRoaXMAAQJfX2xzX3N3ZnQAAAJfX2xzX3N3ZXhwcgAAAl9fbHNfa2V5AAACX19sc190ZXJuYXJ5AAACX19sc19wb3N0aW5jAAACAAA=",
-                        "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2UCAQcAAQACTSIAJwYAAEwGAgAKdmFsdWUAAHRoaXMAAQJfX2xzX3N3ZnQAAAJfX2xzX3N3ZXhwcgAAAl9fbHNfa2V5AAACX19sc190ZXJuYXJ5AAACX19sc19wb3N0aW5jAAACAAA=",
+                        "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2UCAQcAAQACTSQAJwYAAEwGAgAKdmFsdWUAAHRoaXMAAQJfX2xzX3N3ZnQAAAJfX2xzX3N3ZXhwcgAAAl9fbHNfa2V5AAACX19sc190ZXJuYXJ5AAACX19sc19wb3N0aW5jAAACAAA=",
+                        "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2UCAQcAAQACTSQAJwYAAEwGAgAKdmFsdWUAAHRoaXMAAQJfX2xzX3N3ZnQAAAJfX2xzX3N3ZXhwcgAAAl9fbHNfa2V5AAACX19sc190ZXJuYXJ5AAACX19sc19wb3N0aW5jAAACAAA=",
                         "docString":"",
-                        "line":34,
+                        "line":36,
                         "metainfo":{},
                         "methodattributes":[
                            "public"
@@ -1231,10 +1231,10 @@
                         "public"
                      ],
                      "setter":{
-                        "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2ICAgcAAAABVCIASwABAAB0aGlzAAEBdmFsdWUAAAFfX2xzX3N3ZnQAAAFfX2xzX3N3ZXhwcgAAAV9fbHNfa2V5AAABX19sc190ZXJuYXJ5AAABX19sc19wb3N0aW5jAAABAAA=",
-                        "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2ICAgcAAAABVCIASwABAAB0aGlzAAEBdmFsdWUAAAFfX2xzX3N3ZnQAAAFfX2xzX3N3ZXhwcgAAAV9fbHNfa2V5AAABX19sc190ZXJuYXJ5AAABX19sc19wb3N0aW5jAAABAAA=",
+                        "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2ICAgcAAAABVCQASwABAAB0aGlzAAEBdmFsdWUAAAFfX2xzX3N3ZnQAAAFfX2xzX3N3ZXhwcgAAAV9fbHNfa2V5AAABX19sc190ZXJuYXJ5AAABX19sc19wb3N0aW5jAAABAAA=",
+                        "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2ICAgcAAAABVCQASwABAAB0aGlzAAEBdmFsdWUAAAFfX2xzX3N3ZnQAAAFfX2xzX3N3ZXhwcgAAAV9fbHNfa2V5AAABX19sc190ZXJuYXJ5AAABX19sc19wb3N0aW5jAAABAAA=",
                         "docString":"",
-                        "line":37,
+                        "line":39,
                         "metainfo":{},
                         "methodattributes":[
                            "public"
@@ -1262,10 +1262,10 @@
                   {
                      "docString":" @inherit ",
                      "getter":{
-                        "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2kCAQgAAAAETyoAEgYAACkHHAA4BgcGTAYCAAAAAAB0aGlzAAEEX19sc19zd2Z0AAAEX19sc19zd2V4cHIAAARfX2xzX2tleQAABF9fbHNfdGVybmFyeQAABF9fbHNfcG9zdGluYwAABAAA",
-                        "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2kCAQgAAAAETyoAEgYAACkHHAA4BgcGTAYCAAAAAAB0aGlzAAEEX19sc19zd2Z0AAAEX19sc19zd2V4cHIAAARfX2xzX2tleQAABF9fbHNfdGVybmFyeQAABF9fbHNfcG9zdGluYwAABAAA",
+                        "bytecode":"G0xKAgAlLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2kCAQgAAAAETywAEgYAACkHHAA4BgcGTAYCAAAAAAB0aGlzAAEEX19sc19zd2Z0AAAEX19sc19zd2V4cHIAAARfX2xzX2tleQAABF9fbHNfdGVybmFyeQAABF9fbHNfcG9zdGluYwAABAAA",
+                        "bytecode_fr2":"G0xKAgglLi9zcmMvLi8vZXhhbXBsZS9FeGFtcGxlU3VwZXJDbGFzcy5sc2kCAQgAAAAETywAEgYAACkHHAA4BgcGTAYCAAAAAAB0aGlzAAEEX19sc19zd2Z0AAAEX19sc19zd2V4cHIAAARfX2xzX2tleQAABF9fbHNfdGVybmFyeQAABF9fbHNfcG9zdGluYwAABAAA",
                         "docString":"",
-                        "line":42,
+                        "line":44,
                         "metainfo":{},
                         "methodattributes":[
                            "public"
@@ -3376,7 +3376,7 @@
                },
                "delegateReturnType":"",
                "delegateTypes":[],
-               "docString":"Encapsulates the data of a loomlib `type` declaration.\n\n@see DefinitionConstruct",
+               "docString":"Encapsulates the data of a loomlib `type` declaration.\n\n@see pixeldroid.lsdoc.models.DefinitionConstruct",
                "fields":[
                   {
                      "docString":"",
@@ -6499,11 +6499,11 @@
                   "public"
                ],
                "constructor":{
-                  "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc7cCAgMLAAIAGpcBANECEgMAACkENAArBQAAPAUEAxIDAAApBDUAKwUAADwFBAMSAwAAKQQ2ACsFAAA8BQQDNggAACcJAQA4CAkIEgkAAEIIAgISCAEAEgkAACkKNAA8CAoJEggCABIJAAApCjUAPAgKCUsAAQAVX19sc19jb25zdHJ1Y3Rvch9waXhlbGRyb2lkLnRhc2suU2luZ2xlVGFzawAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAVABUAFQAVEBUQFRAVEBUQF0aGlzAAEadHlwZUluZm8AABptb2R1bGVJbmZvAAAaX19sc19zd2Z0AAwOX19sc19zd2V4cHIAAA5fX2xzX2tleQAADl9fbHNfdGVybmFyeQAADl9fbHNfcG9zdGluYwAADgAA",
-                  "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9UCAgMLAAIAH6EBANECEgMAACkENAArBQAAPAUEAxIDAAApBDUAKwUAADwFBAMSAwAAKQQ2ACsFAAA8BQQDNggAACcJAQA4CAkIEgoAAEIIAgI2CAAAJwkBADgICQgSCgAAQggCAhIIAQASCQAAKQo0ADwICgkSCAIAEgkAACkKNQA8CAoJSwABABVfX2xzX2NvbnN0cnVjdG9yH3BpeGVsZHJvaWQudGFzay5TaW5nbGVUYXNrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAVABUAFQAVEBUQFRAVEBUQF0aGlzAAEfdHlwZUluZm8AAB9tb2R1bGVJbmZvAAAfX19sc19zd2Z0AAwTX19sc19zd2V4cHIAABNfX2xzX2tleQAAE19fbHNfdGVybmFyeQAAE19fbHNfcG9zdGluYwAAEwAA",
+                  "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc7cCAgMLAAIAGpcBANACEgMAACkENAArBQAAPAUEAxIDAAApBDUAKwUAADwFBAMSAwAAKQQ2ACsFAAA8BQQDNggAACcJAQA4CAkIEgkAAEIIAgISCAEAEgkAACkKNAA8CAoJEggCABIJAAApCjUAPAgKCUsAAQAVX19sc19jb25zdHJ1Y3Rvch9waXhlbGRyb2lkLnRhc2suU2luZ2xlVGFzawAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPAU8BTwFPAVABUAFQAVABUAF0aGlzAAEadHlwZUluZm8AABptb2R1bGVJbmZvAAAaX19sc19zd2Z0AAwOX19sc19zd2V4cHIAAA5fX2xzX2tleQAADl9fbHNfdGVybmFyeQAADl9fbHNfcG9zdGluYwAADgAA",
+                  "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9UCAgMLAAIAH6EBANACEgMAACkENAArBQAAPAUEAxIDAAApBDUAKwUAADwFBAMSAwAAKQQ2ACsFAAA8BQQDNggAACcJAQA4CAkIEgoAAEIIAgI2CAAAJwkBADgICQgSCgAAQggCAhIIAQASCQAAKQo0ADwICgkSCAIAEgkAACkKNQA8CAoJSwABABVfX2xzX2NvbnN0cnVjdG9yH3BpeGVsZHJvaWQudGFzay5TaW5nbGVUYXNrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPAU8BTwFPAVABUAFQAVABUAF0aGlzAAEfdHlwZUluZm8AAB9tb2R1bGVJbmZvAAAfX19sc19zd2Z0AAwTX19sc19zd2V4cHIAABNfX2xzX2tleQAAE19fbHNfdGVybmFyeQAAE19fbHNfcG9zdGluYwAAEwAA",
                   "defaultconstructor":false,
                   "docString":"",
-                  "line":334,
+                  "line":333,
                   "metainfo":{},
                   "methodattributes":[
                      "public"
@@ -6568,7 +6568,7 @@
                      "fieldattributes":[
                         "private"
                      ],
-                     "line":328,
+                     "line":327,
                      "metainfo":{},
                      "name":"typeInfo",
                      "ordinal":52,
@@ -6581,7 +6581,7 @@
                      "fieldattributes":[
                         "private"
                      ],
-                     "line":329,
+                     "line":328,
                      "metainfo":{},
                      "name":"moduleInfo",
                      "ordinal":53,
@@ -6594,7 +6594,7 @@
                      "fieldattributes":[
                         "public"
                      ],
-                     "line":331,
+                     "line":330,
                      "metainfo":{},
                      "name":"lines",
                      "ordinal":54,
@@ -7084,8 +7084,8 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9oHAgEXAAgCfcoC/QEZLAcKACkLAAArDAAAEg0AACkOGgA4DQ4NKQ41ADgNDg02DgAAQg4BAhIBDgASDwEAKhAAADgPEA8qEAEAKREBADwREA8pEQAANhIAAEISAQISExIAKhQAADgTFBMqFAEAKRUBADwVFBMpFQAAJxYBADwWFRM8EhEPEhEBABIOAQBCDQICEgcNADYNAgBCDQECEggNABINAAApDh8AOA0ODRIOCAApDxsAPA0PDhINBwASDggAKQ8aADwNDw4SDQAAKQ4kADgNDg0SDggAKQ8eADwNDw4SDQAAKQ4dADgNDg0SDggAKQ8gADwNDw4SDQAAKQ4eADgNDg0pDiAAOA0ODUINAQIpDgAAAA4NAFgNAoArDQEAWA4BgCsNAgAPAA0AWA4zgDYNAABCDQECEg4NACoPAAA4Dg8OKg8BACkQAAA8EA8OEgkNACsKAAApCwEANg0DABIOAAApDx4AOA4PDkIN/wRYEByANhIEAEISAQISChIANhIFADkSBhInEwcAQhICAjYTBQA5EwYTEgYLACkUAQAgFBQGEgsUABIUBgBCEwICJhITEhITCgApFBwAPBIUExISEQASEwoAKRQeADwSFBMSEgkAKRMkADgSExISEwoAQhICAkUQAwNSEOJ/Eg0JABIOCAApDx8APA0PDkwIAgAKcGFyYW0OX3RvU3RyaW5nC09iamVjdCxwaXhlbGRyb2lkLmxzZG9jLm1vZGVscy5NZXRob2RQYXJhbWV0ZXIRX19sdWFfaXBhaXJzJ3BpeGVsZHJvaWQubHNkb2MubW9kZWxzLlR5cGVNZXRob2QNZGVsZWdhdGUSc3lzdGVtLlZlY3Rvcv72hf8f/PaF/x8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICAwMDAwMDBAQEBAUFBQUFBQYGBgYGBggICAgICAgICAgICAgICgoKCgoKCgoKCwwNDQ0NDQ0PDw8QEBAQEBAQEBAQEBAQEBAQERERERMTExMTDQ0WFhYWGXR5cGVJbmZvAAF9X19sc192YXJhcmcwAAB9X19sc19zd2Z0AAB9X19sc19zd2V4cHIAAH1fX2xzX2tleQAAfV9fbHNfdGVybmFyeQAAfV9fbHNfcG9zdGluYwAAfWF0dHIAAH1mAAB9cGFyYW1zAAB9cAAAfWkAAH1wYXJhbVR5cGUAAH0oZm9yIGdlbmVyYXRvcikAWR8oZm9yIHN0YXRlKQAAHyhmb3IgY29udHJvbCkAAB9fX2xzX2tleQABHHBhcmFtVHlwZQAAHAAA",
-                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9oHAgEYAAgCfcoC/QEZLAcKACkLAAArDAAAEg0AACkOGgA4DQ4NKQ41ADgNDg02DwAAQg8BAhIBDwASEAEAKhEAADgQERAqEQEAKRIBADwSERApEgAANhMAAEITAQISFBMAKhUAADgUFRQqFQEAKRYBADwWFRQpFgAAJxcBADwXFhQ8ExIQEhIBABIPAQBCDQICEgcNADYNAgBCDQECEggNABINAAApDh8AOA0ODRIOCAApDxsAPA0PDhINBwASDggAKQ8aADwNDw4SDQAAKQ4kADgNDg0SDggAKQ8eADwNDw4SDQAAKQ4dADgNDg0SDggAKQ8gADwNDw4SDQAAKQ4eADgNDg0pDiAAOA0ODUINAQIpDgAAAA4NAFgNAoArDQEAWA4BgCsNAgAPAA0AWA4zgDYNAABCDQECEg4NACoPAAA4Dg8OKg8BACkQAAA8EA8OEgkNACsKAAApCwEANg0DABIPAAApEB4AOA8QD0IN/wRYEByANhIEAEISAQISChIANhIFADkSBhInFAcAQhICAjYTBQA5EwYTEgYLACkVAQAgFRUGEgsVABIVBgBCEwICJhITEhITCgApFBwAPBIUExISEQASEwoAKRQeADwSFBMSEgkAKRMkADgSExISFAoAQhICAkUQAwNSEOJ/Eg0JABIOCAApDx8APA0PDkwIAgAKcGFyYW0OX3RvU3RyaW5nC09iamVjdCxwaXhlbGRyb2lkLmxzZG9jLm1vZGVscy5NZXRob2RQYXJhbWV0ZXIRX19sdWFfaXBhaXJzJ3BpeGVsZHJvaWQubHNkb2MubW9kZWxzLlR5cGVNZXRob2QNZGVsZWdhdGUSc3lzdGVtLlZlY3Rvcv72hf8f/PaF/x8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICAwMDAwMDBAQEBAUFBQUFBQYGBgYGBggICAgICAgICAgICAgICgoKCgoKCgoKCwwNDQ0NDQ0PDw8QEBAQEBAQEBAQEBAQEBAQERERERMTExMTDQ0WFhYWGXR5cGVJbmZvAAF9X19sc192YXJhcmcwAAB9X19sc19zd2Z0AAB9X19sc19zd2V4cHIAAH1fX2xzX2tleQAAfV9fbHNfdGVybmFyeQAAfV9fbHNfcG9zdGluYwAAfWF0dHIAAH1mAAB9cGFyYW1zAAB9cAAAfWkAAH1wYXJhbVR5cGUAAH0oZm9yIGdlbmVyYXRvcikAWR8oZm9yIHN0YXRlKQAAHyhmb3IgY29udHJvbCkAAB9fX2xzX2tleQABHHBhcmFtVHlwZQAAHAAA",
+                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc/QHAgEWAAgCgQHTAv0BGCwHCQApCgAAKwsAADYMAABCDAECEgcMABIMAAApDR8AOAwNDBINBwApDhsAPAwODRIMAAApDSAAOAwNDBINBwApDhwAPAwODRIMAAApDRoAOAwNDCkNNQA4DA0MNg0BAEINAQISAQ0AEg4BACoPAAA4Dg8OKg8BACkQAQA8EA8OKRAAADYRAQBCEQECEhIRACoTAAA4EhMSKhMBACkUAQA8FBMSKRQAACcVAgA8FRQSPBEQDhIQAQASDQEAQgwCAhINBwApDhoAPAwODRIMAAApDSQAOAwNDBINBwApDh4APAwODRIMAAApDR0AOAwNDBINBwApDiAAPAwODRIMAAApDR4AOAwNDCkNIAA4DA0MQgwBAikNAAAADQwAWAwCgCsMAQBYDQGAKwwCAA8ADABYDTOANgwBAEIMAQISDQwAKg4AADgNDg0qDgEAKQ8AADwPDg0SCAwAKwkAACkKAQA2DAMAEg0AACkOHgA4DQ4NQgz/BFgPHIA2EQQAQhEBAhIJEQA2EQUAOREGEScSBwBCEQICNhIFADkSBhISBgoAKRMBACATEwYSChMAEhMGAEISAgImERIREhIJACkTHAA8ERMSEhEQABISCQApEx4APBETEhIRCAApEiQAOBESERISCQBCEQICRQ8DA1IP4n8SDAgAEg0HACkOHwA8DA4NTAcCAApwYXJhbQ5fdG9TdHJpbmcLT2JqZWN0LHBpeGVsZHJvaWQubHNkb2MubW9kZWxzLk1ldGhvZFBhcmFtZXRlchFfX2x1YV9pcGFpcnMNZGVsZWdhdGUSc3lzdGVtLlZlY3RvcidwaXhlbGRyb2lkLmxzZG9jLm1vZGVscy5UeXBlTWV0aG9k/vaF/x/89oX/HwAAAAAAAAEBAQEBAQICAgICAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwQEBAQEBAUFBQUFBQcHBwcHBwcHBwcHBwcHCQkJCQkJCQkJCgsMDAwMDAwODg4PDw8PDw8PDw8PDw8PDw8PEBAQEBISEhISDAwVFRUVGHR5cGVJbmZvAAGBAV9fbHNfdmFyYXJnMAAAgQFfX2xzX3N3ZnQAAIEBX19sc19zd2V4cHIAAIEBX19sc19rZXkAAIEBX19sc190ZXJuYXJ5AACBAV9fbHNfcG9zdGluYwAAgQFtAACBAXBhcmFtcwAAgQFwAACBAWkAAIEBcGFyYW1UeXBlAACBAShmb3IgZ2VuZXJhdG9yKQBdHyhmb3Igc3RhdGUpAAAfKGZvciBjb250cm9sKQAAH19fbHNfa2V5AAEccGFyYW1UeXBlAAAcAAA=",
+                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc/QHAgEXAAgCgQHTAv0BGCwHCQApCgAAKwsAADYMAABCDAECEgcMABIMAAApDR8AOAwNDBINBwApDhsAPAwODRIMAAApDSAAOAwNDBINBwApDhwAPAwODRIMAAApDRoAOAwNDCkNNQA4DA0MNg4BAEIOAQISAQ4AEg8BACoQAAA4DxAPKhABACkRAQA8ERAPKREAADYSAQBCEgECEhMSACoUAAA4ExQTKhQBACkVAQA8FRQTKRUAACcWAgA8FhUTPBIRDxIRAQASDgEAQgwCAhINBwApDhoAPAwODRIMAAApDSQAOAwNDBINBwApDh4APAwODRIMAAApDR0AOAwNDBINBwApDiAAPAwODRIMAAApDR4AOAwNDCkNIAA4DA0MQgwBAikNAAAADQwAWAwCgCsMAQBYDQGAKwwCAA8ADABYDTOANgwBAEIMAQISDQwAKg4AADgNDg0qDgEAKQ8AADwPDg0SCAwAKwkAACkKAQA2DAMAEg4AACkPHgA4Dg8OQgz/BFgPHIA2EQQAQhEBAhIJEQA2EQUAOREGEScTBwBCEQICNhIFADkSBhISBgoAKRQBACAUFAYSChQAEhQGAEISAgImERIREhIJACkTHAA8ERMSEhEQABISCQApEx4APBETEhIRCAApEiQAOBESERITCQBCEQICRQ8DA1IP4n8SDAgAEg0HACkOHwA8DA4NTAcCAApwYXJhbQ5fdG9TdHJpbmcLT2JqZWN0LHBpeGVsZHJvaWQubHNkb2MubW9kZWxzLk1ldGhvZFBhcmFtZXRlchFfX2x1YV9pcGFpcnMNZGVsZWdhdGUSc3lzdGVtLlZlY3RvcidwaXhlbGRyb2lkLmxzZG9jLm1vZGVscy5UeXBlTWV0aG9k/vaF/x/89oX/HwAAAAAAAAEBAQEBAQICAgICAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwQEBAQEBAUFBQUFBQcHBwcHBwcHBwcHBwcHCQkJCQkJCQkJCgsMDAwMDAwODg4PDw8PDw8PDw8PDw8PDw8PEBAQEBISEhISDAwVFRUVGHR5cGVJbmZvAAGBAV9fbHNfdmFyYXJnMAAAgQFfX2xzX3N3ZnQAAIEBX19sc19zd2V4cHIAAIEBX19sc19rZXkAAIEBX19sc190ZXJuYXJ5AACBAV9fbHNfcG9zdGluYwAAgQFtAACBAXBhcmFtcwAAgQFwAACBAWkAAIEBcGFyYW1UeXBlAACBAShmb3IgZ2VuZXJhdG9yKQBdHyhmb3Igc3RhdGUpAAAfKGZvciBjb250cm9sKQAAH19fbHNfa2V5AAEccGFyYW1UeXBlAAAcAAA=",
                      "docString":"",
                      "line":251,
                      "metainfo":{},
@@ -7110,10 +7110,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc+ANAgIRABYDigKXA5sCKSwHCgA2CwAAQgsBAhIMCwAqDQAAOAwNDCoNAQApDgAAPA4NDBIHCwASCwEAKQwaADgIDAs2CwEAQgsBAicMAgAnDQMAPA0MCycMBAASDQAAKQ4kADgNDg08DQwLJwwFABINAAApDiUAOA0ODTwNDAsnDAMAEg0AACkOGwA4DQ4NPA0MCxIJCwASCwAAKQwaADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwIgBILAAApDBoAOAsMCxIMCQAqDQIAOAwNDCcNBgA8Cw0MNgsHACkMOgA4CwwLEgwJACcNCAASDgAAKQ8iADgODw5CCwQCNgsHACkMOgA4CwwLEgwJACcNCQA2DgoAKQ8iADgODw4SDwAAEhAIAEIOAwBBCwICNgsHACkMOgA4CwwLEgwJACcNCwA2DgoAKQ8lADgODw4SDwAAEhAIAEIOAwBBCwICEgsAACkMHAA4CwwLDwALAFgMCoASCwAAKQwcADgLDAspDBoAOAsMCykMMwA4CwwLJwwMAEILAgITCwsADwALAFgMDIA2CwcAKQw/ADgLDAsSDAAAKQ0cADgMDQxCCwICEgwJACoNAgA4DA0MJw0NADwLDQwSCwAAKQwgADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwMgDYLBwApDDwAOAsMCxIMAAApDSAAOAwNDEILAgISDAkAKg0CADgMDQwnDQ4APAsNDBILAAApDCEAOAsMCykMIAA4CwwLQgsBAikMAAAADAsAWAsCgCsLAQBYDAGAKwsCAA8ACwBYDAyANgsHACkMQgA4CwwLEgwAACkNIQA4DA0MQgsCAhIMCQAqDQIAOAwNDCcNDwA8Cw0MEgsAACkMJgA4CwwLKQwgADgLDAtCCwECKQwAAAAMCwBYCwKAKwsBAFgMAYArCwIADwALAFgMDIA2CwcAKQxEADgLDAsSDAAAKQ0mADgMDQxCCwICEgwJACoNAgA4DA0MJw0QADwLDQwSCwAAKQwjADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwMgDYLBwApDEAAOAsMCxIMAAApDSMAOAwNDEILAgISDAkAKg0CADgMDQwnDREAPAsNDBILAAApDBsAOAsMCwYLEgBYCwKAKwsBAFgMAYArCwIADwALAFgMDoA2CwcAKQw/ADgLDAs2DAcAKQ1FADgMDQwSDQAAQgwCAEELAAISDAkAKg0CADgMDQwnDRMAPAsNDDYLFAApDB8AOAsMCxIMCQBCCwICEgoLABILBwApDCQAOAsMCzYMFQApDRsAOAwNDBINCgA2DgcAKQ84ADgODw5CDgEAQQwBAEELAAJMBwIAEFlhbWxQcmludGVyCUpzb24Oc2lnbmF0dXJlDURFTEVHQVRFDG1ldGhvZHMPcHJvcGVydGllcwtmaWVsZHMJdGFncxBjb25zdHJ1Y3Rvcgxwcml2YXRlEGRlc2NlbmRhbnRzDkxpYk1vZHVsZQ5hbmNlc3RvcnMPaW1wbGVtZW50cz9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlFHR5cGVfYXR0cmlidXRlcwttb2R1bGUJbmFtZQl0eXBlC2xheW91dBZzeXN0ZW0uRGljdGlvbmFyeRJzeXN0ZW0uVmVjdG9y/vaF/x/89oX/H+72hf8fAAAAAAAAAAAAAAEBAQMDAwMDAwMDAwMDAwMDAwMDAwMDAwoKCgoKCgoKCgoKCgoKCgoKCgoKCgoNDQ0NDQ0NDQ0ODg4ODg4ODg4ODg4PDw8PDw8PDw8PDw8RERERERERERERERERERERERERERERERERERERERQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGh0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dICAgICAgICAgICAgICAgICAgICAgICAgJSUlJSUlJycnJycnJycnJycnJyl0eXBlSW5mbwABigJtb2R1bGVJbmZvAACKAl9fbHNfc3dmdAAAigJfX2xzX3N3ZXhwcgAAigJfX2xzX2tleQAAigJfX2xzX3Rlcm5hcnkAAIoCX19sc19wb3N0aW5jAACKAnJlc3VsdAAAigJ0eXBlTGlzdAAAigJwYWdlAACKAnBhZ2VKc29uAACKAgAA",
-                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc+ANAgITABYDigKXA5sCKSwHCgA2CwAAQgsBAhIMCwAqDQAAOAwNDCoNAQApDgAAPA4NDBIHCwASCwEAKQwaADgIDAs2CwEAQgsBAicMAgAnDQMAPA0MCycMBAASDQAAKQ4kADgNDg08DQwLJwwFABINAAApDiUAOA0ODTwNDAsnDAMAEg0AACkOGwA4DQ4NPA0MCxIJCwASCwAAKQwaADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwIgBILAAApDBoAOAsMCxIMCQAqDQIAOAwNDCcNBgA8Cw0MNgsHACkMOgA4CwwLEg0JACcOCAASDwAAKRAiADgPEA9CCwQCNgsHACkMOgA4CwwLEg0JACcOCQA2DwoAKRAiADgPEA8SEQAAEhIIAEIPAwBBCwICNgsHACkMOgA4CwwLEg0JACcOCwA2DwoAKRAlADgPEA8SEQAAEhIIAEIPAwBBCwICEgsAACkMHAA4CwwLDwALAFgMCoASCwAAKQwcADgLDAspDBoAOAsMCykMMwA4CwwLJw0MAEILAgITCwsADwALAFgMDIA2CwcAKQw/ADgLDAsSDQAAKQ4cADgNDg1CCwICEgwJACoNAgA4DA0MJw0NADwLDQwSCwAAKQwgADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwMgDYLBwApDDwAOAsMCxINAAApDiAAOA0ODUILAgISDAkAKg0CADgMDQwnDQ4APAsNDBILAAApDCEAOAsMCykMIAA4CwwLQgsBAikMAAAADAsAWAsCgCsLAQBYDAGAKwsCAA8ACwBYDAyANgsHACkMQgA4CwwLEg0AACkOIQA4DQ4NQgsCAhIMCQAqDQIAOAwNDCcNDwA8Cw0MEgsAACkMJgA4CwwLKQwgADgLDAtCCwECKQwAAAAMCwBYCwKAKwsBAFgMAYArCwIADwALAFgMDIA2CwcAKQxEADgLDAsSDQAAKQ4mADgNDg1CCwICEgwJACoNAgA4DA0MJw0QADwLDQwSCwAAKQwjADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwMgDYLBwApDEAAOAsMCxINAAApDiMAOA0ODUILAgISDAkAKg0CADgMDQwnDREAPAsNDBILAAApDBsAOAsMCwYLEgBYCwKAKwsBAFgMAYArCwIADwALAFgMDoA2CwcAKQw/ADgLDAs2DQcAKQ5FADgNDg0SDwAAQg0CAEELAAISDAkAKg0CADgMDQwnDRMAPAsNDDYLFAApDB8AOAsMCxINCQBCCwICEgoLABILBwApDCQAOAsMCzYNFQApDhsAOA0ODRIPCgA2EAcAKRE4ADgQERBCEAEAQQ0BAEELAAJMBwIAEFlhbWxQcmludGVyCUpzb24Oc2lnbmF0dXJlDURFTEVHQVRFDG1ldGhvZHMPcHJvcGVydGllcwtmaWVsZHMJdGFncxBjb25zdHJ1Y3Rvcgxwcml2YXRlEGRlc2NlbmRhbnRzDkxpYk1vZHVsZQ5hbmNlc3RvcnMPaW1wbGVtZW50cz9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlFHR5cGVfYXR0cmlidXRlcwttb2R1bGUJbmFtZQl0eXBlC2xheW91dBZzeXN0ZW0uRGljdGlvbmFyeRJzeXN0ZW0uVmVjdG9y/vaF/x/89oX/H+72hf8fAAAAAAAAAAAAAAEBAQMDAwMDAwMDAwMDAwMDAwMDAwMDAwoKCgoKCgoKCgoKCgoKCgoKCgoKCgoNDQ0NDQ0NDQ0ODg4ODg4ODg4ODg4PDw8PDw8PDw8PDw8RERERERERERERERERERERERERERERERERERERERQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGh0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dICAgICAgICAgICAgICAgICAgICAgICAgJSUlJSUlJycnJycnJycnJycnJyl0eXBlSW5mbwABigJtb2R1bGVJbmZvAACKAl9fbHNfc3dmdAAAigJfX2xzX3N3ZXhwcgAAigJfX2xzX2tleQAAigJfX2xzX3Rlcm5hcnkAAIoCX19sc19wb3N0aW5jAACKAnJlc3VsdAAAigJ0eXBlTGlzdAAAigJwYWdlAACKAnBhZ2VKc29uAACKAgAA",
+                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc+ANAgIRABYDigKXA5oCKSwHCgA2CwAAQgsBAhIMCwAqDQAAOAwNDCoNAQApDgAAPA4NDBIHCwASCwEAKQwaADgIDAs2CwEAQgsBAicMAgAnDQMAPA0MCycMBAASDQAAKQ4kADgNDg08DQwLJwwFABINAAApDiUAOA0ODTwNDAsnDAMAEg0AACkOGwA4DQ4NPA0MCxIJCwASCwAAKQwaADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwIgBILAAApDBoAOAsMCxIMCQAqDQIAOAwNDCcNBgA8Cw0MNgsHACkMOgA4CwwLEgwJACcNCAASDgAAKQ8iADgODw5CCwQCNgsHACkMOgA4CwwLEgwJACcNCQA2DgoAKQ8iADgODw4SDwAAEhAIAEIOAwBBCwICNgsHACkMOgA4CwwLEgwJACcNCwA2DgoAKQ8lADgODw4SDwAAEhAIAEIOAwBBCwICEgsAACkMHAA4CwwLDwALAFgMCoASCwAAKQwcADgLDAspDBoAOAsMCykMMwA4CwwLJwwMAEILAgITCwsADwALAFgMDIA2CwcAKQw/ADgLDAsSDAAAKQ0cADgMDQxCCwICEgwJACoNAgA4DA0MJw0NADwLDQwSCwAAKQwgADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwMgDYLBwApDDwAOAsMCxIMAAApDSAAOAwNDEILAgISDAkAKg0CADgMDQwnDQ4APAsNDBILAAApDCEAOAsMCykMIAA4CwwLQgsBAikMAAAADAsAWAsCgCsLAQBYDAGAKwsCAA8ACwBYDAyANgsHACkMQgA4CwwLEgwAACkNIQA4DA0MQgsCAhIMCQAqDQIAOAwNDCcNDwA8Cw0MEgsAACkMJgA4CwwLKQwgADgLDAtCCwECKQwAAAAMCwBYCwKAKwsBAFgMAYArCwIADwALAFgMDIA2CwcAKQxEADgLDAsSDAAAKQ0mADgMDQxCCwICEgwJACoNAgA4DA0MJw0QADwLDQwSCwAAKQwjADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwMgDYLBwApDEAAOAsMCxIMAAApDSMAOAwNDEILAgISDAkAKg0CADgMDQwnDREAPAsNDBILAAApDBsAOAsMCwYLEgBYCwKAKwsBAFgMAYArCwIADwALAFgMDoA2CwcAKQw/ADgLDAs2DAcAKQ1FADgMDQwSDQAAQgwCAEELAAISDAkAKg0CADgMDQwnDRMAPAsNDDYLFAApDB8AOAsMCxIMCQBCCwICEgoLABILBwApDCQAOAsMCzYMFQApDRsAOAwNDBINCgA2DgcAKQ84ADgODw5CDgEAQQwBAEELAAJMBwIAEFlhbWxQcmludGVyCUpzb24Oc2lnbmF0dXJlDURFTEVHQVRFDG1ldGhvZHMPcHJvcGVydGllcwtmaWVsZHMJdGFncxBjb25zdHJ1Y3Rvcgxwcml2YXRlEGRlc2NlbmRhbnRzDkxpYk1vZHVsZQ5hbmNlc3RvcnMPaW1wbGVtZW50cz9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlFHR5cGVfYXR0cmlidXRlcwttb2R1bGUJbmFtZQl0eXBlC2xheW91dBZzeXN0ZW0uRGljdGlvbmFyeRJzeXN0ZW0uVmVjdG9y/vaF/x/89oX/H+72hf8fAAAAAAAAAAAAAAEBAQMDAwMDAwMDAwMDAwMDAwMDAwMDAwoKCgoKCgoKCgoKCgoKCgoKCgoKCgoNDQ0NDQ0NDQ0ODg4ODg4ODg4ODg4PDw8PDw8PDw8PDw8RERERERERERERERERERERERERERERERERERERERQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGh0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dICAgICAgICAgICAgICAgICAgICAgICAgJSUlJSUlJycnJycnJycnJycnJyl0eXBlSW5mbwABigJtb2R1bGVJbmZvAACKAl9fbHNfc3dmdAAAigJfX2xzX3N3ZXhwcgAAigJfX2xzX2tleQAAigJfX2xzX3Rlcm5hcnkAAIoCX19sc19wb3N0aW5jAACKAnJlc3VsdAAAigJ0eXBlTGlzdAAAigJwYWdlAACKAnBhZ2VKc29uAACKAgAA",
+                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc+ANAgITABYDigKXA5oCKSwHCgA2CwAAQgsBAhIMCwAqDQAAOAwNDCoNAQApDgAAPA4NDBIHCwASCwEAKQwaADgIDAs2CwEAQgsBAicMAgAnDQMAPA0MCycMBAASDQAAKQ4kADgNDg08DQwLJwwFABINAAApDiUAOA0ODTwNDAsnDAMAEg0AACkOGwA4DQ4NPA0MCxIJCwASCwAAKQwaADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwIgBILAAApDBoAOAsMCxIMCQAqDQIAOAwNDCcNBgA8Cw0MNgsHACkMOgA4CwwLEg0JACcOCAASDwAAKRAiADgPEA9CCwQCNgsHACkMOgA4CwwLEg0JACcOCQA2DwoAKRAiADgPEA8SEQAAEhIIAEIPAwBBCwICNgsHACkMOgA4CwwLEg0JACcOCwA2DwoAKRAlADgPEA8SEQAAEhIIAEIPAwBBCwICEgsAACkMHAA4CwwLDwALAFgMCoASCwAAKQwcADgLDAspDBoAOAsMCykMMwA4CwwLJw0MAEILAgITCwsADwALAFgMDIA2CwcAKQw/ADgLDAsSDQAAKQ4cADgNDg1CCwICEgwJACoNAgA4DA0MJw0NADwLDQwSCwAAKQwgADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwMgDYLBwApDDwAOAsMCxINAAApDiAAOA0ODUILAgISDAkAKg0CADgMDQwnDQ4APAsNDBILAAApDCEAOAsMCykMIAA4CwwLQgsBAikMAAAADAsAWAsCgCsLAQBYDAGAKwsCAA8ACwBYDAyANgsHACkMQgA4CwwLEg0AACkOIQA4DQ4NQgsCAhIMCQAqDQIAOAwNDCcNDwA8Cw0MEgsAACkMJgA4CwwLKQwgADgLDAtCCwECKQwAAAAMCwBYCwKAKwsBAFgMAYArCwIADwALAFgMDIA2CwcAKQxEADgLDAsSDQAAKQ4mADgNDg1CCwICEgwJACoNAgA4DA0MJw0QADwLDQwSCwAAKQwjADgLDAspDCAAOAsMC0ILAQIpDAAAAAwLAFgLAoArCwEAWAwBgCsLAgAPAAsAWAwMgDYLBwApDEAAOAsMCxINAAApDiMAOA0ODUILAgISDAkAKg0CADgMDQwnDREAPAsNDBILAAApDBsAOAsMCwYLEgBYCwKAKwsBAFgMAYArCwIADwALAFgMDoA2CwcAKQw/ADgLDAs2DQcAKQ5FADgNDg0SDwAAQg0CAEELAAISDAkAKg0CADgMDQwnDRMAPAsNDDYLFAApDB8AOAsMCxINCQBCCwICEgoLABILBwApDCQAOAsMCzYNFQApDhsAOA0ODRIPCgA2EAcAKRE4ADgQERBCEAEAQQ0BAEELAAJMBwIAEFlhbWxQcmludGVyCUpzb24Oc2lnbmF0dXJlDURFTEVHQVRFDG1ldGhvZHMPcHJvcGVydGllcwtmaWVsZHMJdGFncxBjb25zdHJ1Y3Rvcgxwcml2YXRlEGRlc2NlbmRhbnRzDkxpYk1vZHVsZQ5hbmNlc3RvcnMPaW1wbGVtZW50cz9waXhlbGRyb2lkLmxzZG9jLnByb2Nlc3NvcnMudGFza3MuZ2hwYWdlcy5HZW5lcmF0ZVR5cGVQYWdlFHR5cGVfYXR0cmlidXRlcwttb2R1bGUJbmFtZQl0eXBlC2xheW91dBZzeXN0ZW0uRGljdGlvbmFyeRJzeXN0ZW0uVmVjdG9y/vaF/x/89oX/H+72hf8fAAAAAAAAAAAAAAEBAQMDAwMDAwMDAwMDAwMDAwMDAwMDAwoKCgoKCgoKCgoKCgoKCgoKCgoKCgoNDQ0NDQ0NDQ0ODg4ODg4ODg4ODg4PDw8PDw8PDw8PDw8RERERERERERERERERERERERERERERERERERERERQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGh0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dICAgICAgICAgICAgICAgICAgICAgICAgJSUlJSUlJycnJycnJycnJycnJyl0eXBlSW5mbwABigJtb2R1bGVJbmZvAACKAl9fbHNfc3dmdAAAigJfX2xzX3N3ZXhwcgAAigJfX2xzX2tleQAAigJfX2xzX3Rlcm5hcnkAAIoCX19sc19wb3N0aW5jAACKAnJlc3VsdAAAigJ0eXBlTGlzdAAAigJwYWdlAACKAnBhZ2VKc29uAACKAgAA",
                      "docString":"",
-                     "line":281,
+                     "line":280,
                      "metainfo":{},
                      "methodattributes":[
                         "private",
@@ -7148,10 +7148,10 @@
                      "type":"METHOD"
                   },
                   {
-                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9ABAAAJAgMADG3XAgA2BQAAOQUBBScGAgBCBQICNgYAADkGAQYtBwEAKQg0ADgHCAdCBgICJgUGBUwFAgAGgACAF3BlcmZvcm1UYXNrKCkgZm9yIA5fdG9TdHJpbmcLT2JqZWN0AAAAAAAAAAAAAAAAX19sc19mdW5jaW5mb19hcmdpbmZvXzAAdGhpcwBfX2xzX3N3ZnQAAQxfX2xzX3N3ZXhwcgAADF9fbHNfa2V5AAAMX19sc190ZXJuYXJ5AAAMX19sc19wb3N0aW5jAAAMAJADAwEMAAQBJKAB1wIHNgcAACkIIAA4BwgHNggBACkJMgA4CAkIKgYAADMJAgBCBwMCNggDACkJRgA4CAkIEgkAACkKNAA4CQoJEgoAACkLNQA4CgsKQggDAhIJAAApCjYAPAgKCSsIAAASCQAAKQo0ADwICgkrCAAAEgkAACkKNQA8CAoJEggAACkJLAA4CAkIQggBAjIAAIBLAAEAFUdlbmVyYXRlVHlwZVBhZ2UAP3BpeGVsZHJvaWQubHNkb2MucHJvY2Vzc29ycy50YXNrcy5naHBhZ2VzLkdlbmVyYXRlVHlwZVBhZ2UITG9n/v8HAAAAAAAAAAAAAgICAgICAgICAgICAgQEBAQFBQUFBwcHBwcHdGhpcwABJF9fbHNfc3dmdAAAJF9fbHNfc3dleHByAAAkX19sc19rZXkAACRfX2xzX3Rlcm5hcnkAACRfX2xzX3Bvc3RpbmMAACRfX2xzX2Z1bmNpbmZvX2FyZ2luZm9fMAAAJF9fbHNfbG9jYWxmdW5jdGlvbjMyAAgcAAA=",
-                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9ABAAAKAgMADG3XAgA2BQAAOQUBBScHAgBCBQICNgYAADkGAQYtCAEAKQk0ADgICQhCBgICJgUGBUwFAgAGgACAF3BlcmZvcm1UYXNrKCkgZm9yIA5fdG9TdHJpbmcLT2JqZWN0AAAAAAAAAAAAAAAAX19sc19mdW5jaW5mb19hcmdpbmZvXzAAdGhpcwBfX2xzX3N3ZnQAAQxfX2xzX3N3ZXhwcgAADF9fbHNfa2V5AAAMX19sc190ZXJuYXJ5AAAMX19sc19wb3N0aW5jAAAMAJADAwENAAQBJKAB1wIHNgcAACkIIAA4BwgHNgkBACkKMgA4CQoJKgYAADMKAgBCBwMCNggDACkJRgA4CAkIEgoAACkLNAA4CgsKEgsAACkMNQA4CwwLQggDAhIJAAApCjYAPAgKCSsIAAASCQAAKQo0ADwICgkrCAAAEgkAACkKNQA8CAoJEggAACkJLAA4CAkIQggBAjIAAIBLAAEAFUdlbmVyYXRlVHlwZVBhZ2UAP3BpeGVsZHJvaWQubHNkb2MucHJvY2Vzc29ycy50YXNrcy5naHBhZ2VzLkdlbmVyYXRlVHlwZVBhZ2UITG9n/v8HAAAAAAAAAAAAAgICAgICAgICAgICAgQEBAQFBQUFBwcHBwcHdGhpcwABJF9fbHNfc3dmdAAAJF9fbHNfc3dleHByAAAkX19sc19rZXkAACRfX2xzX3Rlcm5hcnkAACRfX2xzX3Bvc3RpbmMAACRfX2xzX2Z1bmNpbmZvX2FyZ2luZm9fMAAAJF9fbHNfbG9jYWxmdW5jdGlvbjMzAAgcAAA=",
+                     "bytecode":"G0xKAgBGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9ABAAAJAgMADG3WAgA2BQAAOQUBBScGAgBCBQICNgYAADkGAQYtBwEAKQg0ADgHCAdCBgICJgUGBUwFAgAGgACAF3BlcmZvcm1UYXNrKCkgZm9yIA5fdG9TdHJpbmcLT2JqZWN0AAAAAAAAAAAAAAAAX19sc19mdW5jaW5mb19hcmdpbmZvXzAAdGhpcwBfX2xzX3N3ZnQAAQxfX2xzX3N3ZXhwcgAADF9fbHNfa2V5AAAMX19sc190ZXJuYXJ5AAAMX19sc19wb3N0aW5jAAAMAJADAwEMAAQBJKAB1gIHNgcAACkIIAA4BwgHNggBACkJMgA4CAkIKgYAADMJAgBCBwMCNggDACkJRgA4CAkIEgkAACkKNAA4CQoJEgoAACkLNQA4CgsKQggDAhIJAAApCjYAPAgKCSsIAAASCQAAKQo0ADwICgkrCAAAEgkAACkKNQA8CAoJEggAACkJLAA4CAkIQggBAjIAAIBLAAEAFUdlbmVyYXRlVHlwZVBhZ2UAP3BpeGVsZHJvaWQubHNkb2MucHJvY2Vzc29ycy50YXNrcy5naHBhZ2VzLkdlbmVyYXRlVHlwZVBhZ2UITG9n/v8HAAAAAAAAAAAAAgICAgICAgICAgICAgQEBAQFBQUFBwcHBwcHdGhpcwABJF9fbHNfc3dmdAAAJF9fbHNfc3dleHByAAAkX19sc19rZXkAACRfX2xzX3Rlcm5hcnkAACRfX2xzX3Bvc3RpbmMAACRfX2xzX2Z1bmNpbmZvX2FyZ2luZm9fMAAAJF9fbHNfbG9jYWxmdW5jdGlvbjMyAAgcAAA=",
+                     "bytecode_fr2":"G0xKAghGLi9zcmMvLi8vcGl4ZWxkcm9pZC9sc2RvYy9wcm9jZXNzb3JzL3Rhc2tzL2docGFnZXMvR2VuZXJhdGVUeXBlUGFnZS5sc9ABAAAKAgMADG3WAgA2BQAAOQUBBScHAgBCBQICNgYAADkGAQYtCAEAKQk0ADgICQhCBgICJgUGBUwFAgAGgACAF3BlcmZvcm1UYXNrKCkgZm9yIA5fdG9TdHJpbmcLT2JqZWN0AAAAAAAAAAAAAAAAX19sc19mdW5jaW5mb19hcmdpbmZvXzAAdGhpcwBfX2xzX3N3ZnQAAQxfX2xzX3N3ZXhwcgAADF9fbHNfa2V5AAAMX19sc190ZXJuYXJ5AAAMX19sc19wb3N0aW5jAAAMAJADAwENAAQBJKAB1gIHNgcAACkIIAA4BwgHNgkBACkKMgA4CQoJKgYAADMKAgBCBwMCNggDACkJRgA4CAkIEgoAACkLNAA4CgsKEgsAACkMNQA4CwwLQggDAhIJAAApCjYAPAgKCSsIAAASCQAAKQo0ADwICgkrCAAAEgkAACkKNQA8CAoJEggAACkJLAA4CAkIQggBAjIAAIBLAAEAFUdlbmVyYXRlVHlwZVBhZ2UAP3BpeGVsZHJvaWQubHNkb2MucHJvY2Vzc29ycy50YXNrcy5naHBhZ2VzLkdlbmVyYXRlVHlwZVBhZ2UITG9n/v8HAAAAAAAAAAAAAgICAgICAgICAgICAgQEBAQFBQUFBwcHBwcHdGhpcwABJF9fbHNfc3dmdAAAJF9fbHNfc3dleHByAAAkX19sc19rZXkAACRfX2xzX3Rlcm5hcnkAACRfX2xzX3Bvc3RpbmMAACRfX2xzX2Z1bmNpbmZvX2FyZ2luZm9fMAAAJF9fbHNfbG9jYWxmdW5jdGlvbjMzAAgcAAA=",
                      "docString":"",
-                     "line":341,
+                     "line":340,
                      "metainfo":{},
                      "methodattributes":[
                         "protected"
@@ -8373,6 +8373,6 @@
       }
    ],
    "type":"ASSEMBLY",
-   "uid":"c665b69b-d8f9-4114-9887-5a22db9cfd5f",
+   "uid":"69fb99bf-cf61-4624-a31b-67f38ddccd58",
    "version":"1.0"
 }

@@ -9,6 +9,8 @@ package example
     SuperClass description doc comments first line.
 
     Additional class description documentation comments.
+
+    @see example.ExampleInterface
     */
     public class ExampleSuperClass implements ExampleInterface
     {
@@ -16,13 +18,13 @@ package example
         public static const constant:String = 'A public class constant';
 
         /** Public field doc comments first line. */
-        public var parent_public_var:String = 'A public member variable';
+        public var parent_public_field:String = 'A public member field';
 
         /** Protected field doc comments first line. */
-        protected var parent_protected_var:String = 'A protected member variable';
+        protected var parent_protected_field:String = 'A protected member field';
 
-        /** Private field doc comments should not appear in the API documentation. */
-        private var parent_private_var:ExampleEnum = ExampleEnum.ZEROITH;
+        /** Private doc comments should not appear in the API documentation. */
+        private var parent_private_field:ExampleEnum = ExampleEnum.ZEROITH;
 
 
         /**
@@ -39,7 +41,7 @@ package example
         // interface methods
 
         /** @inherit */
-        public function get read_only_property():ExampleEnum { return parent_private_var; }
+        public function get read_only_property():ExampleEnum { return parent_private_field; }
 
         /** @inherit */
         public function interface_method(param1:String, ...rest):void { }
