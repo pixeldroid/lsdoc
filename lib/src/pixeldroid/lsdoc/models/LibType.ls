@@ -35,7 +35,9 @@ package pixeldroid.lsdoc.models
         public var properties:Vector.<TypeProperty> = [];
         public var sourceFile:String;
 
-        public function toString():String { return packageString +'.' +name; }
+        public function toString():String { return typeString; }
+
+        public function get typeString():String { return packageString +'.' +name; }
 
         public static function fromJSON(j:JSON):LibType
         {
@@ -75,6 +77,9 @@ package pixeldroid.lsdoc.models
 
             if (jj = j.getArray('methods'))
                 LibUtils.extractTypeVector(jj, TypeMethod.fromJSON, t.methods);
+
+            for each(var m:TypeMethod in t.methods)
+                TypeMethod.setChainable(m, t);
 
             if (jj = j.getArray('fields'))
                 LibUtils.extractTypeVector(jj, TypeField.fromJSON, t.fields);

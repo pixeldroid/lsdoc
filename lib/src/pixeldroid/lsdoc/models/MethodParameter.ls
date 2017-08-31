@@ -11,7 +11,7 @@ package pixeldroid.lsdoc.models
     public class MethodParameter
     {
         public var defaultValue:String;
-        public var hasDefault:Boolean = true;
+        public var hasDefault:Boolean = false;
         public var isVarArgs:Boolean = false;
         public var name:String;
         public var templateTypes:ValueTemplate;

@@ -155,6 +155,9 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             if (methodInfo.templateTypes)
                 method['template_types'] = getValueTemplate(methodInfo.templateTypes);
 
+            if (methodInfo.isChainable)
+                method['is_chainable'] = true;
+
             return method;
         }
 

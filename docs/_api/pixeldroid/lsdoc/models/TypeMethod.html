@@ -6,6 +6,7 @@ fields:
   - { attributes: [ "public" ], description: "", name: "docString", type: "system.String" }
   - { attributes: [ "public" ], description: "", name: "docTags", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.DocTag" } ], type: "system.Vector" }, type: "system.Vector" }
   - { attributes: [ "public" ], description: "", name: "isDefault", type: "system.Boolean" }
+  - { attributes: [ "public" ], description: "", name: "isChainable", type: "system.Boolean" }
   - { attributes: [ "public" ], description: "", name: "name", type: "system.String" }
   - { attributes: [ "public" ], description: "", name: "parameters", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.MethodParameter" } ], type: "system.Vector" }, type: "system.Vector" }
   - { attributes: [ "public" ], description: "", name: "returnTypeString", type: "system.String" }
@@ -16,7 +17,8 @@ fields:
 layout: "type"
 methods: 
   - { attributes: [ "public" ], description: "", name: "toString", type: "system.String" }
-  - { attributes: [ "public", "static" ], description: "", name: "fromJSON", parameters: [ { name: "j", type: "system.JSON" } ], type: "pixeldroid.lsdoc.models.TypeMethod" }
+  - { attributes: [ "public", "static" ], description: "", name: "setChainable", parameters: [ { name: "method", type: "pixeldroid.lsdoc.models.TypeMethod" }, { name: "parentType", type: "pixeldroid.lsdoc.models.LibType" } ], type: "system.Void" }
+  - { attributes: [ "public", "static" ], description: "", is_chainable: true, name: "fromJSON", parameters: [ { name: "j", type: "system.JSON" } ], type: "pixeldroid.lsdoc.models.TypeMethod" }
 module: "pixeldroid.lsdoc.models"
 name: "TypeMethod"
 type: "CLASS"

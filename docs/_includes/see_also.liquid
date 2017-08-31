@@ -2,14 +2,18 @@
 
 see_also
   creates an unordered list of linked module references, one for each @see tag provided:
+
   <h3 class="ui tight sub header">See Also</h3>
   <ul>
-  <li><a href="/api/example">example</a>.<a href="/api/example/ExampleClass">ExampleClass</a>#<a href="/api/example/ExampleClass#details-kitchen_sink_method">kitchen_sink_method</a></li>
+  <li>#<a href="/api/example/ExampleClass#details-kitchen_sink_method">kitchen_sink_method</a></li>
   <li><a href="/api/example">example</a>.<a href="/api/example/ExampleSuperClass">ExampleSuperClass</a>#<a href="/api/example/ExampleSuperClass#details-constructor">constructor</a></li>
   </ul>
 
 params:
-  tags=[{"name"=>"see", "value"=>"example.ExampleSuperClass"}] (array of tag objects; those with name not equal to 'see' are ignored)
+  tags=[
+    {"name"=>"see", "value"=>"example.ExampleSuperClass"},
+    {"name"=>"see", "value"=>"#details-kitchen_sink_method"}
+  ] (array of tag objects; those with name not equal to 'see' are ignored)
   base_module="foo.bar.Baz" (base module used for relative links: "value"=>"#bat")
   heading=3 (optional, defaults to 3: html h3 heading is used for 'See Also' section.)
 

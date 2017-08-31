@@ -86,6 +86,11 @@ package pixeldroid.lsdoc.models
         }
 
 
+        /**
+        Provides a human-readable string representation of the tag.
+
+        e.g.: `@<name> <value>`
+        */
         public function toString():String { return NAME_DELIMITER +_name +VALUE_DELIMITER +_value; }
 
         public function get name():String { return _name; }

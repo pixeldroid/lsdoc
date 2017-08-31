@@ -8,6 +8,7 @@ module: "example"
 name: "ExampleInterface"
 properties: 
   - { attributes: [ "public" ], description: " Public read-only property doc comments first line. \n", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, is_read_only: true, name: "read_only_property", type: "example.ExampleEnum" }
+  - { attributes: [ "public" ], description: "Unfashionable old property.\n\n", getter: { attributes: [ "public" ], description: "", name: "__pget_legacy_property", type: "system.String" }, is_read_only: true, name: "legacy_property", tags: [ { name: "deprecated", value: "v2.1.3" } ], type: "system.String" }
 tags: 
   - { name: "see", value: "#interface_method" }
 type: "INTERFACE"

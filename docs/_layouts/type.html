@@ -98,10 +98,14 @@ layout: page
 {% assign isCtor = false %}{% if a == 'constructor' %}{% assign isCtor = true %}{% endif %}
 {% for item in list %}
   {% capture params %}{% include parameters.liquid params=item.parameters base_url=site.baseurl module_root=site.module_root %}{% endcapture %}
+  {% assign d_tags = item.tags | where_exp:"t", "t.name == 'deprecated'" %}
+  {% capture deprecated %}{% if d_tags.size > 0 %}<div class="ui horizontal orange label">deprecated {{ d_tags.first.value }}</div>{% endif %}{% endcapture %}
+  {% capture static %}{% if item.attributes contains 'static' %}<div class="ui horizontal grey label">static</div>{% endif %}{% endcapture %}
   {% capture read_only %}{% if item.is_read_only %}<div class="ui horizontal label">read only</div>{% endif %}{% endcapture %}
+  {% capture chainable %}{% if item.is_chainable %}<div class="ui horizontal label">chainable</div>{% endif %}{% endcapture %}
   {% capture signature %}<a href="#details-{{ item.name }}">{{ item.name }}</a><span class="normal text">{% if isFunc and params.size == 0 %}(){% else %}{{ params | rstrip }}{% endif %}{% if isCtor != true %}:{% if item.template_types %}{% include template_signature.liquid template_type=item.template_types base_url=site.baseurl module_root=site.module_root %}{% else %}{% include module_linker.liquid module=item.type base_url=site.baseurl module_root=site.module_root %}{% endif %}{% endif %}</span>{% endcapture %}
   {% assign d_lines = item.description | split: newline %}
-  <tr><td{% if forloop.first %} class="collapsing"{% endif %}>{{ read_only }}{{ signature | rstrip }}</td><td>{{ d_lines | first | markdownify | remove: '<p>' | remove: '</p>' | remove: '</p>' | rstrip }}</td></tr>
+  <tr><td{% if forloop.first %} class="collapsing"{% endif %}>{{ signature | rstrip }}</td><td>{{ deprecated }}{{ static }}{{ read_only }}{{ chainable }}{{ d_lines | first | markdownify | remove: '<p>' | remove: '</p>' | remove: '</p>' | rstrip }}</td></tr>
 {% endfor %}
 </tbody></table>
 {% endif %}
@@ -123,17 +127,22 @@ layout: page
 {% assign isCtor = false %}{% if a == 'constructor' %}{% assign isCtor = true %}{% endif %}
 {% for item in list %}
   {% capture params %}{% include parameters.liquid params=item.parameters base_url=site.baseurl module_root=site.module_root %}{% endcapture %}
+  {% assign d_tags = item.tags | where_exp:"t", "t.name == 'deprecated'" %}
+  {% capture deprecated %}{% if d_tags.size > 0 %}<div class="ui horizontal orange label">deprecated {{ d_tags.first.value }}</div>{% endif %}{% endcapture %}
+  {% capture static %}{% if item.attributes contains 'static' %}<div class="ui horizontal grey label">static</div>{% endif %}{% endcapture %}
   {% capture read_only %}{% if item.is_read_only %}<div class="ui horizontal label">read only</div>{% endif %}{% endcapture %}
+  {% capture chainable %}{% if item.is_chainable %}<div class="ui horizontal label">chainable</div>{% endif %}{% endcapture %}
   {% capture signature %}{{ item.attributes | join: ' ' }} {% if isFunc %}function {% endif %}<strong>{{ item.name }}</strong>{{ params | rstrip }}{% if isCtor != true %}:{% if item.template_types %}{% include template_signature.liquid template_type=item.template_types base_url=site.baseurl module_root=site.module_root %}{% else %}{% include module_linker.liquid module=item.type base_url=site.baseurl module_root=site.module_root %}{% endif %}{% endif %}{% endcapture %}
-  <div class="ui tight vertical segment"><span class="anchor" id="details-{{ item.name }}">&nbsp;</span><h4 class="ui very tight header">{{ item.name }}{% if isFunc %}(){% endif %}</h4>
-  <p>{{ read_only }}<code>{{ signature }}</code></p>
+  <div class="ui tight vertical segment"><span class="anchor" id="details-{{ item.name }}">&nbsp;</span><h4 class="ui very tight header">{{ item.name }}{% if isFunc %}(){% endif %}{{ deprecated }}{{ static }}{{ read_only }}{{ chainable }}</h4>
+  <p><code>{{ signature }}</code></p>
   {{ item.description | markdownify }}
   {% assign base_module = page.module | append: '.' | append: page.name %}
   {% include see_also.liquid base_module=base_module tags=item.tags heading=4 %}
   {% if isFunc and item.parameters %}<table class="ui striped definition table"><tbody>
   {% for p in item.parameters %}
     {% capture p_sig %}{% include parameter_signature.liquid param=p base_url=include.base_url %}{% endcapture %}
-    <tr><td{% if forloop.first %} class="collapsing"{% endif %}><code>{{ p_sig | rstrip }}</code></td><td>{% if p.description %}{{ p.description | markdownify | rstrip }}{% endif %}</td></tr>
+    {% capture optional %}{% if p.default_value or p.is_var_args %}<div class="ui horizontal label">optional</div>{% endif %}{% endcapture %}
+    <tr><td{% if forloop.first %} class="collapsing"{% endif %}><code>{{ p_sig | rstrip }}</code></td><td>{{ optional }}{% if p.description %}{{ p.description | markdownify | rstrip }}{% endif %}</td></tr>
   {% endfor %}
   </tbody></table>{% endif %}
   </div>

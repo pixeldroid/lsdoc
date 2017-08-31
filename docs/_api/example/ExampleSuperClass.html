@@ -24,6 +24,7 @@ name: "ExampleSuperClass"
 properties: 
   - { attributes: [ "public" ], description: " Public property getter doc comments first line. \n", getter: { attributes: [ "public" ], description: "", name: "__pget_property", type: "system.String" }, name: "property", setter: { attributes: [ "public" ], description: "", name: "__pset_property", parameters: [ { name: "value", type: "system.String" } ], type: "system.Void" }, type: "system.String" }
   - { attributes: [ "public" ], description: "", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, is_read_only: true, name: "read_only_property", type: "example.ExampleEnum" }
+  - { attributes: [ "public" ], description: "", getter: { attributes: [ "public" ], description: "", name: "__pget_legacy_property", type: "system.String" }, is_read_only: true, name: "legacy_property", type: "system.String" }
 tags: 
   - { name: "see", value: "example.ExampleInterface" }
 type: "CLASS"

@@ -4,6 +4,7 @@ package pixeldroid.lsdoc.models
 
     import pixeldroid.lsdoc.LibUtils;
     import pixeldroid.lsdoc.models.DocTag;
+    import pixeldroid.lsdoc.models.LibType;
     // import pixeldroid.lsdoc.models.ElementMetaData;
     import pixeldroid.lsdoc.models.MethodParameter;
     import pixeldroid.lsdoc.models.ValueTemplate;
@@ -35,6 +36,7 @@ package pixeldroid.lsdoc.models
         public var docString:String;
         public var docTags:Vector.<DocTag> = [];
         public var isDefault:Boolean = true;
+        public var isChainable:Boolean = false;
         // public var metaInfo:ElementMetaData;
         public var name:String;
         public var parameters:Vector.<MethodParameter> = [];
@@ -46,6 +48,11 @@ package pixeldroid.lsdoc.models
 
         public function toString():String { return name; }
 
+
+        public static function setChainable(method:TypeMethod, parentType:LibType):void
+        {
+            method.isChainable = (method.returnTypeString == parentType.typeString);
+        }
 
         public static function fromJSON(j:JSON):TypeMethod
         {
