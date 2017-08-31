@@ -38,10 +38,13 @@ package example
         /** Setter doc comments are ignored; place doc comments on the getter. */
         public function set property(value:String):void { }
 
-        // interface methods
+        // interface methods should inherit documentation
 
         /** @inherit */
         public function get read_only_property():ExampleEnum { return parent_private_field; }
+
+        /** @inherit */
+        public function get legacy_property():String { return null; }
 
         /** @inherit */
         public function interface_method(param1:String, ...rest):void { }

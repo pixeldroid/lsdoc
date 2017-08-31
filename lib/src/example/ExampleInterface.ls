@@ -17,6 +17,13 @@ package example
         function get read_only_property():ExampleEnum;
 
         /**
+        Unfashionable old property.
+
+        @deprecated v2.1.3
+        */
+        function get legacy_property():String;
+
+        /**
         Public interface method doc comments first line.
 
         This method has one required first parameter,

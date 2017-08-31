@@ -98,6 +98,8 @@ layout: page
 {% assign isCtor = false %}{% if a == 'constructor' %}{% assign isCtor = true %}{% endif %}
 {% for item in list %}
   {% capture params %}{% include parameters.liquid params=item.parameters base_url=site.baseurl module_root=site.module_root %}{% endcapture %}
+  {% assign d_tags = item.tags | where_exp:"t", "t.name == 'deprecated'" %}
+  {% capture deprecated %}{% if d_tags.size > 0 %}<div class="ui horizontal orange label">deprecated {{ d_tags.first.value }}</div>{% endif %}{% endcapture %}
   {% capture read_only %}{% if item.is_read_only %}<div class="ui horizontal label">read only</div>{% endif %}{% endcapture %}
   {% capture signature %}<a href="#details-{{ item.name }}">{{ item.name }}</a><span class="normal text">{% if isFunc and params.size == 0 %}(){% else %}{{ params | rstrip }}{% endif %}{% if isCtor != true %}:{% if item.template_types %}{% include template_signature.liquid template_type=item.template_types base_url=site.baseurl module_root=site.module_root %}{% else %}{% include module_linker.liquid module=item.type base_url=site.baseurl module_root=site.module_root %}{% endif %}{% endif %}</span>{% endcapture %}
   {% assign d_lines = item.description | split: newline %}
@@ -123,6 +125,8 @@ layout: page
 {% assign isCtor = false %}{% if a == 'constructor' %}{% assign isCtor = true %}{% endif %}
 {% for item in list %}
   {% capture params %}{% include parameters.liquid params=item.parameters base_url=site.baseurl module_root=site.module_root %}{% endcapture %}
+  {% assign d_tags = item.tags | where_exp:"t", "t.name == 'deprecated'" %}
+  {% capture deprecated %}{% if d_tags.size > 0 %}<div class="ui horizontal orange label">deprecated {{ d_tags.first.value }}</div>{% endif %}{% endcapture %}
   {% capture read_only %}{% if item.is_read_only %}<div class="ui horizontal label">read only</div>{% endif %}{% endcapture %}
   {% capture signature %}{{ item.attributes | join: ' ' }} {% if isFunc %}function {% endif %}<strong>{{ item.name }}</strong>{{ params | rstrip }}{% if isCtor != true %}:{% if item.template_types %}{% include template_signature.liquid template_type=item.template_types base_url=site.baseurl module_root=site.module_root %}{% else %}{% include module_linker.liquid module=item.type base_url=site.baseurl module_root=site.module_root %}{% endif %}{% endif %}{% endcapture %}
   <div class="ui tight vertical segment"><span class="anchor" id="details-{{ item.name }}">&nbsp;</span><h4 class="ui very tight header">{{ item.name }}{% if isFunc %}(){% endif %}</h4>
