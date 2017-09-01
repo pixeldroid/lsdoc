@@ -1,6 +1,7 @@
 ---
 ancestors: 
   - { module: "system", name: "Object" }
+description: ""
 layout: "type"
 methods: 
   - { attributes: [ "public", "static" ], description: "Extracts JSON array elements, sends them through a transformation function, and stores them in a provided Vector.\n", name: "extractTypeVector", parameters: [ { name: "j", type: "system.JSON" }, { name: "f", type: "system.Function" }, { name: "v", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], type: "system.Void" }

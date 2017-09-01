@@ -1,6 +1,7 @@
 ---
 ancestors: 
   - { module: "system", name: "Object" }
+description: "Encapsulates the data of a loomlib `property` declaration.\n\nLoom properties are special methods that look like a field, but provide control over access and mutation:\n- `function get foo()`\n- `function set foo()` (optional, value is read-only when not defined)\n\nNote that doc strings are only recorded from the getter definition.\n"
 fields: 
   - { attributes: [ "public" ], description: "", name: "attributes", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
   - { attributes: [ "public" ], description: "", name: "docString", type: "system.String" }

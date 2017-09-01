@@ -1,6 +1,7 @@
 ---
 ancestors: 
   - { module: "system", name: "Object" }
+description: "A utlity class for manipulating file paths.\n"
 layout: "type"
 methods: 
   - { attributes: [ "public", "static" ], description: "Returns all components of the given filepath except the last one.\n\nThe returned string does not contain a trailing delimiter.\n", name: "dirname", parameters: [ { name: "filepath", type: "system.String" } ], type: "system.String" }

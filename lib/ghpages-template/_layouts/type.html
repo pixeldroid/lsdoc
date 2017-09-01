@@ -70,8 +70,7 @@ layout: page
 {% unless page.type == 'DELEGATE' %}
 <div class="ui basic segment"><span class="anchor" id="description">&nbsp;</span>
 <h3 class="ui header">{{ page.type | capitalize }} Description</h3>
-{% capture description_file %}_{{ page.name }}-description.md{% endcapture %}
-{% capture description %}{% include_relative {{ description_file }} %}{% endcapture %}
+{% capture description %}{{ page.description }}{% endcapture %}
 {{ description | replace: '   ⇥', '⇥' | replace: '⇥', site.code_indent | markdownify }}
 {% assign base_module = page.module | append: '.' | append: page.name %}
 {% include see_also.liquid base_module=base_module tags=page.tags heading=3 %}

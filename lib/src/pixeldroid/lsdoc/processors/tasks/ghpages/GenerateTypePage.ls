@@ -286,10 +286,11 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             var typeList:Vector.<LibType> = moduleInfo.types;
 
             var page:Dictionary.<String,Object> = {
-                'layout' : 'type',
-                'name'   : typeInfo.name,
-                'module' : typeInfo.packageString,
-                'type'   : typeInfo.construct,
+                'layout'      : 'type',
+                'name'        : typeInfo.name,
+                'description' : typeInfo.docString,
+                'module'      : typeInfo.packageString,
+                'type'        : typeInfo.construct,
             };
 
             if (typeInfo.attributes.length > 0)

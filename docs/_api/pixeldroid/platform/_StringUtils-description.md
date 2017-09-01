@@ -1,1 +1,0 @@
-A utlity class for manipulating strings.

@@ -23,14 +23,12 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
         private static const logName:String = WriteTypePage.getTypeName();
         private var genTypePage:GenerateTypePage;
         private var writeLines:WriteLines;
-        private var writeDescription:WriteLines;
 
 
         public function WriteTypePage(apiPath:String, typeInfo:LibType, moduleInfo:LibModule, context:ProcessingContext)
         {
             var packageComponents:Vector.<String> = typeInfo.packageString.split('.');
             var fileName:String = typeInfo.name +'.html';
-            var descriptionName:String = '_' +typeInfo.name +'-description.md';
 
             genTypePage = new GenerateTypePage(typeInfo, moduleInfo);
             addTask(genTypePage);
@@ -38,11 +36,6 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             writeLines = new WriteLines(context);
             writeLines.outfile = FilePath.join(apiPath, packageComponents, fileName);
             addTask(writeLines);
-
-            writeDescription = new WriteLines(context);
-            writeDescription.lines = [typeInfo.docString];
-            writeDescription.outfile = FilePath.join(apiPath, packageComponents, descriptionName);
-            addTask(writeDescription);
 
             addSubTaskStateCallback(TaskState.COMPLETED, handleSubTaskCompletion);
         }
@@ -56,9 +49,6 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             writeLines.lines.clear();
             writeLines = null;
-
-            writeDescription.lines.clear();
-            writeDescription = null;
         }
 
 

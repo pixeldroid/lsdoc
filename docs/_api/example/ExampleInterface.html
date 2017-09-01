@@ -1,6 +1,7 @@
 ---
 descendants: 
   - { module: "example", name: "ExampleSuperClass" }
+description: "Interface description doc comments first line.\n\nAdditional interface description documentation comments.\n\n"
 layout: "type"
 methods: 
   - { attributes: [ "public" ], description: "Public interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).\n\n", name: "interface_method", parameters: [ { description: "The first parameter (required)", name: "param1", type: "system.String" }, { description: "Any additional params (optional)", is_var_args: true, name: "rest", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], type: "system.Void" }
