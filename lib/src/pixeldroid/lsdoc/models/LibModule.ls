@@ -14,36 +14,40 @@ package pixeldroid.lsdoc.models
     public class LibModule
     {
 
+        private var _types:Vector.<LibType> = [];
+        private var _typeDictionary:Dictionary.<String, LibType> = {};
+
         public var name:String;
-        public var types:Vector.<LibType> = [];
         public var version:String;
 
-        public function toString():String { return name +'(' +types.length +' types)'; }
+        public function toString():String { return name +' v' +version +' (' +_types.length +' types)'; }
+
+        public function get types():Vector.<LibType> { return _types; }
+
+        public function addType(t:LibType):Number
+        {
+            _typeDictionary[t.typeString] = t;
+            _types.push(t);
+
+            return _types.length;
+        }
+
+        public function fetchType(typeString:String, defaultValue:Object = null):LibType { return _typeDictionary.fetch(typeString, defaultValue) as LibType; }
 
 
         public static function fromJSON(j:JSON):LibModule
         {
             var m:LibModule = new LibModule();
+            var f:Function = function (j:JSON):void { m.addType(LibType.fromJSON(j)); }; // capture m in closure
             var jj:JSON;
 
             m.name = j.getString('name');
             m.version = j.getString('version');
 
             if (jj = j.getArray('types'))
-                LibUtils.extractTypeVector(jj, LibType.fromJSON, m.types);
+                LibUtils.applyToJSONArray(jj, f);
 
             return m;
-        }
-
-        public static function getTypeByName(fullName:String, typeList:Vector.<LibType>):LibType
-        {
-            for each(var t:LibType in typeList)
-            {
-                if (t.toString() == fullName)
-                    return t;
-            }
-
-            return null;
         }
 
         public static function selectTypesByPackage(parentPackage:String, typeList:Vector.<LibType>):Vector.<LibType>
@@ -135,7 +139,7 @@ package pixeldroid.lsdoc.models
             {
                 result.push(ancestor);
 
-                if (!(subject = getTypeByName(ancestor, typeList)))
+                if (!(subject = module.fetchType(ancestor)))
                     break;
 
                 ancestor = subject.baseTypeString;

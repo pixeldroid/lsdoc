@@ -18,12 +18,28 @@ package
         {
             it = specifier.describe('LibModule');
 
+            it.should('fetch types by fully qualified name', types_by_fqn);
             it.should('select types by package membership', types_by_package);
             it.should('select types by construct', types_by_construct);
             it.should('collect all packages in a module', get_packages);
             it.should('collect all subpackages under a parent package in a module', get_subpackages);
         }
 
+
+        private static function types_by_fqn():void
+        {
+            var r:LibType;
+            var m:LibModule = testModule;
+
+            r = m.fetchType('ClassTopLevel');
+            it.asserts(r).isNotNull().or('ClassTopLevel was unable to be fetched');
+            it.expects(r).toBeA(LibType);
+
+            r = m.fetchType('test.pkgb.DelegateB3');
+            it.asserts(r).isNotNull().or('DelegateB3 was unable to be fetched');
+            it.expects(r).toBeA(LibType);
+            it.expects(r.construct).toEqual(DefinitionConstruct.DELEGATE.toString());
+        }
 
         private static function types_by_package():void
         {

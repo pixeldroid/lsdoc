@@ -37,7 +37,13 @@ package pixeldroid.lsdoc.models
 
         public function toString():String { return typeString; }
 
-        public function get typeString():String { return packageString +'.' +name; }
+        public function get typeString():String
+        {
+            if (packageString && packageString.length > 0)
+                return packageString +'.' +name;
+
+            return name;
+        }
 
         public static function fromJSON(j:JSON):LibType
         {

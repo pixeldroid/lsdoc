@@ -7,6 +7,19 @@ package pixeldroid.lsdoc
     public final class LibUtils
     {
         /**
+        Extracts JSON array elements and sends them to a provided function.
+        */
+        public static function applyToJSONArray(j:JSON, f:Function):void
+        {
+            if (j.getJSONType() != JSONType.JSON_ARRAY)
+                return;
+
+            var n:Number = j.getArrayCount();
+            for (var i:Number = 0; i < n; i++)
+                f(j.getArrayObject(i));
+        }
+
+        /**
         Extracts JSON array elements, sends them through a transformation function, and loads them onto a provided vector.
 
         Elements are pushed onto the end of the vector in the same order as the provided JSON array.
