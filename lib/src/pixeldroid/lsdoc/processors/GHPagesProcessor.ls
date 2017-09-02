@@ -65,7 +65,7 @@ package pixeldroid.lsdoc.processors
             for each(var m:LibModule in context.lsdoc.modules)
             {
                 // package pages
-                packages = LibModule.getPackages(m.types);
+                packages = LibModule.getPackages(m);
 
                 for each(var p:String in packages)
                     addTask(new WritePackagePage(apiPath, p, m, context));

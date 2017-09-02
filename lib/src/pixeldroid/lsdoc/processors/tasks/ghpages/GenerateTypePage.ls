@@ -297,8 +297,8 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                 page['type_attributes'] = typeInfo.attributes;
 
             setTypeRefs(page, 'implements', typeInfo.interfaceStrings);
-            setTypeRefs(page, 'ancestors', LibModule.getAncestors(typeInfo, typeList));
-            setTypeRefs(page, 'descendants', LibModule.getDescendants(typeInfo, typeList));
+            setTypeRefs(page, 'ancestors', LibModule.getAncestors(typeInfo, moduleInfo));
+            setTypeRefs(page, 'descendants', LibModule.getDescendants(typeInfo, moduleInfo));
 
             if (typeInfo.constructor && !typeInfo.constructor.attributes.contains('private'))
                 page['constructor'] = getOneMethod(typeInfo.constructor);

@@ -18,107 +18,110 @@ package
         {
             it = specifier.describe('LibModule');
 
-            it.should('retrieve types by package membership', types_by_package);
-            it.should('retrieve types by construct', types_by_construct);
-            it.should('collect all packages in a set of types', get_packages);
-            it.should('collect all subpackages under a parent package in a set of types', get_subpackages);
+            it.should('select types by package membership', types_by_package);
+            it.should('select types by construct', types_by_construct);
+            it.should('collect all packages in a module', get_packages);
+            it.should('collect all subpackages under a parent package in a module', get_subpackages);
         }
 
 
         private static function types_by_package():void
         {
             var r:Vector.<LibType>;
-            var t:Vector.<LibType> = testTypes;
+            var m:LibModule = testModule;
 
-            r = LibModule.getTypesByPackage(t, '');
+            r = LibModule.selectTypesByPackage('', m.types);
             it.expects(r.length).toEqual(1);
 
-            r = LibModule.getTypesByPackage(t, 'test');
+            r = LibModule.selectTypesByPackage('test', m.types);
             it.expects(r.length).toEqual(0);
 
-            r = LibModule.getTypesByPackage(t, 'test.pkga');
+            r = LibModule.selectTypesByPackage('test.pkga', m.types);
             it.expects(r.length).toEqual(7);
 
-            r = LibModule.getTypesByPackage(t, 'test.pkgb.suba');
+            r = LibModule.selectTypesByPackage('test.pkgb.suba', m.types);
             it.expects(r.length).toEqual(2);
         }
 
         private static function types_by_construct():void
         {
             var r:Vector.<LibType>;
-            var t:Vector.<LibType> = testTypes;
+            var m:LibModule = testModule;
 
-            r = LibModule.getTypesByConstruct(t, DefinitionConstruct.CLASS);
+            r = LibModule.selectTypesByConstruct(DefinitionConstruct.CLASS, m.types);
             it.expects(r.length).toEqual(8);
 
-            r = LibModule.getTypesByConstruct(t, DefinitionConstruct.DELEGATE);
+            r = LibModule.selectTypesByConstruct(DefinitionConstruct.DELEGATE, m.types);
             it.expects(r.length).toEqual(5);
 
-            r = LibModule.getTypesByConstruct(t, DefinitionConstruct.ENUM);
+            r = LibModule.selectTypesByConstruct(DefinitionConstruct.ENUM, m.types);
             it.expects(r.length).toEqual(2);
 
-            r = LibModule.getTypesByConstruct(t, DefinitionConstruct.INTERFACE);
+            r = LibModule.selectTypesByConstruct(DefinitionConstruct.INTERFACE, m.types);
             it.expects(r.length).toEqual(4);
 
-            r = LibModule.getTypesByConstruct(t, DefinitionConstruct.STRUCT);
+            r = LibModule.selectTypesByConstruct(DefinitionConstruct.STRUCT, m.types);
             it.expects(r.length).toEqual(3);
         }
 
         private static function get_packages():void
         {
             var r:Vector.<LibType>;
-            var t:Vector.<LibType> = testTypes;
+            var m:LibModule = testModule;
 
-            r = LibModule.getPackages(t);
+            r = LibModule.getPackages(m);
             it.expects(r.length).toEqual(7);
         }
 
         private static function get_subpackages():void
         {
             var r:Vector.<LibType>;
-            var t:Vector.<LibType> = testTypes;
+            var m:LibModule = testModule;
 
-            r = LibModule.getSubpackages(t, '');
+            r = LibModule.getSubpackages('', m);
             it.expects(r.length).toEqual(1);
 
-            r = LibModule.getSubpackages(t, 'test');
+            r = LibModule.getSubpackages('test', m);
             it.expects(r.length).toEqual(2);
 
-            r = LibModule.getSubpackages(t, 'test.pkga');
+            r = LibModule.getSubpackages('test.pkga', m);
             it.expects(r.length).toEqual(3);
         }
 
 
-        private static function get testTypes():Vector.<LibType>
+        private static function get testModule():LibModule
         {
-            var result:Vector.<LibType> = [];
+            var m:LibModule = new LibModule();
 
-            result.push(getTestType('ClassTopLevel', '', DefinitionConstruct.CLASS));
+            m.name = 'TestModule';
+            m.version = '0.0.0';
 
-            result.push(getTestType('ClassA', 'test.pkga', DefinitionConstruct.CLASS));
-            result.push(getTestType('ClassAa', 'test.pkga.suba', DefinitionConstruct.CLASS));
-            result.push(getTestType('ClassAb', 'test.pkga.subb', DefinitionConstruct.CLASS));
-            result.push(getTestType('ClassAc', 'test.pkga.subc', DefinitionConstruct.CLASS));
-            result.push(getTestType('DelegateA1', 'test.pkga', DefinitionConstruct.DELEGATE));
-            result.push(getTestType('DelegateA2', 'test.pkga', DefinitionConstruct.DELEGATE));
-            result.push(getTestType('EnumA', 'test.pkga', DefinitionConstruct.ENUM));
-            result.push(getTestType('InterfaceA', 'test.pkga', DefinitionConstruct.INTERFACE));
-            result.push(getTestType('InterfaceAa', 'test.pkga.suba', DefinitionConstruct.INTERFACE));
-            result.push(getTestType('StructA1', 'test.pkga', DefinitionConstruct.STRUCT));
-            result.push(getTestType('StructA2', 'test.pkga', DefinitionConstruct.STRUCT));
+            m.addType(getTestType('ClassTopLevel', '', DefinitionConstruct.CLASS));
 
-            result.push(getTestType('ClassB', 'test.pkgb', DefinitionConstruct.CLASS));
-            result.push(getTestType('ClassBa', 'test.pkgb.suba', DefinitionConstruct.CLASS));
-            result.push(getTestType('ClassBb', 'test.pkgb.subb', DefinitionConstruct.CLASS));
-            result.push(getTestType('DelegateB1', 'test.pkgb', DefinitionConstruct.DELEGATE));
-            result.push(getTestType('DelegateB2', 'test.pkgb', DefinitionConstruct.DELEGATE));
-            result.push(getTestType('DelegateB3', 'test.pkgb', DefinitionConstruct.DELEGATE));
-            result.push(getTestType('EnumB', 'test.pkgb', DefinitionConstruct.ENUM));
-            result.push(getTestType('InterfaceB', 'test.pkgb', DefinitionConstruct.INTERFACE));
-            result.push(getTestType('InterfaceBa', 'test.pkgb.suba', DefinitionConstruct.INTERFACE));
-            result.push(getTestType('StructB', 'test.pkgb', DefinitionConstruct.STRUCT));
+            m.addType(getTestType('ClassA', 'test.pkga', DefinitionConstruct.CLASS));
+            m.addType(getTestType('ClassAa', 'test.pkga.suba', DefinitionConstruct.CLASS));
+            m.addType(getTestType('ClassAb', 'test.pkga.subb', DefinitionConstruct.CLASS));
+            m.addType(getTestType('ClassAc', 'test.pkga.subc', DefinitionConstruct.CLASS));
+            m.addType(getTestType('DelegateA1', 'test.pkga', DefinitionConstruct.DELEGATE));
+            m.addType(getTestType('DelegateA2', 'test.pkga', DefinitionConstruct.DELEGATE));
+            m.addType(getTestType('EnumA', 'test.pkga', DefinitionConstruct.ENUM));
+            m.addType(getTestType('InterfaceA', 'test.pkga', DefinitionConstruct.INTERFACE));
+            m.addType(getTestType('InterfaceAa', 'test.pkga.suba', DefinitionConstruct.INTERFACE));
+            m.addType(getTestType('StructA1', 'test.pkga', DefinitionConstruct.STRUCT));
+            m.addType(getTestType('StructA2', 'test.pkga', DefinitionConstruct.STRUCT));
 
-            return result;
+            m.addType(getTestType('ClassB', 'test.pkgb', DefinitionConstruct.CLASS));
+            m.addType(getTestType('ClassBa', 'test.pkgb.suba', DefinitionConstruct.CLASS));
+            m.addType(getTestType('ClassBb', 'test.pkgb.subb', DefinitionConstruct.CLASS));
+            m.addType(getTestType('DelegateB1', 'test.pkgb', DefinitionConstruct.DELEGATE));
+            m.addType(getTestType('DelegateB2', 'test.pkgb', DefinitionConstruct.DELEGATE));
+            m.addType(getTestType('DelegateB3', 'test.pkgb', DefinitionConstruct.DELEGATE));
+            m.addType(getTestType('EnumB', 'test.pkgb', DefinitionConstruct.ENUM));
+            m.addType(getTestType('InterfaceB', 'test.pkgb', DefinitionConstruct.INTERFACE));
+            m.addType(getTestType('InterfaceBa', 'test.pkgb.suba', DefinitionConstruct.INTERFACE));
+            m.addType(getTestType('StructB', 'test.pkgb', DefinitionConstruct.STRUCT));
+
+            return m;
         }
 
         private static function getTestType(name:String, packageString:String, construct:DefinitionConstruct):LibType

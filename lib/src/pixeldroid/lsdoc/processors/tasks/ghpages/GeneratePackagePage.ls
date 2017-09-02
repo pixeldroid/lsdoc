@@ -30,7 +30,6 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
         private static function getPackagePage(pkg:String, moduleInfo:LibModule):Vector.<String>
         {
             var result:Vector.<String> = [];
-            var types:Vector.<LibType> = moduleInfo.types;
             var submodules:Vector.<String>;
             var memberTypes:Vector.<Dictionary.<String,Object>>;
 
@@ -39,22 +38,22 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                 'module' : pkg,
             };
 
-            if ((submodules = LibModule.getSubpackages(types, pkg)).length > 0)
+            if ((submodules = LibModule.getSubpackages(pkg, moduleInfo)).length > 0)
                 page['submodules'] = submodules;
 
-            if ((memberTypes = getMembersByConstruct(types, pkg, DefinitionConstruct.CLASS)).length > 0)
+            if ((memberTypes = getMembersByConstruct(DefinitionConstruct.CLASS, pkg, moduleInfo)).length > 0)
                 page['classes'] = memberTypes;
 
-            if ((memberTypes = getMembersByConstruct(types, pkg, DefinitionConstruct.DELEGATE)).length > 0)
+            if ((memberTypes = getMembersByConstruct(DefinitionConstruct.DELEGATE, pkg, moduleInfo)).length > 0)
                 page['delegates'] = memberTypes;
 
-            if ((memberTypes = getMembersByConstruct(types, pkg, DefinitionConstruct.ENUM)).length > 0)
+            if ((memberTypes = getMembersByConstruct(DefinitionConstruct.ENUM, pkg, moduleInfo)).length > 0)
                 page['enums'] = memberTypes;
 
-            if ((memberTypes = getMembersByConstruct(types, pkg, DefinitionConstruct.INTERFACE)).length > 0)
+            if ((memberTypes = getMembersByConstruct(DefinitionConstruct.INTERFACE, pkg, moduleInfo)).length > 0)
                 page['interfaces'] = memberTypes;
 
-            if ((memberTypes = getMembersByConstruct(types, pkg, DefinitionConstruct.STRUCT)).length > 0)
+            if ((memberTypes = getMembersByConstruct(DefinitionConstruct.STRUCT, pkg, moduleInfo)).length > 0)
                 page['structs'] = memberTypes;
 
             var pageJson:Json = Json.fromObject(page);
@@ -66,14 +65,14 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return result;
         }
 
-        private static function getMembersByConstruct(types:Vector.<LibType>, pkg:String, construct:DefinitionConstruct):Vector.<Dictionary.<String,Object>>
+        private static function getMembersByConstruct(construct:DefinitionConstruct, pkg:String, module:LibModule):Vector.<Dictionary.<String,Object>>
         {
             var filteredTypes:Vector.<LibType>;
             var memberInfo:Dictionary.<String,Object>;
             var result:Vector.<Dictionary.<String,Object>> = [];
 
-            filteredTypes = LibModule.getTypesByConstruct(types, construct);
-            filteredTypes = LibModule.getTypesByPackage(filteredTypes, pkg);
+            filteredTypes = LibModule.selectTypesByConstruct(construct, module.types);
+            filteredTypes = LibModule.selectTypesByPackage(pkg, filteredTypes);
 
             for each(var t:LibType in filteredTypes)
             {

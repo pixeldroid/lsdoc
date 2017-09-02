@@ -46,7 +46,7 @@ package pixeldroid.lsdoc.models
             return null;
         }
 
-        public static function getTypesByPackage(typeList:Vector.<LibType>, parentPackage:String):Vector.<LibType>
+        public static function selectTypesByPackage(parentPackage:String, typeList:Vector.<LibType>):Vector.<LibType>
         {
             var result:Vector.<LibType> = [];
             var typePackage:String;
@@ -65,7 +65,7 @@ package pixeldroid.lsdoc.models
             return result;
         }
 
-        public static function getTypesByConstruct(typeList:Vector.<LibType>, construct:DefinitionConstruct):Vector.<LibType>
+        public static function selectTypesByConstruct(construct:DefinitionConstruct, typeList:Vector.<LibType>):Vector.<LibType>
         {
             var result:Vector.<LibType> = [];
 
@@ -78,12 +78,12 @@ package pixeldroid.lsdoc.models
             return result;
         }
 
-        public static function getPackages(typeList:Vector.<LibType>):Vector.<String>
+        public static function getPackages(module:LibModule):Vector.<String>
         {
             var p:Vector.<String> = [];
             var s:String;
 
-            for each(var t:LibType in typeList)
+            for each(var t:LibType in module.types)
             {
                 s = t.packageString;
                 if (s == '' || p.contains(s))
@@ -95,14 +95,14 @@ package pixeldroid.lsdoc.models
             return p;
         }
 
-        public static function getSubpackages(typeList:Vector.<LibType>, parentPackage:String):Vector.<String>
+        public static function getSubpackages(parentPackage:String, module:LibModule):Vector.<String>
         {
             var subPackages:Vector.<String> = [];
             var typePackage:String;
             var parentComponents:Vector.<String> = [];
             var typeComponents:Vector.<String> = [];
 
-            for each(var t:LibType in typeList)
+            for each(var t:LibType in module.types)
             {
                 typePackage = t.packageString;
 
@@ -126,7 +126,7 @@ package pixeldroid.lsdoc.models
             return subPackages;
         }
 
-        public static function getAncestors(subject:LibType, typeList:Vector.<LibType>):Vector.<String>
+        public static function getAncestors(subject:LibType, module:LibModule):Vector.<String>
         {
             var result:Vector.<String> = [];
             var ancestor:String = subject.baseTypeString;
@@ -144,11 +144,11 @@ package pixeldroid.lsdoc.models
             return result;
         }
 
-        public static function getImplementors(fullName:String, typeList:Vector.<LibType>):Vector.<String>
+        public static function getImplementors(fullName:String, module:LibModule):Vector.<String>
         {
             var result:Vector.<String> = [];
 
-            for each(var t:LibType in typeList)
+            for each(var t:LibType in module.types)
             {
                 if (t.interfaceStrings.contains(fullName))
                     result.push(t.toString());
@@ -157,11 +157,11 @@ package pixeldroid.lsdoc.models
             return result;
         }
 
-        public static function getSubClasses(fullName:String, typeList:Vector.<LibType>):Vector.<String>
+        public static function getSubClasses(fullName:String, module:LibModule):Vector.<String>
         {
             var result:Vector.<String> = [];
 
-            for each(var t:LibType in typeList)
+            for each(var t:LibType in module.types)
             {
                 if (t.baseTypeString == fullName)
                     result.push(t.toString());
@@ -170,7 +170,7 @@ package pixeldroid.lsdoc.models
             return result;
         }
 
-        public static function getDescendants(subject:LibType, typeList:Vector.<LibType>):Vector.<String>
+        public static function getDescendants(subject:LibType, module:LibModule):Vector.<String>
         {
             var result:Vector.<String>;
             var fullName:String = subject.toString();
@@ -179,12 +179,12 @@ package pixeldroid.lsdoc.models
             switch(construct)
             {
                 case DefinitionConstruct.INTERFACE:
-                    result = getImplementors(fullName, typeList);
+                    result = getImplementors(fullName, module);
                     break;
 
                 case DefinitionConstruct.CLASS:
                 case DefinitionConstruct.STRUCT:
-                    result = getSubClasses(fullName, typeList);
+                    result = getSubClasses(fullName, module);
                     break;
 
                 default:
