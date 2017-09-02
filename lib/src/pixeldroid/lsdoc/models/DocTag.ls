@@ -3,7 +3,9 @@ package pixeldroid.lsdoc.models
 
 
     /**
-    Encapsulates the data of an doc tag (`@tag`).
+    Encapsulates the data of a doc tag (`@tag value`).
+
+    Tags start with an at sign (`@`), are key-value pairs separated by a space (` `) and terminated with a newline (`\n`):
     */
     public class DocTag
     {
