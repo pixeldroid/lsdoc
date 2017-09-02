@@ -51,7 +51,9 @@ package pixeldroid.lsdoc.models
 
         public static function setChainable(method:TypeMethod, parentType:LibType):void
         {
-            method.isChainable = (method.returnTypeString == parentType.typeString);
+            var isStatic:Boolean = method.attributes.contains('static');
+            var returnsOwnType:Boolean = (method.returnTypeString == parentType.typeString);
+            method.isChainable = (returnsOwnType && !isStatic);
         }
 
         public static function fromJSON(j:JSON):TypeMethod
