@@ -16,10 +16,30 @@ package
         {
             it = specifier.describe('StringUtils');
 
+            it.should('return the part of a string before a given token', part_before);
+            it.should('return the part of a string after a given token', part_after);
             it.should('determine that a string starts with a token', starts_with);
             it.should('determine that a string ends with a token', ends_with);
         }
 
+
+        private static function part_before():void
+        {
+            var s:String = '123|abc';
+            it.expects(StringUtils.before(s, '|')).toEqual('123');
+            it.expects(StringUtils.before(s, '1')).toEqual('');
+            it.expects(StringUtils.before(s, '')).toEqual(s);
+            it.expects(StringUtils.before(s, 'X')).toEqual(s);
+        }
+
+        private static function part_after():void
+        {
+            var s:String = '123|abc';
+            it.expects(StringUtils.after(s, '|')).toEqual('abc');
+            it.expects(StringUtils.after(s, 'c')).toEqual('');
+            it.expects(StringUtils.after(s, '')).toEqual('');
+            it.expects(StringUtils.after(s, 'X')).toEqual('');
+        }
 
         private static function starts_with():void
         {
