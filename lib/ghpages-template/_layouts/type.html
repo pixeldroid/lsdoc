@@ -152,9 +152,9 @@ layout: page
   {% for p in item.parameters %}
     {% capture p_sig %}{% include parameter_signature.liquid param=p base_url=include.base_url %}{% endcapture %}
     {% capture optional %}{% if p.default_value or p.is_var_args %}<div class="ui horizontal label">optional</div>{% endif %}{% endcapture %}
-    <tr><td{% if forloop.first %} class="collapsing"{% endif %}><code>{{ p_sig | rstrip }}</code></td><td>{{ optional }}{% if p.description %}{{ p.description | markdownify | rstrip }}{% endif %}</td></tr>
+    <tr><td class="collapsing"><code>{{ p_sig | rstrip }}</code></td><td>{{ optional }}{% if p.description %}{{ p.description | markdownify | rstrip }}{% endif %}</td></tr>
   {% endfor %}
-  {% if has_return %}<tr><td><div class="ui ribbon label">returns</div>{{ return_val }}</td><td>{{ r_tags.first.value | markdownify }}</td></tr>{% endif %}
+  {% if has_return %}<tr><td class="collapsing"><div class="ui ribbon label">returns</div>{{ return_val }}</td><td>{{ r_tags.first.value | markdownify }}</td></tr>{% endif %}
   </tbody></table>{% endif %}
   </div>
 {% endfor %}
