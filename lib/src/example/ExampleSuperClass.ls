@@ -15,7 +15,7 @@ package example
     public class ExampleSuperClass implements ExampleInterface
     {
         /** Constant field doc comments first line. */
-        public static const constant:String = 'A public class constant';
+        public static const parent_constant:String = 'A public class constant';
 
         /** Public field doc comments first line. */
         public var parent_public_field:String = 'A public member field';
@@ -40,13 +40,13 @@ package example
 
         // interface methods should inherit documentation
 
-        /** @inherit */
+        /** @copy example.ExampleInterface */
         public function get read_only_property():ExampleEnum { return parent_private_field; }
 
-        /** @inherit */
+        /** @copy example.ExampleInterface */
         public function get legacy_property():String { return null; }
 
-        /** @inherit */
+        /** @copy example.ExampleInterface */
         public function interface_method(param1:String, ...rest):void { }
 
         /**
@@ -63,10 +63,9 @@ package example
         /**
         Protected method doc comments first line.
 
-        This method has one required first parameter,
-        and one optional second parameter.
+        This method has one required first parameter without any documentation,
+        and one optional second parameter with documentation.
 
-        @param param1 The first parameter (required)
         @param param2 The second parameter (optional)
         */
         protected function protected_method(param1:String, param2:Number = 123):void { }

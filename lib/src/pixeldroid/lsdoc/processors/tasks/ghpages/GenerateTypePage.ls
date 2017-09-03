@@ -57,6 +57,52 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             page[section] = typeRefs;
         }
 
+        private static function getCopiedDocStrings(docTags:Vector.<DocTag>, defaultName:String, memberType:Type, moduleInfo:LibModule):String
+        {
+            // @copy does not support transitive references
+            var tags:Vector.<DocTag> = [];
+            if (!DocTag.selectByTagName(docTags, 'copy', tags))
+                return '';
+
+            var ds:Vector.<String> = [];
+            var packageString:String;
+            var memberName:String;
+            var t:LibType;
+            for each(var d:DocTag in tags)
+            {
+                packageString = StringUtils.before(d.value, '#');
+                memberName = StringUtils.after(d.value, '#');
+                if (!memberName)
+                    memberName = defaultName;
+
+                if (t = moduleInfo.fetchType(packageString))
+                {
+                    switch(memberType)
+                    {
+                        case TypeField:
+                        var f:TypeField = t.getField(memberName);
+                        if (f && f.docString)
+                            ds.push(f.docString);
+                        break;
+
+                        case TypeMethod:
+                        var m:TypeMethod = t.getMethod(memberName);
+                        if (m && m.docString)
+                            ds.push(m.docString);
+                        break;
+
+                        case TypeProperty:
+                        var p:TypeProperty = t.getProperty(memberName);
+                        if (p && p.docString)
+                            ds.push(p.docString);
+                        break;
+                    }
+                }
+            }
+
+            return ds.join('\n');
+        }
+
         private static function getOneTag(tagInfo:DocTag):Dictionary.<String,Object>
         {
             var tag:Dictionary.<String,Object> = {
@@ -121,7 +167,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return param;
         }
 
-        private static function getOneMethod(methodInfo:TypeMethod):Dictionary.<String,Object>
+        private static function getOneMethod(methodInfo:TypeMethod, moduleInfo:LibModule):Dictionary.<String,Object>
         {
             var method:Dictionary.<String,Object> = {
                 'name'        : methodInfo.name,
@@ -135,8 +181,11 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             if (methodInfo.docTags.length > 0)
             {
                 tags.clear();
+                // collect non-param tags
                 if (DocTag.selectByTagName(methodInfo.docTags, 'param', tags, true))
                     method['tags'] = getTags(tags);
+
+                method['description'] = getCopiedDocStrings(methodInfo.docTags, methodInfo.name, TypeMethod, moduleInfo) +method['description'];
             }
 
             if (methodInfo.parameters.length > 0)
@@ -161,7 +210,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return method;
         }
 
-        private static function getMethods(methodList:Vector.<TypeMethod>):Vector.<Dictionary.<String,Object>>
+        private static function getMethods(methodList:Vector.<TypeMethod>, moduleInfo:LibModule):Vector.<Dictionary.<String,Object>>
         {
             var methods:Vector.<Dictionary.<String,Object>> = [];
 
@@ -170,13 +219,13 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                 if (m.attributes.contains('private'))
                     continue;
 
-                methods.push(getOneMethod(m));
+                methods.push(getOneMethod(m, moduleInfo));
             }
 
             return methods;
         }
 
-        private static function getOneField(fieldInfo:TypeField):Dictionary.<String,Object>
+        private static function getOneField(fieldInfo:TypeField, moduleInfo:LibModule):Dictionary.<String,Object>
         {
             var field:Dictionary.<String,Object> = {
                 'name'        : fieldInfo.name,
@@ -186,7 +235,10 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             };
 
             if (fieldInfo.docTags.length > 0)
+            {
                 field['tags'] = getTags(fieldInfo.docTags);
+                field['description'] = getCopiedDocStrings(fieldInfo.docTags, fieldInfo.name, TypeField, moduleInfo) +field['description'];
+            }
 
             if (fieldInfo.templateTypes)
                 field['template_types'] = getValueTemplate(fieldInfo.templateTypes);
@@ -194,7 +246,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return field;
         }
 
-        private static function getFields(fieldList:Vector.<TypeField>):Vector.<Dictionary.<String,Object>>
+        private static function getFields(fieldList:Vector.<TypeField>, moduleInfo:LibModule):Vector.<Dictionary.<String,Object>>
         {
             var fields:Vector.<Dictionary.<String,Object>> = [];
 
@@ -203,13 +255,13 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                 if (f.attributes.contains('private'))
                     continue;
 
-                fields.push(getOneField(f));
+                fields.push(getOneField(f, moduleInfo));
             }
 
             return fields;
         }
 
-        private static function getOneProperty(propertyInfo:TypeProperty):Dictionary.<String,Object>
+        private static function getOneProperty(propertyInfo:TypeProperty, moduleInfo:LibModule):Dictionary.<String,Object>
         {
             var property:Dictionary.<String,Object> = {
                 'name'        : propertyInfo.name,
@@ -219,16 +271,19 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             };
 
             if (propertyInfo.docTags.length > 0)
+            {
                 property['tags'] = getTags(propertyInfo.docTags);
+                property['description'] = getCopiedDocStrings(propertyInfo.docTags, propertyInfo.name, TypeProperty, moduleInfo) +property['description'];
+            }
 
             if (propertyInfo.templateTypes)
                 property['template_types'] = getValueTemplate(propertyInfo.templateTypes);
 
             if (propertyInfo.getter)
-                property['getter'] = getOneMethod(propertyInfo.getter);
+                property['getter'] = getOneMethod(propertyInfo.getter, moduleInfo);
 
             if (propertyInfo.setter)
-                property['setter'] = getOneMethod(propertyInfo.setter);
+                property['setter'] = getOneMethod(propertyInfo.setter, moduleInfo);
 
             if (propertyInfo.isReadOnly)
                 property['is_read_only'] = true;
@@ -236,7 +291,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             return property;
         }
 
-        private static function getProperties(propertyList:Vector.<TypeProperty>):Vector.<Dictionary.<String,Object>>
+        private static function getProperties(propertyList:Vector.<TypeProperty>, moduleInfo:LibModule):Vector.<Dictionary.<String,Object>>
         {
             var properties:Vector.<Dictionary.<String,Object>> = [];
 
@@ -245,7 +300,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                 if (p.attributes.contains('private'))
                     continue;
 
-                properties.push(getOneProperty(p));
+                properties.push(getOneProperty(p, moduleInfo));
             }
 
             return properties;
@@ -301,22 +356,22 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             setTypeRefs(page, 'descendants', LibModule.getDescendants(typeInfo, moduleInfo));
 
             if (typeInfo.constructor && !typeInfo.constructor.attributes.contains('private'))
-                page['constructor'] = getOneMethod(typeInfo.constructor);
+                page['constructor'] = getOneMethod(typeInfo.constructor, moduleInfo);
 
             if (typeInfo.docTags.length > 0)
                 page['tags'] = getTags(typeInfo.docTags);
 
             if (typeInfo.fields.length > 0)
-                page['fields'] = getFields(typeInfo.fields);
+                page['fields'] = getFields(typeInfo.fields, moduleInfo);
 
             if (typeInfo.properties.length > 0)
-                page['properties'] = getProperties(typeInfo.properties);
+                page['properties'] = getProperties(typeInfo.properties, moduleInfo);
 
             if (typeInfo.methods.length > 0)
-                page['methods'] = getMethods(typeInfo.methods);
+                page['methods'] = getMethods(typeInfo.methods, moduleInfo);
 
             if (typeInfo.construct == 'DELEGATE')
-                page['signature'] = getOneMethod(getDelegateInfo(typeInfo));
+                page['signature'] = getOneMethod(getDelegateInfo(typeInfo), moduleInfo);
 
             // typeInfo.metainfo
 

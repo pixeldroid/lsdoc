@@ -45,6 +45,40 @@ package pixeldroid.lsdoc.models
             return name;
         }
 
+        public function getField(fieldName:String):TypeField
+        {
+            for each(var f:TypeField in fields)
+            {
+                if (f.name == fieldName)
+                    return f;
+            }
+
+            return null;
+        }
+
+        public function getMethod(methodName:String):TypeMethod
+        {
+            for each(var m:TypeMethod in methods)
+            {
+                if (m.name == methodName)
+                    return m;
+            }
+
+            return null;
+        }
+
+        public function getProperty(propertyName:String):TypeProperty
+        {
+            for each(var p:TypeProperty in properties)
+            {
+                if (p.name == propertyName)
+                    return p;
+            }
+
+            return null;
+        }
+
+
         public static function fromJSON(j:JSON):LibType
         {
             var t:LibType = new LibType();

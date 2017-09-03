@@ -38,8 +38,12 @@ package example
         /** Public templated field doc comments first line. */
         public var public_templated_field:Vector.<String> = [];
 
-        /** Protected field doc comments first line. */
-        protected var protected_field:String = 'A protected member field';
+        /**
+        @copy example.ExampleSuperClass#parent_protected_field
+
+        Additional doc comments from another class
+        */
+        override protected var protected_field:String = 'An overridden protected member field at the subclass level';
 
         /** Private doc comments should not appear in the API documentation. */
         private var private_field:ExampleEnum = ExampleEnum.LAST;
@@ -55,41 +59,43 @@ package example
         */
         public function ExampleClass(constructorParam:String = 'A constructor parameter') { }
 
+
         /** Public read-only templated property doc comments first line. */
         public function get read_only_templated_property():Dictionary.<String,Number> { return null; }
 
-        /** Public read-only property doc comments first line. */
+        /**
+        @copy example.ExampleInterface
+
+        Additional doc comments from overriding subclass
+        */
         override public function get read_only_property():ExampleEnum { return private_field; }
 
-        /** Public property getter doc comments first line. */
+        /**
+        @copy example.ExampleInterface
+
+        Additional doc comments from overriding subclass
+
+        @see example.ExampleSuperClass
+        */
+        override public function interface_method(param1:String, ...rest):void { }
+
+        /**
+        @copy example.ExampleSuperClass
+
+        Additional doc comments from overriding subclass
+        */
         override public function get property():String { return 'value'; }
 
         /** Public property setter doc comments first line (not expected to appear in loomlib or docs). */
         override public function set property(value:String):void { }
 
-        /**
-        Overridden interface method doc comments first line.
-
-        This method has one required first parameter,
-        and can accept any number of additional params via the rest arg (`...`).
-
-        @param param1 The first parameter (required)
-        @param rest Any additional params (optional)
-
-        @see example.ExampleInterface
-        */
-        override public function interface_method(param1:String, ...rest):void { }
 
         /**
-        Overridden public doc comments first line.
+        @copy example.ExampleSuperClass
 
-        This method has one required first parameter,
-        and an optional second parameter.
+        Additional doc comments from overriding subclass
 
-        The second parameter's defaul value is different than that of the base class.
-
-        @param param1 The first parameter (required)
-        @param param2 The second parameter (optional)
+        @see example.ExampleSuperClass
         */
         override public function method(param1:String, param2:String = 'child default'):String { return param2; }
 
@@ -113,12 +119,11 @@ package example
         public function kitchen_sink_method(param1:Vector.<Object>, param2:Dictionary.<String,Vector.<Object>>, param3:Vector.<Vector.<Vector.<Number>>>, ...args):void { }
 
         /**
-        Overridden protected method doc comments first line.
+        @copy example.ExampleSuperClass
 
-        This method has one required first parameter without any documentation,
-        and one optional second parameter with documentation.
+        Additional doc comments from overriding subclass
 
-        @param param2 The second parameter (optional)
+        @see example.ExampleSuperClass
         */
         override protected function protected_method(param1:String, param2:Number = 123):void { }
 
