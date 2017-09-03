@@ -131,18 +131,30 @@ layout: page
   {% capture static %}{% if item.attributes contains 'static' %}<div class="ui horizontal grey label">static</div>{% endif %}{% endcapture %}
   {% capture read_only %}{% if item.is_read_only %}<div class="ui horizontal label">read only</div>{% endif %}{% endcapture %}
   {% capture chainable %}{% if item.is_chainable %}<div class="ui horizontal label">chainable</div>{% endif %}{% endcapture %}
-  {% capture signature %}{{ item.attributes | join: ' ' }} {% if isFunc %}function {% endif %}<strong>{{ item.name }}</strong>{{ params | rstrip }}{% if isCtor != true %}:{% if item.template_types %}{% include template_signature.liquid template_type=item.template_types base_url=site.baseurl module_root=site.module_root %}{% else %}{% include module_linker.liquid module=item.type base_url=site.baseurl module_root=site.module_root %}{% endif %}{% endif %}{% endcapture %}
+  {% capture return_val %}{% if item.template_types %}{% include template_signature.liquid template_type=item.template_types base_url=site.baseurl module_root=site.module_root %}{% else %}{% include module_linker.liquid module=item.type base_url=site.baseurl module_root=site.module_root %}{% endif %}{% endcapture %}
+  {% capture signature %}{{ item.attributes | join: ' ' }} {% if isFunc %}function {% endif %}<strong>{{ item.name }}</strong>{{ params | rstrip }}{% if isCtor != true %}:{{ return_val }}{% endif %}{% endcapture %}
   <div class="ui tight vertical segment"><span class="anchor" id="details-{{ item.name }}">&nbsp;</span><h4 class="ui very tight header">{{ item.name }}{% if isFunc %}(){% endif %}{{ deprecated }}{{ static }}{{ read_only }}{{ chainable }}</h4>
   <p><code>{{ signature }}</code></p>
   {{ item.description | markdownify }}
+
   {% assign base_module = page.module | append: '.' | append: page.name %}
   {% include see_also.liquid base_module=base_module tags=item.tags heading=4 %}
-  {% if isFunc and item.parameters %}<table class="ui striped definition table"><tbody>
+
+  {% assign r_tags = item.tags | where_exp:"t", "t.name == 'return'" %}
+  {% assign has_return = false %}
+  {% if r_tags.size > 0 %}{% assign has_return = true %}{% endif %}
+
+  {% assign needs_table = false %}
+  {% if isFunc and item.parameters %}{% assign needs_table = true %}{% endif %}
+  {% if has_return %}{% assign needs_table = true %}{% endif %}
+
+  {% if needs_table %}<table class="ui striped definition table"><tbody>
   {% for p in item.parameters %}
     {% capture p_sig %}{% include parameter_signature.liquid param=p base_url=include.base_url %}{% endcapture %}
     {% capture optional %}{% if p.default_value or p.is_var_args %}<div class="ui horizontal label">optional</div>{% endif %}{% endcapture %}
     <tr><td{% if forloop.first %} class="collapsing"{% endif %}><code>{{ p_sig | rstrip }}</code></td><td>{{ optional }}{% if p.description %}{{ p.description | markdownify | rstrip }}{% endif %}</td></tr>
   {% endfor %}
+  {% if has_return %}<tr><td><div class="ui ribbon label">returns</div>{{ return_val }}</td><td>{{ r_tags.first.value | markdownify }}</td></tr>{% endif %}
   </tbody></table>{% endif %}
   </div>
 {% endfor %}

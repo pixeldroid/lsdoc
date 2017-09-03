@@ -57,14 +57,14 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             page[section] = typeRefs;
         }
 
-        private static function getCopiedDocStrings(docTags:Vector.<DocTag>, defaultName:String, memberType:Type, moduleInfo:LibModule):String
+        private static function getCopiedDocInfo(docTags:Vector.<DocTag>, defaultName:String, memberType:Type, moduleInfo:LibModule, cTags:Vector.<DocTag>, cStrings:Vector.<String>):Boolean
         {
-            // @copy does not support transitive references
+            // @copy does not follow transitive references
+            var foundSome:Boolean = false;
             var tags:Vector.<DocTag> = [];
             if (!DocTag.selectByTagName(docTags, 'copy', tags))
-                return '';
+                return foundSome;
 
-            var ds:Vector.<String> = [];
             var packageString:String;
             var memberName:String;
             var t:LibType;
@@ -80,27 +80,36 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
                     switch(memberType)
                     {
                         case TypeField:
-                        var f:TypeField = t.getField(memberName);
-                        if (f && f.docString)
-                            ds.push(f.docString);
+                            var f:TypeField = t.getField(memberName);
+                            if (!f) { break; }
+
+                            foundSome = (f.docString || f.docTags);
+                            if (f.docString) { cStrings.push(f.docString); }
+                            if (f.docTags) { cTags = cTags.concat(f.docTags); }
                         break;
 
                         case TypeMethod:
-                        var m:TypeMethod = t.getMethod(memberName);
-                        if (m && m.docString)
-                            ds.push(m.docString);
+                            var m:TypeMethod = t.getMethod(memberName);
+                            if (!m) { break; }
+
+                            foundSome = (m.docString || m.docTags);
+                            if (m.docString) { cStrings.push(m.docString); }
+                            if (m.docTags) { cTags = cTags.concat(m.docTags); }
                         break;
 
                         case TypeProperty:
-                        var p:TypeProperty = t.getProperty(memberName);
-                        if (p && p.docString)
-                            ds.push(p.docString);
+                            var p:TypeProperty = t.getProperty(memberName);
+                            if (!p) { break; }
+
+                            foundSome = (p.docString || p.docTags);
+                            if (p.docString) { cStrings.push(p.docString); }
+                            if (p.docTags) { cTags = cTags.concat(p.docTags); }
                         break;
                     }
                 }
             }
 
-            return ds.join('\n');
+            return foundSome;
         }
 
         private static function getOneTag(tagInfo:DocTag):Dictionary.<String,Object>
@@ -181,11 +190,16 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
             if (methodInfo.docTags.length > 0)
             {
                 tags.clear();
-                // collect non-param tags
+                var strings:Vector.<String> = [];
+                if (getCopiedDocInfo(methodInfo.docTags, methodInfo.name, TypeMethod, moduleInfo, tags, strings))
+                {
+                    method['description'] = strings.join('\n') +method['description'];
+                    DocTag.selectByTagName(tags, 'param', methodInfo.docTags); // add any copied params to methodInfo
+                }
+
+                // collect non-param tags, adding to any copied tags
                 if (DocTag.selectByTagName(methodInfo.docTags, 'param', tags, true))
                     method['tags'] = getTags(tags);
-
-                method['description'] = getCopiedDocStrings(methodInfo.docTags, methodInfo.name, TypeMethod, moduleInfo) +method['description'];
             }
 
             if (methodInfo.parameters.length > 0)
@@ -236,8 +250,13 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             if (fieldInfo.docTags.length > 0)
             {
-                field['tags'] = getTags(fieldInfo.docTags);
-                field['description'] = getCopiedDocStrings(fieldInfo.docTags, fieldInfo.name, TypeField, moduleInfo) +field['description'];
+                var tags:Vector.<DocTag> = [];
+                var strings:Vector.<String> = [];
+
+                if (getCopiedDocInfo(fieldInfo.docTags, fieldInfo.name, TypeField, moduleInfo, tags, strings))
+                    field['description'] = strings.join('\n') +field['description'];
+
+                field['tags'] = getTags(tags.concat(fieldInfo.docTags));
             }
 
             if (fieldInfo.templateTypes)
@@ -272,8 +291,13 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
             if (propertyInfo.docTags.length > 0)
             {
-                property['tags'] = getTags(propertyInfo.docTags);
-                property['description'] = getCopiedDocStrings(propertyInfo.docTags, propertyInfo.name, TypeProperty, moduleInfo) +property['description'];
+                var tags:Vector.<DocTag> = [];
+                var strings:Vector.<String> = [];
+
+                if (getCopiedDocInfo(propertyInfo.docTags, propertyInfo.name, TypeProperty, moduleInfo, tags, strings))
+                    property['description'] = strings.join('\n') +property['description'];
+
+                property['tags'] = getTags(tags.concat(propertyInfo.docTags));
             }
 
             if (propertyInfo.templateTypes)

@@ -34,6 +34,10 @@ package example
         Public static operator doc comments first line.
 
         The assignment operator transfers the value of `b` to `a`, and returns `a`.
+
+        @param a The instance to update
+        @param b The instance to read from
+        @return The first parameter is returned after being updated with the values of the second.
         */
         public static operator function =(a:ExampleStruct, b:ExampleStruct):ExampleStruct
         {
@@ -48,6 +52,10 @@ package example
 
         The addition operator combines the values of `b` and `a` into a new instance.
 
+        @param a The left-hand operand
+        @param b The right-hand operand
+        @return A new instance is returned, created from the sums of the x and y components of the operands.
+
         @see #+=
         */
         public static operator function +(a:ExampleStruct, b:ExampleStruct):ExampleStruct
@@ -58,11 +66,13 @@ package example
         /**
         Public operator doc comments first line.
 
-        The addition with assignment operator combines the values of `b` into the calling instance.
+        The addition with assignment operator combines the values of `b` into this instance.
+
+        @param b The right-hand operand to be added to this instance
 
         @see #+
         */
-        public operator function +=(b:ExampleStruct)
+        public operator function +=(b:ExampleStruct):void
         {
             x += b.x;
             y += b.y;

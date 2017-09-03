@@ -32,7 +32,11 @@ package example
         */
         public function ExampleSuperClass() { }
 
-        /** Public property getter doc comments first line. */
+        /**
+        Public property getter doc comments first line.
+
+        @return The literal string phrase 'value'.
+        */
         public function get property():String { return 'value'; }
 
         /** Setter doc comments are ignored; place doc comments on the getter. */
@@ -57,6 +61,7 @@ package example
 
         @param param1 The first parameter (required)
         @param param2 The second parameter (optional)
+        @return The value of param2 is always returned.
         */
         public function method(param1:String, param2:String = 'parent default'):String { return param2; }
 

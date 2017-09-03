@@ -60,7 +60,11 @@ package example
         public function ExampleClass(constructorParam:String = 'A constructor parameter') { }
 
 
-        /** Public read-only templated property doc comments first line. */
+        /**
+        Public read-only templated property doc comments first line.
+
+        @return A `Dictionary` of `String` keys and `Number` values.
+        */
         public function get read_only_templated_property():Dictionary.<String,Number> { return null; }
 
         /**
@@ -103,6 +107,8 @@ package example
         Templated return value method signature doc comments first line.
 
         This method signature has a templated return type.
+
+        @return A `Vector` of `String` values.
         */
         public function method_template_return():Vector.<String> { return ['a', 'b']; }
 

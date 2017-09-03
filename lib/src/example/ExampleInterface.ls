@@ -13,12 +13,17 @@ package example
     public interface ExampleInterface
     {
 
-        /** Public read-only property doc comments first line. */
+        /**
+        Public read-only property doc comments first line.
+
+        @return An enumeration value
+        */
         function get read_only_property():ExampleEnum;
 
         /**
         Unfashionable old property.
 
+        @return A string value
         @deprecated v2.1.3
         */
         function get legacy_property():String;
