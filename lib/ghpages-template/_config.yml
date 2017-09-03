@@ -30,6 +30,8 @@ sass:
 # site globals
 code_indent: '  ' # 2 space indent
 module_root: /api  # the api collection houses the code modules
+example_root: /examples  # the examples collection houses the code modules
+guide_root: /guides  # the guides collection houses the code modules
 project:
   name: 'docs test'
   repo: 'https://ellemenno.github.io/pages/'
