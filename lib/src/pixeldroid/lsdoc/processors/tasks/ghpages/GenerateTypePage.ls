@@ -77,6 +77,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
                 if (t = moduleInfo.fetchType(packageString))
                 {
+                    var dt:DocTag;
                     switch(memberType)
                     {
                         case TypeField:
@@ -85,7 +86,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
                             foundSome = (f.docString || f.docTags);
                             if (f.docString) { cStrings.push(f.docString); }
-                            if (f.docTags) { cTags = cTags.concat(f.docTags); }
+                            if (f.docTags) { for each(dt in f.docTags) { cTags.push(dt); } }
                         break;
 
                         case TypeMethod:
@@ -94,7 +95,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
                             foundSome = (m.docString || m.docTags);
                             if (m.docString) { cStrings.push(m.docString); }
-                            if (m.docTags) { cTags = cTags.concat(m.docTags); }
+                            if (m.docTags) { for each(dt in m.docTags) { cTags.push(dt); } }
                         break;
 
                         case TypeProperty:
@@ -103,7 +104,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
                             foundSome = (p.docString || p.docTags);
                             if (p.docString) { cStrings.push(p.docString); }
-                            if (p.docTags) { cTags = cTags.concat(p.docTags); }
+                            if (p.docTags) { for each(dt in p.docTags) { cTags.push(dt); } }
                         break;
                     }
                 }
