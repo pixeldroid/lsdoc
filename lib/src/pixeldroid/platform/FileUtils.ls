@@ -16,7 +16,7 @@ package pixeldroid.platform
 
             The containing directory is not copied, only its contents.
         */
-        public static function copy(source:String, destination:String):Boolean
+        public static function copyContents(source:String, destination:String):Boolean
         {
             if (!Path.dirExists(source))
                 return false;

@@ -8,6 +8,7 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.models.LibType;
     import pixeldroid.lsdoc.processors.LSDocProcessor;
     import pixeldroid.lsdoc.processors.tasks.EmptyDirectory;
+    import pixeldroid.lsdoc.processors.tasks.CopyFile;
     import pixeldroid.lsdoc.processors.tasks.CopyFiles;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WritePackagePage;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WriteTypePage;
@@ -29,9 +30,11 @@ package pixeldroid.lsdoc.processors
 
             addEmptyOutputDir();
             addInstallTemplates();
-            addGenerateApiDocs();
+            addCopySiteConfig();
+            addCopyHomePage();
             addCopyExamples();
             addCopyGuides();
+            addGenerateApiDocs();
         }
 
         public function get context():ProcessingContext { return _context; }
@@ -56,23 +59,13 @@ package pixeldroid.lsdoc.processors
             }
         }
 
-        private function addGenerateApiDocs():void
+        private function addCopySiteConfig():void
         {
-            var apiDir:String = _context.getOption('api-dir', null, ['_api'])[0];
-            var apiPath:String = FilePath.join(_context.outPath, apiDir);
-            var packages:Vector.<String>;
-
-            for each(var m:LibModule in context.lsdoc.modules)
+            var configSrc:String = _context.getOption('config-src', 'c', ['_config.yml'])[0];
+            if (configSrc)
             {
-                // package pages
-                packages = LibModule.getPackages(m);
-
-                for each(var p:String in packages)
-                    addTask(new WritePackagePage(apiPath, p, m, context));
-
-                // type pages
-                for each(var t:LibType in m.types)
-                    addTask(new WriteTypePage(apiPath, t, m, context));
+                var filename:String = FilePath.basename(configSrc);
+                addTask(new CopyFile(configSrc, FilePath.join(_context.outPath, filename), _context));
             }
         }
 
@@ -81,7 +74,8 @@ package pixeldroid.lsdoc.processors
             var indexSrc:String = _context.getOption('index-src', 'i', ['index.md'])[0];
             if (indexSrc)
             {
-                addTask(new CopyFiles(indexSrc, _context.outPath, _context));
+                var filename:String = FilePath.basename(indexSrc);
+                addTask(new CopyFile(indexSrc, FilePath.join(_context.outPath, filename), _context));
             }
         }
 
@@ -104,6 +98,26 @@ package pixeldroid.lsdoc.processors
                 var guidesDir:String = _context.getOption('guides-dir', null, ['_guides'])[0];
                 var guidesPath:String = FilePath.join(_context.outPath, guidesDir);
                 addTask(new CopyFiles(guidesSrc, guidesPath, _context));
+            }
+        }
+
+        private function addGenerateApiDocs():void
+        {
+            var apiDir:String = _context.getOption('api-dir', null, ['_api'])[0];
+            var apiPath:String = FilePath.join(_context.outPath, apiDir);
+            var packages:Vector.<String>;
+
+            for each(var m:LibModule in context.lsdoc.modules)
+            {
+                // package pages
+                packages = LibModule.getPackages(m);
+
+                for each(var p:String in packages)
+                    addTask(new WritePackagePage(apiPath, p, m, context));
+
+                // type pages
+                for each(var t:LibType in m.types)
+                    addTask(new WriteTypePage(apiPath, t, m, context));
             }
         }
 

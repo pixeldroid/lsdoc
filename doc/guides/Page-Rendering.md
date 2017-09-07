@@ -14,11 +14,11 @@ This guide describes the folder structure, layouts, and includes used by lsdoc t
 The ghpages template comprises the following main pieces, discussed in detail in the sections below:
 
 ```
-├─index.md          / user provided content        /
+├─index.md          / user provided content /
 ├─_config.yml       / GitHub pages / Jekyll config /
 ├─_api/             generated documentation built by lsdoc
-├─_examples/        / user provided content        /
-├─_guides/          / user provided content        /
+├─_examples/        / user provided content /
+├─_guides/          / user provided content /
 ├─_includes/        liquid partials
 │ ├─elements/       html partials used in layouts
 │ ├─scripts/        js partials and libraries used in layouts

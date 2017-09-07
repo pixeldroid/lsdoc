@@ -47,7 +47,14 @@ package pixeldroid.lsdoc.processors.tasks
 
             Log.debug(logName, function():String { return 'performTask() copying from "' +sourceDir +'" to "' +targetDir +'"'; });
 
-            FileUtils.copy(sourceDir, targetDir);
+            if (!FileUtils.copyContents(sourceDir, targetDir))
+            {
+                Log.error(logName, function():String{ return 'copy failed'; });
+                context.appendErrors([LSDocError.noDir('copy failed')]);
+                fault('unable to copy files.');
+                return;
+            }
+
             complete();
         }
 

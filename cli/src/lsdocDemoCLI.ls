@@ -50,6 +50,7 @@ package
             trace('usage: lsdoc [-h|--help] [-v|--version]');
             trace('             -l|--lib <path>...');
             trace('             -o|--output-dir <path>');
+            trace('             [-c|--config-src <path>]');
             trace('             [-d|--debug]');
             trace('             [-e|--examples-src <path>]');
             trace('             [-g|--guides-src <path>]');
@@ -61,6 +62,7 @@ package
             trace('  -h --help           Print this screen and exit');
             trace('  -v --version        Print version and exit');
             trace('  ');
+            trace('  -c --config-src     Set jekyll config file');
             trace('  -d --debug          Turn on debug logging');
             trace('  -e --examples-src   Set examples source directory');
             trace('  -g --guides-src     Set guides source directory');

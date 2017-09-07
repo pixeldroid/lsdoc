@@ -35,7 +35,7 @@ guide_root: /guides  # the guides collection houses the code modules
 ## project specific values -----------------
 code_indent: '  ' # 2 space indent
 project:
-  name: 'ghpages-template'
-  repo: 'https://github.com/pixeldroid/lsdoc/tree/master/lib/ghpages-template'
+  name: 'lsdoc'
+  repo: 'https://github.com/pixeldroid/lsdoc'
   owner: pixeldroid
   version: '1.0.0'
