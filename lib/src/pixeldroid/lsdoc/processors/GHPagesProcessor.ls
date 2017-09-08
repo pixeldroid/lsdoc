@@ -9,7 +9,7 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.processors.LSDocProcessor;
     import pixeldroid.lsdoc.processors.tasks.EmptyDirectory;
     import pixeldroid.lsdoc.processors.tasks.CopyFile;
-    import pixeldroid.lsdoc.processors.tasks.CopyFiles;
+    import pixeldroid.lsdoc.processors.tasks.CopyDirContents;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WritePackagePage;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WriteTypePage;
 
@@ -51,7 +51,7 @@ package pixeldroid.lsdoc.processors
 
             if (templateSrc)
             {
-                addTask(new CopyFiles(templateSrc, _context.outPath, _context));
+                addTask(new CopyDirContents(templateSrc, _context.outPath, _context));
             }
             else
             {
@@ -86,7 +86,7 @@ package pixeldroid.lsdoc.processors
             {
                 var examplesDir:String = _context.getOption('examples-dir', null, ['_examples'])[0];
                 var examplesPath:String = FilePath.join(_context.outPath, examplesDir);
-                addTask(new CopyFiles(examplesSrc, examplesPath, _context));
+                addTask(new CopyDirContents(examplesSrc, examplesPath, _context));
             }
         }
 
@@ -97,7 +97,7 @@ package pixeldroid.lsdoc.processors
             {
                 var guidesDir:String = _context.getOption('guides-dir', null, ['_guides'])[0];
                 var guidesPath:String = FilePath.join(_context.outPath, guidesDir);
-                addTask(new CopyFiles(guidesSrc, guidesPath, _context));
+                addTask(new CopyDirContents(guidesSrc, guidesPath, _context));
             }
         }
 

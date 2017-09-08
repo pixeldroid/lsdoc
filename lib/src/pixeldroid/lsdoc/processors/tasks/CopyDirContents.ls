@@ -10,16 +10,16 @@ package pixeldroid.lsdoc.processors.tasks
     import pixeldroid.util.Log;
 
 
-    public class CopyFiles extends SingleTask
+    public class CopyDirContents extends SingleTask
     {
-        private static const logName:String = CopyFiles.getTypeName();
+        private static const logName:String = CopyDirContents.getTypeName();
 
         private var context:ProcessingContext;
         private var sourceDir:String;
         private var targetDir:String;
 
 
-        public function CopyFiles(src:String, dst:String, context:ProcessingContext)
+        public function CopyDirContents(src:String, dst:String, context:ProcessingContext)
         {
             this.context = context;
             this.sourceDir = src;
