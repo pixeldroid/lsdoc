@@ -5,7 +5,7 @@ package
     import pixeldroid.bdd.Spec;
     import pixeldroid.bdd.Thing;
 
-    import pixeldroid.platform.FilePath;
+    import pixeldroid.util.FilePath;
 
 
     public static class FilePathSpec

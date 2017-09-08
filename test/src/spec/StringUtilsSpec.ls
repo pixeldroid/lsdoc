@@ -5,7 +5,7 @@ package
     import pixeldroid.bdd.Spec;
     import pixeldroid.bdd.Thing;
 
-    import pixeldroid.platform.StringUtils;
+    import pixeldroid.util.StringUtils;
 
 
     public static class StringUtilsSpec

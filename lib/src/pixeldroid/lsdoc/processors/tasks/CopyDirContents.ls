@@ -5,8 +5,8 @@ package pixeldroid.lsdoc.processors.tasks
     import pixeldroid.lsdoc.errors.LSDocError;
     import pixeldroid.lsdoc.processors.ProcessingContext;
 
-    import pixeldroid.platform.FileUtils;
     import pixeldroid.task.SingleTask;
+    import pixeldroid.util.FileUtils;
     import pixeldroid.util.Log;
 
 

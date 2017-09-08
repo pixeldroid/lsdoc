@@ -8,7 +8,7 @@ methods:
   - { attributes: [ "public", "static" ], description: "Searches string for token. If found, returns characters before token. If not found, returns original string.\n\nIf the token starts the string, return value will be the empty string.\n", name: "before", parameters: [ { name: "s", type: "system.String" }, { name: "token", type: "system.String" } ], type: "system.String" }
   - { attributes: [ "public", "static" ], description: "", name: "startsWith", parameters: [ { name: "s", type: "system.String" }, { name: "token", type: "system.String" } ], type: "system.Boolean" }
   - { attributes: [ "public", "static" ], description: "", name: "endsWith", parameters: [ { name: "s", type: "system.String" }, { name: "token", type: "system.String" } ], type: "system.Boolean" }
-module: "pixeldroid.platform"
+module: "pixeldroid.util"
 name: "StringUtils"
 type: "CLASS"
 type_attributes: 

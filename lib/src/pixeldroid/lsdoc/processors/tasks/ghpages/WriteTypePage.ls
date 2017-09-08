@@ -6,12 +6,11 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
     import pixeldroid.lsdoc.processors.tasks.WriteLines;
     import pixeldroid.lsdoc.processors.tasks.ghpages.GenerateTypePage;
 
-    import pixeldroid.platform.FilePath;
-
     import pixeldroid.task.SequentialTask;
     import pixeldroid.task.Task;
     import pixeldroid.task.TaskState;
 
+    import pixeldroid.util.FilePath;
     import pixeldroid.util.Log;
 
 

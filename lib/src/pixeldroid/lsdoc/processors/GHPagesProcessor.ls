@@ -13,8 +13,8 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.processors.tasks.ghpages.WritePackagePage;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WriteTypePage;
 
-    import pixeldroid.platform.FilePath;
     import pixeldroid.task.SequentialTask;
+    import pixeldroid.util.FilePath;
     import pixeldroid.util.Log;
 
 

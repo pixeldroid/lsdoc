@@ -5,10 +5,10 @@ package pixeldroid.lsdoc.processors.tasks
     import pixeldroid.lsdoc.errors.LSDocError;
     import pixeldroid.lsdoc.processors.ProcessingContext;
 
-    import pixeldroid.platform.FilePath;
-    import pixeldroid.platform.FileUtils;
     import pixeldroid.task.SingleTask;
     import pixeldroid.util.Log;
+    import pixeldroid.util.FilePath;
+    import pixeldroid.util.FileUtils;
 
 
     public class CopyFile extends SingleTask

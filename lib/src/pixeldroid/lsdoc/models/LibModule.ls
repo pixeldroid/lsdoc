@@ -5,7 +5,7 @@ package pixeldroid.lsdoc.models
     import pixeldroid.lsdoc.LibUtils;
     import pixeldroid.lsdoc.models.DefinitionConstruct;
     import pixeldroid.lsdoc.models.LibType;
-    import pixeldroid.platform.StringUtils;
+    import pixeldroid.util.StringUtils;
 
 
     /**
