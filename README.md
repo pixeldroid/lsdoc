@@ -28,11 +28,12 @@ first, install [loomtasks][loomtasks], and [bundler][bundler].
 
 then run `bundle install` to retrieve and install the project dependencies on [Jekyll][jekyll] and the [GitHub Pages gem][ghpages-gem]
 
-### compiling from source
+### compiling from source and installing for use
 
     $ rake lib:install
+    $ rake template:install
 
-this will build the lsdoc library and install it in the currently configured sdk
+this will build the lsdoc library and install it and the ghpages-template in the currently configured sdk
 
 ### running tests
 
@@ -49,7 +50,8 @@ this will build the lsdoc library, install it in the currently configured sdk, b
 > from the project root
 
     $ export LSDOC=`pwd`
-    $ rake clean && rake cli['-p ghpages -o $LSDOC/docs -t $LSDOC/lib/ghpages-template -i $LSDOC/doc/index.md -c $LSDOC/doc/_config.yml -e $LSDOC/doc/examples -g $LSDOC/doc/guides -l ~/.loom/sdks/sprint34/libs/lsdoc.loomlib -d']
+    $ export LSDK="$HOME/.loom/sdks/sprint34"
+    $ rake clean && rake cli['-p ghpages -o $LSDOC/docs -i $LSDOC/doc/index.md -c $LSDOC/doc/_config.yml -e $LSDOC/doc/examples -g $LSDOC/doc/guides -t $LSDK/ghpages-template -l $LSDK/libs/lsdoc.loomlib']
 
 
 ## contributing
