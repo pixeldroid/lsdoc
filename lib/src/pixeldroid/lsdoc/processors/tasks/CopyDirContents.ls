@@ -17,13 +17,15 @@ package pixeldroid.lsdoc.processors.tasks
         private var context:ProcessingContext;
         private var sourceDir:String;
         private var targetDir:String;
+        private var excludes:Vector.<String>;
 
 
-        public function CopyDirContents(src:String, dst:String, context:ProcessingContext)
+        public function CopyDirContents(sourceDir:String, targetDir:String, excludes:Vector.<String>, context:ProcessingContext)
         {
             this.context = context;
-            this.sourceDir = src;
-            this.targetDir = dst;
+            this.sourceDir = sourceDir;
+            this.targetDir = targetDir;
+            this.excludes = excludes;
         }
 
 
@@ -47,7 +49,7 @@ package pixeldroid.lsdoc.processors.tasks
 
             Log.debug(logName, function():String { return 'performTask() copying from "' +sourceDir +'" to "' +targetDir +'"'; });
 
-            if (!FileUtils.copyContents(sourceDir, targetDir))
+            if (!FileUtils.copyContents(sourceDir, targetDir, excludes))
             {
                 Log.error(logName, function():String{ return 'copy failed'; });
                 context.appendErrors([LSDocError.noDir('copy failed')]);

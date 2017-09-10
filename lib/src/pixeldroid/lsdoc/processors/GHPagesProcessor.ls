@@ -55,7 +55,8 @@ package pixeldroid.lsdoc.processors
                 return;
             }
 
-            addTask(new CopyDirContents(templateSrc, _context.outPath, _context));
+            var excludes:Vector.<String> = [ FilePath.join(templateSrc, 'ghpages.config') ];
+            addTask(new CopyDirContents(templateSrc, _context.outPath, excludes, _context));
         }
 
         private function addMergeSiteConfig():void
@@ -90,7 +91,8 @@ package pixeldroid.lsdoc.processors
             {
                 var examplesDir:String = _context.getOption('examples-dir', null, ['_examples'])[0];
                 var examplesPath:String = FilePath.join(_context.outPath, examplesDir);
-                addTask(new CopyDirContents(examplesSrc, examplesPath, _context));
+                var excludes:Vector.<String>;
+                addTask(new CopyDirContents(examplesSrc, examplesPath, excludes, _context));
             }
         }
 
@@ -101,7 +103,8 @@ package pixeldroid.lsdoc.processors
             {
                 var guidesDir:String = _context.getOption('guides-dir', null, ['_guides'])[0];
                 var guidesPath:String = FilePath.join(_context.outPath, guidesDir);
-                addTask(new CopyDirContents(guidesSrc, guidesPath, _context));
+                var excludes:Vector.<String>;
+                addTask(new CopyDirContents(guidesSrc, guidesPath, excludes, _context));
             }
         }
 

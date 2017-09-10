@@ -15,8 +15,13 @@ package pixeldroid.util
             Recursively copy files and subdirectories from source dir to destination dir.
 
             The containing directory is not copied, only its contents.
+            The target directory and/or any subdirectories will be created as needed.
+
+            @param source Full filepath to directory of files to be copied
+            @param destination Full filepath to target directory (does not need to be created before-hand)
+            @param excludes List of filepaths that should not be copied. Pattern matching is not supported.
         */
-        public static function copyContents(source:String, destination:String):Boolean
+        public static function copyContents(source:String, destination:String, excludes:Vector.<String> = null):Boolean
         {
             if (!Path.dirExists(source))
                 return false;
@@ -30,6 +35,9 @@ package pixeldroid.util
             var rootLength:Number = source.length;
             for each (var file:String in files)
             {
+                if (excludes && excludes.contains(file))
+                    continue;
+
                 dst = FilePath.join(destination, file.substring(rootLength, file.length));
                 dstDir = FilePath.dirname(dst);
 

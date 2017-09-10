@@ -5,7 +5,7 @@ constructor:
   attributes: [ "public" ]
   description: ""
   name: "CopyDirContents"
-  parameters: [ { name: "src", type: "system.String" }, { name: "dst", type: "system.String" }, { name: "context", type: "pixeldroid.lsdoc.processors.ProcessingContext" } ]
+  parameters: [ { name: "sourceDir", type: "system.String" }, { name: "targetDir", type: "system.String" }, { name: "excludes", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }, { name: "context", type: "pixeldroid.lsdoc.processors.ProcessingContext" } ]
   type: "pixeldroid.lsdoc.processors.tasks.CopyDirContents"
 description: ""
 fields: []

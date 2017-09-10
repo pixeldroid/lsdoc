@@ -18,4 +18,4 @@ project:
   version: "1.0.0"
 sass: 
   style: "compressed"
-template_version: "9.9.9"
+template_version: "1.0.0"
