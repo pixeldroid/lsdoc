@@ -51,7 +51,7 @@ this will build the lsdoc library, install it in the currently configured sdk, b
 
     $ export LSDOC=`pwd`
     $ export LSDK="$HOME/.loom/sdks/sprint34"
-    $ rake clean && rake cli['-p ghpages -o $LSDOC/docs -i $LSDOC/doc/index.md -c $LSDOC/doc/_config.yml -e $LSDOC/doc/examples -g $LSDOC/doc/guides -t $LSDK/ghpages-template -l $LSDK/libs/lsdoc.loomlib']
+    $ rake clean && rake cli['-p ghpages -o $LSDOC/docs -i $LSDOC/doc/index.md -c $LSDOC/doc/lsdoc.config -e $LSDOC/doc/examples -g $LSDOC/doc/guides -t $LSDK/ghpages-template -l $LSDK/libs/lsdoc.loomlib']
 
 
 ## contributing

@@ -10,6 +10,7 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.processors.tasks.EmptyDirectory;
     import pixeldroid.lsdoc.processors.tasks.CopyFile;
     import pixeldroid.lsdoc.processors.tasks.CopyDirContents;
+    import pixeldroid.lsdoc.processors.tasks.ghpages.WriteSiteConfig;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WritePackagePage;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WriteTypePage;
 
@@ -30,7 +31,7 @@ package pixeldroid.lsdoc.processors
 
             addEmptyOutputDir();
             addInstallTemplates();
-            addCopySiteConfig();
+            addMergeSiteConfig();
             addCopyHomePage();
             addCopyExamples();
             addCopyGuides();
@@ -48,25 +49,28 @@ package pixeldroid.lsdoc.processors
         private function addInstallTemplates():void
         {
             var templateSrc:String = _context.getOption('templates-src', 't', [null])[0];
+            if (!templateSrc)
+            {
+                context.appendErrors([LSDocError.noDir('doc template directory not provided, unable to install templates')]);
+                return;
+            }
 
-            if (templateSrc)
-            {
-                addTask(new CopyDirContents(templateSrc, _context.outPath, _context));
-            }
-            else
-            {
-                context.appendErrors([LSDocError.noDir('doc template directory not provided')]);
-            }
+            addTask(new CopyDirContents(templateSrc, _context.outPath, _context));
         }
 
-        private function addCopySiteConfig():void
+        private function addMergeSiteConfig():void
         {
-            var configSrc:String = _context.getOption('config-src', 'c', ['_config.yml'])[0];
-            if (configSrc)
+            var templateSrc:String = _context.getOption('templates-src', 't', [null])[0];
+            if (!templateSrc)
             {
-                var filename:String = FilePath.basename(configSrc);
-                addTask(new CopyFile(configSrc, FilePath.join(_context.outPath, filename), _context));
+                context.appendErrors([LSDocError.noDir('doc template directory not provided, unable to merge site config')]);
+                return;
             }
+
+            var templateConfigPath:String = FilePath.join(templateSrc, 'ghpages.config');
+            var userConfigPath:String = _context.getOption('config-src', 'c', ['lsdoc.config'])[0];
+
+            addTask(new WriteSiteConfig(templateConfigPath, userConfigPath, FilePath.join(_context.outPath, '_config.yml'), _context));
         }
 
         private function addCopyHomePage():void

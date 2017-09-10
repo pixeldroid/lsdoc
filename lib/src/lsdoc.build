@@ -1,6 +1,6 @@
 {
   "name": "lsdoc",
-  "version": "1.0",
+  "version": "1.0.0",
   "outputDir": "build",
   "references": [
     "System",
@@ -11,7 +11,7 @@
   "modules": [
     {
       "name": "lsdoc",
-      "version": "1.0",
+      "version": "1.0.0",
       "sourcePath": [
         "."
       ]

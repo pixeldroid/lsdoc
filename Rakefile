@@ -11,6 +11,22 @@ rescue LoadError
   ].join("\n"))
 end
 
+
+@template_config = nil
+
+def template_config_file()
+  File.join('lib', 'ghpages-template', 'ghpages.config')
+end
+
+def template_config()
+  @template_config || (@template_config = LoomTasks.parse_loom_config(template_config_file))
+end
+
+def write_template_config(config)
+  LoomTasks.write_loom_config(template_config_file, config)
+end
+
+
 # add ./docs/ to CLEAN list
 [
   File.join('docs'),
@@ -66,7 +82,7 @@ namespace :template do
   desc [
     "installs #{TEMPLATE} into #{lib_config['sdk_version']} SDK",
   ].join("\n")
-  task :install do |t, args|
+  task :install => 'template:uninstall' do |t, args|
     sdk_version = lib_config['sdk_version']
 
     FileUtils.cp_r(TEMPLATE, LoomTasks.sdk_root(sdk_version))
@@ -94,4 +110,10 @@ namespace :template do
 end
 
 Rake::Task["lib:release"].enhance ["template:package"]
+
+Rake::Task["lib:version"].enhance do |t, args|
+  lib_version = LoomTasks.lib_version(lib_version_file)
+  template_config['template_version'] = lib_version
+  write_template_config(template_config)
+end
 
