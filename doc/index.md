@@ -72,4 +72,4 @@ The following tags are supported by {{ page.this }}:
 [asdoc]: http://help.adobe.com/en_US/flex/using/WSd0ded3821e0d52fe1e63e3d11c2f44bb7b-7fed.html "Creating ASDoc comments in ActionScript"
 [javadoc]: http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html "How to Write Doc Comments for the Javadoc Tool"
 [loomscript]: https://github.com/LoomSDK/LoomSDK "The Loom SDK, a native mobile app and game framework"
-[markdown]: https://en.wikipedia.org/wiki/Markdown "Markdown is a lightweight markup language with plain text formatting syntax"
+[markdown]: https://guides.github.com/features/mastering-markdown/ "Markdown is a lightweight markup language with plain text formatting syntax"
