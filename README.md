@@ -1,7 +1,16 @@
 # lsdoc
 an API docs generator for LoomScript
 
+lsdoc provides an API for loading loomlib libraries and extracting type metadata.
+
+The lsdoc distribution provides a documentation generator and GitHub Pages Jekyll template for creating html documentation that is:
+* searchable
+* browsable
+* cross-linked
+* mobile friendly
+
 > see lsdoc api documentation documented by lsdoc here: https://ellemenno.github.io/lsdoc/
+
 
 ![lsdoc screenshot](lsdoc-screenshot.png)
 
