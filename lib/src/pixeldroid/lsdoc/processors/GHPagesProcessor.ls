@@ -22,6 +22,7 @@ package pixeldroid.lsdoc.processors
     public class GHPagesProcessor extends SequentialTask implements LSDocProcessor
     {
         private static const logName:String = GHPagesProcessor.getTypeName();
+        private static const ghpagesConfigFile:String = 'ghpages.config';
         private var _context:ProcessingContext;
 
 
@@ -55,7 +56,7 @@ package pixeldroid.lsdoc.processors
                 return;
             }
 
-            var excludes:Vector.<String> = [ FilePath.join(templateSrc, 'ghpages.config') ];
+            var excludes:Vector.<String> = [ FilePath.join(templateSrc, ghpagesConfigFile) ];
             addTask(new CopyDirContents(templateSrc, _context.outPath, excludes, _context));
         }
 
@@ -68,9 +69,14 @@ package pixeldroid.lsdoc.processors
                 return;
             }
 
-            var templateConfigPath:String = FilePath.join(templateSrc, 'ghpages.config');
-            var userConfigPath:String = _context.getOption('config-src', 'c', ['lsdoc.config'])[0];
+            var userConfigPath:String = _context.getOption('config-src', 'c', [null])[0];
+            if (!templateSrc)
+            {
+                context.appendErrors([LSDocError.noDir('user config file not provided, unable to merge site config')]);
+                return;
+            }
 
+            var templateConfigPath:String = FilePath.join(templateSrc, ghpagesConfigFile);
             addTask(new WriteSiteConfig(templateConfigPath, userConfigPath, FilePath.join(_context.outPath, '_config.yml'), _context));
         }
 
