@@ -68,7 +68,7 @@ package pixeldroid.lsdoc.models
                 targetList.push(tag);
             }
 
-            return nonTag;
+            return nonTag.trim();
         }
 
         public static function fromRawLine(line:String):DocTag

@@ -18,6 +18,7 @@ package
             it.should('extract a list of tags from a field', extract_from_field);
             it.should('extract tags from a list that match a given name', extract_matching_tags_from_list);
             it.should('extract tags from a list that don\'t match a given name', extract_nonmatching_tags_from_list);
+            it.should('not lose backslashes when processing', not_lose_characters);
         }
 
 
@@ -44,6 +45,15 @@ package
 
             result = DocTag.fromRawLine(no_at);
             it.expects(result).toBeNull();
+        }
+
+        private static function not_lose_characters():void
+        {
+            var field:String = File.loadTextFile('fixtures/description_escapes.md').trim();
+            var tags:Vector.<DocTag> = [];
+            var description:String = DocTag.fromRawField(field, tags);
+
+            it.expects(description.length).toEqual(field.length);
         }
 
         private static function extract_from_field():void
