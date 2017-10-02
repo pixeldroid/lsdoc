@@ -6,6 +6,9 @@
     "System",
     "Spec",
     "LSDoc",
+      "Log",
+      "Task",
+      "Json"
   ],
   "modules": [
     {
