@@ -43,6 +43,11 @@ package
         }
 
 
+        private function get versionString():String
+        {
+            return 'lsdoc ' +LSDoc.version;
+        }
+
         private function showUsage():void
         {
             var pNames:String = ProcessorSelector.selectionNames.join('|');
@@ -77,7 +82,7 @@ package
 
         private function showVersion():void
         {
-            trace('lsdoc ' +LSDoc.version);
+            trace(versionString);
 
             Process.exit(EXIT_OK);
         }
@@ -96,6 +101,8 @@ package
 
         private function runProcessor(opts:OptionParser):void
         {
+            trace(versionString);
+
             if (!opts.getOption('o', 'output-dir').hasValue)
                 exitWithErrors('no output directory specified', null);
 
