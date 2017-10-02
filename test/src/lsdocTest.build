@@ -1,15 +1,15 @@
 {
-  "name": "lsdocTest",
+  "name": "LSDocTest",
   "version": "1.0",
   "outputDir": "bin",
   "references": [
     "System",
     "Spec",
-    "lsdoc"
+    "LSDoc",
   ],
   "modules": [
     {
-      "name": "lsdocTest",
+      "name": "LSDocTest",
       "version": "1.0",
       "sourcePath": [
         "app",

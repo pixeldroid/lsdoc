@@ -7,7 +7,7 @@ package
     import pixeldroid.lsdoc.errors.LSDocError;
 
 
-    public static class lsdocSpec
+    public static class LSDocSpec
     {
         private static var it:Thing;
 

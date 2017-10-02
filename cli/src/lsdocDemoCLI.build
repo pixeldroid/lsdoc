@@ -1,5 +1,5 @@
 {
-  "name": "lsdocDemoCLI",
+  "name": "LSDocDemoCLI",
   "version": "1.0",
   "outputDir": "bin",
   "references": [

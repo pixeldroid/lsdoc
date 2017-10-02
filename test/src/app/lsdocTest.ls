@@ -5,9 +5,9 @@ package
 
     import pixeldroid.bdd.SpecExecutor;
 
-    import lsdocSpec;
     import FilePathSpec;
     import LibModuleSpec;
+    import LSDocSpec;
     import StringUtilsSpec;
 
 
@@ -21,7 +21,7 @@ package
                 DocTagSpec,
                 FilePathSpec,
                 LibModuleSpec,
-                lsdocSpec,
+                LSDocSpec,
                 StringUtilsSpec
             ]);
 

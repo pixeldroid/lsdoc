@@ -1,5 +1,5 @@
-LIB_NAME = 'lsdoc'
-LIB_VERSION_FILE = File.join('lib', 'src', 'pixeldroid', 'lsdoc', 'lsdoc.ls')
+LIB_NAME = 'LSDoc'
+LIB_VERSION_FILE = File.join('lib', 'src', 'pixeldroid', 'lsdoc', 'LSDoc.ls')
 
 begin
   load(File.join(ENV['HOME'], '.loom', 'tasks', 'loomlib.rake'))
