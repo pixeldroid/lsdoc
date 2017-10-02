@@ -6,13 +6,13 @@
     "System",
     "OptionParser",
     "Log",
-    "lsdoc",
+    "LSDoc",
     "Task",
     "Json"
   ],
   "modules": [
     {
-      "name": "lsdocDemoCLI",
+      "name": "LSDocDemoCLI",
       "version": "1.0",
       "sourcePath": [
         "."

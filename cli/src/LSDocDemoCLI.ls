@@ -18,9 +18,9 @@ package
     import pixeldroid.util.log.LogLevel;
 
 
-    public class lsdocDemoCLI extends ConsoleApplication
+    public class LSDocDemoCLI extends ConsoleApplication
     {
-        private static const logName:String = lsdocDemoCLI.getTypeName();
+        private static const logName:String = LSDocDemoCLI.getTypeName();
         private static const EXIT_OK:Number = 0;
         private static const EXIT_ERR:Number = 1;
 
