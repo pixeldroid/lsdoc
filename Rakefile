@@ -27,11 +27,6 @@ def write_template_config(config)
 end
 
 
-# add ./docs/ to CLEAN list
-[
-  File.join('docs'),
-].each { |f| CLEAN << f }
-
 # add lsdoc loomlib to fixtures after compilation before running cli demo
 namespace :cli do
 
@@ -116,4 +111,3 @@ Rake::Task["lib:version"].enhance do |t, args|
   template_config['template_version'] = lib_version
   write_template_config(template_config)
 end
-
