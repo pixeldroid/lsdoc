@@ -6,13 +6,13 @@ this: "**lsdoc**"
 
 # {{ page.title }}
 
-{{ page.this }} is a tool to generate clean technical documentation from [LoomScript][loomscript] code comments, examples, and guides.
+{{ page.this }} generates clean technical documentation from [LoomScript][loomscript] code comments, examples, and guides.
 
 ## Code comments
 
 {{ page.this }} follows familiar [JavaDoc][javadoc] and [ASDoc][asdoc] conventions.
 
-Doc comments are written in [Markdown][markdown], enclosed in 'extra asterisk' multi-line comment pairs placed on the line above the documentation subject:
+Write documentation in [Markdown][markdown], in a doc comment block (`/** ... */`) on the line above the subject:
 
 ```as3
 /**
