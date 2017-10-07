@@ -104,6 +104,9 @@ namespace :template do
 
 end
 
+Rake::Task["cli:install"].enhance ["template:install"]
+Rake::Task["cli:uninstall"].enhance ["template:uninstall"]
+
 Rake::Task["lib:release"].enhance ["template:package"]
 
 Rake::Task["lib:version"].enhance do |t, args|
