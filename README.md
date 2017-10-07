@@ -2,22 +2,22 @@
 
 an API docs generator for LoomScript
 
+> see **lsdoc** api documentation documented by **lsdoc** here: https://pixeldroid.github.io/lsdoc/
+
+- [installation](#installation)
+- [usage](#usage)
+- [building](#building)
+- [contributing](#contributing)
+
+<br/>
+
 **lsdoc** provides an API for loading loomlib libraries and extracting type metadata. The distribution provides a command line tool and GitHub Pages Jekyll template for creating html documentation that is:
 * searchable
 * browsable
 * cross-linked
 * mobile friendly
 
-> see **lsdoc** api documentation documented by **lsdoc** here: https://pixeldroid.github.io/lsdoc/
-
 ![lsdoc screenshot](lsdoc-screenshot.png)
-
-<br/>
-
-- [installation](#installation)
-- [usage](#usage)
-- [building](#building)
-- [contributing](#contributing)
 
 
 ## installation
