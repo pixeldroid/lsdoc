@@ -1,15 +1,15 @@
 ---
 descendants: 
   - { module: "example", name: "ExampleSuperClass" }
-description: "Interface description doc comments first line.\n\nAdditional interface description documentation comments.\n\n"
+description: "Interface description doc comments first line.\n\nAdditional interface description documentation comments."
 layout: "type"
 methods: 
-  - { attributes: [ "public" ], description: "Public interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).\n\n", name: "interface_method", parameters: [ { description: "The first parameter (required)", name: "param1", type: "system.String" }, { description: "Any additional params (optional)", is_var_args: true, name: "rest", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], type: "system.Void" }
+  - { attributes: [ "public" ], description: "Public interface method doc comments first line.\n\nThis method has one required first parameter,\nand can accept any number of additional params via the rest arg (`...`).", name: "interface_method", parameters: [ { description: "The first parameter (required)", name: "param1", type: "system.String" }, { description: "Any additional params (optional)", is_var_args: true, name: "rest", template_types: { item_types: [ { item_types: [], type: "system.Object" } ], type: "system.Vector" }, type: "system.Vector" } ], type: "system.Void" }
 module: "example"
 name: "ExampleInterface"
 properties: 
-  - { attributes: [ "public" ], description: "Public read-only property doc comments first line.\n\n", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, is_read_only: true, name: "read_only_property", tags: [ { name: "return", value: "An enumeration value" } ], type: "example.ExampleEnum" }
-  - { attributes: [ "public" ], description: "Unfashionable old property.\n\n", getter: { attributes: [ "public" ], description: "", name: "__pget_legacy_property", type: "system.String" }, is_read_only: true, name: "legacy_property", tags: [ { name: "return", value: "A string value" }, { name: "deprecated", value: "v2.1.3" } ], type: "system.String" }
+  - { attributes: [ "public" ], description: "Public read-only property doc comments first line.", getter: { attributes: [ "public" ], description: "", name: "__pget_read_only_property", type: "example.ExampleEnum" }, is_read_only: true, name: "read_only_property", tags: [ { name: "return", value: "An enumeration value" } ], type: "example.ExampleEnum" }
+  - { attributes: [ "public" ], description: "Unfashionable old property.", getter: { attributes: [ "public" ], description: "", name: "__pget_legacy_property", type: "system.String" }, is_read_only: true, name: "legacy_property", tags: [ { name: "return", value: "A string value" }, { name: "deprecated", value: "v2.1.3" } ], type: "system.String" }
 tags: 
   - { name: "see", value: "#interface_method" }
 type: "INTERFACE"
