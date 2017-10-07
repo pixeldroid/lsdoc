@@ -1,0 +1,20 @@
+{
+  "name": "LSDoc",
+  "version": "1.0.0",
+  "outputDir": "build",
+  "references": [
+    "System",
+    "Log",
+    "Task",
+    "Json"
+  ],
+  "modules": [
+    {
+      "name": "LSDoc",
+      "version": "1.0.0",
+      "sourcePath": [
+        "."
+      ]
+    }
+  ]
+}

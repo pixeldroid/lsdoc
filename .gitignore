@@ -1,0 +1,8 @@
+cli/bin/
+lib/build/
+releases/
+test/bin/
+test/TEST-*.xml
+docs/_site
+.jekyll-metadata
+docs-site

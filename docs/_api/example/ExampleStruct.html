@@ -1,0 +1,24 @@
+---
+ancestors: 
+  - { module: "system", name: "Object" }
+constructor: 
+  attributes: [ "public" ]
+  description: "Constructor doc comments first line.\n\nThis constructor takes two optional parameters.\nNot all constructors do. Some take none at all."
+  name: "ExampleStruct"
+  parameters: [ { default_value: "1", description: "Value for the x component", name: "x", type: "system.Number" }, { default_value: "2", description: "Value for the y component", name: "y", type: "system.Number" } ]
+  type: "example.ExampleStruct"
+description: "Struct description doc comments first line.\n\nAdditional struct description documentation comments."
+fields: 
+  - { attributes: [ "public" ], description: "Public field doc comments first line.", name: "x", type: "system.Number" }
+  - { attributes: [ "public" ], description: "Public field doc comments first line.", name: "y", type: "system.Number" }
+layout: "type"
+methods: 
+  - { attributes: [ "public", "operator", "static" ], description: "Public static operator doc comments first line.\n\nThe assignment operator transfers the value of `b` to `a`, and returns `a`.", name: "=", parameters: [ { description: "The instance to update", name: "a", type: "example.ExampleStruct" }, { description: "The instance to read from", name: "b", type: "example.ExampleStruct" } ], tags: [ { name: "return", value: "The first parameter is returned after being updated with the values of the second." } ], type: "example.ExampleStruct" }
+  - { attributes: [ "public", "operator", "static" ], description: "Public static operator doc comments first line.\n\nThe addition operator combines the values of `b` and `a` into a new instance.", name: "+", parameters: [ { description: "The left-hand operand", name: "a", type: "example.ExampleStruct" }, { description: "The right-hand operand", name: "b", type: "example.ExampleStruct" } ], tags: [ { name: "return", value: "A new instance is returned, created from the sums of the x and y components of the operands." }, { name: "see", value: "#+=" } ], type: "example.ExampleStruct" }
+  - { attributes: [ "public", "operator" ], description: "Public operator doc comments first line.\n\nThe addition with assignment operator combines the values of `b` into this instance.", name: "+=", parameters: [ { description: "The right-hand operand to be added to this instance", name: "b", type: "example.ExampleStruct" } ], tags: [ { name: "see", value: "#+" } ], type: "system.Void" }
+module: "example"
+name: "ExampleStruct"
+type: "STRUCT"
+type_attributes: 
+  - "public"
+...

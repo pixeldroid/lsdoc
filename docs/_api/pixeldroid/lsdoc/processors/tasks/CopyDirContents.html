@@ -1,0 +1,20 @@
+---
+ancestors: 
+  - { module: "pixeldroid.task", name: "SingleTask" }
+constructor: 
+  attributes: [ "public" ]
+  description: ""
+  name: "CopyDirContents"
+  parameters: [ { name: "sourceDir", type: "system.String" }, { name: "targetDir", type: "system.String" }, { name: "excludes", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }, { name: "context", type: "pixeldroid.lsdoc.processors.ProcessingContext" } ]
+  type: "pixeldroid.lsdoc.processors.tasks.CopyDirContents"
+description: ""
+fields: []
+layout: "type"
+methods: 
+  - { attributes: [ "protected" ], description: "", name: "performTask", type: "system.Void" }
+module: "pixeldroid.lsdoc.processors.tasks"
+name: "CopyDirContents"
+type: "CLASS"
+type_attributes: 
+  - "public"
+...

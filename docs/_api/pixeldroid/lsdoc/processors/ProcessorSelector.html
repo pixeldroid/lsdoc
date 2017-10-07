@@ -1,0 +1,17 @@
+---
+ancestors: 
+  - { module: "system", name: "Object" }
+description: ""
+fields: []
+layout: "type"
+methods: 
+  - { attributes: [ "public", "static" ], description: "", name: "select", parameters: [ { name: "name", type: "system.String" } ], type: "pixeldroid.lsdoc.processors.LSDocProcessor" }
+module: "pixeldroid.lsdoc.processors"
+name: "ProcessorSelector"
+properties: 
+  - { attributes: [ "public", "static" ], description: "", getter: { attributes: [ "public", "static" ], description: "", name: "__pget_defaultName", type: "system.String" }, is_read_only: true, name: "defaultName", type: "system.String" }
+  - { attributes: [ "public", "static" ], description: "", getter: { attributes: [ "public", "static" ], description: "", name: "__pget_selectionNames", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }, is_read_only: true, name: "selectionNames", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
+type: "CLASS"
+type_attributes: 
+  - "public"
+...

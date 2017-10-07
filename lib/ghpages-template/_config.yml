@@ -1,0 +1,41 @@
+# https://help.github.com/articles/repository-metadata-on-github-pages/
+
+# https://help.github.com/articles/configuring-jekyll/#configuration-settings-you-cannot-change
+highlighter: rouge
+
+# https://jekyllrb.com/docs/configuration/
+permalink: pretty # for trailing slash urls (requires index.html inside)
+collections: # used for the tabbed sections that appear in the side menu
+  api:
+    output: true
+    title: API
+    permalink: /:collection/:path/
+  examples:
+    output: true
+    title: Examples
+    permalink: /:collection/:path/
+  guides:
+    output: true
+    title: Guides
+    permalink: /:collection/:path/
+
+# https://github.com/penibelst/jekyll-compress-html
+compress_html:
+  comments: ["<!-- ", " -->"]
+
+# https://jekyllrb.com/docs/assets/
+sass:
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# site globals
+module_root: /api  # the api collection houses the code modules
+example_root: /examples  # the examples collection houses the code modules
+guide_root: /guides  # the guides collection houses the code modules
+
+## project specific values -----------------
+code_indent: '  ' # 2 space indent
+project:
+  name: 'ghpages-template'
+  repo: 'https://github.com/pixeldroid/lsdoc/tree/master/lib/ghpages-template'
+  owner: pixeldroid
+  version: '1.0.0'

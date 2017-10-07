@@ -1,0 +1,24 @@
+---
+ancestors: 
+  - { module: "system", name: "Object" }
+description: "Encapsulates the data of a loomlib `property` declaration.\n\nLoom properties are special methods that look like a field, but provide control over access and mutation:\n- `function get foo()`\n- `function set foo()` (optional, value is read-only when not defined)\n\nNote that doc strings are only recorded from the getter definition."
+fields: 
+  - { attributes: [ "public" ], description: "", name: "attributes", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "docString", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "docTags", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.DocTag" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "getter", type: "pixeldroid.lsdoc.models.TypeMethod" }
+  - { attributes: [ "public" ], description: "", name: "isReadOnly", type: "system.Boolean" }
+  - { attributes: [ "public" ], description: "", name: "name", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "setter", type: "pixeldroid.lsdoc.models.TypeMethod" }
+  - { attributes: [ "public" ], description: "", name: "templateTypes", type: "pixeldroid.lsdoc.models.ValueTemplate" }
+  - { attributes: [ "public" ], description: "", name: "typeString", type: "system.String" }
+layout: "type"
+methods: 
+  - { attributes: [ "public" ], description: "", name: "toString", type: "system.String" }
+  - { attributes: [ "public", "static" ], description: "", name: "fromJSON", parameters: [ { name: "j", type: "system.JSON" } ], type: "pixeldroid.lsdoc.models.TypeProperty" }
+module: "pixeldroid.lsdoc.models"
+name: "TypeProperty"
+type: "CLASS"
+type_attributes: 
+  - "public"
+...

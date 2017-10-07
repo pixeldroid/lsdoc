@@ -1,0 +1,17 @@
+---
+ancestors: 
+  - { module: "system", name: "Object" }
+description: "A utlity class for manipulating strings."
+layout: "type"
+methods: 
+  - { attributes: [ "public", "static" ], description: "Searches string for token. If found, returns characters after token. If not found, returns the empty string.\n\nIf the token ends the string, return value will be the empty string.", name: "after", parameters: [ { name: "s", type: "system.String" }, { name: "token", type: "system.String" } ], type: "system.String" }
+  - { attributes: [ "public", "static" ], description: "Searches string for token. If found, returns characters before token. If not found, returns original string.\n\nIf the token starts the string, return value will be the empty string.", name: "before", parameters: [ { name: "s", type: "system.String" }, { name: "token", type: "system.String" } ], type: "system.String" }
+  - { attributes: [ "public", "static" ], description: "", name: "startsWith", parameters: [ { name: "s", type: "system.String" }, { name: "token", type: "system.String" } ], type: "system.Boolean" }
+  - { attributes: [ "public", "static" ], description: "", name: "endsWith", parameters: [ { name: "s", type: "system.String" }, { name: "token", type: "system.String" } ], type: "system.Boolean" }
+module: "pixeldroid.util"
+name: "StringUtils"
+type: "CLASS"
+type_attributes: 
+  - "public"
+  - "final"
+...

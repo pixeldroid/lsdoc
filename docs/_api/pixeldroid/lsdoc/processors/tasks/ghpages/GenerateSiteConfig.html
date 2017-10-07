@@ -1,0 +1,22 @@
+---
+ancestors: 
+  - { module: "pixeldroid.task", name: "SingleTask" }
+constructor: 
+  attributes: [ "public" ]
+  description: ""
+  name: "GenerateSiteConfig"
+  parameters: [ { name: "templateConfigPath", type: "system.String" }, { name: "userConfigPath", type: "system.String" }, { name: "context", type: "pixeldroid.lsdoc.processors.ProcessingContext" } ]
+  type: "pixeldroid.lsdoc.processors.tasks.ghpages.GenerateSiteConfig"
+description: ""
+fields: 
+  - { attributes: [ "public" ], description: "", name: "lines", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
+layout: "type"
+methods: 
+  - { attributes: [ "protected" ], description: "", name: "performTask", type: "system.Void" }
+module: "pixeldroid.lsdoc.processors.tasks.ghpages"
+name: "GenerateSiteConfig"
+properties: []
+type: "CLASS"
+type_attributes: 
+  - "public"
+...

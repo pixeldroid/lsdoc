@@ -1,0 +1,23 @@
+{
+  "name": "LSDocDemoCLI",
+  "version": "1.0",
+  "outputDir": "bin",
+  "references": [
+    "System",
+    "OptionParser",
+    "Log",
+    "LSDoc",
+    "Task",
+    "Json"
+  ],
+  "modules": [
+    {
+      "name": "LSDocDemoCLI",
+      "version": "1.0",
+      "sourcePath": [
+        "."
+      ]
+    }
+  ],
+  "executable": true
+}

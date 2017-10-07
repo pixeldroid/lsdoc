@@ -1,0 +1,37 @@
+---
+ancestors: 
+  - { module: "system", name: "Object" }
+description: "Encapsulates the data of a loomlib `type` declaration."
+fields: 
+  - { attributes: [ "public" ], description: "", name: "baseTypeString", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "attributes", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "construct", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "constructor", type: "pixeldroid.lsdoc.models.TypeMethod" }
+  - { attributes: [ "public" ], description: "", name: "delegateReturnTypeString", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "delegateTypeStrings", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "docString", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "docTags", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.DocTag" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "fields", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.TypeField" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "interfaceStrings", template_types: { item_types: [ { item_types: [], type: "system.String" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "methods", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.TypeMethod" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "name", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "packageString", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "properties", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.TypeProperty" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "", name: "sourceFile", type: "system.String" }
+layout: "type"
+methods: 
+  - { attributes: [ "public" ], description: "", name: "toString", type: "system.String" }
+  - { attributes: [ "public" ], description: "", name: "getField", parameters: [ { name: "fieldName", type: "system.String" } ], type: "pixeldroid.lsdoc.models.TypeField" }
+  - { attributes: [ "public" ], description: "", name: "getMethod", parameters: [ { name: "methodName", type: "system.String" } ], type: "pixeldroid.lsdoc.models.TypeMethod" }
+  - { attributes: [ "public" ], description: "", name: "getProperty", parameters: [ { name: "propertyName", type: "system.String" } ], type: "pixeldroid.lsdoc.models.TypeProperty" }
+  - { attributes: [ "public", "static" ], description: "", name: "fromJSON", parameters: [ { name: "j", type: "system.JSON" } ], type: "pixeldroid.lsdoc.models.LibType" }
+module: "pixeldroid.lsdoc.models"
+name: "LibType"
+properties: 
+  - { attributes: [ "public" ], description: "", getter: { attributes: [ "public" ], description: "", name: "__pget_typeString", type: "system.String" }, is_read_only: true, name: "typeString", type: "system.String" }
+tags: 
+  - { name: "see", value: "pixeldroid.lsdoc.models.DefinitionConstruct" }
+type: "CLASS"
+type_attributes: 
+  - "public"
+...
