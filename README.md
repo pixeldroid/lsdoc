@@ -49,7 +49,7 @@ the **lsdoc** loomlib can also be linked into your own Loom project to leverage 
 
 ## building
 
-first, install [loomtasks][loomtasks], and [bundler][bundler].
+first, install [loomtasks][loomtasks] and [bundler][bundler].
 
 then run `bundle install` to retrieve and install the project dependencies on [Jekyll][jekyll] and the [GitHub Pages gem][ghpages-gem]
 
@@ -76,6 +76,11 @@ this will build the lsdoc library, install it in the currently configured sdk, b
     $ export LSDOC=`pwd`
     $ export LSDK="$HOME/.loom/sdks/sprint34"
     $ rake clean && rake cli['-p ghpages -t $LSDK/ghpages-template -l $LSDK/libs/LSDoc.loomlib -o $LSDOC/docs -c $LSDOC/doc/lsdoc.config -i $LSDOC/doc/index.md -e $LSDOC/doc/examples -g $LSDOC/doc/guides']
+
+after tested and installed, invoke in the usual manner:
+
+    $ lsdoc <args>
+
 
 ## contributing
 
