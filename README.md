@@ -2,9 +2,8 @@
 
 an API docs generator for LoomScript
 
-> see **lsdoc** api documentation documented by **lsdoc** here: https://pixeldroid.github.io/lsdoc/
-
-![lsdoc screenshot](lsdoc-screenshot.png)
+> see **lsdoc** api documentation documented by **lsdoc** here: https://pixeldroid.github.io/lsdoc/ <br/>
+> ![lsdoc screenshot](lsdoc-screenshot.png)
 
 <br/>
 
