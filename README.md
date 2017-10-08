@@ -4,6 +4,7 @@ an API docs generator for LoomScript
 
 > see **lsdoc** api documentation documented by **lsdoc** here: https://pixeldroid.github.io/lsdoc/
 
+- [screenshot](#screenshot)
 - [installation](#installation)
 - [usage](#usage)
 - [building](#building)
@@ -17,10 +18,15 @@ an API docs generator for LoomScript
 * cross-linked
 * mobile friendly
 
+
+## screenshot
+
 ![lsdoc screenshot](lsdoc-screenshot.png)
 
 
 ## installation
+
+### lsdoc commandline doc generator
 
 > requires [Rake][rake]
 
@@ -32,6 +38,10 @@ Clone this repo.
 0. Run `rake cli:uninstall` to:
     * delete the `ghpages-template` directory from the default sdk directory
     * remove the `lsdoc` executable from the system
+
+### lsdoc GitHub pages template files
+
+If you just need the template distribution, download `ghpages-template_v<version>.zip` from the [releases][lsdoc-releases] page
 
 
 ## usage
@@ -93,4 +103,5 @@ Pull requests are welcome!
 [jekyll]: https://jekyllrb.com/ "Jekyll is a blog-aware, static site generator in Ruby"
 [loomtasks]: https://github.com/pixeldroid/loomtasks "Rake tasks for working with loomlibs"
 [lsdoc-api]: https://pixeldroid.github.io/lsdoc/ "API docs for lsdoc"
+[lsdoc-releases]: https://github.com/pixeldroid/lsdoc/releases "releases for lsdoc"
 [rake]: https://github.com/ruby/rake "A make-like build utility for Ruby"
