@@ -1,13 +1,14 @@
 # lsdoc
 
-an API docs generator for LoomScript
+an API docs generator for [LoomScript][loomscript]
 
-> see **lsdoc** api documentation documented by **lsdoc** here: https://pixeldroid.github.io/lsdoc/ <br/>
+> _see **lsdoc** api documentation documented by **lsdoc** here: https://pixeldroid.github.io/lsdoc/_ <br/>
+> <br/>
 > ![lsdoc screenshot](lsdoc-screenshot.png)
 
 <br/>
 
-**lsdoc** provides an API for loading loomlib libraries and extracting type metadata. The distribution provides a command line tool and GitHub Pages Jekyll template for creating html documentation that is searchable, browsable, cross-linked, and mobile friendly.
+**lsdoc** provides an API for loading loomlib libraries and extracting type metadata. The distribution provides a command line tool and [GitHub Pages][ghpages] Jekyll template for creating html documentation that is searchable, browsable, cross-linked, and mobile friendly.
 
 - [installation](#installation)
 - [usage](#usage)
@@ -90,8 +91,10 @@ Pull requests are welcome!
 
 
 [bundler]: http://bundler.io "Manage your Ruby application's gem dependencies"
+[ghpages]: https://pages.github.com/ "GitHub Pages is a static site hosting service."
 [ghpages-gem]: https://github.com/github/pages-gem "A simple Ruby Gem to bootstrap dependencies for setting up and maintaining a local Jekyll environment in sync with GitHub Pages"
 [jekyll]: https://jekyllrb.com/ "Jekyll is a blog-aware, static site generator in Ruby"
+[loomscript]: https://github.com/LoomSDK/LoomSDK "The Loom SDK, a native mobile app and game framework"
 [loomtasks]: https://github.com/pixeldroid/loomtasks "Rake tasks for working with loomlibs"
 [lsdoc-api]: https://pixeldroid.github.io/lsdoc/ "API docs for lsdoc"
 [lsdoc-releases]: https://github.com/pixeldroid/lsdoc/releases "releases for lsdoc"
