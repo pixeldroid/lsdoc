@@ -7,6 +7,7 @@ this: "**lsdoc**"
 # {{ page.title }}
 
 {{ page.this }} generates clean technical documentation from [LoomScript][loomscript] code comments, examples, and guides.
+{:.ui.large.message}
 
 ## Code comments
 
