@@ -29,7 +29,7 @@ params:
     {%- capture ml -%}{% include module_linker.liquid module=p.type base_url=include.base_url module_root=include.module_root %}{%- endcapture -%}{{- ml | rstrip -}}
   {%- endif -%}
   {%- if p.default_value -%}=
-    {%- assign isString = false -%}{%- if p.type == 'system.String' -%}{%- assign isString = true -%}{%- endif -%}
+    {%- assign isString = false -%}{%- if p.type == 'system.String' and p.default_value != 'null' -%}{%- assign isString = true -%}{%- endif -%}
     {%- if isString -%}'{%- endif -%}{{ p.default_value }}{%- if isString -%}'{%- endif -%}
   {%- endif -%}
 {%- endif -%}
