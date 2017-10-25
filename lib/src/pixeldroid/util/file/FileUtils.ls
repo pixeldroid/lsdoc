@@ -1,9 +1,9 @@
-package pixeldroid.util
+package pixeldroid.util.file
 {
     import system.platform.File;
     import system.platform.Path;
 
-    import pixeldroid.util.FilePath;
+    import pixeldroid.util.file.FilePath;
 
 
     /**

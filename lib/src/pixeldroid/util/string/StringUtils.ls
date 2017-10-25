@@ -1,4 +1,4 @@
-package pixeldroid.util
+package pixeldroid.util.string
 {
 
     /**

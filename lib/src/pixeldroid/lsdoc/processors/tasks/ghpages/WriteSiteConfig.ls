@@ -8,7 +8,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
     import pixeldroid.task.Task;
     import pixeldroid.task.TaskState;
 
-    import pixeldroid.util.Log;
+    import pixeldroid.util.log.Log;
 
 
     /**

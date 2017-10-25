@@ -11,7 +11,7 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
 
     import pixeldroid.task.SingleTask;
 
-    import pixeldroid.util.Log;
+    import pixeldroid.util.log.Log;
 
 
     public class GenerateSiteConfig extends SingleTask

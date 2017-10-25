@@ -4,7 +4,7 @@ package pixeldroid.lsdoc.processors.tasks.info
     import pixeldroid.lsdoc.models.LibType;
 
     import pixeldroid.task.SingleTask;
-    import pixeldroid.util.Log;
+    import pixeldroid.util.log.Log;
 
 
     public class GenerateLibModule extends SingleTask

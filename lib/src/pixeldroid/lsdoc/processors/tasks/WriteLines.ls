@@ -7,8 +7,8 @@ package pixeldroid.lsdoc.processors.tasks
     import pixeldroid.lsdoc.processors.ProcessingContext;
 
     import pixeldroid.task.SingleTask;
-    import pixeldroid.util.FilePath;
-    import pixeldroid.util.Log;
+    import pixeldroid.util.file.FilePath;
+    import pixeldroid.util.log.Log;
 
 
     public class WriteLines extends SingleTask

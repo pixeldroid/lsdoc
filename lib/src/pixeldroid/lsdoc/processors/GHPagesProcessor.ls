@@ -15,8 +15,8 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.processors.tasks.ghpages.WriteTypePage;
 
     import pixeldroid.task.SequentialTask;
-    import pixeldroid.util.FilePath;
-    import pixeldroid.util.Log;
+    import pixeldroid.util.file.FilePath;
+    import pixeldroid.util.log.Log;
 
 
     public class GHPagesProcessor extends SequentialTask implements LSDocProcessor

@@ -7,7 +7,7 @@ package
 
     import pixeldroid.json.Json;
     import pixeldroid.task.TaskVersion;
-    import pixeldroid.util.Log;
+    import pixeldroid.util.log.Log;
 
 
     public static class DependenciesSpec
@@ -26,7 +26,7 @@ package
         {
             it.expects(Json.version).toEqual('1.0.0');
             it.expects(TaskVersion.version).toEqual('0.0.1');
-            it.expects(Log.version).toEqual('2.0.0');
+            it.expects(Log.version).toEqual('3.0.0');
         }
 
     }

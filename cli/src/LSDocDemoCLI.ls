@@ -14,7 +14,7 @@ package
     import pixeldroid.task.Task;
     import pixeldroid.task.TaskState;
 
-    import pixeldroid.util.Log;
+    import pixeldroid.util.log.Log;
     import pixeldroid.util.log.LogLevel;
 
 

@@ -6,9 +6,9 @@ package pixeldroid.lsdoc.processors.tasks
     import pixeldroid.lsdoc.processors.ProcessingContext;
 
     import pixeldroid.task.SingleTask;
-    import pixeldroid.util.Log;
-    import pixeldroid.util.FilePath;
-    import pixeldroid.util.FileUtils;
+    import pixeldroid.util.log.Log;
+    import pixeldroid.util.file.FilePath;
+    import pixeldroid.util.file.FileUtils;
 
 
     public class CopyFile extends SingleTask

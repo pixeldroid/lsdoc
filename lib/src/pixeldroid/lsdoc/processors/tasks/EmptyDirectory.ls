@@ -6,8 +6,8 @@ package pixeldroid.lsdoc.processors.tasks
     import pixeldroid.lsdoc.processors.ProcessingContext;
 
     import pixeldroid.task.SingleTask;
-    import pixeldroid.util.FileUtils;
-    import pixeldroid.util.Log;
+    import pixeldroid.util.file.FileUtils;
+    import pixeldroid.util.log.Log;
 
 
     public class EmptyDirectory extends SingleTask
