@@ -8,7 +8,7 @@
 
 <div id="collection-tabs" class="ui inverted stackable pointing secondary menu">
 {% for collection in site.collections %}
-{% unless collection.label == 'posts' %}
+{% unless collection.label == 'posts' or collection.docs.size == 0 %}
 {% capture class %}{% if forloop.first %}active {% endif %}item{% endcapture %}
   <a class="{{ class }}" data-tab="{{ collection.label | downcase }}">{{ collection.title }}</a>
 {% endunless %}
@@ -16,7 +16,7 @@
 </div>
 
 {% for collection in site.collections %}
-{% unless collection.label == 'posts' %}
+{% unless collection.label == 'posts' or collection.docs.size == 0 %}
 {% capture class %}ui {% if forloop.first %}active {% endif %}inverted tab segment{% endcapture %}
 <div class="{{ class }}" data-tab="{{ collection.label | downcase }}">
 <h4 class="ui header">{{ collection.title }}</h4>
