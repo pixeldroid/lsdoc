@@ -12,6 +12,7 @@ layout: compress
 {% include styles/semantic-ui/divider.min.css %}
 {% include styles/semantic-ui/grid.min.css %}
 {% include styles/semantic-ui/header.min.css %}
+{% include styles/semantic-ui/image.min.css %}
 {% include styles/semantic-ui/input.min.css %}
 {% include styles/semantic-ui/item.min.css %}
 {% include styles/semantic-ui/label.min.css %}
