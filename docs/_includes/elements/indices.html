@@ -8,7 +8,7 @@
 
 <div id="collection-tabs" class="ui inverted stackable pointing secondary menu">
 {% for collection in site.collections %}
-{% unless collection.label == 'posts' %}
+{% unless collection.label == 'posts' or collection.docs.size == 0 %}
 {% capture class %}{% if forloop.first %}active {% endif %}item{% endcapture %}
   <a class="{{ class }}" data-tab="{{ collection.label | downcase }}">{{ collection.title }}</a>
 {% endunless %}
@@ -16,7 +16,7 @@
 </div>
 
 {% for collection in site.collections %}
-{% unless collection.label == 'posts' %}
+{% unless collection.label == 'posts' or collection.docs.size == 0 %}
 {% capture class %}ui {% if forloop.first %}active {% endif %}inverted tab segment{% endcapture %}
 <div class="{{ class }}" data-tab="{{ collection.label | downcase }}">
 <h4 class="ui header">{{ collection.title }}</h4>
@@ -30,7 +30,14 @@
     {% when 'type' %}
       {% capture pkg %}{{ doc.module }}.{{ doc.name }}{% endcapture %}
       {% capture link %}{% include package_shortener.liquid package=pkg %}{% endcapture %}
+    {% when 'page' %}
+      {% assign path_bits = doc.relative_path | split: '.' | first | split: '/' %}
+      {% assign n = path_bits.size | minus: 2 %}
+      {% if n > 3 %}{% assign n = 3 %}{% endif %}
+      {% capture indent %}{% for i in (1..n) %}&ensp;{% endfor %}{% endcapture %}
+      {% capture link %}{{ indent }}{{ doc.title }}{% endcapture %}
   {% endcase %}
+  {{ info }}
   <a class="very tight smaller text item" href="{{ site.baseurl }}{{ url }}">{{ link }}</a>
 {% endfor %}
 </div>
