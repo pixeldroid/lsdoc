@@ -2,8 +2,9 @@
 layout: compress
 ---
 
-{% include styles/semantic-ui/reset.min.css %}
+{% include styles/semantic-ui/_version.css %}
 {% include styles/semantic-ui/site.min.css %}
+{% include styles/semantic-ui/reset.min.css %}
 
 {% include styles/semantic-ui/breadcrumb.min.css %}
 {% include styles/semantic-ui/button.min.css %}

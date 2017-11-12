@@ -37,7 +37,6 @@
       {% capture indent %}{% for i in (1..n) %}&ensp;{% endfor %}{% endcapture %}
       {% capture link %}{{ indent }}{{ doc.title }}{% endcapture %}
   {% endcase %}
-  {{ info }}
   <a class="very tight smaller text item" href="{{ site.baseurl }}{{ url }}">{{ link }}</a>
 {% endfor %}
 </div>
