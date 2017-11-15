@@ -22,7 +22,7 @@ params:
 {%- endcomment -%}
 {%- if include.param -%}
   {%- assign p = include.param -%}
-  {%- if p.is_var_args == true -%}...{%- endif -%}{{- p.name -}}:
+  {%- if p.is_var_args == true -%}...{%- endif -%}<b>{{- p.name -}}</b>:
   {%- if p.template_types -%}
     {%- capture t -%}{% include template_signature.liquid template_type=p.template_types base_url=include.base_url module_root=include.module_root %}{%- endcapture -%}{{- t | rstrip -}}
   {%- else -%}

@@ -12,7 +12,7 @@
 
 @headerFont        : 'Montserrat Regular', sans-serif;
 @pageFont          : 'Raleway', sans-serif;
-@googleFontRequest : 'Montserrat|Raleway&subset=@{googleSubset}';
+@googleFontRequest : 'Montserrat|Raleway:400,800&subset=@{googleSubset}';
 
 /*-------------------
       Base Sizes
