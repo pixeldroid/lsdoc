@@ -15,7 +15,7 @@ project:
   name: "lsdoc"
   owner: "pixeldroid"
   repo: "https://github.com/pixeldroid/lsdoc"
-  version: "1.0.0"
+  version: "2.0.0"
 sass: 
   style: "compressed"
-template_version: "1.0.0"
+template_version: "2.0.0"
