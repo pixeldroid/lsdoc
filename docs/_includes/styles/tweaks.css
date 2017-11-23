@@ -83,7 +83,23 @@ span.anchor {
 
 /* custom styling */
 code, kbd, pre, samp {
-  font-family: 'Lucida Console','Andale Mono',monospace;
+  font-family: Consolas,'Lucida Console','Andale Mono',monospace;
+}
+p code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #d87b00;
+    background-color: #f5f4e8;
+    border-radius: 4px;
+}
+blockquote {
+  background: #f9f9f9;
+  border-left: .5em solid #4183c4;
+  margin: 1.5em .5em;
+  padding: .5em .5em;
+}
+blockquote p {
+  display: inline;
 }
 #page {
   margin-top:3.40em; /* position page under top menu */

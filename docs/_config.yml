@@ -11,6 +11,8 @@ guide_root: "/guides"
 highlighter: "rouge"
 module_root: "/api"
 permalink: "pretty"
+plugins: 
+  - "jemoji"
 project: 
   name: "lsdoc"
   owner: "pixeldroid"
