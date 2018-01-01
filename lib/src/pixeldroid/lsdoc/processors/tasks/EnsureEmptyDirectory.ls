@@ -10,15 +10,15 @@ package pixeldroid.lsdoc.processors.tasks
     import pixeldroid.util.log.Log;
 
 
-    public class EmptyDirectory extends SingleTask
+    public class EnsureEmptyDirectory extends SingleTask
     {
-        private static const logName:String = EmptyDirectory.getTypeName();
+        private static const logName:String = EnsureEmptyDirectory.getTypeName();
 
         private var context:ProcessingContext;
         private var directory:String;
 
 
-        public function EmptyDirectory(directory:String, context:ProcessingContext)
+        public function EnsureEmptyDirectory(directory:String, context:ProcessingContext)
         {
             this.context = context;
             this.directory = directory;

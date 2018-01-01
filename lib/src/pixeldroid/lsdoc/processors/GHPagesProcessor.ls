@@ -7,7 +7,7 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.models.LibModule;
     import pixeldroid.lsdoc.models.LibType;
     import pixeldroid.lsdoc.processors.LSDocProcessor;
-    import pixeldroid.lsdoc.processors.tasks.EmptyDirectory;
+    import pixeldroid.lsdoc.processors.tasks.EnsureEmptyDirectory;
     import pixeldroid.lsdoc.processors.tasks.CopyFile;
     import pixeldroid.lsdoc.processors.tasks.CopyDirContents;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WriteSiteConfig;
@@ -44,7 +44,7 @@ package pixeldroid.lsdoc.processors
 
         private function addEmptyOutputDir():void
         {
-            addTask(new EmptyDirectory(_context.outPath, _context));
+            addTask(new EnsureEmptyDirectory(_context.outPath, _context));
         }
 
         private function addInstallTemplates():void
@@ -97,6 +97,8 @@ package pixeldroid.lsdoc.processors
             {
                 var examplesDir:String = _context.getOption('examples-dir', null, ['_examples'])[0];
                 var examplesPath:String = FilePath.join(_context.outPath, examplesDir);
+                addTask(new EnsureEmptyDirectory(examplesPath, _context));
+
                 var excludes:Vector.<String>;
                 addTask(new CopyDirContents(examplesSrc, examplesPath, excludes, _context));
             }
@@ -109,6 +111,8 @@ package pixeldroid.lsdoc.processors
             {
                 var guidesDir:String = _context.getOption('guides-dir', null, ['_guides'])[0];
                 var guidesPath:String = FilePath.join(_context.outPath, guidesDir);
+                addTask(new EnsureEmptyDirectory(guidesPath, _context));
+
                 var excludes:Vector.<String>;
                 addTask(new CopyDirContents(guidesSrc, guidesPath, excludes, _context));
             }
@@ -118,8 +122,9 @@ package pixeldroid.lsdoc.processors
         {
             var apiDir:String = _context.getOption('api-dir', null, ['_api'])[0];
             var apiPath:String = FilePath.join(_context.outPath, apiDir);
-            var packages:Vector.<String>;
+            addTask(new EnsureEmptyDirectory(apiPath, _context));
 
+            var packages:Vector.<String>;
             for each(var m:LibModule in context.lsdoc.modules)
             {
                 // package pages
