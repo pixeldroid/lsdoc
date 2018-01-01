@@ -30,24 +30,24 @@ package pixeldroid.lsdoc.processors
         {
             _context = context;
 
-            addEmptyOutputDir();
-            addInstallTemplates();
-            addMergeSiteConfig();
-            addCopyHomePage();
-            addCopyExamples();
-            addCopyGuides();
-            addGenerateApiDocs();
+            addTaskToEmptyOutputDir();
+            addTaskToInstallTemplates();
+            addTaskToMergeSiteConfig();
+            addTaskToCopyHomePage();
+            addTaskToCopyExamples();
+            addTaskToCopyGuides();
+            addTaskToGenerateApiDocs();
         }
 
         public function get context():ProcessingContext { return _context; }
 
 
-        private function addEmptyOutputDir():void
+        private function addTaskToEmptyOutputDir():void
         {
             addTask(new EnsureEmptyDirectory(_context.outPath, _context));
         }
 
-        private function addInstallTemplates():void
+        private function addTaskToInstallTemplates():void
         {
             var templateSrc:String = _context.getOption('templates-src', 't', [null])[0];
             if (!templateSrc)
@@ -60,7 +60,7 @@ package pixeldroid.lsdoc.processors
             addTask(new CopyDirContents(templateSrc, _context.outPath, excludes, _context));
         }
 
-        private function addMergeSiteConfig():void
+        private function addTaskToMergeSiteConfig():void
         {
             var templateSrc:String = _context.getOption('templates-src', 't', [null])[0];
             if (!templateSrc)
@@ -80,7 +80,7 @@ package pixeldroid.lsdoc.processors
             addTask(new WriteSiteConfig(templateConfigPath, userConfigPath, FilePath.join(_context.outPath, '_config.yml'), _context));
         }
 
-        private function addCopyHomePage():void
+        private function addTaskToCopyHomePage():void
         {
             var indexSrc:String = _context.getOption('index-src', 'i', ['index.md'])[0];
             if (indexSrc)
@@ -90,7 +90,7 @@ package pixeldroid.lsdoc.processors
             }
         }
 
-        private function addCopyExamples():void
+        private function addTaskToCopyExamples():void
         {
             var examplesSrc:String = _context.getOption('examples-src', 'e', [null])[0];
             if (examplesSrc)
@@ -104,7 +104,7 @@ package pixeldroid.lsdoc.processors
             }
         }
 
-        private function addCopyGuides():void
+        private function addTaskToCopyGuides():void
         {
             var guidesSrc:String = _context.getOption('guides-src', 'g', [null])[0];
             if (guidesSrc)
@@ -118,7 +118,7 @@ package pixeldroid.lsdoc.processors
             }
         }
 
-        private function addGenerateApiDocs():void
+        private function addTaskToGenerateApiDocs():void
         {
             var apiDir:String = _context.getOption('api-dir', null, ['_api'])[0];
             var apiPath:String = FilePath.join(_context.outPath, apiDir);
