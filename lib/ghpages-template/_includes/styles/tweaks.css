@@ -110,8 +110,13 @@ pre.highlight {
 .larger.text {
   font-size: 150%;
 }
+p.larger.text {
+  line-height: 150%;
+  max-width: 50rem;
+}
 .smaller.text {
   font-size: 80%;
+  line-height: 80%;
 }
 .normal.text {
   font-weight: normal;
