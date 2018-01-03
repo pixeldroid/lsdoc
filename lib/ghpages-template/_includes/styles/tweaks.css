@@ -121,6 +121,9 @@ p.larger.text {
   font-size: 80%;
   line-height: 80%;
 }
+p.smaller.text {
+  line-height: 80%;
+}
 .normal.text {
   font-weight: normal;
 }
