@@ -6,9 +6,10 @@ title: Documentation Examples
 
 # {{ page.title }}
 
-The `lsdoc.example` package illustrates source code documentation for all the different supported types in [LoomScript][loomscript-types]:
+The `lsdoc.example` package illustrates source code documentation for all the different supported types in [LoomScript][loomscript-types].
+{:.larger.text}
 
-See the [example package][lsdoc-example] for the full listing:
+See the [package summary][lsdoc-example] for the full listing:
 
 - [ExampleClass](/api/example/ExampleClass#/api/)
 - [ExampleSuperClass](/api/example/ExampleSuperClass#/api/)
