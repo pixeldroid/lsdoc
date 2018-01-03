@@ -80,6 +80,9 @@ span.anchor {
 .ui.tight.label, .ui.tight.button {
   padding: .25em;
 }
+.ui.message {
+  max-width: 45rem;
+}
 
 /* custom styling */
 blockquote {
