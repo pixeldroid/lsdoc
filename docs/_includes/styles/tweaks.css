@@ -80,18 +80,11 @@ span.anchor {
 .ui.tight.label, .ui.tight.button {
   padding: .25em;
 }
+.ui.message {
+  max-width: 45rem;
+}
 
 /* custom styling */
-code, kbd, pre, samp {
-  font-family: Consolas,'Lucida Console','Andale Mono',monospace;
-}
-p code {
-    padding: 2px 4px;
-    font-size: 90%;
-    color: #d87b00;
-    background-color: #f5f4e8;
-    border-radius: 4px;
-}
 blockquote {
   background: #f9f9f9;
   border-left: .5em solid #4183c4;
@@ -101,14 +94,35 @@ blockquote {
 blockquote p {
   display: inline;
 }
+code, kbd, pre, samp {
+  font-family: Consolas,'Lucida Console','Andale Mono',monospace;
+}
+li code, p code, td code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #d87b00;
+    background-color: #f5f4e8;
+    border-radius: 4px;
+}
+pre.highlight {
+  line-height: 1.18em;
+}
 #page {
   margin-top:3.40em; /* position page under top menu */
 }
 .larger.text {
   font-size: 150%;
 }
+p.larger.text {
+  line-height: 150%;
+  max-width: 50rem;
+}
 .smaller.text {
   font-size: 80%;
+  line-height: 80%;
+}
+p.smaller.text {
+  line-height: 80%;
 }
 .normal.text {
   font-weight: normal;
