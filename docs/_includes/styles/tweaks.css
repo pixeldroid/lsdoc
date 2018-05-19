@@ -1,5 +1,5 @@
 /*
- * CSS customizations
+ * CSS customizations for the programming pages template
  */
 
 /* use flexbox to keep footer stuck to bottom */
@@ -8,12 +8,12 @@
   min-height: 100vh;
   flex-direction: column;
 }
-#page {
+#page-container {
   flex: 1;
 }
 
-/* toggle visibility of menu button / sidebar at 'mobile' width */
-#title .button.item {
+/* toggle visibility of menu toggle / sidebar at 'mobile' width */
+#site-title .toggle.item {
   display: none;
 }
 #sidebar-fixed {
@@ -24,17 +24,17 @@
 #sidebar-retractable {
   width: 15rem;
 }
-.pusher #page {
+.pusher #page-container {
   margin-left: 15rem; /* position page to left of sidebar when it's not retractable */
 }
 @media only screen and (max-width: 767px) {
-  #title .button.item {
+  #site-title .toggle.item {
     display: flex;
   }
   .pusher #sidebar-fixed {
     display: none;
   }
-  .pusher #page {
+  .pusher #page-container {
     margin-left: 0;
   }
 }
@@ -43,22 +43,40 @@
 span.anchor {
   display: block;
   content: " ";
-  margin-top: -3.5em;
-  height: 3.5em;
+  margin-top: -3.5rem;
+  height: 3.5rem;
   visibility: hidden;
 }
 
-/* additions to semantic-ui */
- #sidebar-retractable.ui.push.sidebar {
+/* adjustments to fixed top title */
+#page-container {
+  margin-top: 3.4rem; /* position page under top menu */
+}
+#site-title .header {
+  height: 3.5rem;
+}
+#site-title .header .text {
+  max-width: 12em;
+}
+#site-title a.borderless.item svg.icon {
+  top: -.06em;
+  margin-right: .18em;
+}
+
+/* tweaks to existing semantic-ui rules */
+#sidebar-retractable.ui.push.sidebar {
   z-index: 100; /* underneath top fixed menu */
 }
 #sidebar-retractable.ui.menu {
-  top: 48px; /* below top fixed menu */
+  top: 3.5rem; /* below top fixed menu */
 }
 #sidebar-fixed.ui.menu {
   position: fixed;
-  top: 48px; /* below top fixed menu */
+  top: 3.5rem; /* below top fixed menu */
   left: auto;
+}
+.ui.secondary.pointing.menu .item {
+  padding: .75em .75em;
 }
 .ui.vertical.text.menu .tight.item {
   margin: 0;
@@ -77,11 +95,18 @@ span.anchor {
 .ui.tight.segment {
   padding: .5em;
 }
-.ui.tight.label, .ui.tight.button {
+.ui.tight.label {
   padding: .25em;
 }
 .ui.message {
   max-width: 45rem;
+}
+.ui.message svg.icon {
+  top: .125em;
+}
+.ui.success.message, .ui.info.message, .ui.warning.message, .ui.error.message {
+  border-left-style: solid;
+  border-left-width: .25em;
 }
 
 /* custom styling */
@@ -107,22 +132,18 @@ li code, p code, td code {
 pre.highlight {
   line-height: 1.18em;
 }
-#page {
-  margin-top:3.40em; /* position page under top menu */
-}
 .larger.text {
   font-size: 150%;
 }
-p.larger.text {
-  line-height: 150%;
+.larger.text li, p.larger.text {
+  line-height: 130%;
   max-width: 50rem;
 }
 .smaller.text {
   font-size: 80%;
-  line-height: 80%;
 }
-p.smaller.text {
-  line-height: 80%;
+.smaller.text li, p.smaller.text {
+  line-height: 90%;
 }
 .normal.text {
   font-weight: normal;

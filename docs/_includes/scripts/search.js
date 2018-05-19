@@ -1,4 +1,4 @@
-pkg_search_init = function() {
+site_search_init = function() {
   var search_content = [
   {% for collection in site.collections %}
   {% unless collection.label == 'posts' %}
@@ -18,13 +18,13 @@ pkg_search_init = function() {
   ];
 
   // urls are auto-followed, so no callback needed
-  $('#search').search({
+  $('#site-search').search({
     source: search_content,
     selectFirstResult: true,
   });
 
   // set up shortut key for search input focus
-  Mousetrap.bind('s', function() { $( '#search .prompt' ).focus(); return false; });
+  Mousetrap.bind('s', function() { $( '#site-search .prompt' ).focus(); return false; });
 };
 
-$(window).on( 'load', pkg_search_init )
+$(site_search_init);
