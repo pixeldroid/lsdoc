@@ -67,7 +67,7 @@ package
             trace('  -h --help           Print this screen and exit');
             trace('  -v --version        Print version and exit');
             trace('  ');
-            trace('  -c --config-src     Set lsdoc config file (to set these options)');
+            trace('  -c --config-src     Set lsdoc config file');
             trace('  -j --jekyll-config  Set jekyll config file');
             trace('  -d --debug          Turn on debug logging');
             trace('  -e --examples-src   Set examples source directory');
