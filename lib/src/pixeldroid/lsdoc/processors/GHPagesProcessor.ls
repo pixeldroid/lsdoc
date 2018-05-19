@@ -10,7 +10,7 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.processors.tasks.EnsureEmptyDirectory;
     import pixeldroid.lsdoc.processors.tasks.CopyFile;
     import pixeldroid.lsdoc.processors.tasks.CopyDirContents;
-    import pixeldroid.lsdoc.processors.tasks.ghpages.WriteSiteConfig;
+    import pixeldroid.lsdoc.processors.tasks.ghpages.WriteUserConfig;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WritePackagePage;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WriteTypePage;
 
@@ -22,7 +22,6 @@ package pixeldroid.lsdoc.processors
     public class GHPagesProcessor extends SequentialTask implements LSDocProcessor
     {
         private static const logName:String = GHPagesProcessor.getTypeName();
-        private static const ghpagesConfigFile:String = 'ghpages.config';
         private var _context:ProcessingContext;
 
 
@@ -31,8 +30,7 @@ package pixeldroid.lsdoc.processors
             _context = context;
 
             addTaskToEmptyOutputDir();
-            addTaskToInstallTemplates();
-            addTaskToMergeSiteConfig();
+            addTaskToWriteUserConfig();
             addTaskToCopyHomePage();
             addTaskToCopyExamples();
             addTaskToCopyGuides();
@@ -47,37 +45,17 @@ package pixeldroid.lsdoc.processors
             addTask(new EnsureEmptyDirectory(_context.outPath, _context));
         }
 
-        private function addTaskToInstallTemplates():void
+        private function addTaskToWriteUserConfig():void
         {
-            var templateSrc:String = _context.getOption('templates-src', 't', [null])[0];
-            if (!templateSrc)
-            {
-                context.appendErrors([LSDocError.noDir('doc template directory not provided, unable to install templates')]);
-                return;
-            }
 
-            var excludes:Vector.<String> = [ FilePath.join(templateSrc, ghpagesConfigFile) ];
-            addTask(new CopyDirContents(templateSrc, _context.outPath, excludes, _context));
-        }
-
-        private function addTaskToMergeSiteConfig():void
-        {
-            var templateSrc:String = _context.getOption('templates-src', 't', [null])[0];
-            if (!templateSrc)
-            {
-                context.appendErrors([LSDocError.noDir('doc template directory not provided, unable to merge site config')]);
-                return;
-            }
-
-            var userConfigPath:String = _context.getOption('config-src', 'c', [null])[0];
-            if (!templateSrc)
+            var configSrc:String = _context.getOption('config-src', 'c', [null])[0];
+            if (!configSrc)
             {
                 context.appendErrors([LSDocError.noDir('user config file not provided, unable to merge site config')]);
                 return;
             }
 
-            var templateConfigPath:String = FilePath.join(templateSrc, ghpagesConfigFile);
-            addTask(new WriteSiteConfig(templateConfigPath, userConfigPath, FilePath.join(_context.outPath, '_config.yml'), _context));
+            addTask(new WriteUserConfig(configSrc, FilePath.join(_context.outPath, '_config.yml'), _context));
         }
 
         private function addTaskToCopyHomePage():void
