@@ -6,3 +6,4 @@ test/TEST-*.xml
 docs/_site
 .jekyll-metadata
 docs-site
+_site
