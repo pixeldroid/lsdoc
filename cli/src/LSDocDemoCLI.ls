@@ -54,12 +54,10 @@ package
 
             trace('usage: lsdoc [-h|--help] [-v|--version]');
             trace('             -l|--lib <path>...');
+            trace('             -i|--input-dir <path>');
             trace('             -o|--output-dir <path>');
             trace('             [-c|--config-src <path>]');
             trace('             [-d|--debug]');
-            trace('             [-e|--examples-src <path>]');
-            trace('             [-g|--guides-src <path>]');
-            trace('             [-i|--index-src <path>]');
             trace('             [-p|--processor <name>]');
             trace('             [-t|--templates-src <path>]');
             trace('');
@@ -67,12 +65,10 @@ package
             trace('  -h --help           Print this screen and exit');
             trace('  -v --version        Print version and exit');
             trace('  ');
-            trace('  -c --config-src     Set lsdoc config file');
-            trace('  -j --jekyll-config  Set jekyll config file');
+            trace('  -c --config-src     Provide lsdoc config file');
+            trace('  -j --jekyll-config  Provide jekyll config file');
             trace('  -d --debug          Turn on debug logging');
-            trace('  -e --examples-src   Set examples source directory');
-            trace('  -g --guides-src     Set guides source directory');
-            trace('  -i --index-src      Set home page source file');
+            trace('  -i --input-dir      Provide documentation source files');
             trace('  -l --lib <path>...  Add loomlib (multiple paths may be given)');
             trace('  -o --output-dir     Set directory for output');
             trace('  -p --processor      Select processor (' +pNames +')');

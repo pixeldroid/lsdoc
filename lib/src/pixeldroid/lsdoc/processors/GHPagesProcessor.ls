@@ -30,11 +30,9 @@ package pixeldroid.lsdoc.processors
             _context = context;
 
             addTaskToEmptyOutputDir();
-            addTaskToWriteUserConfig();
-            addTaskToCopyHomePage();
-            addTaskToCopyExamples();
-            addTaskToCopyGuides();
+            addTaskToCopyDocSourceFiles();
             addTaskToGenerateApiDocs();
+            addTaskToWriteUserConfig();
         }
 
         public function get context():ProcessingContext { return _context; }
@@ -45,54 +43,13 @@ package pixeldroid.lsdoc.processors
             addTask(new EnsureEmptyDirectory(_context.outPath, _context));
         }
 
-        private function addTaskToWriteUserConfig():void
+        private function addTaskToCopyDocSourceFiles():void
         {
-
-            var configSrc:String = _context.getOption('config-src', 'c', [null])[0];
-            if (!configSrc)
+            var docsSrc:String = _context.getOption('docs-src', 'd', [null])[0];
+            if (docsSrc)
             {
-                context.appendErrors([LSDocError.noDir('user config file not provided, unable to merge site config')]);
-                return;
-            }
-
-            addTask(new WriteUserConfig(configSrc, FilePath.join(_context.outPath, '_config.yml'), _context));
-        }
-
-        private function addTaskToCopyHomePage():void
-        {
-            var indexSrc:String = _context.getOption('index-src', 'i', ['index.md'])[0];
-            if (indexSrc)
-            {
-                var filename:String = FilePath.basename(indexSrc);
-                addTask(new CopyFile(indexSrc, FilePath.join(_context.outPath, filename), _context));
-            }
-        }
-
-        private function addTaskToCopyExamples():void
-        {
-            var examplesSrc:String = _context.getOption('examples-src', 'e', [null])[0];
-            if (examplesSrc)
-            {
-                var examplesDir:String = _context.getOption('examples-dir', null, ['_examples'])[0];
-                var examplesPath:String = FilePath.join(_context.outPath, examplesDir);
-                addTask(new EnsureEmptyDirectory(examplesPath, _context));
-
                 var excludes:Vector.<String>;
-                addTask(new CopyDirContents(examplesSrc, examplesPath, excludes, _context));
-            }
-        }
-
-        private function addTaskToCopyGuides():void
-        {
-            var guidesSrc:String = _context.getOption('guides-src', 'g', [null])[0];
-            if (guidesSrc)
-            {
-                var guidesDir:String = _context.getOption('guides-dir', null, ['_guides'])[0];
-                var guidesPath:String = FilePath.join(_context.outPath, guidesDir);
-                addTask(new EnsureEmptyDirectory(guidesPath, _context));
-
-                var excludes:Vector.<String>;
-                addTask(new CopyDirContents(guidesSrc, guidesPath, excludes, _context));
+                addTask(new CopyDirContents(docsSrc, _context.outPath, excludes, _context));
             }
         }
 
@@ -115,6 +72,19 @@ package pixeldroid.lsdoc.processors
                 for each(var t:LibType in m.types)
                     addTask(new WriteTypePage(apiPath, t, m, context));
             }
+        }
+
+        private function addTaskToWriteUserConfig():void
+        {
+
+            var configSrc:String = _context.getOption('config-src', 'c', [null])[0];
+            if (!configSrc)
+            {
+                context.appendErrors([LSDocError.noDir('user config file not provided, unable to merge site config')]);
+                return;
+            }
+
+            addTask(new WriteUserConfig(configSrc, FilePath.join(_context.outPath, '_config.yml'), _context));
         }
 
     }
