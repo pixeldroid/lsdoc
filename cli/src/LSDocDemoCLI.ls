@@ -59,7 +59,6 @@ package
             trace('             [-c|--config-src <path>]');
             trace('             [-d|--debug]');
             trace('             [-p|--processor <name>]');
-            trace('             [-t|--templates-src <path>]');
             trace('');
             trace('options:');
             trace('  -h --help           Print this screen and exit');
@@ -72,7 +71,6 @@ package
             trace('  -l --lib <path>...  Add loomlib (multiple paths may be given)');
             trace('  -o --output-dir     Set directory for output');
             trace('  -p --processor      Select processor (' +pNames +')');
-            trace('  -t --templates-src  Set doc templates directory');
 
             Process.exit(EXIT_OK);
         }
