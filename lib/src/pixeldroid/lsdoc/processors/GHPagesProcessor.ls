@@ -10,7 +10,6 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.processors.tasks.EnsureEmptyDirectory;
     import pixeldroid.lsdoc.processors.tasks.CopyFile;
     import pixeldroid.lsdoc.processors.tasks.CopyDirContents;
-    import pixeldroid.lsdoc.processors.tasks.ghpages.WriteUserConfig;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WritePackagePage;
     import pixeldroid.lsdoc.processors.tasks.ghpages.WriteTypePage;
 
@@ -32,7 +31,6 @@ package pixeldroid.lsdoc.processors
             addTaskToEmptyOutputDir();
             addTaskToCopyDocSourceFiles();
             addTaskToGenerateApiDocs();
-            addTaskToWriteUserConfig();
         }
 
         public function get context():ProcessingContext { return _context; }
@@ -72,19 +70,6 @@ package pixeldroid.lsdoc.processors
                 for each(var t:LibType in m.types)
                     addTask(new WriteTypePage(apiPath, t, m, context));
             }
-        }
-
-        private function addTaskToWriteUserConfig():void
-        {
-
-            var configSrc:String = _context.getOption('config-src', 'c', [null])[0];
-            if (!configSrc)
-            {
-                context.appendErrors([LSDocError.noDir('user config file not provided, unable to merge site config')]);
-                return;
-            }
-
-            addTask(new WriteUserConfig(configSrc, FilePath.join(_context.outPath, '_config.yml'), _context));
         }
 
     }

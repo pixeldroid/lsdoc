@@ -56,16 +56,12 @@ package
             trace('             -l|--lib <path>...');
             trace('             -i|--input-dir <path>');
             trace('             -o|--output-dir <path>');
-            trace('             [-c|--config-src <path>]');
             trace('             [-d|--debug]');
             trace('             [-p|--processor <name>]');
             trace('');
             trace('options:');
             trace('  -h --help           Print this screen and exit');
             trace('  -v --version        Print version and exit');
-            trace('  ');
-            trace('  -c --config-src     Provide lsdoc config file');
-            trace('  -j --jekyll-config  Provide jekyll config file');
             trace('  -d --debug          Turn on debug logging');
             trace('  -i --input-dir      Provide documentation source files');
             trace('  -l --lib <path>...  Add loomlib (multiple paths may be given)');
