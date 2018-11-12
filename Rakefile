@@ -12,9 +12,30 @@ rescue LoadError
 end
 
 
-# add lsdoc loomlib to fixtures after compilation before running cli demo
 namespace :cli do
 
+  # add publish task for jekyll theme files
+  desc [
+    "copies Jekyll theme files into #{cli_default_bin_dir}",
+    "this makes them available to the loomtasks scaffolding task",
+  ].join("\n")
+  task :copy_theme_files do |t, args|
+    puts "[#{t.name}] copying theme files into #{cli_default_bin_dir}..."
+
+    %w(
+      _data
+      _includes
+      _layouts
+    ).each do |dir|
+      theme_dir = File.join('docs', dir)
+      fail("could not find '#{theme_dir}' to copy") unless Dir.exists?(theme_dir)
+      FileUtils.cp_r(theme_dir, cli_default_bin_dir)
+    end
+
+    puts "[#{t.name}] pre-task completed, theme files copied to #{cli_default_bin_dir}"
+  end
+
+  # add lsdoc loomlib to fixtures after compilation before running cli demo
   desc [
     "copies #{LIBRARY} into test/fixtures for use in doc gen demo",
   ].join("\n")
@@ -32,4 +53,5 @@ namespace :cli do
 
 end
 
-Rake::Task["cli:run"].enhance ["cli:update_fixture"]
+Rake::Task['cli:install'].enhance { Rake::Task['cli:copy_theme_files'].invoke() }
+Rake::Task['cli:run'].enhance ['cli:update_fixture']
