@@ -96,14 +96,21 @@ package pixeldroid.util.file
         */
         public static function join(...components):String
         {
+            components = components.filter(removeEmpty);
             return components.map(stringify).join(Path.getFolderDelimiter());
         }
 
 
+        private static function removeEmpty(thing:Object, index:Number):Boolean
+        {
+            if (thing is Vector) return (Vector(thing).length > 0);
+            return (String(thing).length > 0);
+        }
+
         private static function stringify(thing:Object, index:Number):String
         {
             var d:String = Path.getFolderDelimiter();
-            var s:String = (thing is Vector) ? Vector(thing).join(Path.getFolderDelimiter()) : thing.toString();
+            var s:String = (thing is Vector) ? Vector(thing).join(d) : thing.toString();
 
             if (index > 0) while (s.charAt(0) == d) s = s.substring(1, s.length);
             while (s.charAt(s.length - 1) == d) s = s.substring(0, s.length - 1);

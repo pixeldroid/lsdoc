@@ -81,9 +81,11 @@ package
             var b:PathObject = new PathObject('b');
             var c:PathObject = new PathObject('c');
             it.expects(FilePath.join('a', 'b', 'c', 'file.ext')).toEqual(path);
+            it.expects(FilePath.join('a', '', 'b', 'c', 'file.ext')).toEqual(path);
             it.expects(FilePath.join('a', ['b', 'c'], 'file.ext')).toEqual(path);
             it.expects(FilePath.join('a', b, c, 'file.ext')).toEqual(path);
             it.expects(FilePath.join('a', [b, c], 'file.ext')).toEqual(path);
+            it.expects(FilePath.join('a', [], [b, c], 'file.ext')).toEqual(path);
         }
 
         private static function strip_join():void {
