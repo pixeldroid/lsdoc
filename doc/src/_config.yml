@@ -1,6 +1,0 @@
----
-project:
-  name: "lsdoc"
-  owner: "pixeldroid"
-  repo: "https://github.com/pixeldroid/lsdoc"
-  version: "2.0.0"
