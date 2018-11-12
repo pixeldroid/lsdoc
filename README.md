@@ -6,7 +6,8 @@ an API docs generator for [LoomScript][loomscript]
 
 <br/>
 
-**lsdoc** provides an API for loading loomlib libraries and extracting type metadata. The distribution provides a command line tool for generating documentation compatible with the [programming-pages][programming-pages] template for creating html documentation that is searchable, browsable, cross-linked, and mobile friendly.
+**lsdoc** provides an API for loading loomlib libraries and extracting type metadata.
+The distribution provides a command line tool for generating documentation compatible with the [programming-pages][programming-pages] theme for creating html documentation that is searchable, browsable, cross-linked, and mobile friendly.
 
 - [installation](#installation)
 - [usage](#usage)
@@ -23,15 +24,9 @@ an API docs generator for [LoomScript][loomscript]
 Clone this repo.
 
 0. Run `rake cli:install` to:
-    * install the `ghpages-template` from this project into the default sdk directory (see `~/.loom/loom.config`)
     * build and install the `lsdoc` executable onto the system (`/Users/<user>/bin/lsdoc`)
 0. Run `rake cli:uninstall` to:
-    * delete the `ghpages-template` directory from the default sdk directory
     * remove the `lsdoc` executable from the system
-
-### lsdoc GitHub pages template files
-
-If you just need the template distribution, download `ghpages-template_v<version>.zip` from the [releases][lsdoc-releases] page
 
 
 ## usage
@@ -57,7 +52,7 @@ then run `bundle install` to retrieve and install the project dependencies on [J
 
     $ rake cli:install
 
-this will build the lsdoc library, install it and the ghpages-template in the currently configured sdk, build the command line tool and install it on the path
+this will build the lsdoc library, install it in the currently configured sdk, build the command line tool and install it on the path
 
 ### running tests
 
@@ -65,21 +60,20 @@ this will build the lsdoc library, install it and the ghpages-template in the cu
 
 this will build the lsdoc library, install it in the currently configured sdk, build the test app, and run the test app.
 
-### starting jekyll
-> from the project root
-
-    $ bundle exec jekyll serve --watch --source docs/ --destination docs/_site
-
 ### running the demo
 > from the project root, before installed on the system
 
     $ export LSDOC=`pwd`
     $ export LSDK="$HOME/.loom/sdks/sprint34"
-    $ rake clean && rake cli['-p ghpages -t $LSDK/ghpages-template -l $LSDK/libs/LSDoc.loomlib -o $LSDOC/docs -c $LSDOC/doc/lsdoc.config -i $LSDOC/doc/index.md -e $LSDOC/doc/examples -g $LSDOC/doc/guides']
+    $ rake clean && rake cli['-p ghpages -l $LSDK/libs/LSDoc.loomlib -o $LSDOC/docs']
 
 after tested and installed, invoke in the usual manner:
 
     $ lsdoc <args>
+
+### building and serving the docs
+
+    $ rake docs
 
 
 ## contributing
