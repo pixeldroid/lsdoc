@@ -131,7 +131,7 @@ package example
 
         @see example.ExampleSuperClass
         */
-        override protected function protected_method(param1:String, param2:Number = 123):void { }
+        override protected function protected_method(param1:String, param2:Number = null):void { }
 
         /** Private method doc comments should not appear in the API documentation. */
         private function private_method():Boolean { return true; }

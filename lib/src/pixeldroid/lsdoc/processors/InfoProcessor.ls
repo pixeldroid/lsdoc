@@ -6,7 +6,7 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.processors.tasks.info.WriteLibModule;
 
     import pixeldroid.task.SequentialTask;
-    import pixeldroid.util.Log;
+    import pixeldroid.util.log.Log;
 
 
     public class InfoProcessor extends SequentialTask implements LSDocProcessor

@@ -9,8 +9,8 @@ package pixeldroid.lsdoc.processors.tasks.info
     import pixeldroid.task.Task;
     import pixeldroid.task.TaskState;
 
-    import pixeldroid.util.FilePath;
-    import pixeldroid.util.Log;
+    import pixeldroid.util.file.FilePath;
+    import pixeldroid.util.log.Log;
 
 
     public class WriteLibModule extends SequentialTask

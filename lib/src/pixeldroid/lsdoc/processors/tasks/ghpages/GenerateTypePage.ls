@@ -13,8 +13,8 @@ package pixeldroid.lsdoc.processors.tasks.ghpages
     import pixeldroid.json.YamlPrinter;
     import pixeldroid.json.YamlPrinterOptions;
     import pixeldroid.task.SingleTask;
-    import pixeldroid.util.Log;
-    import pixeldroid.util.StringUtils;
+    import pixeldroid.util.log.Log;
+    import pixeldroid.util.string.StringUtils;
 
 
     public class GenerateTypePage extends SingleTask

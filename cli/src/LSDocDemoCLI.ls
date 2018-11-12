@@ -14,7 +14,7 @@ package
     import pixeldroid.task.Task;
     import pixeldroid.task.TaskState;
 
-    import pixeldroid.util.Log;
+    import pixeldroid.util.log.Log;
     import pixeldroid.util.log.LogLevel;
 
 
@@ -55,28 +55,16 @@ package
             trace('usage: lsdoc [-h|--help] [-v|--version]');
             trace('             -l|--lib <path>...');
             trace('             -o|--output-dir <path>');
-            trace('             [-c|--config-src <path>]');
             trace('             [-d|--debug]');
-            trace('             [-e|--examples-src <path>]');
-            trace('             [-g|--guides-src <path>]');
-            trace('             [-i|--index-src <path>]');
             trace('             [-p|--processor <name>]');
-            trace('             [-t|--templates-src <path>]');
             trace('');
             trace('options:');
             trace('  -h --help           Print this screen and exit');
             trace('  -v --version        Print version and exit');
-            trace('  ');
-            trace('  -c --config-src     Set lsdoc config file (to set these options)');
-            trace('  -j --jekyll-config  Set jekyll config file');
             trace('  -d --debug          Turn on debug logging');
-            trace('  -e --examples-src   Set examples source directory');
-            trace('  -g --guides-src     Set guides source directory');
-            trace('  -i --index-src      Set home page source file');
             trace('  -l --lib <path>...  Add loomlib (multiple paths may be given)');
             trace('  -o --output-dir     Set directory for output');
             trace('  -p --processor      Select processor (' +pNames +')');
-            trace('  -t --templates-src  Set doc templates directory');
 
             Process.exit(EXIT_OK);
         }

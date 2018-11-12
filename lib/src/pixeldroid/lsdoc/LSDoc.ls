@@ -10,7 +10,7 @@ package pixeldroid.lsdoc
 
     public class LSDoc
     {
-        public static const version:String = '1.0.0';
+        public static const version:String = '2.0.0';
         private static const parser:JSON = new JSON;
 
         private const libPaths:Vector.<String> = [];

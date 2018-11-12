@@ -12,24 +12,30 @@ rescue LoadError
 end
 
 
-@template_config = nil
-
-def template_config_file()
-  File.join('lib', 'ghpages-template', 'ghpages.config')
-end
-
-def template_config()
-  @template_config || (@template_config = LoomTasks.parse_loom_config(template_config_file))
-end
-
-def write_template_config(config)
-  LoomTasks.write_loom_config(template_config_file, config)
-end
-
-
-# add lsdoc loomlib to fixtures after compilation before running cli demo
 namespace :cli do
 
+  # add publish task for jekyll theme files
+  desc [
+    "copies Jekyll theme files into #{cli_default_bin_dir}",
+    "this makes them available to the loomtasks scaffolding task",
+  ].join("\n")
+  task :copy_theme_files do |t, args|
+    puts "[#{t.name}] copying theme files into #{cli_default_bin_dir}..."
+
+    %w(
+      _data
+      _includes
+      _layouts
+    ).each do |dir|
+      theme_dir = File.join('docs', dir)
+      fail("could not find '#{theme_dir}' to copy") unless Dir.exists?(theme_dir)
+      FileUtils.cp_r(theme_dir, cli_default_bin_dir)
+    end
+
+    puts "[#{t.name}] pre-task completed, theme files copied to #{cli_default_bin_dir}"
+  end
+
+  # add lsdoc loomlib to fixtures after compilation before running cli demo
   desc [
     "copies #{LIBRARY} into test/fixtures for use in doc gen demo",
   ].join("\n")
@@ -47,70 +53,5 @@ namespace :cli do
 
 end
 
-Rake::Task["cli:run"].enhance ["cli:update_fixture"]
-
-
-TEMPLATE = File.join('lib', 'ghpages-template')
-
-namespace :template do
-
-  desc [
-    "packages #{TEMPLATE} for release",
-    "the version value will be read from #{LIB_VERSION_FILE}",
-    "it must match this regex: #{lib_version_regex}",
-  ].join("\n")
-  task :package do |t, args|
-    lib_version = LoomTasks.lib_version(lib_version_file)
-    template_release = "#{File.basename(TEMPLATE)}_v#{lib_version}.zip"
-    released_template = File.join(release_dir, template_release)
-
-    fail('zip archiving not yet supported on windows') if windows?
-    cmd = "zip --quiet --recurse-paths #{released_template} #{TEMPLATE} --exclude '*.DS_Store'"
-
-    Dir.mkdir(release_dir) unless Dir.exists?(release_dir)
-    FileUtils.rm(released_template) if (File.exists?(released_template))
-    try(cmd, "unable to create #{template_release}")
-
-    puts "[#{t.name}] task completed, find #{template_release} in #{release_dir}/"
-  end
-
-  desc [
-    "installs #{TEMPLATE} into #{lib_config['sdk_version']} SDK",
-  ].join("\n")
-  task :install => 'template:uninstall' do |t, args|
-    sdk_version = lib_config['sdk_version']
-
-    FileUtils.cp_r(TEMPLATE, LoomTasks.sdk_root(sdk_version))
-
-    puts "[#{t.name}] task completed, #{TEMPLATE} installed for #{sdk_version}"
-  end
-
-  desc [
-    "removes #{TEMPLATE} from #{lib_config['sdk_version']} SDK",
-  ].join("\n")
-  task :uninstall do |t, args|
-    sdk_version = lib_config['sdk_version']
-    sdk_dir = LoomTasks.sdk_root(sdk_version)
-    template_dir = File.basename(TEMPLATE)
-    installed_template = File.join(sdk_dir, template_dir)
-
-    if (Dir.exists?(installed_template))
-      FileUtils.rm_r(installed_template)
-      puts "[#{t.name}] task completed, #{template_dir} removed from #{sdk_dir}"
-    else
-      puts "[#{t.name}] nothing to do; no #{template_dir} found in #{sdk_dir}"
-    end
-  end
-
-end
-
-Rake::Task["cli:install"].enhance ["template:install"]
-Rake::Task["cli:uninstall"].enhance ["template:uninstall"]
-
-Rake::Task["lib:release"].enhance ["template:package"]
-
-Rake::Task["lib:version"].enhance do |t, args|
-  lib_version = LoomTasks.lib_version(lib_version_file)
-  template_config['template_version'] = lib_version
-  write_template_config(template_config)
-end
+Rake::Task['cli:install'].enhance { Rake::Task['cli:copy_theme_files'].invoke() }
+Rake::Task['cli:run'].enhance ['cli:update_fixture']

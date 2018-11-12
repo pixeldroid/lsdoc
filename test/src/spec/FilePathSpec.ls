@@ -5,7 +5,7 @@ package
     import pixeldroid.bdd.Spec;
     import pixeldroid.bdd.Thing;
 
-    import pixeldroid.util.FilePath;
+    import pixeldroid.util.file.FilePath;
 
 
     public static class FilePathSpec
@@ -81,9 +81,11 @@ package
             var b:PathObject = new PathObject('b');
             var c:PathObject = new PathObject('c');
             it.expects(FilePath.join('a', 'b', 'c', 'file.ext')).toEqual(path);
+            it.expects(FilePath.join('a', '', 'b', 'c', 'file.ext')).toEqual(path);
             it.expects(FilePath.join('a', ['b', 'c'], 'file.ext')).toEqual(path);
             it.expects(FilePath.join('a', b, c, 'file.ext')).toEqual(path);
             it.expects(FilePath.join('a', [b, c], 'file.ext')).toEqual(path);
+            it.expects(FilePath.join('a', [], [b, c], 'file.ext')).toEqual(path);
         }
 
         private static function strip_join():void {

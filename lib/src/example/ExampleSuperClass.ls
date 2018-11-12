@@ -73,7 +73,7 @@ package example
 
         @param param2 The second parameter (optional)
         */
-        protected function protected_method(param1:String, param2:Number = 123):void { }
+        protected function protected_method(param1:String, param2:Number = null):void { }
 
         /** Private method doc comments should not appear in the API documentation. */
         private function private_method():Boolean { return true; }
