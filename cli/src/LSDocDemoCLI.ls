@@ -54,7 +54,6 @@ package
 
             trace('usage: lsdoc [-h|--help] [-v|--version]');
             trace('             -l|--lib <path>...');
-            trace('             -i|--input-dir <path>');
             trace('             -o|--output-dir <path>');
             trace('             [-d|--debug]');
             trace('             [-p|--processor <name>]');
@@ -63,7 +62,6 @@ package
             trace('  -h --help           Print this screen and exit');
             trace('  -v --version        Print version and exit');
             trace('  -d --debug          Turn on debug logging');
-            trace('  -i --input-dir      Provide documentation source files');
             trace('  -l --lib <path>...  Add loomlib (multiple paths may be given)');
             trace('  -o --output-dir     Set directory for output');
             trace('  -p --processor      Select processor (' +pNames +')');

@@ -28,34 +28,24 @@ package pixeldroid.lsdoc.processors
         {
             _context = context;
 
-            addTaskToEmptyOutputDir();
-            addTaskToCopyDocSourceFiles();
+            addTaskToEmptyApiDir();
             addTaskToGenerateApiDocs();
         }
 
         public function get context():ProcessingContext { return _context; }
 
 
-        private function addTaskToEmptyOutputDir():void
+        private function addTaskToEmptyApiDir():void
         {
-            addTask(new EnsureEmptyDirectory(_context.outPath, _context));
-        }
-
-        private function addTaskToCopyDocSourceFiles():void
-        {
-            var docsSrc:String = _context.getOption('docs-src', 'd', [null])[0];
-            if (docsSrc)
-            {
-                var excludes:Vector.<String>;
-                addTask(new CopyDirContents(docsSrc, _context.outPath, excludes, _context));
-            }
+            var apiDir:String = _context.getOption('api-dir', null, ['_api'])[0];
+            var apiPath:String = FilePath.join(_context.outPath, apiDir);
+            addTask(new EnsureEmptyDirectory(apiPath, _context));
         }
 
         private function addTaskToGenerateApiDocs():void
         {
             var apiDir:String = _context.getOption('api-dir', null, ['_api'])[0];
             var apiPath:String = FilePath.join(_context.outPath, apiDir);
-            addTask(new EnsureEmptyDirectory(apiPath, _context));
 
             var packages:Vector.<String>;
             for each(var m:LibModule in context.lsdoc.modules)
