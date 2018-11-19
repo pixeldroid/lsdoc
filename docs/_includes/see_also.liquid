@@ -12,10 +12,12 @@ see_also
 params:
   tags=[
     {"name"=>"see", "value"=>"example.ExampleSuperClass"},
-    {"name"=>"see", "value"=>"#details-kitchen_sink_method"}
+    {"name"=>"see", "value"=>"#details-kitchen_sink_method"},
+    {"name"=>"see", "value"=>"https://foo.bar.baz"}
   ] (array of tag objects; those with name not equal to 'see' are ignored)
   base_module="foo.bar.Baz" (base module used for relative links: "value"=>"#bat")
   heading=3 (optional, defaults to 3: html h3 heading is used for 'See Also' section.)
+  module_root="/api" (should include leading slash)
 
 {%- endcomment -%}
 {%- if include.tags -%}
@@ -26,14 +28,21 @@ params:
 <ul>
 {% assign see_also = see_also | sort: 'value' -%}
 {% for tag in see_also %}
-{%- assign l = 'true' -%}
-{%- assign m = tag.value -%}
-{%- assign c = m | slice: 0 -%}
-{%- if c == '#' %}
-  {%- assign l = 'false' -%}
-  {%- assign m = include.base_module | append: m -%}
-{%- endif -%}
-<li>{% include module_linker.liquid full_linkage=l base_module=include.base_module module=m base_url=site.baseurl module_root=site.module_root %}</li>
+{% assign li_data = '' %}
+{% assign not_url = tag.value | split: 'http' | first %}{%- comment -%}if value does start with 'http', not_url will be nil{%- endcomment -%}
+{% if not_url %}
+  {%- assign l = 'true' -%}
+  {%- assign m = tag.value -%}
+  {%- assign c = m | slice: 0 -%}
+  {%- if c == '#' %}
+    {%- assign l = 'false' -%}
+    {%- assign m = include.base_module | append: m -%}
+  {%- endif -%}
+  {% capture li_data %}{% include module_linker.liquid full_linkage=l base_module=include.base_module module=m base_url=site.baseurl module_root=include.module_root %}{% endcapture %}
+{% else %}
+  {% capture li_data %}<a href="{{ tag.value }}">{{ tag.value }}</a>{% endcapture %}
+{% endif %}
+<li>{{ li_data }}</li>
 {% endfor %}
 </ul>
 {%- endif -%}

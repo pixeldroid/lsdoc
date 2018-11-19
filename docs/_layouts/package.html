@@ -2,7 +2,9 @@
 layout: page
 ---
 
-{% capture module_url %}{{ site.baseurl }}{{ site.module_root }}{% endcapture %}
+{% assign page_url_pieces = page.url | split: '/' %}
+{% assign module_root = page_url_pieces[1] | prepend: '/' %}
+{% capture module_url %}{{ site.baseurl }}{{ module_root }}{% endcapture %}
 {% capture page_module_url %}{{ module_url }}/{{ page.module | split: '.' | join: '/' }}{% endcapture %}
 
 <div class="ui basic segment">

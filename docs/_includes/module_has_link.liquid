@@ -1,7 +1,7 @@
 {%- comment -%}
 
 module_has_link
-  checks documents in the site.module_root collection for a url attribute that matches include.module_url
+  checks documents in the module_root collection for a url attribute that matches include.module_url
 
 params:
   module_url="/api/foo/bar/Baz"
@@ -13,7 +13,8 @@ returns:
 {%- endcomment -%}
 {%- assign u = include.module_url -%}
 {%- assign found = false -%}
-{%- assign api_collection = site.module_root | slice: 1, site.module_root.size -%}
+{%- assign url_pieces = u | split: '/' -%}
+{%- assign api_collection = url_pieces[1] -%}
 {%- assign api_docs = site.documents | where:"collection",api_collection -%}
 
 {%- for doc in api_docs -%}
