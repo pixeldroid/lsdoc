@@ -1,0 +1,35 @@
+{%- comment -%}
+
+render_indices (lsdoc override of the programming pages implementation)
+  decides how to paint the individual links in the sidebar
+  - pages, layouts, and guide-indexes are indented when parented
+  - packages get a folder icon
+  - types are listed by their shortened package name
+
+params:
+  doc_list=<array of document objects to create links for>
+  collection_label=<name of collection the docs belong to>
+  page_title=<title of the calling page>
+
+{%- endcomment -%}
+{% for doc in include.doc_list %}
+  {% capture link %}{{ doc.title }}{% endcapture %}
+  {% capture url %}{{ doc.url }}#/{{ include.collection_label | downcase }}/{% endcapture %}
+  {% capture item_class %}{% if doc.title == include.page_title %}active {% endif %}item{% endcapture %}
+  {% if doc.layout == 'page' or doc.layout == 'layout' or doc.layout == 'guide-index' %}
+    {% assign path_bits = doc.relative_path | split: '.' | first | split: '/' %}
+    {% assign n = path_bits.size | minus: 2 %}
+    {% if n > 3 %}{% assign n = 3 %}{% endif %}
+    {% capture indent %}{% for i in (1..n) %}&ensp;{% endfor %}{% endcapture %}
+    {% capture link %}{{ indent }}{{ doc.title }}{% endcapture %}
+  {% else %}
+  {% case doc.layout %}
+    {% when 'package' %}
+      {% capture link %}{% include icon.liquid id='folder-outline' %} {% include package_shortener.liquid package=doc.module %}{% endcapture %}
+    {% when 'type' %}
+      {% capture pkg %}{{ doc.module }}.{{ doc.name }}{% endcapture %}
+      {% capture link %}{% include package_shortener.liquid package=pkg %}{% endcapture %}
+  {% endcase %}
+  {% endif %}
+  <a class="very tight smaller text {{ item_class }}" href="{{ site.baseurl }}{{ url }}">{{ link }}</a>
+{% endfor %}
