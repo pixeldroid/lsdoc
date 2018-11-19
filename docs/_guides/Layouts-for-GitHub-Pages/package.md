@@ -7,13 +7,15 @@ description: |
 
   A package (or module), is a collection of files that belong to the same namespace.
 
-  This template supports the LoomScript language constructs (`enum`, `struct`, `class`, etc.), and auto-links to the corresponding type summary page. If a type summary page cannot be located, no link will be generated.
+  This template supports the LoomScript language constructs (`enum`, `struct`, `class`, etc.), and auto-links to the corresponding [type] summary page. If a type summary page cannot be located, no link will be generated.
 
   Construct meta data should be provided in the following format:
 
   ```yaml
   [ { declaration: string, description: string, name: string } ]
   ```
+
+  [type]: ../type/#/guides/ "documentation of the type layout"
 parent_layout: [ "page", "base", "compress" ]
 parameters:
   - { name: "module", type: "string", description: "name of the package" }

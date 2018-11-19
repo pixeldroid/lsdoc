@@ -1,14 +1,17 @@
 ---
 layout: guide-index
 title: Layouts for GitHub Pages
+
+order: 2
 ---
 
-**{{ lsdoc }}** extends the [Programming Pages][programming-pages] template by providing two layouts for LoomScript documentation: [package][layout-package] and [type][layout-type].
+**lsdoc** extends the [Programming Pages][programming-pages] theme by providing two layouts for LoomScript documentation: [package][layout-package] and [type][layout-type].
 {:.larger.text}
 
-Layouts are essentially rendering functions; provided values for named parameters, the layout code turns those values into a specific html view.
+<span>{% include icon.liquid id='info-circle' %} <b>Info</b></span><br> Layouts are essentially rendering functions. Given values for named parameters, the layout code turns those values into a specific html view.
+{:.ui.info.message}
 
-To use a layout, create a markdown or html file that has a yaml front-matter block at the top of the file, and provide values for the layout parameters:
+To use a layout, create a markdown or html file that has a yaml front-matter block at the top of the file, and provide values for the layout parameters within the front-matter block:
 
 ```yaml
 ---
@@ -35,6 +38,6 @@ structs:
 
 
 
-[layout-package]: {{ site.baseurl }}/guides/Layouts-for-GitHub-Pages/package/#/guides/
-[layout-type]: {{ site.baseurl }}/guides/Layouts-for-GitHub-Pages/type/#/guides/
+[layout-package]: {{site.baseurl}}/guides/Layouts-for-GitHub-Pages/package/#/guides/
+[layout-type]: {{site.baseurl}}/guides/Layouts-for-GitHub-Pages/type/#/guides/
 [programming-pages]: https://github.com/pixeldroid/programming-pages "A site template for publishing code documentation to GitHub pages"

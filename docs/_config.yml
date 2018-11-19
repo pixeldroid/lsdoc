@@ -5,21 +5,21 @@ project:
   repo: https://github.com/pixeldroid/lsdoc
   version: 2.0.0
 collections:
-  api:
+  guides:
     output: true
-    ignore-page-order: true
     permalink: "/:collection/:path/"
-    title: API
+    title: Guides
     tab-order: 1
   examples:
     output: true
     permalink: "/:collection/:path/"
     title: Examples
     tab-order: 2
-  guides:
+  api:
     output: true
+    ignore-page-order: true
     permalink: "/:collection/:path/"
-    title: Guides
+    title: API
     tab-order: 3
 code_indent: "  "
 highlighter: rouge

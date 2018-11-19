@@ -1,17 +1,21 @@
 ---
 layout: page
 title: Anatomy of a loomlib
+
+order: 3
 ---
 
 # {{ page.title }}
 {:.no_toc}
 
-A **loomlib** is a self-contained, portable code library for the [LoomScript][loomscript] language. Loomlibs can be dynamically loaded into the LoomScript virtual machine at runtime (see [loading loomlibs][loading-loomlibs]), or statically linked against at compile time (see [linking loomlibs][linking-loomlibs]).
+A **loomlib** is a self-contained, portable code library for the [LoomScript][loomscript] language. Loomlibs can be dynamically loaded into the LoomScript virtual machine at runtime, or statically linked against at compile time.
 {:.larger.text}
 
-Loomlibs are valid [json][json] files, containing [Base64][base64] encoded bytecode, documentation comments, and type metadata.
+<span>{% include icon.liquid id='info-circle' %} <b>Info</b></span><br> Loomlibs are valid [JSON][json] files, containing [Base64][base64] encoded bytecode, documentation comments, and type metadata.
+{:.ui.info.message}
 
 See the sections below for details of the data structures found in a loomlib.
+{:.larger.text}
 
 - TOC
 {:toc}
@@ -427,8 +431,6 @@ Nested types are valid. For example, a mapping of Type to array of Objects:
 
 
 [base64]: https://en.wikipedia.org/wiki/Base64 "base64 encoding"
-[json]: https://www.json.org/ "Introducing JSON - javascript object notation"
-[linking-loomlibs]: /foo "statically link a loomlib into a project with the loomscript compiler"
-[loading-loomlibs]: /foo "dynamically load a loomlib into the running LoomScript VM"
+[json]: https://www.json.org/ "javascript object notation"
 [loomscript]: https://github.com/LoomSDK/LoomSDK "The Loom SDK, a native mobile app and game framework"
 [loomdocs-reflection]: http://docs.theengine.co/loom/1.1.4813/guides/02_LoomScript/03_reflection.html "Reflection in LoomScript"

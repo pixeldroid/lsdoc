@@ -9,15 +9,12 @@ title: Creating Documentation
 The `lsdoc.example` package illustrates source code documentation for all the different supported types in [LoomScript][loomscript-types].
 {:.larger.text}
 
-The example documentation was generated for GitHub pages from source code comments in LoomScript files that were compiled into a loomlib and processed by lsdoc using a command like the following:
+The example documentation was generated for GitHub pages from [source code comments][doc-comments] in LoomScript files that were compiled into a loomlib and processed by lsdoc using a command like the following:
 
 ```console
 $ lsdoc -p ghpages \
-    -t <template_dir}> \
-    -l <loomlib_path> \
-    -o <out_dir}> \
-    -c <config_path}> \
-    -i <in_dir>/index.md
+    -l ~/.loom/sdks/sprint34/libs/LSDoc.loomlib \
+    -o ~/lsdoc/docs
 ```
 
 See the [package summary][lsdoc-example] or browse from here:
@@ -35,5 +32,6 @@ See the [package summary][lsdoc-example] or browse from here:
 
 
 
+[doc-comments]: {{site.baseurl}}/guides/Using-lsdoc/Describing-code/#/guides "lsdoc syntax supported in source code documentation comments"
 [loomscript-types]: http://docs.theengine.co/loom/1.1.3435/guides/02_LoomScript/02_syntax.html "LoomScript language reference"
-[lsdoc-example]: {{ site.baseurl }}/api/example/#/api/ "the lsdoc.example package illustrates source code documentation for all LoomScript types"
+[lsdoc-example]: {{site.baseurl}}/api/example/#/api/ "the lsdoc.example package illustrates source code documentation for all LoomScript types"
