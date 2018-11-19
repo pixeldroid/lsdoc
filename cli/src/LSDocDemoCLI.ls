@@ -93,7 +93,7 @@ package
             trace(versionString);
 
             if (!opts.getOption('o', 'output-dir').hasValue)
-                exitWithErrors('no output directory specified', null);
+                exitWithErrors('no output directory specified');
 
             lsdoc = new LSDoc();
 
@@ -179,7 +179,7 @@ package
             Process.exit(EXIT_OK);
         }
 
-        private function exitWithErrors(message:String, err:Vector.<LSDocError>):void
+        private function exitWithErrors(message:String, err:Vector.<LSDocError>=[]):void
         {
             trace(message);
             for each(var e:LSDocError in err) trace(e);
