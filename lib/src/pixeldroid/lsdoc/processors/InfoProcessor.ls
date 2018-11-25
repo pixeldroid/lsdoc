@@ -3,7 +3,7 @@ package pixeldroid.lsdoc.processors
     import pixeldroid.lsdoc.models.LibModule;
     import pixeldroid.lsdoc.processors.LSDocProcessor;
     import pixeldroid.lsdoc.processors.ProcessingContext;
-    import pixeldroid.lsdoc.processors.tasks.info.WriteLibModule;
+    import pixeldroid.lsdoc.processors.tasks.info.WriteModuleInfo;
 
     import pixeldroid.task.SequentialTask;
     import pixeldroid.util.log.Log;
@@ -22,7 +22,7 @@ package pixeldroid.lsdoc.processors
             _context = context;
 
             for each(var m:LibModule in _context.lsdoc.modules)
-                addTask(new WriteLibModule(m, _context));
+                addTask(new WriteModuleInfo(m, _context));
 
             Log.debug(logName, function():String{ return 'ready to process ' +numTasks +' modules'; });
         }
