@@ -116,9 +116,11 @@ public function get legacy_property():String;
 
 ### @param
 
-Usage: `@param <description>`
+Usage: `@param <name⎵description>`
 
-Describe a method parameter.
+Describe a method parameter. Include one `@param` line for each parameter.
+
+The parameter name is expected as the first part of the description, separated from the rest by a single space.
 
 ```as3
 /**

@@ -9,7 +9,7 @@ title: Creating Documentation
 The `lsdoc.example` package illustrates source code documentation for all the different supported types in [LoomScript][loomscript-types].
 {:.larger.text}
 
-The example documentation was generated for GitHub pages from [source code comments][doc-comments] in LoomScript files that were compiled into a loomlib and processed by lsdoc using a command like the following:
+The [example documentation][lsdoc-example] was generated for GitHub pages from [source code comments][doc-comments] in LoomScript files that were compiled into a loomlib and processed by lsdoc using a command like the following:
 
 ```console
 $ lsdoc -p ghpages \

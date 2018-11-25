@@ -36,8 +36,13 @@ structs:
 `example.md`
 {:.smaller.text}
 
+<span>{% include icon.liquid id='check-circle' %}</span> While you can author documentation by hand using these layouts, **lsdoc** provides the `ghpages` processor to build documentation pages automatically from a loomlib file. See [Describing code] and [Using the lsdoc cli] for more details.
+{:.ui.success.message}
 
 
-[layout-package]: {{site.baseurl}}/guides/Layouts-for-GitHub-Pages/package/#/guides/
-[layout-type]: {{site.baseurl}}/guides/Layouts-for-GitHub-Pages/type/#/guides/
+
+[Describing code]: {{site.baseurl}}/guides/Using-lsdoc/Describing-code/#/guides/ "How to mark up code for documentation generation"
+[layout-package]: {{site.baseurl}}/guides/Layouts-for-GitHub-Pages/package/#/guides/ "Documentation of the package layout"
+[layout-type]: {{site.baseurl}}/guides/Layouts-for-GitHub-Pages/type/#/guides/ "Documentation of the type layout"
 [programming-pages]: https://github.com/pixeldroid/programming-pages "A site template for publishing code documentation to GitHub pages"
+[Using the lsdoc cli]: {{site.baseurl}}/guides/Using-lsdoc/Using-the-lsdoc-cli/#/guides/ "Use the lsdoc cli to generate github pages documentation from loomlibs"

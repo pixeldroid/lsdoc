@@ -4,10 +4,15 @@ package pixeldroid.lsdoc
     import system.JSONType;
 
 
+    /**
+        A utlity class for working with common loomlib JSON structures.
+    */
     public final class LibUtils
     {
         /**
-        Extracts JSON array elements and sends them to a provided function.
+        Extracts elements of a JSON object array and sends them to a provided function.
+
+        The provided function is called once for each element in the JSON array.
         */
         public static function applyToJSONArray(j:JSON, f:Function):void
         {
@@ -20,7 +25,7 @@ package pixeldroid.lsdoc
         }
 
         /**
-        Extracts JSON array elements, sends them through a transformation function, and loads them onto a provided vector.
+        Extracts elements of a JSON object array, sends them through a transformation function, and loads the result into a provided vector.
 
         Elements are pushed onto the end of the vector in the same order as the provided JSON array.
         */
@@ -35,7 +40,9 @@ package pixeldroid.lsdoc
         }
 
         /**
-        Inserts the contents of a JSON string array into a `Vector.<String>`
+        Copies the contents of a JSON string array into a `Vector.<String>`.
+
+        _Note:_ The provided string vector is not cleared; items are pushed onto the end.
         */
         public static function extractStringVector(j:JSON, v:Vector.<String>):void
         {

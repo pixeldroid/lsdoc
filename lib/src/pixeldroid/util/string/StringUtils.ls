@@ -27,6 +27,11 @@ package pixeldroid.util.string
         Searches string for token. If found, returns characters after token. If not found, returns the empty string.
 
         If the token ends the string, return value will be the empty string.
+
+        @param s The string to search
+        @param token The string to find
+
+        @return characters after token, or empty string
         */
         public static function after(s:String, token:String):String { return part(s, token, true); }
 
@@ -34,9 +39,22 @@ package pixeldroid.util.string
         Searches string for token. If found, returns characters before token. If not found, returns original string.
 
         If the token starts the string, return value will be the empty string.
+
+        @param s The string to search
+        @param token The string to find
+
+        @return characters before token, or empty string
         */
         public static function before(s:String, token:String):String { return part(s, token, false); }
 
+        /**
+        `true` when the given string begins with token.
+
+        @param s The string to search
+        @param token The string to find
+
+        @return Boolean indicating whether token begins the string
+        */
         public static function startsWith(s:String, token:String):Boolean
         {
             if (!token || !s)
@@ -45,6 +63,14 @@ package pixeldroid.util.string
             return (s.indexOf(token) == 0);
         }
 
+        /**
+        `true` when the given string ends with token.
+
+        @param s The string to search
+        @param token The string to find
+
+        @return Boolean indicating whether token ends the string
+        */
         public static function endsWith(s:String, token:String):Boolean
         {
             if (!token || !s)

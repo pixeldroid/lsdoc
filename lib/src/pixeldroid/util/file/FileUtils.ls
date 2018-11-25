@@ -20,6 +20,8 @@ package pixeldroid.util.file
             @param source Full filepath to directory of files to be copied
             @param destination Full filepath to target directory (does not need to be created before-hand)
             @param excludes List of filepaths that should not be copied. Pattern matching is not supported.
+
+            @return Boolean indicating success of copy
         */
         public static function copyContents(source:String, destination:String, excludes:Vector.<String> = null):Boolean
         {
@@ -58,6 +60,10 @@ package pixeldroid.util.file
             NOTE: empty directories are unable to be removed, only directories with files inside
 
             The containing directory is also removed.
+
+            @param Full filepath to directory of files to be removed (deleted)
+
+            @return Boolean indicating success of removal
         */
         public static function remove(dir:String):Boolean
         {
