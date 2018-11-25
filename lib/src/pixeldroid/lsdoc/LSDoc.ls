@@ -19,7 +19,7 @@ package pixeldroid.lsdoc
     public class LSDoc
     {
         /** LSDoc library version */
-        public static const version:String = '2.0.0';
+        public static const version:String = '2.1.0';
 
         /**
         list of extracted modules, populated via calls to `addLoomlib`
