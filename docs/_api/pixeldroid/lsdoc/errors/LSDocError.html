@@ -27,7 +27,7 @@ methods:
   - { attributes: [ "public", "static" ], description: "create a new `LSDocError` of type `PARSE_FAIL`", name: "parseFail", parameters: [ { name: "msg", type: "system.String" } ], type: "pixeldroid.lsdoc.errors.LSDocError" }
   - { attributes: [ "public", "static" ], description: "create a new `LSDocError` of type `PROCESSOR_FAIL`", name: "processorFail", parameters: [ { name: "msg", type: "system.String" } ], type: "pixeldroid.lsdoc.errors.LSDocError" }
   - { attributes: [ "public", "static" ], description: "create a new `LSDocError` of type `WRITE_FAIL`", name: "writeFail", parameters: [ { name: "msg", type: "system.String" } ], type: "pixeldroid.lsdoc.errors.LSDocError" }
-  - { attributes: [ "public" ], description: "create a new `LSDocError` of type `WRITE_FAIL`", name: "toString", type: "system.String" }
+  - { attributes: [ "public" ], description: "retrieve a human readable description of the error", name: "toString", type: "system.String" }
 module: "pixeldroid.lsdoc.errors"
 name: "LSDocError"
 properties: 
