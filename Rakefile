@@ -16,7 +16,7 @@ namespace :cli do
 
   # add publish task for jekyll theme files
   desc [
-    "copies Jekyll theme files into #{cli_default_bin_dir}",
+    "copies lsdoc Jekyll theme files into #{cli_default_bin_dir}",
     "this makes them available to the loomtasks scaffolding task",
   ].join("\n")
   task :copy_theme_files do |t, args|

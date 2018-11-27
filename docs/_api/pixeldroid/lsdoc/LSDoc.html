@@ -1,17 +1,19 @@
 ---
 ancestors: 
   - { module: "system", name: "Object" }
-description: ""
+description: "Entry point for loomlib processing.\n\nThe LSDoc class loads loomlibs, parses them,\nand makes the data available via a list of `LibModule` instances."
 fields: 
-  - { attributes: [ "public", "static", "const" ], description: "", name: "version", type: "system.String" }
-  - { attributes: [ "public", "const" ], description: "", name: "modules", template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.LibModule" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public", "static", "const" ], description: "LSDoc library version", name: "version", type: "system.String" }
+  - { attributes: [ "public", "const" ], description: "list of extracted modules, populated via calls to `addLoomlib`", name: "modules", tags: [ { name: "see", value: "#addLoomlib" } ], template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.models.LibModule" } ], type: "system.Vector" }, type: "system.Vector" }
 layout: "type"
 methods: 
-  - { attributes: [ "public" ], description: "", name: "addLoomlib", parameters: [ { name: "path", type: "system.String" } ], template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.errors.LSDocError" } ], type: "system.Vector" }, type: "system.Vector" }
+  - { attributes: [ "public" ], description: "Load and parse the provided loomlib into memory.", name: "addLoomlib", parameters: [ { description: "Absolute path to a loomlib. Relative paths are not supported.", name: "path", type: "system.String" } ], tags: [ { name: "return", value: "List of errors encountered during parsing. An empty list indicates success." }, { name: "see", value: "pixeldroid.lsdoc.errors.LSDocError" } ], template_types: { item_types: [ { item_types: [], type: "pixeldroid.lsdoc.errors.LSDocError" } ], type: "system.Vector" }, type: "system.Vector" }
 module: "pixeldroid.lsdoc"
 name: "LSDoc"
 properties: 
-  - { attributes: [ "public" ], description: "", getter: { attributes: [ "public" ], description: "", name: "__pget_numTypes", type: "system.Number" }, is_read_only: true, name: "numTypes", type: "system.Number" }
+  - { attributes: [ "public" ], description: "retrieve a count of the total unique types defined in the currently loaded loomlibs", getter: { attributes: [ "public" ], description: "", name: "__pget_numTypes", type: "system.Number" }, is_read_only: true, name: "numTypes", tags: [ { name: "return", value: "Integer count of total types loaded" } ], type: "system.Number" }
+tags: 
+  - { name: "see", value: "pixeldroid.lsdoc.models.LibModule" }
 type: "CLASS"
 type_attributes: 
   - "public"

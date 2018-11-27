@@ -8,15 +8,34 @@ package pixeldroid.lsdoc
     import pixeldroid.lsdoc.models.LibType;
 
 
+    /**
+    Entry point for loomlib processing.
+
+    The LSDoc class loads loomlibs, parses them,
+    and makes the data available via a list of `LibModule` instances.
+
+    @see pixeldroid.lsdoc.models.LibModule
+    */
     public class LSDoc
     {
-        public static const version:String = '2.0.0';
-        private static const parser:JSON = new JSON;
+        /** LSDoc library version */
+        public static const version:String = '2.1.0';
 
-        private const libPaths:Vector.<String> = [];
+        /**
+        list of extracted modules, populated via calls to `addLoomlib`
+        @see #addLoomlib
+        */
         public const modules:Vector.<LibModule> = [];
 
+        private static const parser:JSON = new JSON;
+        private const libPaths:Vector.<String> = [];
 
+
+        /**
+        retrieve a count of the total unique types defined in the currently loaded loomlibs
+
+        @return Integer count of total types loaded
+        */
         public function get numTypes():Number
         {
             var n:Number = 0;
@@ -26,6 +45,15 @@ package pixeldroid.lsdoc
             return n;
         }
 
+        /**
+        Load and parse the provided loomlib into memory.
+
+        @param path Absolute path to a loomlib. Relative paths are not supported.
+
+        @return List of errors encountered during parsing. An empty list indicates success.
+
+        @see pixeldroid.lsdoc.errors.LSDocError
+        */
         public function addLoomlib(path:String):Vector.<LSDocError>
         {
             var errors:Vector.<LSDocError> = [];

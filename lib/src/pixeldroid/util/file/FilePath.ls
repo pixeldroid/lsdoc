@@ -13,6 +13,10 @@ package pixeldroid.util.file
             Returns all components of the given filepath except the last one.
 
             The returned string does not contain a trailing delimiter.
+
+            @param filepath Path to a file for which the containing directory is desired
+
+            @return Path up to but not including the file or a trailing delimiter
         */
         public static function dirname(filepath:String):String
         {
@@ -26,6 +30,11 @@ package pixeldroid.util.file
 
             If extension is given and found at the end of `filepath`, it is removed.
             If extension is `.*`, any extension will be removed.
+
+            @param filepath Path to a file for which the filename is desired
+            @param extension File suffix to remove. Either as a wildcard (`.*`), or as a literal string not including `.` (e.g. `png` or `txt`)
+
+            @return Filename from the given path, optionally with extension removed
         */
         public static function basename(filepath:String, extension:String = null):String
         {
@@ -46,6 +55,10 @@ package pixeldroid.util.file
 
             If no period exists in the filename, the empty string is returned.
             If a period is the last character in the filename, the empty string is returned.
+
+            @param filepath Path to a file for which the file extension is desired
+
+            @return File extension from the given path, or empty string
         */
         public static function extname(filepath:String):String
         {
@@ -55,6 +68,10 @@ package pixeldroid.util.file
 
         /**
             Tests that path exists and is a directory on the filesystem.
+
+            @param path Path to test as a directory
+
+            @return `true` when path is a directory
         */
         public static function isDir(path:String):Boolean
         {
@@ -63,6 +80,10 @@ package pixeldroid.util.file
 
         /**
             Tests that path exists and is a file on the filesystem.
+
+            @param path Path to test as a file
+
+            @return `true` when path is a file, and not a directory
         */
         public static function isFile(path:String):Boolean
         {
@@ -90,9 +111,13 @@ package pixeldroid.util.file
             The returned string does not contain a trailing delimiter.
 
             With the exception of a leading delimiter on the first component,
-            all leading and trailing delimiters will be stripped.
+            all leading and trailing delimiters will be stripped from individual components.
 
             Delimiters existing within a component are left alone.
+
+            @param components Any mix of single string values, single objects that provide a `toString()` method, or Vectors of strings or objects
+
+            @return Single string of components joined by the system folder delimiter, but without a trailing delimiter
         */
         public static function join(...components):String
         {

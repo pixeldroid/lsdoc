@@ -20,28 +20,9 @@ By pairing **lsdoc** with a [processor][processors], the loomlib data can be use
 
 
 
-[loomlibs]: {{ site.baseurl }}/guides/Understanding-the-lsdoc-library/Anatomy-of-a-loomlib/#/guides/ "Anatomy of a loomlibs"
+[loomlibs]: {{site.baseurl}}/guides/Understanding-the-lsdoc-library/Anatomy-of-a-loomlib/#/guides/ "Anatomy of a loomlibs"
 [loomscript]: https://github.com/LoomSDK/LoomSDK "The Loom SDK, a native mobile app and game framework"
-[lsdoc-analyze]: {{ site.baseurl }}/examples/analyzing/#/examples/ "using lsdoc and a custom processor to identify public interfaces without documentation"
-[lsdoc-document]: {{ site.baseurl }}/examples/documenting/#/examples/ "using lsdoc to create documentation for github pages"
-[processors]: {{ site.baseurl }}/api/pixeldroid/lsdoc/processors/#/api/ "api docs for lsdoc processors"
+[lsdoc-analyze]: {{site.baseurl}}/examples/analyzing/#/examples/ "using lsdoc and a custom processor to identify public interfaces without documentation"
+[lsdoc-document]: {{site.baseurl}}/examples/documenting/#/examples/ "using lsdoc to create documentation for github pages"
+[processors]: {{site.baseurl}}/api/pixeldroid/lsdoc/processors/#/api/ "api docs for lsdoc processors"
 [programming-pages]: https://github.com/pixeldroid/programming-pages "A site template for publishing code documentation to GitHub pages"
-
-
-
-{% comment %}
-index - lsdoc is a library for processing loomlibs
-guides
-  Anatomy-of-a-loomlib - format reference (fileformat.info)
-  Using-lsdoc
-    Using-the-lsdoc-cli
-    Using-the-lsdoc-library
-  Writing-a-custom-processor
-  Layouts-for-GitHub-Pages
-    package
-    type
-examples
-  analyzing - using lsdoc and a custom processor to identify public interfaces without documentation
-  documenting - using lsdoc to create documentation for github pages
-
-{% endcomment %}

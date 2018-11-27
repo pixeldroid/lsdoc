@@ -7,15 +7,15 @@ package pixeldroid.lsdoc.processors.tasks.info
     import pixeldroid.util.log.Log;
 
 
-    public class GenerateLibModule extends SingleTask
+    public class GenerateModuleInfo extends SingleTask
     {
-        private static const logName:String = GenerateLibModule.getTypeName();
+        private static const logName:String = GenerateModuleInfo.getTypeName();
         private var module:LibModule;
 
         public var lines:Vector.<String>;
 
 
-        public function GenerateLibModule(module:LibModule)
+        public function GenerateModuleInfo(module:LibModule)
         {
             this.module = module;
         }

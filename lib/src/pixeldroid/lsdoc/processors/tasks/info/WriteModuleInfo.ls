@@ -3,7 +3,7 @@ package pixeldroid.lsdoc.processors.tasks.info
     import pixeldroid.lsdoc.models.LibModule;
     import pixeldroid.lsdoc.processors.ProcessingContext;
     import pixeldroid.lsdoc.processors.tasks.WriteLines;
-    import pixeldroid.lsdoc.processors.tasks.info.GenerateLibModule;
+    import pixeldroid.lsdoc.processors.tasks.info.GenerateModuleInfo;
 
     import pixeldroid.task.SequentialTask;
     import pixeldroid.task.Task;
@@ -13,19 +13,19 @@ package pixeldroid.lsdoc.processors.tasks.info
     import pixeldroid.util.log.Log;
 
 
-    public class WriteLibModule extends SequentialTask
+    public class WriteModuleInfo extends SequentialTask
     {
-        private static const logName:String = WriteLibModule.getTypeName();
+        private static const logName:String = WriteModuleInfo.getTypeName();
         private var module:LibModule;
-        private var genInfo:GenerateLibModule;
+        private var genInfo:GenerateModuleInfo;
         private var writeLines:WriteLines;
 
 
-        public function WriteLibModule(module:LibModule, context:ProcessingContext)
+        public function WriteModuleInfo(module:LibModule, context:ProcessingContext)
         {
             this.module = module;
 
-            genInfo = new GenerateLibModule(module);
+            genInfo = new GenerateModuleInfo(module);
 
             writeLines = new WriteLines(context);
             writeLines.outfile = FilePath.join(context.outPath, module.name);
@@ -40,7 +40,7 @@ package pixeldroid.lsdoc.processors.tasks.info
         private function handleSubTaskCompletion(task:Task):void
         {
             if (task == genInfo)
-                writeLines.lines = (task as GenerateLibModule).lines;
+                writeLines.lines = (task as GenerateModuleInfo).lines;
         }
 
     }
