@@ -7,7 +7,7 @@ an API docs generator for [LoomScript][loomscript]
 <br/>
 
 **lsdoc** provides an API for loading loomlib libraries and extracting type metadata.
-The distribution provides a command line tool for generating documentation compatible with the [programming-pages][programming-pages] theme for creating html documentation that is searchable, browsable, cross-linked, and mobile friendly.
+The distribution provides a command line tool for generating documentation compatible with the [programming-pages] theme for creating html documentation that is searchable, browsable, cross-linked, and mobile friendly.
 
 - [installation](#installation)
 - [usage](#usage)
@@ -90,4 +90,5 @@ Pull requests are welcome!
 [loomtasks]: https://github.com/pixeldroid/loomtasks "Rake tasks for working with loomlibs"
 [lsdoc-api]: https://pixeldroid.github.io/lsdoc/ "API docs for lsdoc"
 [lsdoc-releases]: https://github.com/pixeldroid/lsdoc/releases "releases for lsdoc"
+[programming-pages]: https://github.com/pixeldroid/programming-pages "a jekyll theme for publishing code documentation to GitHub pages"
 [rake]: https://github.com/ruby/rake "A make-like build utility for Ruby"
